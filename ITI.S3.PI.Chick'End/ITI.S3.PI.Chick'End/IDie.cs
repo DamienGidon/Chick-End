@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    public class Map
+    interface IDie
     {
-        MapElement[,] _mapElements;
-
-        internal Map()
-        {
-            MapElement[,] _mapElements = new MapElement[15,15];
-        }
+        void Die();
     }
 }

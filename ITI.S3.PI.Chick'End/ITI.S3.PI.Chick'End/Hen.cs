@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    class Hen
+    class Hen : Tower
     {
+        internal Hen()
+            : base(10, 15)
+        {
+            _health = 50;
+        }
+
+        public override void Attack(Ennemi ennemi)
+        {
+            ennemi.Health -= Damages;
+        }
+        
+        /*
+        public override void Remove()
+        {
+
+        }
+        */
     }
 }
