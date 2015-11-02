@@ -8,6 +8,7 @@ namespace ITI.S3.PI.Chick_End
 {
     internal class Square
     {
+        Placeable _ally;
         List<Unit> _units;
         string _decoration;
 

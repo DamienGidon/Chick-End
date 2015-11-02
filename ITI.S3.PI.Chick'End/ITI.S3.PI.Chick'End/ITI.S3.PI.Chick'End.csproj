@@ -46,14 +46,13 @@
     <Compile Include="Hen.cs" />
     <Compile Include="IAttack.cs" />
     <Compile Include="Map.cs" />
-    <Compile Include="MapElement.cs" />
     <Compile Include="IMove.cs" />
     <Compile Include="Placeable.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IRemove.cs" />
+    <Compile Include="Square.cs" />
     <Compile Include="Tower.cs" />
-    <Compile Include="Tree.cs" />
     <Compile Include="Unit.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
