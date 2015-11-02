@@ -10,6 +10,7 @@ namespace ITI.S3.PI.Chick_End
     {
         Square[,] _squares;
 
+        // Contructor
         internal Map()
         {
             Square[,] _squares = new Square[8,13];
