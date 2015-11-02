@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    class Unit : MapElement, IDie
+    class Unit : Square, IDie
     {
         internal Point _position;
         internal int _health;

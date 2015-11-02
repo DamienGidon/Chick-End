@@ -12,10 +12,7 @@ namespace ITI.S3.PI.Chick_End
         readonly int _damages;
         readonly float _range;
 
-        public abstract void Attack();
-        /*{
-            throw new NotImplementedException();
-        }*/
+        public abstract void Attack(Ennemi opposant);
 
         public abstract void Move();
     }

@@ -53,6 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IRemove.cs" />
     <Compile Include="Tower.cs" />
+    <Compile Include="Tree.cs" />
     <Compile Include="Unit.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
