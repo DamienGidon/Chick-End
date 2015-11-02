@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    class Unit : Square, IDie
+    class Unit : IDie
     {
         internal Point _position;
         internal int _health;
@@ -16,7 +16,6 @@ namespace ITI.S3.PI.Chick_End
             get { return _health;}
             set { _health = value; }
         }
-
 
         public void Die()
         {
