@@ -41,6 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BomberHen.cs" />
+    <Compile Include="Rooster.cs" />
+    <Compile Include="InfantryFarmer.cs" />
+    <Compile Include="GunnerFarmer.cs" />
+    <Compile Include="OldHen.cs" />
     <Compile Include="IDie.cs" />
     <Compile Include="Ennemi.cs" />
     <Compile Include="Hen.cs" />
