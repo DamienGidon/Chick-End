@@ -19,11 +19,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             _window = window;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void quit(object sender, EventArgs e)
         {
             using (Form m = new Menu())
