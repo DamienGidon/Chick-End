@@ -11,7 +11,7 @@ namespace ITI.S3.PI.Chick_End
         Placeable _ally;
         List<Unit> _units;
         string _decoration;
-
+       
         internal Square( string decoration )
         {
             _decoration = decoration;
