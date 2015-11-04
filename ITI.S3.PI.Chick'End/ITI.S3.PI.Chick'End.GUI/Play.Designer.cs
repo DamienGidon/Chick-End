@@ -106,18 +106,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Playbill", 26.25F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(45, 9);
+            this.label1.Location = new System.Drawing.Point(3, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 35);
+            this.label1.Size = new System.Drawing.Size(97, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Units";
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(549, 6);
+            this.button1.Location = new System.Drawing.Point(942, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(63, 33);
             this.button1.TabIndex = 1;
@@ -128,7 +128,7 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(480, 6);
+            this.button2.Location = new System.Drawing.Point(873, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(63, 33);
             this.button2.TabIndex = 2;
@@ -143,17 +143,17 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(144, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(480, 60);
+            this.panel2.Size = new System.Drawing.Size(873, 60);
             this.panel2.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Playbill", 26.25F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(10, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 35);
+            this.label2.Size = new System.Drawing.Size(134, 39);
             this.label2.TabIndex = 0;
             this.label2.Text = "Seeds :";
             // 
@@ -163,7 +163,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(624, 420);
+            this.ClientSize = new System.Drawing.Size(1017, 438);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);

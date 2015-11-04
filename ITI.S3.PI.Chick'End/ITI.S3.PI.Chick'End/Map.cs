@@ -9,7 +9,9 @@ namespace ITI.S3.PI.Chick_End
     public class Map
     {
         Square[,] _squares;
-
+        /*
+         * Constructor
+         */
         internal Map()
         {
             Square[,] _squares = new Square[8,13];
@@ -17,7 +19,8 @@ namespace ITI.S3.PI.Chick_End
             // Setting the hen house
             for( int i = 3; i < 6; i++)
             {
-                _squares[i, 0] = null; // Poulailler à l'avenir ?
+                int j = 0;
+                _squares[i, j] = new Square(this, i, j, "hen home" );
             }
             // Setting the other decorations
             for( int i = 0; i < 9; i++)
@@ -27,14 +30,14 @@ namespace ITI.S3.PI.Chick_End
                 {
                     for( int j = 0; j < 14; j++)
                     {
-                        _squares[i, j] = new Square( "tree" );
+                        _squares[i, j] = new Square( this, i, j, "tree" );
                     }
                 }
                 else if( i == 4)
                 {
                     for( int j = 1; j < 14; j++)
                     {
-                        _squares[i, j] = new Square( "tree" );
+                        _squares[i, j] = new Square( this, i, j, "tree" );
                     }
                 }
                 // Setting the paths
@@ -42,10 +45,24 @@ namespace ITI.S3.PI.Chick_End
                 {
                     for( int j = 1; j < 14; j++)
                     {
-                        _squares[i, j] = new Square( "path" );
+                        _squares[i, j] = new Square( this, i, , "path" );
                     }
                 }
             }
         }
+
+        internal Square GetSquare(int y, int x)
+        {
+            return _squares[x, y];
+        }
+        /*
+        public void PutHen(int y, int x )
+        {
+            if (GetSquare( y, x ).Ally != null)
+                throw new ArgumentException();
+            else
+                GetSquare( y, x ).Ally = new Hen();
+        }
+        */
     }
 }

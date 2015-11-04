@@ -8,7 +8,7 @@ namespace ITI.S3.PI.Chick_End
 {
     class Unit : IDie
     {
-        internal Point _position;
+        Square _context;
         internal int _health;
 
         internal int Health
@@ -20,6 +20,7 @@ namespace ITI.S3.PI.Chick_End
         public void Die()
         {
             throw new NotImplementedException();
+            _health = 0;
         }
     }
 }

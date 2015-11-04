@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    abstract class Tower : Unit, IAttack
+    abstract class Tower : Placeable, IAttack
     {
         internal readonly int _damages;
         internal readonly float _range;
