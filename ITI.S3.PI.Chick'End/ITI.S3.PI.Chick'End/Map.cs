@@ -45,7 +45,7 @@ namespace ITI.S3.PI.Chick_End
                 {
                     for( int j = 1; j < 14; j++)
                     {
-                        _squares[i, j] = new Square( this, i, , "path" );
+                        _squares[i, j] = new Square( this, i, j, "path" );
                     }
                 }
             }
