@@ -4,17 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITI.S3.PI.Chick_End
+namespace ITI.S3.PI.Chick_End.Units
 {
-    class Rooster : Tower
+    class GunnerFarmer : Tower
     {
-        internal Rooster()
+        internal GunnerFarmer()
             : base(10, 15)
         {
             _health = 50;
         }
 
-       
         public override void Attack(Ennemi ennemi)
         {
             ennemi.Health -= Damages;
@@ -23,7 +22,7 @@ namespace ITI.S3.PI.Chick_End
         /*
         public override void Remove()
         {
-
+            
         }
         */
     }

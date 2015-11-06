@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ITI.S3.PI.Chick_End;
 
-namespace ITI.S3.PI.Chick_End
+namespace ITI.S3.PI.Chick_End.Units
 {
-    class Hen : Tower
+    internal class OldHen : Tower
     {
-        internal Hen()
+        internal OldHen()
             : base(10, 15)
         {
             _health = 50;
