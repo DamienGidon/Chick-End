@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITI.S3.PI.Chick_End
+namespace ITI.S3.PI.Chick_End.Units
 {
-    class GunnerFarmer : Tower
+    internal class Hen : Tower
     {
-        internal GunnerFarmer()
+        internal Hen()
             : base(10, 15)
         {
             _health = 50;
@@ -22,7 +22,7 @@ namespace ITI.S3.PI.Chick_End
         /*
         public override void Remove()
         {
-            
+
         }
         */
     }

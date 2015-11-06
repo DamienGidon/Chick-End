@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITI.S3.PI.Chick_End
+namespace ITI.S3.PI.Chick_End.Units
 {
     class InfantryFarmer : Tower
     {
