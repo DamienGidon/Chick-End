@@ -14,7 +14,7 @@ namespace ITI.S3.PI.Chick_End
          */
         internal Map()
         {
-            Square[,] _squares = new Square[8,13];
+            Square[,] _squares = new Square[ FinalVariables._nbCaseHeight - 1, FinalVariables._nbCaseWidth - 1 ];
 
             // Setting the hen house
             for( int i = 3; i < 6; i++)
@@ -55,14 +55,5 @@ namespace ITI.S3.PI.Chick_End
         {
             return _squares[x, y];
         }
-        /*
-        public void PutHen(int y, int x )
-        {
-            if (GetSquare( y, x ).Ally != null)
-                throw new ArgumentException();
-            else
-                GetSquare( y, x ).Ally = new Hen();
-        }
-        */
     }
 }
