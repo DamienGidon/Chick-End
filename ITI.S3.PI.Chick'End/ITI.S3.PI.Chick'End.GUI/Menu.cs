@@ -27,7 +27,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             using (Form p = new Play())
             {
                 p.ShowDialog();
-                Close();
+                this.Close();
             }
         }
     }
