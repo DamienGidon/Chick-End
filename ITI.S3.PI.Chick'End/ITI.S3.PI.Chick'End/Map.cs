@@ -8,6 +8,19 @@ namespace ITI.S3.PI.Chick_End
 {
     public class Map
     {
+        readonly Dictionary<string, Tower> _towers;
+        readonly Dictionary<string, Ennemi> _ennemis;
+        List<Unit> AllUnits
+        {
+            get
+            {
+                List<Unit> units = new List<Unit>();
+                foreach (Tower tower in _towers.Values) units.Add(tower);
+                foreach (Ennemi ennemi in _ennemis.Values) units.Add(ennemi);
+
+                return units;
+            }
+        }
         Square[,] _squares;
         /*
          * Constructor

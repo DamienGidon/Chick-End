@@ -19,8 +19,8 @@ namespace ITI.S3.PI.Chick_End
 
         public void Die()
         {
-            throw new NotImplementedException();
             _health = 0;
+            throw new NotImplementedException();  
         }
     }
 }
