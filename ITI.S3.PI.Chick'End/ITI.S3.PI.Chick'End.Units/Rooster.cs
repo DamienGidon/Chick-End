@@ -11,7 +11,7 @@ namespace ITI.S3.PI.Chick_End.Units
         internal Rooster()
             : base(10, 15)
         {
-            _health = 50;
+            Health = 50;
         }
 
        

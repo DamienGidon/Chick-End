@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End.Units
 {
-    class BomberHen : Tower
+    public class BomberHen : Tower
     {
         public BomberHen()
             : base(10, 15)
