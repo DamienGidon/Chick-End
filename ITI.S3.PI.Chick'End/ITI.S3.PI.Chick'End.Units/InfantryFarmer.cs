@@ -11,7 +11,7 @@ namespace ITI.S3.PI.Chick_End.Units
         internal InfantryFarmer()
             : base(10, 15)
         {
-            _health = 50;
+            Health = 50;
         }
 
         public override void Attack(Ennemi ennemi)

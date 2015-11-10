@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    abstract class Ennemi : Unit, IAttack, IMove
+    public abstract class Ennemi : Unit, IAttack, IMove
     {
         int _speed;
         readonly int _damages;

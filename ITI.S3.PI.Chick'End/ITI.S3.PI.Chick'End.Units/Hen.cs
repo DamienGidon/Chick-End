@@ -11,7 +11,7 @@ namespace ITI.S3.PI.Chick_End.Units
         internal Hen()
             : base(10, 15)
         {
-            _health = 50;
+            this.Health = 50;
         }
 
         public override void Attack(Ennemi ennemi)

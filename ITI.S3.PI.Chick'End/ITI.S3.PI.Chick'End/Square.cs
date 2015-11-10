@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    internal class Square
+    public class Square
     {
         readonly Map _context;
         readonly int _line;

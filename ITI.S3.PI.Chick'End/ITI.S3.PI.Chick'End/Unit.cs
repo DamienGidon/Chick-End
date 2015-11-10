@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    class Unit : IDie
+    public class Unit : IDie
     {
         Square _context;
         internal int _health;
 
-        internal int Health
+        public int Health
         {
             get { return _health;}
             set { _health = value; }
