@@ -8,6 +8,7 @@ namespace ITI.S3.PI.Chick_End
 {
     public class Map
     {
+        readonly Square[,] _squares;
         readonly Dictionary<string, Tower> _towers;
         readonly Dictionary<string, Ennemi> _ennemis;
         List<Unit> AllUnits

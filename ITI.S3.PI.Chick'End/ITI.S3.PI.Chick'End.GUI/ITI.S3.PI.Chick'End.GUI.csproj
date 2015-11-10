@@ -66,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewMapControler.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="EscapeWindow.resx">
       <DependentUpon>EscapeWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,6 +99,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITI.S3.PI.Chick%27End\ITI.S3.PI.Chick%27End.csproj">
+      <Project>{0996f6a9-b143-431c-bab2-6e65a49ce6a6}</Project>
+      <Name>ITI.S3.PI.Chick%27End</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

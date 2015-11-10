@@ -13,7 +13,7 @@ namespace ITI.S3.PI.Chick_End
         readonly int _column;
         string _decoration;
 
-        internal Square( Map context, int x, int y, string decoration )
+        public Square( Map context, int x, int y, string decoration )
         {
             _context = context;
             _decoration = decoration;
@@ -21,13 +21,17 @@ namespace ITI.S3.PI.Chick_End
             _column = y;
         }
 
-        internal int X
+        public int Line
         {
             get { return _line; }
         }
-        internal int Y
+        public int Column
         {
             get { return _column; }
+        }
+        public string Decoration
+        {
+            get { return _decoration; }
         }
     }
 }
