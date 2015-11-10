@@ -8,13 +8,13 @@ namespace ITI.S3.PI.Chick_End
 {
     public class Map
     {
-        Square[,] _squares;
+        public Square[,] _squares;
         /*
          * Constructor
          */
         internal Map()
         {
-            Square[,] _squares = new Square[ FinalVariables._nbCaseHeight - 1, FinalVariables._nbCaseWidth - 1 ];
+            _squares = new Square[ FinalVariables._nbCaseHeight - 1, FinalVariables._nbCaseWidth - 1 ];
 
             // Setting the hen house
             for( int i = 3; i < 6; i++)
@@ -30,14 +30,14 @@ namespace ITI.S3.PI.Chick_End
                 {
                     for( int j = 0; j < 14; j++)
                     {
-                        _squares[i, j] = new Square( this, i, j, "tree" );
+                        _squares[i, j] = new Square( this, i, j, "grass" );
                     }
                 }
                 else if( i == 4)
                 {
                     for( int j = 1; j < 14; j++)
                     {
-                        _squares[i, j] = new Square( this, i, j, "tree" );
+                        _squares[i, j] = new Square( this, i, j, "grass" );
                     }
                 }
                 // Setting the paths
@@ -51,9 +51,14 @@ namespace ITI.S3.PI.Chick_End
             }
         }
 
-        internal Square GetSquare(int y, int x)
+        public Square[,] Square
         {
-            return _squares[x, y];
+            get { return _squares; }
+        }
+
+        public Square this[int ligne, int colonne]
+        {
+            get { return _squares[ligne, colonne]; }
         }
     }
 }
