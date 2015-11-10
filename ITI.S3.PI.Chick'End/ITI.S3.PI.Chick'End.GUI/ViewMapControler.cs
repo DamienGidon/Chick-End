@@ -12,8 +12,11 @@ namespace ITI.S3.PI.Chick_End.GUI
     {
         Game _context;
 
-        public void Draw( Graphics g )
+        protected override void OnPaint( PaintEventArgs e )
         {
+            //Graphics g = new Graphics
+            base.OnPaint( e );
+
             Image grass = Image.FromFile( ".\\Images\\Grass.png" );
             Image path = Image.FromFile( ".\\Images\\Path.png" );
 
@@ -23,21 +26,15 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     if (_context.Map.Square[i, j].Decoration == "grass")
                     {
-                        g.DrawImage( grass, _context.Map.Square[i, j].Line * FinalVariables._squareWidthInMeters, _context.Map.Square[i, j].Column * FinalVariables._squareWidthInMeters, FinalVariables._squareWidthInMeters, FinalVariables._squareWidthInMeters );
+                        e.Graphics.DrawImage( grass, _context.Map.Square[i, j].Column * FinalVariables._squareWidthInMeters, _context.Map.Square[i, j].Line * FinalVariables._squareWidthInMeters, FinalVariables._squareWidthInMeters, FinalVariables._squareWidthInMeters );
                     }
                     else if (_context.Map.Square[i, j].Decoration == "path")
                     {
-                        g.DrawImage( path, _context.Map.Square[i, j].Line * FinalVariables._squareWidthInMeters, _context.Map.Square[i, j].Column * FinalVariables._squareWidthInMeters, FinalVariables._squareWidthInMeters, FinalVariables._squareWidthInMeters );
+                        e.Graphics.DrawImage( path, _context.Map.Square[i, j].Column * FinalVariables._squareWidthInMeters, _context.Map.Square[i, j].Line * FinalVariables._squareWidthInMeters, FinalVariables._squareWidthInMeters, FinalVariables._squareWidthInMeters );
                     }
                 }
             }
-        }
 
-        protected override void OnPaint( PaintEventArgs e )
-        {
-            //Graphics g = new Graphics
-            base.OnPaint( e );
-            
         }
     }
 }
