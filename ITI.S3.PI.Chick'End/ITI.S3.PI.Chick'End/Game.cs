@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    public abstract class Placeable : Unit, IRemove
+    public class Game
     {
-        public virtual void Remove()
+        Map _context;
+
+        public Game()
         {
-            throw new NotImplementedException();
+            _context = new Map();
+        }
+
+        public Map Map
+        {
+            get { return _context; }
         }
     }
 }

@@ -4,11 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITI.S3.PI.Chick_End
+namespace ITI.S3.PI.Chick_End.Units
 {
-    public abstract class Placeable : Unit, IRemove
+    public class BomberHen : Tower
     {
-        public virtual void Remove()
+        public BomberHen()
+            : base(10, 15)
+        {
+
+        }
+
+        public override void Attack( Ennemi ennemi )
         {
             throw new NotImplementedException();
         }
