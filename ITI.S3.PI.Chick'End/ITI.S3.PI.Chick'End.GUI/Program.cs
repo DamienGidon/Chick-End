@@ -16,7 +16,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());
+            Application.Run(new FormF());
         }
     }
 }
