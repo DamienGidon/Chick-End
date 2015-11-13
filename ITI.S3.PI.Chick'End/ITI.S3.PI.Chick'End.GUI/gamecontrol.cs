@@ -37,5 +37,31 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             panelMenu.Hide();
         }
+
+        private void buttonBestiary_MouseEnter(object sender, EventArgs e)
+        {
+            buttonBestiary.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonBestiary.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            buttonBestiary.Refresh();
+        }
+
+        private void buttonBestiary_MouseLeave(object sender, EventArgs e)
+        {
+            buttonBestiary.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonBestiary.Refresh();
+        }
+
+        private void buttonResume_MouseEnter(object sender, EventArgs e)
+        {
+            buttonResume.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonResume.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            buttonResume.Refresh();
+        }
+
+        private void buttonResume_MouseLeave(object sender, EventArgs e)
+        {
+            buttonResume.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonResume.Refresh();
+        }
     }
 }
