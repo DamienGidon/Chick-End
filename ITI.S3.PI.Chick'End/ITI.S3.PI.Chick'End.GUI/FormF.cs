@@ -10,25 +10,22 @@ using System.Windows.Forms;
 
 namespace ITI.S3.PI.Chick_End.GUI
 {
-    public partial class Menu : Form
+    public partial class FormF : Form
     {
-        public Menu()
+        public FormF()
         {
             InitializeComponent();
         }
 
-        private void quit(object sender, EventArgs e)
+        private void buttonPlay_Click(object sender, EventArgs e)
         {
-            Close();
+            MenuPanel.Hide();
+            this.Controls.Add(new gamecontrol(MenuPanel));
         }
 
-        private void play(object sender, EventArgs e)
+        private void buttonQuit_Click(object sender, EventArgs e)
         {
-            using (Form p = new Play())
-            {
-                p.ShowDialog();
-                this.Close();
-            }
+            this.Close();
         }
     }
 }

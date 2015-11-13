@@ -52,6 +52,18 @@
     <Compile Include="EscapeWindow.Designer.cs">
       <DependentUpon>EscapeWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormF.Designer.cs">
+      <DependentUpon>FormF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gamecontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gamecontrol.Designer.cs">
+      <DependentUpon>gamecontrol.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +83,12 @@
     </Compile>
     <EmbeddedResource Include="EscapeWindow.resx">
       <DependentUpon>EscapeWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormF.resx">
+      <DependentUpon>FormF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gamecontrol.resx">
+      <DependentUpon>gamecontrol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
