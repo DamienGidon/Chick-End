@@ -11,6 +11,7 @@ namespace ITI.S3.PI.Chick_End
         readonly Square[,] _squares;
         readonly Dictionary<string, Tower> _towers;
         readonly Dictionary<string, Ennemi> _ennemis;
+
         List<Unit> AllUnits
         {
             get
@@ -29,9 +30,9 @@ namespace ITI.S3.PI.Chick_End
         /*
          * Constructor
          */
-        internal Map()
+        public Map()
         {
-            _squares = new Square[ FinalVariables._nbCaseHeight - 1, FinalVariables._nbCaseWidth - 1 ];
+            _squares = new Square[ FinalVariables._nbCaseHeight, FinalVariables._nbCaseWidth];
 
             // Setting the hen house
             for( int i = 3; i < 6; i++)
@@ -45,22 +46,22 @@ namespace ITI.S3.PI.Chick_End
                 // Setting the trees
                 if( i < 3 || i > 5)
                 {
-                    for( int j = 0; j < 14; j++)
+                    for( int j = 0; j < FinalVariables._nbCaseWidth; j++)
                     {
                         _squares[i, j] = new Square( this, i, j, "grass" );
                     }
                 }
                 else if( i == 4)
                 {
-                    for( int j = 1; j < 14; j++)
+                    for( int j = 1; j < FinalVariables._nbCaseWidth; j++)
                     {
                         _squares[i, j] = new Square( this, i, j, "grass" );
                     }
                 }
                 // Setting the paths
-                if( i == 3 || i == 5)
+                else if( i == 3 || i == 5)
                 {
-                    for( int j = 1; j < 14; j++)
+                    for( int j = 1; j < FinalVariables._nbCaseWidth; j++)
                     {
                         _squares[i, j] = new Square( this, i, j, "path" );
                     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,13 +13,28 @@ namespace ITI.S3.PI.Chick_End.GUI
     {
         Game _context;
 
+        public ViewMapControler()
+        {
+            _context = new Game();
+        }
+
+        public Game Context
+        {
+            get { return _context; }
+            set { _context = value; }
+        }
+
         protected override void OnPaint( PaintEventArgs e )
         {
             //Graphics g = new Graphics
             base.OnPaint( e );
 
-            Image grass = Image.FromFile( ".\\Images\\Grass.png" );
-            Image path = Image.FromFile( ".\\Images\\Path.png" );
+            string directory = Path.GetDirectoryName( Application.ExecutablePath );
+            string pathGrass = Path.Combine( directory, @"grass.png" );
+            string pathPath  = Path.Combine( directory, @"path.png" );
+
+            Image grass = Image.FromFile( pathGrass );
+            Image path = Image.FromFile( pathPath );
 
             for (int i = 0; i < FinalVariables._nbCaseHeight; i++)
             {

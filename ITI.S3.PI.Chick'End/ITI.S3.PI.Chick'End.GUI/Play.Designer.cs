@@ -40,6 +40,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -134,7 +135,6 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Trash";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel2
             // 
@@ -159,6 +159,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Seeds :";
             // 
+            // viewMapControler1
+            // 
+            this.viewMapControler1.Context = null;
+            this.viewMapControler1.Location = new System.Drawing.Point(152, 67);
+            this.viewMapControler1.Name = "viewMapControler1";
+            this.viewMapControler1.Size = new System.Drawing.Size(200, 100);
+            this.viewMapControler1.TabIndex = 4;
+            // 
             // Play
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,6 +174,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1017, 438);
+            this.Controls.Add(this.viewMapControler1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -193,5 +202,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
+        private ViewMapControler viewMapControler1;
     }
 }

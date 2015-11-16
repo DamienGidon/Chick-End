@@ -106,5 +106,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             buttonQuit.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonQuit.Refresh();
         }
+
+        private void MenuPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

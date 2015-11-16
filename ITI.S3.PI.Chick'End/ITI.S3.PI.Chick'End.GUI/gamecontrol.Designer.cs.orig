@@ -37,7 +37,10 @@
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonBestiary = new System.Windows.Forms.Button();
             this.buttonResume = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
+=======
+>>>>>>> 2f664539709f971dbbbd8a31f5d34600790b50c5
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,11 +89,33 @@
             this.panelMenu.Controls.Add(this.buttonResume);
             this.panelMenu.Location = new System.Drawing.Point(351, 182);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 262);
+            this.panelMenu.Size = new System.Drawing.Size(200, 251);
             this.panelMenu.TabIndex = 3;
             this.panelMenu.Visible = false;
             // 
             // buttonQuit
+<<<<<<< HEAD
+            // 
+            this.buttonQuit.Location = new System.Drawing.Point(63, 203);
+            this.buttonQuit.Name = "buttonQuit";
+            this.buttonQuit.Size = new System.Drawing.Size(75, 23);
+            this.buttonQuit.TabIndex = 3;
+            this.buttonQuit.Text = "Quit";
+            this.buttonQuit.UseVisualStyleBackColor = true;
+            this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(63, 140);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.TabIndex = 2;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            // 
+            // buttonBestiary
+=======
+>>>>>>> 2f664539709f971dbbbd8a31f5d34600790b50c5
             // 
             this.buttonQuit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonQuit.BackColor = System.Drawing.Color.Transparent;
@@ -107,8 +132,25 @@
             this.buttonQuit.UseVisualStyleBackColor = true;
             this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
             // 
-            // buttonSave
+            // buttonResume
             // 
+<<<<<<< HEAD
+            this.buttonResume.Location = new System.Drawing.Point(63, 27);
+            this.buttonResume.Name = "buttonResume";
+            this.buttonResume.Size = new System.Drawing.Size(75, 23);
+            this.buttonResume.TabIndex = 0;
+            this.buttonResume.Text = "Resume";
+            this.buttonResume.UseVisualStyleBackColor = true;
+            this.buttonResume.Click += new System.EventHandler(this.buttonResume_Click);
+            // 
+            // viewMapControler1
+            // 
+            this.viewMapControler1.Context = game1;
+            this.viewMapControler1.Location = new System.Drawing.Point(137, 155);
+            this.viewMapControler1.Name = "viewMapControler1";
+            this.viewMapControler1.Size = new System.Drawing.Size(200, 100);
+            this.viewMapControler1.TabIndex = 4;
+=======
             this.buttonSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonSave.BackColor = System.Drawing.Color.Transparent;
             this.buttonSave.FlatAppearance.BorderSize = 0;
@@ -119,9 +161,9 @@
             this.buttonSave.Location = new System.Drawing.Point(44, 124);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(117, 61);
-            this.buttonSave.TabIndex = 4;
+            this.buttonSave.TabIndex = 2;
             this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.UseVisualStyleBackColor = true;
             // 
             // buttonBestiary
             // 
@@ -159,14 +201,7 @@
             this.buttonResume.Click += new System.EventHandler(this.buttonResume_Click);
             this.buttonResume.MouseEnter += new System.EventHandler(this.buttonBestiary_MouseEnter);
             this.buttonResume.MouseLeave += new System.EventHandler(this.buttonBestiary_MouseLeave);
-            // 
-            // viewMapControler1
-            // 
-            this.viewMapControler1.Context = game1;
-            this.viewMapControler1.Location = new System.Drawing.Point(0, 0);
-            this.viewMapControler1.Name = "viewMapControler1";
-            this.viewMapControler1.Size = new System.Drawing.Size(200, 100);
-            this.viewMapControler1.TabIndex = 0;
+>>>>>>> 2f664539709f971dbbbd8a31f5d34600790b50c5
             // 
             // gamecontrol
             // 
@@ -174,8 +209,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.viewMapControler1);
+            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.buttonTrash);
             this.Controls.Add(this.buttonMenu);
             this.Name = "gamecontrol";
