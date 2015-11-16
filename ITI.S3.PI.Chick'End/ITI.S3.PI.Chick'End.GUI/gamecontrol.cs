@@ -63,5 +63,31 @@ namespace ITI.S3.PI.Chick_End.GUI
             buttonResume.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonResume.Refresh();
         }
+
+        private void buttonMenu_MouseEnter(object sender, EventArgs e)
+        {
+            buttonMenu.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            buttonMenu.Refresh();
+        }
+
+        private void buttonMenu_MouseLeave(object sender, EventArgs e)
+        {
+            buttonMenu.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonMenu.Refresh();
+        }
+
+        private void buttonTrash_MouseEnter(object sender, EventArgs e)
+        {
+            buttonTrash.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonTrash.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            buttonTrash.Refresh();
+        }
+
+        private void buttonTrash_MouseLeave(object sender, EventArgs e)
+        {
+            buttonTrash.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonTrash.Refresh();
+        }
     }
 }
