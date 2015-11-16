@@ -48,7 +48,7 @@
             this.buttonMenu.FlatAppearance.BorderSize = 0;
             this.buttonMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMenu.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.buttonMenu.Location = new System.Drawing.Point(915, 3);
             this.buttonMenu.Name = "buttonMenu";
@@ -67,7 +67,7 @@
             this.buttonTrash.FlatAppearance.BorderSize = 0;
             this.buttonTrash.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonTrash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTrash.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTrash.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTrash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.buttonTrash.Location = new System.Drawing.Point(821, 3);
             this.buttonTrash.Name = "buttonTrash";
@@ -86,7 +86,7 @@
             this.panelMenu.Controls.Add(this.buttonResume);
             this.panelMenu.Location = new System.Drawing.Point(351, 182);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 251);
+            this.panelMenu.Size = new System.Drawing.Size(200, 262);
             this.panelMenu.TabIndex = 3;
             this.panelMenu.Visible = false;
             // 
@@ -97,7 +97,7 @@
             this.buttonQuit.FlatAppearance.BorderSize = 0;
             this.buttonQuit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonQuit.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonQuit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.buttonQuit.Location = new System.Drawing.Point(44, 191);
             this.buttonQuit.Name = "buttonQuit";
@@ -106,20 +106,22 @@
             this.buttonQuit.Text = "Quit";
             this.buttonQuit.UseVisualStyleBackColor = true;
             this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
             // 
-            // buttonResume
+            // buttonSave
             // 
             this.buttonSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonSave.BackColor = System.Drawing.Color.Transparent;
             this.buttonSave.FlatAppearance.BorderSize = 0;
             this.buttonSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.buttonSave.Location = new System.Drawing.Point(44, 124);
+            this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(117, 61);
+            this.buttonSave.TabIndex = 4;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = false;
             // 
             // buttonBestiary
             // 
@@ -128,7 +130,7 @@
             this.buttonBestiary.FlatAppearance.BorderSize = 0;
             this.buttonBestiary.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonBestiary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBestiary.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBestiary.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBestiary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.buttonBestiary.Location = new System.Drawing.Point(44, 67);
             this.buttonBestiary.Name = "buttonBestiary";
@@ -146,7 +148,7 @@
             this.buttonResume.FlatAppearance.BorderSize = 0;
             this.buttonResume.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonResume.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonResume.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonResume.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonResume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.buttonResume.Location = new System.Drawing.Point(44, 0);
             this.buttonResume.Name = "buttonResume";
@@ -158,14 +160,22 @@
             this.buttonResume.MouseEnter += new System.EventHandler(this.buttonBestiary_MouseEnter);
             this.buttonResume.MouseLeave += new System.EventHandler(this.buttonBestiary_MouseLeave);
             // 
+            // viewMapControler1
+            // 
+            this.viewMapControler1.Context = game1;
+            this.viewMapControler1.Location = new System.Drawing.Point(0, 0);
+            this.viewMapControler1.Name = "viewMapControler1";
+            this.viewMapControler1.Size = new System.Drawing.Size(200, 100);
+            this.viewMapControler1.TabIndex = 0;
+            // 
             // gamecontrol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.viewMapControler1);
             this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.viewMapControler1);
             this.Controls.Add(this.buttonTrash);
             this.Controls.Add(this.buttonMenu);
             this.Name = "gamecontrol";
