@@ -48,9 +48,15 @@
             this.buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMenu.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+<<<<<<< HEAD
+            this.buttonMenu.Location = new System.Drawing.Point(915, 25);
+            this.buttonMenu.Name = "buttonMenu";
+            this.buttonMenu.Size = new System.Drawing.Size(85, 39);
+=======
             this.buttonMenu.Location = new System.Drawing.Point(915, 3);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(85, 45);
+>>>>>>> fa85ded58a08b82086df6207e1f27820566b6d98
             this.buttonMenu.TabIndex = 1;
             this.buttonMenu.Text = "Menu";
             this.buttonMenu.UseVisualStyleBackColor = true;
@@ -67,9 +73,15 @@
             this.buttonTrash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTrash.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTrash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+<<<<<<< HEAD
+            this.buttonTrash.Location = new System.Drawing.Point(826, 25);
+            this.buttonTrash.Name = "buttonTrash";
+            this.buttonTrash.Size = new System.Drawing.Size(83, 39);
+=======
             this.buttonTrash.Location = new System.Drawing.Point(821, 3);
             this.buttonTrash.Name = "buttonTrash";
             this.buttonTrash.Size = new System.Drawing.Size(88, 45);
+>>>>>>> fa85ded58a08b82086df6207e1f27820566b6d98
             this.buttonTrash.TabIndex = 2;
             this.buttonTrash.Text = "Trash";
             this.buttonTrash.UseVisualStyleBackColor = true;
