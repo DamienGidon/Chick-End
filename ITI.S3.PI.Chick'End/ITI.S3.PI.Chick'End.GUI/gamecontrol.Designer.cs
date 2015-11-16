@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            ITI.S3.PI.Chick_End.Game game1 = new ITI.S3.PI.Chick_End.Game();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gamecontrol));
             this.buttonMenu = new System.Windows.Forms.Button();
             this.buttonTrash = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.buttonResume = new System.Windows.Forms.Button();
-            this.buttonBestiary = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
             this.buttonQuit = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonBestiary = new System.Windows.Forms.Button();
+            this.buttonResume = new System.Windows.Forms.Button();
+            this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,34 +72,6 @@
             this.panelMenu.TabIndex = 3;
             this.panelMenu.Visible = false;
             // 
-            // buttonResume
-            // 
-            this.buttonResume.Location = new System.Drawing.Point(63, 27);
-            this.buttonResume.Name = "buttonResume";
-            this.buttonResume.Size = new System.Drawing.Size(75, 23);
-            this.buttonResume.TabIndex = 0;
-            this.buttonResume.Text = "Resume";
-            this.buttonResume.UseVisualStyleBackColor = true;
-            this.buttonResume.Click += new System.EventHandler(this.buttonResume_Click);
-            // 
-            // buttonBestiary
-            // 
-            this.buttonBestiary.Location = new System.Drawing.Point(63, 84);
-            this.buttonBestiary.Name = "buttonBestiary";
-            this.buttonBestiary.Size = new System.Drawing.Size(75, 23);
-            this.buttonBestiary.TabIndex = 1;
-            this.buttonBestiary.Text = "Bestiary";
-            this.buttonBestiary.UseVisualStyleBackColor = true;
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Location = new System.Drawing.Point(63, 140);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
-            this.buttonSave.TabIndex = 2;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            // 
             // buttonQuit
             // 
             this.buttonQuit.Location = new System.Drawing.Point(63, 203);
@@ -108,12 +82,49 @@
             this.buttonQuit.UseVisualStyleBackColor = true;
             this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
             // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(63, 140);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.TabIndex = 2;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            // 
+            // buttonBestiary
+            // 
+            this.buttonBestiary.Location = new System.Drawing.Point(63, 84);
+            this.buttonBestiary.Name = "buttonBestiary";
+            this.buttonBestiary.Size = new System.Drawing.Size(75, 23);
+            this.buttonBestiary.TabIndex = 1;
+            this.buttonBestiary.Text = "Bestiary";
+            this.buttonBestiary.UseVisualStyleBackColor = true;
+            // 
+            // buttonResume
+            // 
+            this.buttonResume.Location = new System.Drawing.Point(63, 27);
+            this.buttonResume.Name = "buttonResume";
+            this.buttonResume.Size = new System.Drawing.Size(75, 23);
+            this.buttonResume.TabIndex = 0;
+            this.buttonResume.Text = "Resume";
+            this.buttonResume.UseVisualStyleBackColor = true;
+            this.buttonResume.Click += new System.EventHandler(this.buttonResume_Click);
+            // 
+            // viewMapControler1
+            // 
+            this.viewMapControler1.Context = game1;
+            this.viewMapControler1.Location = new System.Drawing.Point(137, 155);
+            this.viewMapControler1.Name = "viewMapControler1";
+            this.viewMapControler1.Size = new System.Drawing.Size(200, 100);
+            this.viewMapControler1.TabIndex = 4;
+            // 
             // gamecontrol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.viewMapControler1);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.buttonTrash);
             this.Controls.Add(this.buttonMenu);
@@ -133,5 +144,6 @@
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonBestiary;
         private System.Windows.Forms.Button buttonResume;
+        private ViewMapControler viewMapControler1;
     }
 }

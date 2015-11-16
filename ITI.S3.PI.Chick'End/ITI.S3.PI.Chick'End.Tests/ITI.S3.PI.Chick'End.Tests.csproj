@@ -11,7 +11,7 @@
     <AssemblyName>ITI.S3.PI.Chick%27End.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-	<StartAction>Program</StartAction>
+    <StartAction>Program</StartAction>
     <StartProgram>$(SolutionDir)packages\NUnit.Runners.Net4.2.6.4\tools\nunit.exe</StartProgram>
     <StartArguments>ITI.S3.PI.Chick%27End.Tests.dll</StartArguments>
   </PropertyGroup>
@@ -52,6 +52,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITI.S3.PI.Chick%27End.Units\ITI.S3.PI.Chick%27End.Units.csproj">
+      <Project>{0806e260-05bf-4fd0-9de1-c2bfc2c692a0}</Project>
+      <Name>ITI.S3.PI.Chick%27End.Units</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ITI.S3.PI.Chick%27End\ITI.S3.PI.Chick%27End.csproj">
+      <Project>{0996f6a9-b143-431c-bab2-6e65a49ce6a6}</Project>
+      <Name>ITI.S3.PI.Chick%27End</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

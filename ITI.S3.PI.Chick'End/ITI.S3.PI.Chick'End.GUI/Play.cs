@@ -24,5 +24,10 @@ namespace ITI.S3.PI.Chick_End.GUI
                 ew.ShowDialog();
             }
         }
+
+        private void button3_Click( object sender, EventArgs e )
+        {
+
+        }
     }
 }

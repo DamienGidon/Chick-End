@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormF));
             this.MenuPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.buttonContinue = new System.Windows.Forms.Button();
-            this.buttonBestiary = new System.Windows.Forms.Button();
-            this.buttonLeaderboard = new System.Windows.Forms.Button();
-            this.buttonRules = new System.Windows.Forms.Button();
             this.buttonQuit = new System.Windows.Forms.Button();
+            this.buttonRules = new System.Windows.Forms.Button();
+            this.buttonLeaderboard = new System.Windows.Forms.Button();
+            this.buttonBestiary = new System.Windows.Forms.Button();
+            this.buttonContinue = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.MenuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,42 +57,15 @@
             this.MenuPanel.Size = new System.Drawing.Size(1007, 728);
             this.MenuPanel.TabIndex = 0;
             // 
-            // button1
+            // buttonQuit
             // 
-            this.button1.Location = new System.Drawing.Point(453, 188);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Play";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonPlay_Click);
-            // 
-            // buttonContinue
-            // 
-            this.buttonContinue.Location = new System.Drawing.Point(453, 237);
-            this.buttonContinue.Name = "buttonContinue";
-            this.buttonContinue.Size = new System.Drawing.Size(75, 23);
-            this.buttonContinue.TabIndex = 1;
-            this.buttonContinue.Text = "Continue";
-            this.buttonContinue.UseVisualStyleBackColor = true;
-            // 
-            // buttonBestiary
-            // 
-            this.buttonBestiary.Location = new System.Drawing.Point(453, 286);
-            this.buttonBestiary.Name = "buttonBestiary";
-            this.buttonBestiary.Size = new System.Drawing.Size(75, 23);
-            this.buttonBestiary.TabIndex = 2;
-            this.buttonBestiary.Text = "Bestiary";
-            this.buttonBestiary.UseVisualStyleBackColor = true;
-            // 
-            // buttonLeaderboard
-            // 
-            this.buttonLeaderboard.Location = new System.Drawing.Point(453, 337);
-            this.buttonLeaderboard.Name = "buttonLeaderboard";
-            this.buttonLeaderboard.Size = new System.Drawing.Size(75, 23);
-            this.buttonLeaderboard.TabIndex = 3;
-            this.buttonLeaderboard.Text = "Leaderboard";
-            this.buttonLeaderboard.UseVisualStyleBackColor = true;
+            this.buttonQuit.Location = new System.Drawing.Point(453, 446);
+            this.buttonQuit.Name = "buttonQuit";
+            this.buttonQuit.Size = new System.Drawing.Size(75, 23);
+            this.buttonQuit.TabIndex = 5;
+            this.buttonQuit.Text = "Quit";
+            this.buttonQuit.UseVisualStyleBackColor = true;
+            this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
             // 
             // buttonRules
             // 
@@ -103,15 +76,42 @@
             this.buttonRules.Text = "Rules";
             this.buttonRules.UseVisualStyleBackColor = true;
             // 
-            // buttonQuit
+            // buttonLeaderboard
             // 
-            this.buttonQuit.Location = new System.Drawing.Point(453, 446);
-            this.buttonQuit.Name = "buttonQuit";
-            this.buttonQuit.Size = new System.Drawing.Size(75, 23);
-            this.buttonQuit.TabIndex = 5;
-            this.buttonQuit.Text = "Quit";
-            this.buttonQuit.UseVisualStyleBackColor = true;
-            this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
+            this.buttonLeaderboard.Location = new System.Drawing.Point(453, 337);
+            this.buttonLeaderboard.Name = "buttonLeaderboard";
+            this.buttonLeaderboard.Size = new System.Drawing.Size(75, 23);
+            this.buttonLeaderboard.TabIndex = 3;
+            this.buttonLeaderboard.Text = "Leaderboard";
+            this.buttonLeaderboard.UseVisualStyleBackColor = true;
+            // 
+            // buttonBestiary
+            // 
+            this.buttonBestiary.Location = new System.Drawing.Point(453, 286);
+            this.buttonBestiary.Name = "buttonBestiary";
+            this.buttonBestiary.Size = new System.Drawing.Size(75, 23);
+            this.buttonBestiary.TabIndex = 2;
+            this.buttonBestiary.Text = "Bestiary";
+            this.buttonBestiary.UseVisualStyleBackColor = true;
+            // 
+            // buttonContinue
+            // 
+            this.buttonContinue.Location = new System.Drawing.Point(453, 237);
+            this.buttonContinue.Name = "buttonContinue";
+            this.buttonContinue.Size = new System.Drawing.Size(75, 23);
+            this.buttonContinue.TabIndex = 1;
+            this.buttonContinue.Text = "Continue";
+            this.buttonContinue.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(453, 188);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Play";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonPlay_Click);
             // 
             // FormF
             // 
