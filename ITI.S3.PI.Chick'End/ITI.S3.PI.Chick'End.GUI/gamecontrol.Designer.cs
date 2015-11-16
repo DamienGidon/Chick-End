@@ -163,7 +163,7 @@
             // viewMapControler1
             // 
             this.viewMapControler1.Context = game1;
-            this.viewMapControler1.Location = new System.Drawing.Point(0, 0);
+            this.viewMapControler1.Location = new System.Drawing.Point(189, 76);
             this.viewMapControler1.Name = "viewMapControler1";
             this.viewMapControler1.Size = new System.Drawing.Size(200, 100);
             this.viewMapControler1.TabIndex = 0;
