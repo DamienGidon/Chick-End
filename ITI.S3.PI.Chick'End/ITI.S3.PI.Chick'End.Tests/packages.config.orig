@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+﻿<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="NUnit" version="3.0.0" targetFramework="net45" />
+  <package id="NUnit.Runners.Net4" version="2.6.4" targetFramework="net45" />
+=======
+﻿<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="NUnit" version="3.0.0" targetFramework="net45" />
+  <package id="NUnit.Runners.Net4" version="2.6.4" targetFramework="net45" />
+>>>>>>> c0cfb76028e0a1677ffc069dd5ae010f9bd64c26
+</packages>
