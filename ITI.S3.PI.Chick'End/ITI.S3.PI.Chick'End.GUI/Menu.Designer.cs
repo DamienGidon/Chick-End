@@ -40,7 +40,7 @@
             // Play
             // 
             this.Play.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Play.Font = new System.Drawing.Font("Playbill", 26.25F);
+            this.Play.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
             this.Play.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Play.Location = new System.Drawing.Point(252, 30);
             this.Play.Name = "Play";
@@ -53,7 +53,7 @@
             // Continue
             // 
             this.Continue.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Continue.Font = new System.Drawing.Font("Playbill", 26.25F);
+            this.Continue.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
             this.Continue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Continue.Location = new System.Drawing.Point(252, 86);
             this.Continue.Name = "Continue";
@@ -65,7 +65,7 @@
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button3.Font = new System.Drawing.Font("Playbill", 26.25F);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.button3.Location = new System.Drawing.Point(252, 142);
             this.button3.Name = "button3";
@@ -77,7 +77,7 @@
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button4.Font = new System.Drawing.Font("Playbill", 26.25F);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.button4.Location = new System.Drawing.Point(239, 198);
             this.button4.Name = "button4";
@@ -89,7 +89,7 @@
             // button5
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button5.Font = new System.Drawing.Font("Playbill", 26.25F);
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.button5.Location = new System.Drawing.Point(252, 253);
             this.button5.Name = "button5";
@@ -101,7 +101,7 @@
             // button6
             // 
             this.button6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button6.Font = new System.Drawing.Font("Playbill", 26.25F);
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.button6.Location = new System.Drawing.Point(252, 309);
             this.button6.Name = "button6";

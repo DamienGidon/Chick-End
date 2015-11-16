@@ -17,6 +17,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             InitializeComponent();
             _panel = panel;
+            viewMapControler1.Size = new System.Drawing.Size( 700, 450 );
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
