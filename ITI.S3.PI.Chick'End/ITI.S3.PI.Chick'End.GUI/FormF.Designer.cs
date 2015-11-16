@@ -52,10 +52,11 @@
             this.MenuPanel.Controls.Add(this.buttonBestiary);
             this.MenuPanel.Controls.Add(this.buttonContinue);
             this.MenuPanel.Controls.Add(this.buttonPlay);
-            this.MenuPanel.Location = new System.Drawing.Point(1, 0);
+            this.MenuPanel.Location = new System.Drawing.Point(1, 1);
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(1007, 728);
             this.MenuPanel.TabIndex = 0;
+            this.MenuPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuPanel_Paint);
             // 
             // buttonQuit
             // 
@@ -167,6 +168,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.MenuPanel);
+            this.MaximumSize = new System.Drawing.Size(1024, 768);
+            this.MinimumSize = new System.Drawing.Size(1024, 766);
             this.Name = "FormF";
             this.Text = "FormF";
             this.MenuPanel.ResumeLayout(false);

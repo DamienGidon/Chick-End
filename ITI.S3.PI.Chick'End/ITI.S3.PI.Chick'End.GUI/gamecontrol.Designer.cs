@@ -47,9 +47,9 @@
             this.buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMenu.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonMenu.Location = new System.Drawing.Point(925, 25);
+            this.buttonMenu.Location = new System.Drawing.Point(915, 25);
             this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(75, 23);
+            this.buttonMenu.Size = new System.Drawing.Size(85, 39);
             this.buttonMenu.TabIndex = 1;
             this.buttonMenu.Text = "Menu";
             this.buttonMenu.UseVisualStyleBackColor = true;
@@ -63,9 +63,9 @@
             this.buttonTrash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTrash.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTrash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonTrash.Location = new System.Drawing.Point(842, 25);
+            this.buttonTrash.Location = new System.Drawing.Point(826, 25);
             this.buttonTrash.Name = "buttonTrash";
-            this.buttonTrash.Size = new System.Drawing.Size(67, 23);
+            this.buttonTrash.Size = new System.Drawing.Size(83, 39);
             this.buttonTrash.TabIndex = 2;
             this.buttonTrash.Text = "Trash";
             this.buttonTrash.UseVisualStyleBackColor = true;
@@ -129,7 +129,6 @@
             this.buttonBestiary.UseVisualStyleBackColor = true;
             this.buttonBestiary.MouseEnter += new System.EventHandler(this.buttonBestiary_MouseEnter);
             this.buttonBestiary.MouseLeave += new System.EventHandler(this.buttonBestiary_MouseLeave);
-
             // 
             // buttonResume
             // 
@@ -148,7 +147,6 @@
             this.buttonResume.Click += new System.EventHandler(this.buttonResume_Click);
             this.buttonResume.MouseEnter += new System.EventHandler(this.buttonBestiary_MouseEnter);
             this.buttonResume.MouseLeave += new System.EventHandler(this.buttonBestiary_MouseLeave);
-
             // 
             // gamecontrol
             // 
