@@ -48,7 +48,7 @@
             this.buttonMenu.FlatAppearance.BorderSize = 0;
             this.buttonMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMenu.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.buttonMenu.Location = new System.Drawing.Point(915, 3);
             this.buttonMenu.Name = "buttonMenu";
@@ -67,7 +67,7 @@
             this.buttonTrash.FlatAppearance.BorderSize = 0;
             this.buttonTrash.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonTrash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTrash.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTrash.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTrash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.buttonTrash.Location = new System.Drawing.Point(821, 3);
             this.buttonTrash.Name = "buttonTrash";
@@ -97,7 +97,7 @@
             this.buttonQuit.FlatAppearance.BorderSize = 0;
             this.buttonQuit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonQuit.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonQuit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.buttonQuit.Location = new System.Drawing.Point(44, 191);
             this.buttonQuit.Name = "buttonQuit";
@@ -114,7 +114,7 @@
             this.buttonSave.FlatAppearance.BorderSize = 0;
             this.buttonSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSave.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.buttonSave.Location = new System.Drawing.Point(44, 124);
             this.buttonSave.Name = "buttonSave";
@@ -130,7 +130,7 @@
             this.buttonBestiary.FlatAppearance.BorderSize = 0;
             this.buttonBestiary.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonBestiary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBestiary.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBestiary.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBestiary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.buttonBestiary.Location = new System.Drawing.Point(44, 67);
             this.buttonBestiary.Name = "buttonBestiary";
@@ -148,7 +148,7 @@
             this.buttonResume.FlatAppearance.BorderSize = 0;
             this.buttonResume.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonResume.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonResume.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonResume.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonResume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.buttonResume.Location = new System.Drawing.Point(44, 0);
             this.buttonResume.Name = "buttonResume";
