@@ -227,7 +227,7 @@
             this.viewMapControler1.Context = game1;
             this.viewMapControler1.Location = new System.Drawing.Point(226, 132);
             this.viewMapControler1.Name = "viewMapControler1";
-            this.viewMapControler1.Size = new System.Drawing.Size(738, 448);
+            this.viewMapControler1.Size = new System.Drawing.Size(700, 450);
             this.viewMapControler1.TabIndex = 4;
             this.viewMapControler1.Text = "viewMapControler1";
             // 
@@ -238,9 +238,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.viewMapControler1);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelSeed);
+            this.Controls.Add(this.viewMapControler1);
             this.Name = "gamecontrol";
             this.Size = new System.Drawing.Size(1007, 728);
             this.panelMenu.ResumeLayout(false);
