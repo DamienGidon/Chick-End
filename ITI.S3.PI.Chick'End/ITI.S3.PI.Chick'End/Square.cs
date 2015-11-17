@@ -12,13 +12,15 @@ namespace ITI.S3.PI.Chick_End
         readonly int _line;
         readonly int _column;
         string _decoration;
+        Tower _tower;
 
-        public Square( Map context, int x, int y, string decoration )
+        public Square( Map context, int x, int y, string decoration, Tower tower)
         {
             _context = context;
             _decoration = decoration;
             _line = x;
             _column = y;
+
         }
 
         public int Line
@@ -32,6 +34,11 @@ namespace ITI.S3.PI.Chick_End
         public string Decoration
         {
             get { return _decoration; }
+        }
+        public Tower Tower
+        {
+            get { return _tower; }
+            set { _tower = value; }
         }
     }
 }

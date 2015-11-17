@@ -90,5 +90,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             buttonTrash.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonTrash.Refresh();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            viewMapControler1.Context.Map.CreateHen(viewMapControler1.Context.Map);
+        }
     }
 }

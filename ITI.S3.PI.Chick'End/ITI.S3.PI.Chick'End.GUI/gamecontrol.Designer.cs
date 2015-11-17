@@ -38,7 +38,10 @@
             this.buttonBestiary = new System.Windows.Forms.Button();
             this.buttonResume = new System.Windows.Forms.Button();
             this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonMenu
@@ -163,10 +166,30 @@
             // viewMapControler1
             // 
             this.viewMapControler1.Context = game1;
-            this.viewMapControler1.Location = new System.Drawing.Point(0, 0);
+            this.viewMapControler1.Location = new System.Drawing.Point(226, 153);
             this.viewMapControler1.Name = "viewMapControler1";
-            this.viewMapControler1.Size = new System.Drawing.Size(200, 100);
+            this.viewMapControler1.Size = new System.Drawing.Size(70, 35);
             this.viewMapControler1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(169, 722);
+            this.panel1.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(42, 111);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Hen";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // gamecontrol
             // 
@@ -174,6 +197,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.viewMapControler1);
             this.Controls.Add(this.buttonTrash);
@@ -181,6 +205,7 @@
             this.Name = "gamecontrol";
             this.Size = new System.Drawing.Size(1007, 728);
             this.panelMenu.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -195,5 +220,7 @@
         private System.Windows.Forms.Button buttonBestiary;
         private System.Windows.Forms.Button buttonResume;
         private ViewMapControler viewMapControler1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }
