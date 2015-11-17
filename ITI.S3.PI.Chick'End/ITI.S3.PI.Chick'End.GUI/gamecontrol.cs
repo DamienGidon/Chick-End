@@ -18,6 +18,12 @@ namespace ITI.S3.PI.Chick_End.GUI
             InitializeComponent();
             _panel = panel;
             viewMapControler1.Size = new System.Drawing.Size( 700, 450 );
+            viewMapControler1.MouseClick += new MouseEventHandler(viewMapControler1_Click);
+        }
+
+        private void viewMapControler1_Click(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show( string.Format("X = {0} ,Y= {1} " , e.X, e.Y));
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
