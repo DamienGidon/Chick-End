@@ -43,6 +43,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
+            this.labelUnit = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelSeed.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -204,8 +205,9 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.Orange;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.labelUnit);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -231,6 +233,17 @@
             this.viewMapControler1.TabIndex = 4;
             this.viewMapControler1.Text = "viewMapControler1";
             // 
+            // labelUnit
+            // 
+            this.labelUnit.AutoSize = true;
+            this.labelUnit.Font = new System.Drawing.Font("Playbill", 20F);
+            this.labelUnit.ForeColor = System.Drawing.Color.DarkGreen;
+            this.labelUnit.Location = new System.Drawing.Point(46, 21);
+            this.labelUnit.Name = "labelUnit";
+            this.labelUnit.Size = new System.Drawing.Size(43, 27);
+            this.labelUnit.TabIndex = 5;
+            this.labelUnit.Text = "Units";
+            // 
             // gamecontrol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,15 +251,16 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.viewMapControler1);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelSeed);
+            this.Controls.Add(this.viewMapControler1);
             this.Name = "gamecontrol";
             this.Size = new System.Drawing.Size(1007, 728);
             this.panelMenu.ResumeLayout(false);
             this.panelSeed.ResumeLayout(false);
             this.panelSeed.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -266,5 +280,6 @@
         private System.Windows.Forms.Panel panelSeed;
         private System.Windows.Forms.Label labelSeedNumber;
         private System.Windows.Forms.Label labelSeed;
+        private System.Windows.Forms.Label labelUnit;
     }
 }
