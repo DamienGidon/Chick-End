@@ -162,7 +162,7 @@
             // viewMapControler1
             // 
             this.viewMapControler1.Context = null;
-            this.viewMapControler1.Location = new System.Drawing.Point(152, 67);
+            this.viewMapControler1.Location = new System.Drawing.Point(208, 115);
             this.viewMapControler1.Name = "viewMapControler1";
             this.viewMapControler1.Size = new System.Drawing.Size(200, 100);
             this.viewMapControler1.TabIndex = 4;
