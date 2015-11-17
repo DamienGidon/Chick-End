@@ -27,9 +27,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         private void buttonQuit_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
-            //Form1 p = ((Form1)this.Parent);
-            //p.Controls.Remove(this);
-            //p.Controls.Add(_panel);
+
             _panel.Show();
         }
 
@@ -37,6 +35,8 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             panelMenu.Hide();
         }
+
+        // Code d'affichage des boutons
 
         private void buttonBestiary_MouseEnter(object sender, EventArgs e)
         {
@@ -90,5 +90,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             buttonTrash.Refresh();
         }
 
+
+        // Fin du code d'affichage
     }
 }
