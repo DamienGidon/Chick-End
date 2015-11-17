@@ -162,11 +162,13 @@
             // 
             // viewMapControler1
             // 
+            this.viewMapControler1.BackColor = System.Drawing.Color.Cyan;
             this.viewMapControler1.Context = game1;
-            this.viewMapControler1.Location = new System.Drawing.Point(0, 0);
+            this.viewMapControler1.Location = new System.Drawing.Point(269, 280);
             this.viewMapControler1.Name = "viewMapControler1";
-            this.viewMapControler1.Size = new System.Drawing.Size(200, 100);
-            this.viewMapControler1.TabIndex = 0;
+            this.viewMapControler1.Size = new System.Drawing.Size(738, 448);
+            this.viewMapControler1.TabIndex = 4;
+            this.viewMapControler1.Text = "viewMapControler1";
             // 
             // gamecontrol
             // 
@@ -174,8 +176,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.viewMapControler1);
+            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.buttonTrash);
             this.Controls.Add(this.buttonMenu);
             this.Name = "gamecontrol";
