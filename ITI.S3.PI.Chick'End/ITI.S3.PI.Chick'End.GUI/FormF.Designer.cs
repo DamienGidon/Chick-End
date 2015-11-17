@@ -67,7 +67,7 @@
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonQuit.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonQuit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonQuit.Location = new System.Drawing.Point(383, 602);
+            this.buttonQuit.Location = new System.Drawing.Point(400, 600);
             this.buttonQuit.Name = "buttonQuit";
             this.buttonQuit.Size = new System.Drawing.Size(199, 88);
             this.buttonQuit.TabIndex = 5;
@@ -86,9 +86,9 @@
             this.buttonRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRules.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRules.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonRules.Location = new System.Drawing.Point(374, 504);
+            this.buttonRules.Location = new System.Drawing.Point(400, 504);
             this.buttonRules.Name = "buttonRules";
-            this.buttonRules.Size = new System.Drawing.Size(227, 92);
+            this.buttonRules.Size = new System.Drawing.Size(200, 92);
             this.buttonRules.TabIndex = 4;
             this.buttonRules.Text = "Rules";
             this.buttonRules.UseVisualStyleBackColor = false;
@@ -104,7 +104,7 @@
             this.buttonLeaderboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLeaderboard.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLeaderboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLeaderboard.Location = new System.Drawing.Point(334, 401);
+            this.buttonLeaderboard.Location = new System.Drawing.Point(350, 401);
             this.buttonLeaderboard.Name = "buttonLeaderboard";
             this.buttonLeaderboard.Size = new System.Drawing.Size(309, 107);
             this.buttonLeaderboard.TabIndex = 3;
@@ -122,7 +122,7 @@
             this.buttonBestiary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBestiary.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBestiary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonBestiary.Location = new System.Drawing.Point(374, 319);
+            this.buttonBestiary.Location = new System.Drawing.Point(400, 319);
             this.buttonBestiary.Name = "buttonBestiary";
             this.buttonBestiary.Size = new System.Drawing.Size(208, 95);
             this.buttonBestiary.TabIndex = 2;
@@ -140,7 +140,7 @@
             this.buttonContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonContinue.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonContinue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonContinue.Location = new System.Drawing.Point(376, 226);
+            this.buttonContinue.Location = new System.Drawing.Point(400, 226);
             this.buttonContinue.Name = "buttonContinue";
             this.buttonContinue.Size = new System.Drawing.Size(206, 105);
             this.buttonContinue.TabIndex = 1;
@@ -158,9 +158,9 @@
             this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPlay.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonPlay.Location = new System.Drawing.Point(383, 138);
+            this.buttonPlay.Location = new System.Drawing.Point(400, 130);
             this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.Size = new System.Drawing.Size(194, 104);
+            this.buttonPlay.Size = new System.Drawing.Size(200, 104);
             this.buttonPlay.TabIndex = 0;
             this.buttonPlay.Text = "Play";
             this.buttonPlay.UseVisualStyleBackColor = false;
