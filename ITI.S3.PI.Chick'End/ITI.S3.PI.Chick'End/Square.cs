@@ -14,7 +14,7 @@ namespace ITI.S3.PI.Chick_End
         string _decoration;
         Tower _tower;
 
-        public Square( Map context, int x, int y, string decoration, Tower tower)
+        public Square( Map context, int x, int y, string decoration)
         {
             _context = context;
             _decoration = decoration;
