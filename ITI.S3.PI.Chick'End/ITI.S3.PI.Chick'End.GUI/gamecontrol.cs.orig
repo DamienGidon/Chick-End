@@ -17,16 +17,6 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             InitializeComponent();
             _panel = panel;
-<<<<<<< HEAD
-=======
-            viewMapControler1.Size = new System.Drawing.Size( 700, 450 );
-            viewMapControler1.MouseClick += new MouseEventHandler(viewMapControler1_Click);
-        }
-
-        private void viewMapControler1_Click(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show( string.Format("X = {0} ,Y= {1} " , e.X, e.Y));
->>>>>>> bf4d9de34d810dc2edcdb906f2162cd73ac6c842
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
@@ -37,9 +27,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         private void buttonQuit_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
-            //Form1 p = ((Form1)this.Parent);
-            //p.Controls.Remove(this);
-            //p.Controls.Add(_panel);
+
             _panel.Show();
         }
 
@@ -48,29 +36,31 @@ namespace ITI.S3.PI.Chick_End.GUI
             panelMenu.Hide();
         }
 
+        // Code d'affichage des boutons
+
         private void buttonBestiary_MouseEnter(object sender, EventArgs e)
         {
-            buttonBestiary.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonBestiary.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonBestiary.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             buttonBestiary.Refresh();
         }
 
         private void buttonBestiary_MouseLeave(object sender, EventArgs e)
         {
-            buttonBestiary.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonBestiary.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonBestiary.Refresh();
         }
 
         private void buttonResume_MouseEnter(object sender, EventArgs e)
         {
-            buttonResume.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonResume.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonResume.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             buttonResume.Refresh();
         }
 
         private void buttonResume_MouseLeave(object sender, EventArgs e)
         {
-            buttonResume.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonResume.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonResume.Refresh();
         }
 
@@ -101,10 +91,6 @@ namespace ITI.S3.PI.Chick_End.GUI
         }
 
 <<<<<<< HEAD
-        private void gamecontrol_Load( object sender, EventArgs e )
-        {
-
-=======
         private void buttonSave_MouseEnter(object sender, EventArgs e)
         {
             buttonSave.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,10 +117,13 @@ namespace ITI.S3.PI.Chick_End.GUI
             buttonQuit.Refresh();
         }
 
+        // Fin du code d'affichage
+
         private void button1_Click(object sender, EventArgs e)
         {
             viewMapControler1.Context.Map.CreateHen(viewMapControler1.Context.Map);
->>>>>>> bf4d9de34d810dc2edcdb906f2162cd73ac6c842
         }
+=======
+>>>>>>> 66eec88eace95982ec64723861dd7552c4fe411e
     }
 }
