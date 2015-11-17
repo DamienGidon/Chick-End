@@ -80,6 +80,7 @@
             // 
             // panelMenu
             // 
+            this.panelMenu.BackColor = System.Drawing.Color.Orange;
             this.panelMenu.Controls.Add(this.buttonQuit);
             this.panelMenu.Controls.Add(this.buttonSave);
             this.panelMenu.Controls.Add(this.buttonBestiary);
@@ -106,6 +107,8 @@
             this.buttonQuit.Text = "Quit";
             this.buttonQuit.UseVisualStyleBackColor = true;
             this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
+            this.buttonQuit.MouseEnter += new System.EventHandler(this.buttonQuit_MouseEnter);
+            this.buttonQuit.MouseLeave += new System.EventHandler(this.buttonQuit_MouseLeave);
             // 
             // buttonSave
             // 
@@ -122,6 +125,8 @@
             this.buttonSave.TabIndex = 4;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.MouseEnter += new System.EventHandler(this.buttonSave_MouseEnter);
+            this.buttonSave.MouseLeave += new System.EventHandler(this.buttonSave_MouseLeave);
             // 
             // buttonBestiary
             // 
@@ -157,13 +162,13 @@
             this.buttonResume.Text = "Resume";
             this.buttonResume.UseVisualStyleBackColor = true;
             this.buttonResume.Click += new System.EventHandler(this.buttonResume_Click);
-            this.buttonResume.MouseEnter += new System.EventHandler(this.buttonBestiary_MouseEnter);
-            this.buttonResume.MouseLeave += new System.EventHandler(this.buttonBestiary_MouseLeave);
+            this.buttonResume.MouseEnter += new System.EventHandler(this.buttonResume_MouseEnter);
+            this.buttonResume.MouseLeave += new System.EventHandler(this.buttonResume_MouseLeave);
             // 
             // viewMapControler1
             // 
             this.viewMapControler1.Context = game1;
-            this.viewMapControler1.Location = new System.Drawing.Point(189, 76);
+            this.viewMapControler1.Location = new System.Drawing.Point(165, 93);
             this.viewMapControler1.Name = "viewMapControler1";
             this.viewMapControler1.Size = new System.Drawing.Size(200, 100);
             this.viewMapControler1.TabIndex = 0;
