@@ -114,8 +114,6 @@
             this.buttonQuit.Text = "Quit";
             this.buttonQuit.UseVisualStyleBackColor = true;
             this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
-            this.buttonQuit.MouseEnter += new System.EventHandler(this.buttonQuit_MouseEnter);
-            this.buttonQuit.MouseLeave += new System.EventHandler(this.buttonQuit_MouseLeave);
             // 
             // buttonSave
             // 
@@ -132,8 +130,6 @@
             this.buttonSave.TabIndex = 4;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.MouseEnter += new System.EventHandler(this.buttonSave_MouseEnter);
-            this.buttonSave.MouseLeave += new System.EventHandler(this.buttonSave_MouseLeave);
             // 
             // buttonBestiary
             // 
@@ -224,15 +220,16 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Hen";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // viewMapControler1
             // 
+            this.viewMapControler1.BackColor = System.Drawing.Color.Cyan;
             this.viewMapControler1.Context = game1;
             this.viewMapControler1.Location = new System.Drawing.Point(226, 132);
             this.viewMapControler1.Name = "viewMapControler1";
-            this.viewMapControler1.Size = new System.Drawing.Size(70, 35);
-            this.viewMapControler1.TabIndex = 0;
+            this.viewMapControler1.Size = new System.Drawing.Size(738, 448);
+            this.viewMapControler1.TabIndex = 4;
+            this.viewMapControler1.Text = "viewMapControler1";
             // 
             // gamecontrol
             // 
@@ -241,8 +238,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.viewMapControler1);
+            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelSeed);
             this.Name = "gamecontrol";
             this.Size = new System.Drawing.Size(1007, 728);
