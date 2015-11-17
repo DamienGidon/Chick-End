@@ -175,7 +175,7 @@
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.MenuPanel);
             this.MaximumSize = new System.Drawing.Size(1024, 768);
-            this.MinimumSize = new System.Drawing.Size(1024, 766);
+            this.MinimumSize = new System.Drawing.Size(1024, 726);
             this.Name = "FormF";
             this.Text = "FormF";
             this.MenuPanel.ResumeLayout(false);
