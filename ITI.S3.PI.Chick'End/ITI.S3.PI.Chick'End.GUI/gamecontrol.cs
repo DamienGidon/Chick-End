@@ -33,6 +33,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             Graphics g4 = Graphics.FromImage(p);
             g2.DrawImage(p4, 60, 60);
             pictureBox4.Image = p4;
+            Bitmap p3 = new Bitmap(@"bomberHen.png");
+            Graphics g3 = Graphics.FromImage(p);
+            g3.DrawImage(p3, 60, 60);
+            pictureBox3.Image = p3;
 
             pictureBox1.DragDrop += new DragEventHandler(pictureBox1_DragDrop);
             pictureBox1.MouseDown += new MouseEventHandler(pictureBox1_MouseDown);
@@ -40,12 +44,15 @@ namespace ITI.S3.PI.Chick_End.GUI
             pictureBox2.MouseDown += new MouseEventHandler(pictureBox2_MouseDown);
             pictureBox4.DragDrop += new DragEventHandler(pictureBox4_DragDrop);
             pictureBox4.MouseDown += new MouseEventHandler(pictureBox4_MouseDown);
+            pictureBox3.DragDrop += new DragEventHandler(pictureBox3_DragDrop);
+            pictureBox3.MouseDown += new MouseEventHandler(pictureBox3_MouseDown);
             viewMapControler1.DragEnter += new DragEventHandler(viewMapControler1_DragEnter);
             panel1.DragEnter += new DragEventHandler(viewMapControler1_DragEnter);
 
             pictureBox1.AllowDrop = true;
             pictureBox2.AllowDrop = true;
             pictureBox4.AllowDrop = true;
+            pictureBox3.AllowDrop = true;
             viewMapControler1.AllowDrop = true;
             panel1.AllowDrop = true;
         }
@@ -225,17 +232,24 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
+        private void pictureBox3_DragDrop(object sender, DragEventArgs e)
         private void pictureBox4_DragDrop(object sender, DragEventArgs e)
         {
             PictureBox pb4 = ((PictureBox)sender);
             pb4.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
+            PictureBox pb3 = ((PictureBox)sender);
+            pb3.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
         }
 
         private void pictureBox4_MouseDown(object sender, MouseEventArgs e)
+        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
         {
             PictureBox pb4 = ((PictureBox)sender);
             pb4.Select();
             pb4.DoDragDrop(pb4.Image, DragDropEffects.Copy);
+            PictureBox pb3 = ((PictureBox)sender);
+            pb3.Select();
+            pb3.DoDragDrop(pb3.Image, DragDropEffects.Copy);
 
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
             int topLeftCornerX = ((relativePoint.X / 50) * 50);
@@ -252,11 +266,17 @@ namespace ITI.S3.PI.Chick_End.GUI
 
                 Bitmap p4 = new Bitmap(@"GunnerFarmer.png");
                 Graphics g4 = Graphics.FromImage(p4);
+                Bitmap p3 = new Bitmap(@"bomberHen.png");
+                Graphics g3 = Graphics.FromImage(p3);
 
                 Rectangle r4 = new Rectangle(topLeftCornerX, topLeftCornerY - 20, 50, 70);
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r4);
                 e1.Graphics.DrawImage(p4, r4);
                 viewMapControler1.Context.Map.CreateGunnerFarmer(line, column, viewMapControler1.Context.Map);
+                Rectangle r3 = new Rectangle(topLeftCornerX, topLeftCornerY, 50, 50);
+                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r3);
+                e1.Graphics.DrawImage(p3, r3);
+                viewMapControler1.Context.Map.CreateBomberHen(line, column, viewMapControler1.Context.Map);
             }
         }
     }
