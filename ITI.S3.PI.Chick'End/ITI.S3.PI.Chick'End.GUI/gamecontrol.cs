@@ -17,6 +17,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             InitializeComponent();
             _panel = panel;
+            //viewMapControler1.Context.Stopwatch.Start();
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
@@ -89,6 +90,5 @@ namespace ITI.S3.PI.Chick_End.GUI
             buttonTrash.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonTrash.Refresh();
         }
-
     }
 }
