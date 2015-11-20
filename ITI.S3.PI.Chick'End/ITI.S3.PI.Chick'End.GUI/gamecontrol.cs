@@ -24,12 +24,20 @@ namespace ITI.S3.PI.Chick_End.GUI
             g.DrawImage(p, 60, 60);
             pictureBox1.Image = p;
 
+            Bitmap p2 = new Bitmap(@"InfantryFarmer.png");
+            Graphics g2 = Graphics.FromImage(p);
+            g2.DrawImage(p2, 60, 60);
+            pictureBox2.Image = p2;
+
             pictureBox1.DragDrop += new DragEventHandler(pictureBox1_DragDrop);
             pictureBox1.MouseDown += new MouseEventHandler(pictureBox1_MouseDown);
+            pictureBox2.DragDrop += new DragEventHandler(pictureBox2_DragDrop);
+            pictureBox2.MouseDown += new MouseEventHandler(pictureBox2_MouseDown);
             viewMapControler1.DragEnter += new DragEventHandler(viewMapControler1_DragEnter);
             panel1.DragEnter += new DragEventHandler(viewMapControler1_DragEnter);
 
             pictureBox1.AllowDrop = true;
+            pictureBox2.AllowDrop = true;
             viewMapControler1.AllowDrop = true;
             panel1.AllowDrop = true;
         }
@@ -125,16 +133,8 @@ namespace ITI.S3.PI.Chick_End.GUI
                 }
             }
         }
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-        private void pictureBox1_DragDrop(object sender, DragEventArgs e)
-        {
-            PictureBox pb = ((PictureBox)sender);
-            pb.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
-        }
-
+       
+        
         private void viewMapControler1_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Bitmap))
@@ -145,6 +145,12 @@ namespace ITI.S3.PI.Chick_End.GUI
             {
                 e.Effect = DragDropEffects.None;
             }
+        }
+
+        private void pictureBox1_DragDrop(object sender, DragEventArgs e)
+        {
+            PictureBox pb = ((PictureBox)sender);
+            pb.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
@@ -173,6 +179,41 @@ namespace ITI.S3.PI.Chick_End.GUI
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r);
                 e1.Graphics.DrawImage(p2, r);
                 viewMapControler1.Context.Map.CreateHen(line, column, viewMapControler1.Context.Map);
+            }
+        }
+
+        private void pictureBox2_DragDrop(object sender, DragEventArgs e)
+        {
+            PictureBox pb2 = ((PictureBox)sender);
+            pb2.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
+        }
+
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox pb2 = ((PictureBox)sender);
+            pb2.Select();
+            pb2.DoDragDrop(pb2.Image, DragDropEffects.Copy);
+
+            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
+            int topLeftCornerX = ((relativePoint.X / 50) * 50);
+            int topLeftCornerY = ((relativePoint.Y / 50) * 50);
+            int line = topLeftCornerY / 50;
+            int column = topLeftCornerX / 50;
+
+            if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
+            {
+                MessageBox.Show("Non");
+            }
+            else
+            {
+
+                Bitmap p2 = new Bitmap(@"InfantryFarmer.png");
+                Graphics g2 = Graphics.FromImage(p2);
+
+                Rectangle r2 = new Rectangle(topLeftCornerX, topLeftCornerY-20, 50, 70);
+                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r2);
+                e1.Graphics.DrawImage(p2, r2);
+                viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
             }
         }
     }
