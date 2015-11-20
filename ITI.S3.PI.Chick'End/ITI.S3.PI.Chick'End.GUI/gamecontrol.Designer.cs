@@ -42,12 +42,14 @@
             this.labelSeed = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelUnit = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelSeed.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonMenu
@@ -160,7 +162,7 @@
             this.buttonResume.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonResume.Font = new System.Drawing.Font("Playbill", 20F);
             this.buttonResume.ForeColor = System.Drawing.Color.DarkGreen;
-            this.buttonResume.Location = new System.Drawing.Point(44, 0);
+            this.buttonResume.Location = new System.Drawing.Point(44, 3);
             this.buttonResume.Name = "buttonResume";
             this.buttonResume.Size = new System.Drawing.Size(117, 58);
             this.buttonResume.TabIndex = 0;
@@ -185,37 +187,49 @@
             // labelSeedNumber
             // 
             this.labelSeedNumber.AutoSize = true;
-            this.labelSeedNumber.Font = new System.Drawing.Font("Playbill", 20F);
+            this.labelSeedNumber.Font = new System.Drawing.Font("Playbill", 22F);
             this.labelSeedNumber.ForeColor = System.Drawing.Color.DarkGreen;
-            this.labelSeedNumber.Location = new System.Drawing.Point(73, 12);
+            this.labelSeedNumber.Location = new System.Drawing.Point(67, 10);
             this.labelSeedNumber.Name = "labelSeedNumber";
-            this.labelSeedNumber.Size = new System.Drawing.Size(79, 27);
+            this.labelSeedNumber.Size = new System.Drawing.Size(89, 31);
             this.labelSeedNumber.TabIndex = 4;
             this.labelSeedNumber.Text = "{Number}";
             // 
             // labelSeed
             // 
             this.labelSeed.AutoSize = true;
-            this.labelSeed.Font = new System.Drawing.Font("Playbill", 20F);
+            this.labelSeed.Font = new System.Drawing.Font("Playbill", 22F);
             this.labelSeed.ForeColor = System.Drawing.Color.DarkGreen;
             this.labelSeed.Location = new System.Drawing.Point(16, 12);
             this.labelSeed.Name = "labelSeed";
-            this.labelSeed.Size = new System.Drawing.Size(51, 27);
+            this.labelSeed.Size = new System.Drawing.Size(59, 31);
             this.labelSeed.TabIndex = 3;
             this.labelSeed.Text = "Seed :";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.Orange;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(154, 722);
+            this.panel1.Size = new System.Drawing.Size(154, 728);
             this.panel1.TabIndex = 4;
             // 
             // pictureBox1
+            // labelUnit
+            // 
+            this.labelUnit.AutoSize = true;
+            this.labelUnit.Font = new System.Drawing.Font("Playbill", 30F);
+            this.labelUnit.ForeColor = System.Drawing.Color.DarkGreen;
+            this.labelUnit.Location = new System.Drawing.Point(43, 10);
+            this.labelUnit.Name = "labelUnit";
+            this.labelUnit.Size = new System.Drawing.Size(63, 40);
+            this.labelUnit.TabIndex = 5;
+            this.labelUnit.Text = "Units";
+            // 
             // 
             this.pictureBox1.Location = new System.Drawing.Point(27, 186);
             this.pictureBox1.Name = "pictureBox1";
@@ -241,9 +255,18 @@
             this.viewMapControler1.Context = game1;
             this.viewMapControler1.Location = new System.Drawing.Point(226, 132);
             this.viewMapControler1.Name = "viewMapControler1";
-            this.viewMapControler1.Size = new System.Drawing.Size(710, 448);
+            this.viewMapControler1.Size = new System.Drawing.Size(700, 450);
             this.viewMapControler1.TabIndex = 4;
             this.viewMapControler1.Text = "viewMapControler1";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel2.Controls.Add(this.labelUnit);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(154, 58);
+            this.panel2.TabIndex = 1;
             // 
             // gamecontrol
             // 
@@ -263,6 +286,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -283,5 +308,7 @@
         private System.Windows.Forms.Label labelSeed;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelUnit;
+        private System.Windows.Forms.Panel panel2;
     }
 }

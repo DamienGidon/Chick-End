@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace ITI.S3.PI.Chick_End.GUI
 {
@@ -18,17 +19,30 @@ namespace ITI.S3.PI.Chick_End.GUI
             InitializeComponent();
             _panel = panel;
 <<<<<<< HEAD
+            Bitmap p = new Bitmap(@"HenLeft.png");
+            Graphics g = Graphics.FromImage(p);
+            g.DrawImage(p, 60, 60);
+            pictureBox1.Image = p;
+
+            pictureBox1.DragDrop += new DragEventHandler(pictureBox1_DragDrop);
+            pictureBox1.MouseDown += new MouseEventHandler(pictureBox1_MouseDown);
+            viewMapControler1.DragEnter += new DragEventHandler(viewMapControler1_DragEnter);
+            panel1.DragEnter += new DragEventHandler(viewMapControler1_DragEnter);
 =======
-            viewMapControler1.Size = new System.Drawing.Size( 700, 450 );
             viewMapControler1.MouseClick += new MouseEventHandler(viewMapControler1_Click);
         }
 
         private void viewMapControler1_Click(object sender, MouseEventArgs e)
         {
-            MessageBox.Show( string.Format("X = {0} ,Y= {1} " , e.X, e.Y));
->>>>>>> bf4d9de34d810dc2edcdb906f2162cd73ac6c842
+            MessageBox.Show(string.Format("X = {0}, Y = {1}", e.X, e.Y));
         }
+>>>>>>> 10feaf6ce530a9cc75ef6cc6b1b8448c575b2ce4
 
+            pictureBox1.AllowDrop = true;
+            viewMapControler1.AllowDrop = true;
+            panel1.AllowDrop = true;
+        }
+        
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             panelMenu.Show();
@@ -37,9 +51,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         private void buttonQuit_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
-            //Form1 p = ((Form1)this.Parent);
-            //p.Controls.Remove(this);
-            //p.Controls.Add(_panel);
+
             _panel.Show();
         }
 
@@ -48,29 +60,31 @@ namespace ITI.S3.PI.Chick_End.GUI
             panelMenu.Hide();
         }
 
+        // Code d'affichage des boutons
+
         private void buttonBestiary_MouseEnter(object sender, EventArgs e)
         {
-            buttonBestiary.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonBestiary.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonBestiary.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             buttonBestiary.Refresh();
         }
 
         private void buttonBestiary_MouseLeave(object sender, EventArgs e)
         {
-            buttonBestiary.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonBestiary.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonBestiary.Refresh();
         }
 
         private void buttonResume_MouseEnter(object sender, EventArgs e)
         {
-            buttonResume.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonResume.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonResume.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             buttonResume.Refresh();
         }
 
         private void buttonResume_MouseLeave(object sender, EventArgs e)
         {
-            buttonResume.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonResume.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonResume.Refresh();
         }
 
@@ -99,42 +113,81 @@ namespace ITI.S3.PI.Chick_End.GUI
             buttonTrash.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonTrash.Refresh();
         }
-
 <<<<<<< HEAD
-        private void gamecontrol_Load( object sender, EventArgs e )
+
+
+        protected override void OnPaint(PaintEventArgs e)
         {
+            int x = 100;
+            int y = 100;
+
+            for (int i = 0; i < FinalVariables._nbCaseHeight; i++)
+            {
+                for (int j = 0; j < FinalVariables._nbCaseWidth; j++)
+                {
+                    if(viewMapControler1.Context.Map.Square[i,j] != null)
+                    {
+                        string directory = Path.GetDirectoryName(Application.ExecutablePath);
+                        string HenLeft = Path.Combine(directory, @"HenLeft.png");
+
+                        Image ImageHenLeft = Image.FromFile(HenLeft);
+                        e.Graphics.DrawImage(ImageHenLeft, x, y, 50, 50);
+                    }
+                }
+            }
+        }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+        private void pictureBox1_DragDrop(object sender, DragEventArgs e)
+        {
+            PictureBox pb = ((PictureBox)sender);
+            pb.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
+        }
+
+        private void viewMapControler1_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Bitmap))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox pb = ((PictureBox)sender);
+            pb.Select();
+            pb.DoDragDrop(pb.Image, DragDropEffects.Copy);
+
+            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
+            int topLeftCornerX = ((relativePoint.X / 50)*50);
+            int topLeftCornerY = ((relativePoint.Y / 50)*50);
+            int line = topLeftCornerY / 50;
+            int column = topLeftCornerX / 50;
+
+            if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
+            {
+                MessageBox.Show("Non");
+            }
+            else
+            {
+
+                Bitmap p2 = new Bitmap(@"HenLeft.png");
+                Graphics g = Graphics.FromImage(p2);
+
+                Rectangle r = new Rectangle(topLeftCornerX, topLeftCornerY, 50, 50);
+                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r);
+                e1.Graphics.DrawImage(p2, r);
+                viewMapControler1.Context.Map.CreateHen(line, column, viewMapControler1.Context.Map);
+            }
+        }
 
 =======
-        private void buttonSave_MouseEnter(object sender, EventArgs e)
-        {
-            buttonSave.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            buttonSave.Refresh();
-        }
-
-        private void buttonSave_MouseLeave(object sender, EventArgs e)
-        {
-            buttonSave.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            buttonSave.Refresh();
-        }
-
-        private void buttonQuit_MouseEnter(object sender, EventArgs e)
-        {
-            buttonQuit.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            buttonQuit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            buttonQuit.Refresh();
-        }
-
-        private void buttonQuit_MouseLeave(object sender, EventArgs e)
-        {
-            buttonQuit.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            buttonQuit.Refresh();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            viewMapControler1.Context.Map.CreateHen(viewMapControler1.Context.Map);
->>>>>>> bf4d9de34d810dc2edcdb906f2162cd73ac6c842
-        }
+>>>>>>> 10feaf6ce530a9cc75ef6cc6b1b8448c575b2ce4
     }
 }

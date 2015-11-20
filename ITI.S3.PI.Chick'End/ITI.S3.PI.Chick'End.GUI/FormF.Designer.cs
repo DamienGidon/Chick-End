@@ -177,6 +177,7 @@
             this.MaximumSize = new System.Drawing.Size(1024, 768);
             this.MinimumSize = new System.Drawing.Size(1024, 726);
             this.Name = "FormF";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormF";
             this.MenuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
