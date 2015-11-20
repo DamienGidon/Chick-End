@@ -233,23 +233,24 @@ namespace ITI.S3.PI.Chick_End.GUI
         }
 
         private void pictureBox3_DragDrop(object sender, DragEventArgs e)
+        {
+            PictureBox pb3 = ((PictureBox)sender);
+            pb3.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
+
+
+        }
         private void pictureBox4_DragDrop(object sender, DragEventArgs e)
         {
             PictureBox pb4 = ((PictureBox)sender);
             pb4.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
-            PictureBox pb3 = ((PictureBox)sender);
-            pb3.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
+         
         }
 
         private void pictureBox4_MouseDown(object sender, MouseEventArgs e)
-        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
         {
             PictureBox pb4 = ((PictureBox)sender);
             pb4.Select();
             pb4.DoDragDrop(pb4.Image, DragDropEffects.Copy);
-            PictureBox pb3 = ((PictureBox)sender);
-            pb3.Select();
-            pb3.DoDragDrop(pb3.Image, DragDropEffects.Copy);
 
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
             int topLeftCornerX = ((relativePoint.X / 50) * 50);
@@ -266,13 +267,37 @@ namespace ITI.S3.PI.Chick_End.GUI
 
                 Bitmap p4 = new Bitmap(@"GunnerFarmer.png");
                 Graphics g4 = Graphics.FromImage(p4);
-                Bitmap p3 = new Bitmap(@"bomberHen.png");
-                Graphics g3 = Graphics.FromImage(p3);
 
                 Rectangle r4 = new Rectangle(topLeftCornerX, topLeftCornerY - 20, 50, 70);
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r4);
                 e1.Graphics.DrawImage(p4, r4);
                 viewMapControler1.Context.Map.CreateGunnerFarmer(line, column, viewMapControler1.Context.Map);
+              
+            }
+        }
+
+        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox pb3 = ((PictureBox)sender);
+            pb3.Select();
+            pb3.DoDragDrop(pb3.Image, DragDropEffects.Copy);
+
+            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
+            int topLeftCornerX = ((relativePoint.X / 50) * 50);
+            int topLeftCornerY = ((relativePoint.Y / 50) * 50);
+            int line = topLeftCornerY / 50;
+            int column = topLeftCornerX / 50;
+
+            if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
+            {
+                MessageBox.Show("Non");
+            }
+            else
+            {
+               
+                Bitmap p3 = new Bitmap(@"bomberHen.png");
+                Graphics g3 = Graphics.FromImage(p3);
+
                 Rectangle r3 = new Rectangle(topLeftCornerX, topLeftCornerY, 50, 50);
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r3);
                 e1.Graphics.DrawImage(p3, r3);
