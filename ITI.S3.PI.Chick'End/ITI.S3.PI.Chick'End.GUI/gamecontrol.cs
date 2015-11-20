@@ -256,7 +256,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Rectangle r3 = new Rectangle(topLeftCornerX, topLeftCornerY, 50, 50);
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r3);
                 e1.Graphics.DrawImage(p3, r3);
-                viewMapControler1.Context.Map.CreateHen(line, column, viewMapControler1.Context.Map);
+                viewMapControler1.Context.Map.CreateBomberHen(line, column, viewMapControler1.Context.Map);
             }
         }
     }
