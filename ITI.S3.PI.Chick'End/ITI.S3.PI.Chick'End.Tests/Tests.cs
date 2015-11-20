@@ -26,5 +26,13 @@ namespace ITI.S3.PI.Chick_End.Tests
 
             //Assert.AreEqual("grass", )
         }
+
+        [Test]
+        public void Create_new_hen()
+        {
+            Hen h = new Hen();
+
+            Assert.IsNotNull(h);
+        }
     }
 }
