@@ -41,11 +41,13 @@
             this.labelSeedNumber = new System.Windows.Forms.Label();
             this.labelSeed = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
             this.panelMenu.SuspendLayout();
             this.panelSeed.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonMenu
@@ -206,20 +208,32 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(154, 722);
             this.panel1.TabIndex = 4;
             // 
-            // button1
+            // pictureBox1
             // 
-            this.button1.Location = new System.Drawing.Point(31, 111);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Hen";
-            this.button1.UseVisualStyleBackColor = true;
+            this.pictureBox1.Location = new System.Drawing.Point(27, 186);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(66, 66);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(39, 100);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(71, 23);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // viewMapControler1
             // 
@@ -227,7 +241,7 @@
             this.viewMapControler1.Context = game1;
             this.viewMapControler1.Location = new System.Drawing.Point(226, 132);
             this.viewMapControler1.Name = "viewMapControler1";
-            this.viewMapControler1.Size = new System.Drawing.Size(738, 448);
+            this.viewMapControler1.Size = new System.Drawing.Size(710, 448);
             this.viewMapControler1.TabIndex = 4;
             this.viewMapControler1.Text = "viewMapControler1";
             // 
@@ -238,15 +252,17 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.viewMapControler1);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelSeed);
+            this.Controls.Add(this.viewMapControler1);
             this.Name = "gamecontrol";
             this.Size = new System.Drawing.Size(1007, 728);
             this.panelMenu.ResumeLayout(false);
             this.panelSeed.ResumeLayout(false);
             this.panelSeed.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,9 +278,10 @@
         private System.Windows.Forms.Button buttonResume;
         private ViewMapControler viewMapControler1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panelSeed;
         private System.Windows.Forms.Label labelSeedNumber;
         private System.Windows.Forms.Label labelSeed;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

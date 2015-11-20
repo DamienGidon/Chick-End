@@ -24,10 +24,9 @@ namespace ITI.S3.PI.Chick_End
             }
         }
 
-        public Tower CreateHen(Map context)
+        public void CreateHen(int ligne, int colonne, Map context)
         {
-            Square[0, 0].Tower = new Hen();
-            return Square[0, 0].Tower;
+            Square[ligne, colonne].Tower = new Hen();
         }
         
 
