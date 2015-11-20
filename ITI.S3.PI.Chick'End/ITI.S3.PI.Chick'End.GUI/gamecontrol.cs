@@ -29,15 +29,23 @@ namespace ITI.S3.PI.Chick_End.GUI
             g2.DrawImage(p2, 60, 60);
             pictureBox2.Image = p2;
 
+            Bitmap p3 = new Bitmap(@"bomberHen.png");
+            Graphics g3 = Graphics.FromImage(p);
+            g3.DrawImage(p3, 60, 60);
+            pictureBox3.Image = p3;
+
             pictureBox1.DragDrop += new DragEventHandler(pictureBox1_DragDrop);
             pictureBox1.MouseDown += new MouseEventHandler(pictureBox1_MouseDown);
             pictureBox2.DragDrop += new DragEventHandler(pictureBox2_DragDrop);
             pictureBox2.MouseDown += new MouseEventHandler(pictureBox2_MouseDown);
+            pictureBox3.DragDrop += new DragEventHandler(pictureBox3_DragDrop);
+            pictureBox3.MouseDown += new MouseEventHandler(pictureBox3_MouseDown);
             viewMapControler1.DragEnter += new DragEventHandler(viewMapControler1_DragEnter);
             panel1.DragEnter += new DragEventHandler(viewMapControler1_DragEnter);
 
             pictureBox1.AllowDrop = true;
             pictureBox2.AllowDrop = true;
+            pictureBox3.AllowDrop = true;
             viewMapControler1.AllowDrop = true;
             panel1.AllowDrop = true;
         }
@@ -214,6 +222,41 @@ namespace ITI.S3.PI.Chick_End.GUI
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r2);
                 e1.Graphics.DrawImage(p2, r2);
                 viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
+            }
+        }
+
+        private void pictureBox3_DragDrop(object sender, DragEventArgs e)
+        {
+            PictureBox pb3 = ((PictureBox)sender);
+            pb3.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
+        }
+
+        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox pb3 = ((PictureBox)sender);
+            pb3.Select();
+            pb3.DoDragDrop(pb3.Image, DragDropEffects.Copy);
+
+            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
+            int topLeftCornerX = ((relativePoint.X / 50) * 50);
+            int topLeftCornerY = ((relativePoint.Y / 50) * 50);
+            int line = topLeftCornerY / 50;
+            int column = topLeftCornerX / 50;
+
+            if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
+            {
+                MessageBox.Show("Non");
+            }
+            else
+            {
+
+                Bitmap p3 = new Bitmap(@"bomberHen.png");
+                Graphics g3 = Graphics.FromImage(p3);
+
+                Rectangle r3 = new Rectangle(topLeftCornerX, topLeftCornerY, 50, 50);
+                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r3);
+                e1.Graphics.DrawImage(p3, r3);
+                viewMapControler1.Context.Map.CreateHen(line, column, viewMapControler1.Context.Map);
             }
         }
     }

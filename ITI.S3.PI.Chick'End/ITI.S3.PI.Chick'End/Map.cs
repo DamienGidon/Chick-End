@@ -32,6 +32,10 @@ namespace ITI.S3.PI.Chick_End
         {
             Square[ligne, colonne].Tower = new InfantryFarmer();
         }
+        public void CreateBomberHen(int ligne, int colonne, Map context)
+        {
+            Square[ligne, colonne].Tower = new BomberHen();
+        }
 
         /*
          * Constructor
