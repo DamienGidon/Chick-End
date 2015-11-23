@@ -35,6 +35,32 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.Close();
         }
 
+        private void buttonReturn_MouseEnter(object sender, EventArgs e)
+        {
+            buttonReturn.Font = new System.Drawing.Font("Playbill", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            buttonReturn.Refresh();
+        }
+
+        private void buttonReturn_MouseLeave(object sender, EventArgs e)
+        {
+            buttonReturn.Font = new System.Drawing.Font("Playbill", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonReturn.Refresh();
+        }
+
+        private void buttonLevelOne_MouseEnter(object sender, EventArgs e)
+        {
+            buttonLevelOne.Font = new System.Drawing.Font("Playbill", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonLevelOne.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            buttonLevelOne.Refresh();
+        }
+
+        private void buttonLevelOne_MouseLeave(object sender, EventArgs e)
+        {
+            buttonLevelOne.Font = new System.Drawing.Font("Playbill", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonLevelOne.Refresh();
+        }
+
         private void buttonPlay_MouseEnter(object sender, EventArgs e)
         {
             buttonPlay.Font = new System.Drawing.Font("Playbill", 58F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
