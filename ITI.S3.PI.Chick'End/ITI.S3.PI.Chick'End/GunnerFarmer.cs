@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    class GunnerFarmer : Tower
+    public class GunnerFarmer : Tower
     {
-        internal GunnerFarmer()
+        public GunnerFarmer()
             : base(10, 15)
         {
             _health = 50;
@@ -18,11 +18,11 @@ namespace ITI.S3.PI.Chick_End
         {
             ennemi.Health -= Damages;
         }
-        
+
         /*
         public override void Remove()
         {
-            
+
         }
         */
     }
