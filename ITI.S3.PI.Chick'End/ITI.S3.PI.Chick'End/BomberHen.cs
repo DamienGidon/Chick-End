@@ -18,12 +18,6 @@ namespace ITI.S3.PI.Chick_End
         {
             ennemi.Health -= Damages;
         }
-
-        /*
-        public override void Remove()
-        {
-
-        }
-        */
+        
     }
 }

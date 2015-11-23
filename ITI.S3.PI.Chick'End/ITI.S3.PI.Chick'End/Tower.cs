@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    public abstract class Tower : Placeable, IAttack
+    public abstract class Tower : Unit, IAttack, IRemove
     {
         internal readonly int _damages;
         internal readonly float _range;
@@ -28,5 +28,10 @@ namespace ITI.S3.PI.Chick_End
         }
 
         public abstract void Attack(Ennemi ennemi);
+
+        public virtual void Remove()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

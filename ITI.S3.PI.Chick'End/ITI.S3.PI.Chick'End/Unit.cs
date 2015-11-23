@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    public class Unit : IDie
+    public abstract class Unit : IDie
     {
-        Square _context;
         internal int _health;
 
         public int Health
