@@ -52,7 +52,7 @@ namespace ITI.S3.PI.Chick_End
             for( int i = 3; i < 6; i++)
             {
                 int j = 0;
-                _squares[i, j] = new Square(this, i, j, "hen home" );
+                _squares[i, j] = new Square(this, i, j, "HomeHen" );
             }
             // Setting the other decorations
             for( int i = 0; i < 9; i++)
