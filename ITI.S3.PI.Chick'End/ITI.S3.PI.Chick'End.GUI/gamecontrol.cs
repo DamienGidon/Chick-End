@@ -159,7 +159,7 @@ namespace ITI.S3.PI.Chick_End.GUI
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
-                MessageBox.Show("Towers must be placed on the path");
+                
             }
             else
             {
@@ -194,7 +194,7 @@ namespace ITI.S3.PI.Chick_End.GUI
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
-                MessageBox.Show("Non");
+                
             }
             else
             {
@@ -237,7 +237,7 @@ namespace ITI.S3.PI.Chick_End.GUI
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
-                MessageBox.Show("Non");
+                
             }
             else
             {
@@ -267,7 +267,7 @@ namespace ITI.S3.PI.Chick_End.GUI
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
-                MessageBox.Show("Non");
+                
             }
             else
             {
@@ -303,7 +303,7 @@ namespace ITI.S3.PI.Chick_End.GUI
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
-                MessageBox.Show("Non");
+                
             }
             else
             {
