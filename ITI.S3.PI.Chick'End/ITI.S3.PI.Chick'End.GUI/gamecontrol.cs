@@ -29,30 +29,40 @@ namespace ITI.S3.PI.Chick_End.GUI
             g2.DrawImage(p2, 60, 60);
             pictureBox2.Image = p2;
 
-            Bitmap p4 = new Bitmap(@"GunnerFarmer.png");
-            Graphics g4 = Graphics.FromImage(p);
-            g2.DrawImage(p4, 60, 60);
-            pictureBox4.Image = p4;
             Bitmap p3 = new Bitmap(@"bomberHen.png");
             Graphics g3 = Graphics.FromImage(p);
             g3.DrawImage(p3, 60, 60);
             pictureBox3.Image = p3;
 
+            Bitmap p4 = new Bitmap(@"GunnerFarmer.png");
+            Graphics g4 = Graphics.FromImage(p);
+            g4.DrawImage(p4, 60, 60);
+            pictureBox4.Image = p4;
+
+            Bitmap p5 = new Bitmap(@"OldHen.png");
+            Graphics g5 = Graphics.FromImage(p);
+            g5.DrawImage(p5, 60, 60);
+            pictureBox5.Image = p5;
+
             pictureBox1.DragDrop += new DragEventHandler(pictureBox1_DragDrop);
             pictureBox1.MouseDown += new MouseEventHandler(pictureBox1_MouseDown);
             pictureBox2.DragDrop += new DragEventHandler(pictureBox2_DragDrop);
             pictureBox2.MouseDown += new MouseEventHandler(pictureBox2_MouseDown);
-            pictureBox4.DragDrop += new DragEventHandler(pictureBox4_DragDrop);
-            pictureBox4.MouseDown += new MouseEventHandler(pictureBox4_MouseDown);
             pictureBox3.DragDrop += new DragEventHandler(pictureBox3_DragDrop);
             pictureBox3.MouseDown += new MouseEventHandler(pictureBox3_MouseDown);
+            pictureBox4.DragDrop += new DragEventHandler(pictureBox4_DragDrop);
+            pictureBox4.MouseDown += new MouseEventHandler(pictureBox4_MouseDown);
+            pictureBox5.DragDrop += new DragEventHandler(pictureBox5_DragDrop);
+            pictureBox5.MouseDown += new MouseEventHandler(pictureBox5_MouseDown);
+
             viewMapControler1.DragEnter += new DragEventHandler(viewMapControler1_DragEnter);
             panel1.DragEnter += new DragEventHandler(viewMapControler1_DragEnter);
 
             pictureBox1.AllowDrop = true;
             pictureBox2.AllowDrop = true;
-            pictureBox4.AllowDrop = true;
             pictureBox3.AllowDrop = true;
+            pictureBox4.AllowDrop = true;
+            pictureBox5.AllowDrop = true;
             viewMapControler1.AllowDrop = true;
             panel1.AllowDrop = true;
         }
@@ -302,6 +312,43 @@ namespace ITI.S3.PI.Chick_End.GUI
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r3);
                 e1.Graphics.DrawImage(p3, r3);
                 viewMapControler1.Context.Map.CreateBomberHen(line, column, viewMapControler1.Context.Map);
+            }
+        }
+
+        private void pictureBox5_DragDrop(object sender, DragEventArgs e)
+        {
+            PictureBox pb4 = ((PictureBox)sender);
+            pb4.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
+
+        }
+
+        private void pictureBox5_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox pb5 = ((PictureBox)sender);
+            pb5.Select();
+            pb5.DoDragDrop(pb5.Image, DragDropEffects.Copy);
+
+            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
+            int topLeftCornerX = ((relativePoint.X / 50) * 50);
+            int topLeftCornerY = ((relativePoint.Y / 50) * 50);
+            int line = topLeftCornerY / 50;
+            int column = topLeftCornerX / 50;
+
+            if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
+            {
+                MessageBox.Show("Non");
+            }
+            else
+            {
+
+                Bitmap p5 = new Bitmap(@"OldHen.png");
+                Graphics g5 = Graphics.FromImage(p5);
+
+                Rectangle r5 = new Rectangle(topLeftCornerX, topLeftCornerY - 0, 50, 50);
+                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r5);
+                e1.Graphics.DrawImage(p5, r5);
+                viewMapControler1.Context.Map.CreateGunnerFarmer(line, column, viewMapControler1.Context.Map);
+
             }
         }
     }
