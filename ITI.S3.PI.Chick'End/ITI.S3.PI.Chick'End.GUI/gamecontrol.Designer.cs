@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gamecontrol));
             ITI.S3.PI.Chick_End.Game game1 = new ITI.S3.PI.Chick_End.Game();
             this.buttonMenu = new System.Windows.Forms.Button();
-            this.buttonTrash = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.buttonQuit = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonBestiary = new System.Windows.Forms.Button();
             this.buttonResume = new System.Windows.Forms.Button();
             this.panelSeed = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelSeedNumber = new System.Windows.Forms.Label();
@@ -49,6 +49,7 @@
             this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
             this.panelMenu.SuspendLayout();
             this.panelSeed.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -72,24 +73,6 @@
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             this.buttonMenu.MouseEnter += new System.EventHandler(this.buttonMenu_MouseEnter);
             this.buttonMenu.MouseLeave += new System.EventHandler(this.buttonMenu_MouseLeave);
-            // 
-            // buttonTrash
-            // 
-            this.buttonTrash.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonTrash.BackColor = System.Drawing.Color.Transparent;
-            this.buttonTrash.FlatAppearance.BorderSize = 0;
-            this.buttonTrash.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonTrash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTrash.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTrash.ForeColor = System.Drawing.Color.DarkGreen;
-            this.buttonTrash.Location = new System.Drawing.Point(749, 3);
-            this.buttonTrash.Name = "buttonTrash";
-            this.buttonTrash.Size = new System.Drawing.Size(88, 45);
-            this.buttonTrash.TabIndex = 2;
-            this.buttonTrash.Text = "Trash";
-            this.buttonTrash.UseVisualStyleBackColor = true;
-            this.buttonTrash.MouseEnter += new System.EventHandler(this.buttonTrash_MouseEnter);
-            this.buttonTrash.MouseLeave += new System.EventHandler(this.buttonTrash_MouseLeave);
             // 
             // panelMenu
             // 
@@ -177,16 +160,25 @@
             // panelSeed
             // 
             this.panelSeed.BackColor = System.Drawing.Color.Orange;
+            this.panelSeed.Controls.Add(this.pictureBox2);
             this.panelSeed.Controls.Add(this.label2);
             this.panelSeed.Controls.Add(this.label1);
             this.panelSeed.Controls.Add(this.labelSeedNumber);
             this.panelSeed.Controls.Add(this.labelSeed);
-            this.panelSeed.Controls.Add(this.buttonTrash);
             this.panelSeed.Controls.Add(this.buttonMenu);
             this.panelSeed.Location = new System.Drawing.Point(0, 0);
             this.panelSeed.Name = "panelSeed";
             this.panelSeed.Size = new System.Drawing.Size(1007, 58);
             this.panelSeed.TabIndex = 4;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(755, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(37, 52);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -297,6 +289,7 @@
             this.panelMenu.ResumeLayout(false);
             this.panelSeed.ResumeLayout(false);
             this.panelSeed.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -308,7 +301,6 @@
         #endregion
 
         private System.Windows.Forms.Button buttonMenu;
-        private System.Windows.Forms.Button buttonTrash;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button buttonQuit;
         private System.Windows.Forms.Button buttonSave;
@@ -324,5 +316,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelUnit;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

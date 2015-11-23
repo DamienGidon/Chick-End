@@ -26,10 +26,10 @@ namespace ITI.S3.PI.Chick_End.GUI
 
             pictureBox1.DragDrop += new DragEventHandler(pictureBox1_DragDrop);
             pictureBox1.MouseDown += new MouseEventHandler(pictureBox1_MouseDown);
-            viewMapControler1.DragEnter += new DragEventHandler(viewMapControler1_DragEnter);
-            panel1.DragEnter += new DragEventHandler(viewMapControler1_DragEnter);
+            viewMapControler1.DragEnter += new DragEventHandler( viewMapControler1_DragEnter );
+            panel1.DragEnter += new DragEventHandler( viewMapControler1_DragEnter );
 
-            pictureBox1.AllowDrop = true;
+            pictureBox1.AllowDrop = false;
             viewMapControler1.AllowDrop = true;
             panel1.AllowDrop = true;
         }
@@ -92,52 +92,15 @@ namespace ITI.S3.PI.Chick_End.GUI
             buttonMenu.Refresh();
         }
 
-        private void buttonTrash_MouseEnter(object sender, EventArgs e)
-        {
-            buttonTrash.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            buttonTrash.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            buttonTrash.Refresh();
-        }
-
-        private void buttonTrash_MouseLeave(object sender, EventArgs e)
-        {
-            buttonTrash.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            buttonTrash.Refresh();
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            int x = 100;
-            int y = 100;
-
-            for (int i = 0; i < FinalVariables._nbCaseHeight; i++)
-            {
-                for (int j = 0; j < FinalVariables._nbCaseWidth; j++)
-                {
-                    if(viewMapControler1.Context.Map.Square[i,j] != null)
-                    {
-                        string directory = Path.GetDirectoryName(Application.ExecutablePath);
-                        string HenLeft = Path.Combine(directory, @"HenLeft.png");
-
-                        Image ImageHenLeft = Image.FromFile(HenLeft);
-                        e.Graphics.DrawImage(ImageHenLeft, x, y, 50, 50);
-                    }
-                }
-            }
-        }
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
         private void pictureBox1_DragDrop(object sender, DragEventArgs e)
         {
             PictureBox pb = ((PictureBox)sender);
-            pb.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
+            //pb.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
         }
 
-        private void viewMapControler1_DragEnter(object sender, DragEventArgs e)
+        private void viewMapControler1_DragEnter( object sender, DragEventArgs e )
         {
-            if (e.Data.GetDataPresent(DataFormats.Bitmap))
+            if (e.Data.GetDataPresent( DataFormats.Bitmap ))
             {
                 e.Effect = DragDropEffects.Copy;
             }
@@ -161,7 +124,7 @@ namespace ITI.S3.PI.Chick_End.GUI
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
-                MessageBox.Show("Non");
+                //MessageBox.Show("Non");
             }
             else
             {
