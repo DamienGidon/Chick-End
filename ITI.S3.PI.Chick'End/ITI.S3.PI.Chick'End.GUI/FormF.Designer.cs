@@ -82,27 +82,31 @@
             // buttonReturn
             // 
             this.buttonReturn.FlatAppearance.BorderSize = 0;
+            this.buttonReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReturn.Font = new System.Drawing.Font("Playbill", 30F);
             this.buttonReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonReturn.Location = new System.Drawing.Point(71, 339);
+            this.buttonReturn.Location = new System.Drawing.Point(50, 339);
             this.buttonReturn.Name = "buttonReturn";
-            this.buttonReturn.Size = new System.Drawing.Size(105, 70);
+            this.buttonReturn.Size = new System.Drawing.Size(140, 70);
             this.buttonReturn.TabIndex = 4;
             this.buttonReturn.Text = "Return";
             this.buttonReturn.UseVisualStyleBackColor = true;
             this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
+            this.buttonReturn.MouseEnter += new System.EventHandler(this.buttonReturn_MouseEnter);
+            this.buttonReturn.MouseLeave += new System.EventHandler(this.buttonReturn_MouseLeave);
             // 
             // buttonLevelFour
             // 
             this.buttonLevelFour.Enabled = false;
             this.buttonLevelFour.FlatAppearance.BorderSize = 0;
+            this.buttonLevelFour.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonLevelFour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLevelFour.Font = new System.Drawing.Font("Playbill", 30F);
             this.buttonLevelFour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLevelFour.Location = new System.Drawing.Point(71, 263);
+            this.buttonLevelFour.Location = new System.Drawing.Point(50, 263);
             this.buttonLevelFour.Name = "buttonLevelFour";
-            this.buttonLevelFour.Size = new System.Drawing.Size(105, 70);
+            this.buttonLevelFour.Size = new System.Drawing.Size(140, 70);
             this.buttonLevelFour.TabIndex = 3;
             this.buttonLevelFour.Text = "Level 4";
             this.buttonLevelFour.UseVisualStyleBackColor = true;
@@ -111,12 +115,13 @@
             // 
             this.buttonLevelThree.Enabled = false;
             this.buttonLevelThree.FlatAppearance.BorderSize = 0;
+            this.buttonLevelThree.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonLevelThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLevelThree.Font = new System.Drawing.Font("Playbill", 30F);
             this.buttonLevelThree.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLevelThree.Location = new System.Drawing.Point(71, 187);
+            this.buttonLevelThree.Location = new System.Drawing.Point(50, 187);
             this.buttonLevelThree.Name = "buttonLevelThree";
-            this.buttonLevelThree.Size = new System.Drawing.Size(105, 70);
+            this.buttonLevelThree.Size = new System.Drawing.Size(140, 70);
             this.buttonLevelThree.TabIndex = 2;
             this.buttonLevelThree.Text = "Level 3";
             this.buttonLevelThree.UseVisualStyleBackColor = true;
@@ -125,12 +130,13 @@
             // 
             this.buttonLevelTwo.Enabled = false;
             this.buttonLevelTwo.FlatAppearance.BorderSize = 0;
+            this.buttonLevelTwo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonLevelTwo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLevelTwo.Font = new System.Drawing.Font("Playbill", 30F);
             this.buttonLevelTwo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLevelTwo.Location = new System.Drawing.Point(71, 109);
+            this.buttonLevelTwo.Location = new System.Drawing.Point(50, 109);
             this.buttonLevelTwo.Name = "buttonLevelTwo";
-            this.buttonLevelTwo.Size = new System.Drawing.Size(105, 70);
+            this.buttonLevelTwo.Size = new System.Drawing.Size(140, 70);
             this.buttonLevelTwo.TabIndex = 1;
             this.buttonLevelTwo.Text = "Level 2";
             this.buttonLevelTwo.UseVisualStyleBackColor = true;
@@ -138,16 +144,19 @@
             // buttonLevelOne
             // 
             this.buttonLevelOne.FlatAppearance.BorderSize = 0;
+            this.buttonLevelOne.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonLevelOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLevelOne.Font = new System.Drawing.Font("Playbill", 30F);
             this.buttonLevelOne.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLevelOne.Location = new System.Drawing.Point(71, 33);
+            this.buttonLevelOne.Location = new System.Drawing.Point(50, 37);
             this.buttonLevelOne.Name = "buttonLevelOne";
-            this.buttonLevelOne.Size = new System.Drawing.Size(105, 70);
+            this.buttonLevelOne.Size = new System.Drawing.Size(140, 66);
             this.buttonLevelOne.TabIndex = 0;
             this.buttonLevelOne.Text = "Level 1";
-            this.buttonLevelOne.UseVisualStyleBackColor = true;
+            this.buttonLevelOne.UseVisualStyleBackColor = false;
             this.buttonLevelOne.Click += new System.EventHandler(this.buttonLevelOne_Click);
+            this.buttonLevelOne.MouseEnter += new System.EventHandler(this.buttonLevelOne_MouseEnter);
+            this.buttonLevelOne.MouseLeave += new System.EventHandler(this.buttonLevelOne_MouseLeave);
             // 
             // buttonQuit
             // 
