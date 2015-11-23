@@ -46,12 +46,6 @@ namespace ITI.S3.PI.Chick_End.GUI
 
             pictureBox1.DragDrop += new DragEventHandler(pictureBox1_DragDrop);
             pictureBox1.MouseDown += new MouseEventHandler(pictureBox1_MouseDown);
-<<<<<<< HEAD
-            viewMapControler1.DragEnter += new DragEventHandler( viewMapControler1_DragEnter );
-            panel1.DragEnter += new DragEventHandler( viewMapControler1_DragEnter );
-
-            pictureBox1.AllowDrop = false;
-=======
             pictureBox2.DragDrop += new DragEventHandler(pictureBox2_DragDrop);
             pictureBox2.MouseDown += new MouseEventHandler(pictureBox2_MouseDown);
             pictureBox3.DragDrop += new DragEventHandler(pictureBox3_DragDrop);
@@ -61,15 +55,14 @@ namespace ITI.S3.PI.Chick_End.GUI
             pictureBox5.DragDrop += new DragEventHandler(pictureBox5_DragDrop);
             pictureBox5.MouseDown += new MouseEventHandler(pictureBox5_MouseDown);
 
-            viewMapControler1.DragEnter += new DragEventHandler(viewMapControler1_DragEnter);
-            panel1.DragEnter += new DragEventHandler(viewMapControler1_DragEnter);
+            viewMapControler1.DragEnter += new DragEventHandler( viewMapControler1_DragEnter );
+            panel1.DragEnter += new DragEventHandler( viewMapControler1_DragEnter );
 
-            pictureBox1.AllowDrop = true;
+            pictureBox1.AllowDrop = false;
             pictureBox2.AllowDrop = true;
             pictureBox3.AllowDrop = true;
             pictureBox4.AllowDrop = true;
             pictureBox5.AllowDrop = true;
->>>>>>> 2557abd8b4c711b80b24dddedfc496211d1eb2de
             viewMapControler1.AllowDrop = true;
             panel1.AllowDrop = true;
         }
@@ -132,52 +125,9 @@ namespace ITI.S3.PI.Chick_End.GUI
             buttonMenu.Refresh();
         }
 
-<<<<<<< HEAD
-        private void pictureBox1_DragDrop(object sender, DragEventArgs e)
-        {
-            PictureBox pb = ((PictureBox)sender);
             //pb.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
-        }
-
-        private void viewMapControler1_DragEnter( object sender, DragEventArgs e )
-=======
-        private void buttonTrash_MouseEnter(object sender, EventArgs e)
-        {
-            buttonTrash.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            buttonTrash.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            buttonTrash.Refresh();
-        }
-
-        private void buttonTrash_MouseLeave(object sender, EventArgs e)
-        {
-            buttonTrash.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            buttonTrash.Refresh();
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            int x = 100;
-            int y = 100;
-
-            for (int i = 0; i < FinalVariables._nbCaseHeight; i++)
-            {
-                for (int j = 0; j < FinalVariables._nbCaseWidth; j++)
-                {
-                    if(viewMapControler1.Context.Map.Square[i,j] != null)
-                    {
-                        string directory = Path.GetDirectoryName(Application.ExecutablePath);
-                        string HenLeft = Path.Combine(directory, @"HenLeft.png");
-
-                        Image ImageHenLeft = Image.FromFile(HenLeft);
-                        e.Graphics.DrawImage(ImageHenLeft, x, y, 50, 50);
-                    }
-                }
-            }
-        }
-       
         
-        private void viewMapControler1_DragEnter(object sender, DragEventArgs e)
->>>>>>> 2557abd8b4c711b80b24dddedfc496211d1eb2de
+        private void viewMapControler1_DragEnter( object sender, DragEventArgs e )
         {
             if (e.Data.GetDataPresent( DataFormats.Bitmap ))
             {
@@ -209,7 +159,11 @@ namespace ITI.S3.PI.Chick_End.GUI
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
+<<<<<<< HEAD
                 //MessageBox.Show("Non");
+=======
+                MessageBox.Show("Towers must be placed on the path");
+>>>>>>> ec96ca09290afcaf8dbc44312d45b941ed68528e
             }
             else
             {

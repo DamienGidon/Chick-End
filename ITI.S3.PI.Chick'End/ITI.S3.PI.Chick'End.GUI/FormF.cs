@@ -19,10 +19,15 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
+            panelLevel.Show(); 
+        }
+
+        private void buttonLevelOne_Click(object sender, EventArgs e)
+        {
             MenuPanel.Hide();
+            panelLevel.Hide();
             this.Controls.Add(new gamecontrol(MenuPanel));
-            buttonPlay.BackColor = System.Drawing.Color.Transparent;
-            
+            //buttonPlay.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void buttonQuit_Click(object sender, EventArgs e)
@@ -108,9 +113,9 @@ namespace ITI.S3.PI.Chick_End.GUI
             buttonQuit.Refresh();
         }
 
-        private void MenuPanel_Paint(object sender, PaintEventArgs e)
+        private void buttonReturn_Click(object sender, EventArgs e)
         {
-
+            panelLevel.Hide();
         }
     }
 }
