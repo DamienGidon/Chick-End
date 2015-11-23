@@ -152,8 +152,34 @@ namespace ITI.S3.PI.Chick_End.GUI
             buttonMenu.Refresh();
         }
 
-            //pb.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
-        
+        private void buttonSave_MouseEnter(object sender, EventArgs e)
+        {
+            buttonSave.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            buttonSave.Refresh();
+        }
+
+        private void buttonSave_MouseLeave(object sender, EventArgs e)
+        {
+            buttonSave.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonSave.Refresh();
+        }
+
+        private void buttonQuit_MouseEnter(object sender, EventArgs e)
+        {
+            buttonQuit.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonQuit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            buttonQuit.Refresh();
+        }
+
+        private void buttonQuit_MouseLeave(object sender, EventArgs e)
+        {
+            buttonQuit.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonQuit.Refresh();
+        }
+
+        //pb.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
+
         private void viewMapControler1_DragEnter( object sender, DragEventArgs e )
         {
             if (e.Data.GetDataPresent( DataFormats.Bitmap ))
@@ -451,5 +477,9 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
