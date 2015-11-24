@@ -59,6 +59,11 @@ namespace ITI.S3.PI.Chick_End.GUI
             g8.DrawImage(p8, 60, 60);
             pictureBox8.Image = p8;
 
+            Bitmap p9 = new Bitmap(@"Rooster.png");
+            Graphics g9 = Graphics.FromImage(p);
+            g8.DrawImage(p9, 60, 60);
+            pictureBox9.Image = p9;
+
             pictureBox1.DragDrop += new DragEventHandler(pictureBox1_DragDrop);
             pictureBox1.MouseDown += new MouseEventHandler(pictureBox1_MouseDown);
             pictureBox2.DragDrop += new DragEventHandler(pictureBox2_DragDrop);
@@ -75,6 +80,8 @@ namespace ITI.S3.PI.Chick_End.GUI
             pictureBox7.MouseDown += new MouseEventHandler(pictureBox7_MouseDown);
             pictureBox8.DragDrop += new DragEventHandler(pictureBox8_DragDrop);
             pictureBox8.MouseDown += new MouseEventHandler(pictureBox8_MouseDown);
+            pictureBox9.DragDrop += new DragEventHandler(pictureBox9_DragDrop);
+            pictureBox9.MouseDown += new MouseEventHandler(pictureBox9_MouseDown);
 
             viewMapControler1.DragEnter += new DragEventHandler( viewMapControler1_DragEnter );
             panel1.DragEnter += new DragEventHandler( viewMapControler1_DragEnter );
@@ -87,6 +94,8 @@ namespace ITI.S3.PI.Chick_End.GUI
             pictureBox6.AllowDrop = true;
             pictureBox7.AllowDrop = true;
             pictureBox8.AllowDrop = true;
+            pictureBox9.AllowDrop = true;
+
 
 
 
@@ -477,9 +486,45 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
+        private void pictureBox9_DragDrop(object sender, DragEventArgs e)
+        {
+            PictureBox pb9 = ((PictureBox)sender);
+            pb9.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
+        }
+
+        private void pictureBox9_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox pb9 = ((PictureBox)sender);
+            pb9.Select();
+            pb9.DoDragDrop(pb9.Image, DragDropEffects.Copy);
+
+            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
+            int topLeftCornerX = ((relativePoint.X / 50) * 50);
+            int topLeftCornerY = ((relativePoint.Y / 50) * 50);
+            int line = topLeftCornerY / 50;
+            int column = topLeftCornerX / 50;
+
+            if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
+            {
+
+            }
+            else
+            {
+
+                Bitmap p9 = new Bitmap(@"Rooster.png");
+                Graphics g9 = Graphics.FromImage(p9);
+
+                Rectangle r9 = new Rectangle(topLeftCornerX, topLeftCornerY - 5, 50, 55);
+                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
+                e1.Graphics.DrawImage(p9, r9);
+                viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
+            }
+        }
+
         private void buttonSave_Click(object sender, EventArgs e)
         {
 
         }
+
     }
 }

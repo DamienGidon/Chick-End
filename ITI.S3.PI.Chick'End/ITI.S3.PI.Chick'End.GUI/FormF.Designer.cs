@@ -230,6 +230,7 @@
             this.buttonBestiary.UseVisualStyleBackColor = false;
             this.buttonBestiary.MouseEnter += new System.EventHandler(this.buttonBestiary_MouseEnter);
             this.buttonBestiary.MouseLeave += new System.EventHandler(this.buttonBestiary_MouseLeave);
+
             // 
             // buttonContinue
             // 
