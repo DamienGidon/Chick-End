@@ -449,7 +449,40 @@ namespace ITI.S3.PI.Chick_End.GUI
                 e1.Graphics.DrawImage(p8, r8);
                 viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
             }
+
+            // création des loups 
+
+        
         }
 
+        private void viewMapControler1_Click(object sender, EventArgs e)
+        {
+
+            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
+            int topLeftCornerX = ((relativePoint.X / 50) * 50);
+            int topLeftCornerY = ((relativePoint.Y / 50) * 50);
+            int line = topLeftCornerY / 50;
+            int column = topLeftCornerX / 50;
+
+            Bitmap p9 = new Bitmap(@"Wolf.png");
+            Graphics g9 = Graphics.FromImage(p9);
+
+            Random r = new Random();
+            int r2 = r.Next(1,3);
+            if (r2 == 1)
+            {
+                Rectangle r9 = new Rectangle(650, 150 - 20, 50, 70);
+                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
+                e1.Graphics.DrawImage(p9, r9);
+                viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
+            }
+            else
+            {
+                Rectangle r9 = new Rectangle(650, 250 - 20, 50, 70);
+                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
+                e1.Graphics.DrawImage(p9, r9);
+                viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
+            }
+        }
     }
 }

@@ -43,6 +43,10 @@
             this.labelSeed = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -53,14 +57,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelUnit = new System.Windows.Forms.Label();
             this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelSeed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -69,8 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonMenu
@@ -261,6 +261,46 @@
             this.panel1.Size = new System.Drawing.Size(185, 728);
             this.panel1.TabIndex = 4;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Location = new System.Drawing.Point(0, 272);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(185, 40);
+            this.panel4.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Playbill", 20F);
+            this.label4.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label4.Location = new System.Drawing.Point(45, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 27);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Farmer Units";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Location = new System.Drawing.Point(0, 53);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(185, 40);
+            this.panel3.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Playbill", 20F);
+            this.label3.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label3.Location = new System.Drawing.Point(51, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 27);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Hen Units";
+            // 
             // pictureBox8
             // 
             this.pictureBox8.Location = new System.Drawing.Point(100, 409);
@@ -347,46 +387,7 @@
             this.viewMapControler1.Size = new System.Drawing.Size(700, 450);
             this.viewMapControler1.TabIndex = 4;
             this.viewMapControler1.Text = "viewMapControler1";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DarkOrange;
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(0, 53);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(185, 40);
-            this.panel3.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Playbill", 20F);
-            this.label3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label3.Location = new System.Drawing.Point(51, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 27);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Hen Units";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.DarkOrange;
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(0, 272);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(185, 40);
-            this.panel4.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Playbill", 20F);
-            this.label4.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label4.Location = new System.Drawing.Point(45, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 27);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Farmer Units";
+            this.viewMapControler1.Click += new System.EventHandler(this.viewMapControler1_Click);
             // 
             // gamecontrol
             // 
@@ -405,6 +406,10 @@
             this.panelSeed.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -414,10 +419,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
