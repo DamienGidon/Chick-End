@@ -119,6 +119,11 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             panelMenu.Hide();
         }
+        private void buttonBestiary_Click(object sender, EventArgs e)
+        {
+            Bestiary b = new Bestiary();
+            b.ShowDialog();
+        }
 
         // Code d'affichage des boutons
 

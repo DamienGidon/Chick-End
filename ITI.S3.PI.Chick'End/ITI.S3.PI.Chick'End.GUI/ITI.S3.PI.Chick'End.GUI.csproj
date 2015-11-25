@@ -52,6 +52,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bestiary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bestiary.designer.cs">
+      <DependentUpon>Bestiary.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlExtension.cs" />
     <Compile Include="FormF.cs">
       <SubType>Form</SubType>
@@ -76,6 +82,9 @@
     <Compile Include="ViewMapControler.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Bestiary.resx">
+      <DependentUpon>Bestiary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormF.resx">
       <DependentUpon>FormF.cs</DependentUpon>
     </EmbeddedResource>

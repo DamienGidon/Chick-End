@@ -230,6 +230,7 @@
             this.buttonBestiary.TabIndex = 2;
             this.buttonBestiary.Text = "Bestiary";
             this.buttonBestiary.UseVisualStyleBackColor = false;
+            this.buttonBestiary.Click += new System.EventHandler(this.buttonBestiary_Click);
             this.buttonBestiary.MouseEnter += new System.EventHandler(this.buttonBestiary_MouseEnter);
             this.buttonBestiary.MouseLeave += new System.EventHandler(this.buttonBestiary_MouseLeave);
             // 

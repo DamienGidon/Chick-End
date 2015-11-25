@@ -21,7 +21,11 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             panelLevel.Show(); 
         }
-
+        private void buttonBestiary_Click(object sender, EventArgs e)
+        {
+            Bestiary b = new Bestiary();
+            b.ShowDialog();
+        }
         private void buttonLevelOne_Click(object sender, EventArgs e)
         {
             MenuPanel.Hide();
