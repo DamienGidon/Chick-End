@@ -8,9 +8,9 @@ namespace ITI.S3.PI.Chick_End
 {
     public class Map
     {
+        readonly List<Way> _ways;
         readonly Square[,] _squares;
-        //readonly Dictionary<string, Tower> _towers;
-        //readonly Dictionary<string, Ennemi> _ennemis;
+        readonly List<Ennemi> _ennemis;
 
         List<Unit> AllUnits
         {
@@ -24,29 +24,13 @@ namespace ITI.S3.PI.Chick_End
             }
         }
 
-        public void CreateHen(int ligne, int colonne, Map context)
-        {
-            Square[ligne, colonne].Tower = new Hen();
-        }
-        public void CreateInfantryFarmer(int ligne, int colonne, Map context)
-        {
-            Square[ligne, colonne].Tower = new InfantryFarmer();
-        }
-        public void CreateBomberHen(int ligne, int colonne, Map context)
-        {
-            Square[ligne, colonne].Tower = new BomberHen();
-        }
-        public void CreateGunnerFarmer(int ligne, int colonne, Map context)
-        {
-            Square[ligne, colonne].Tower = new BomberHen();
-        }
-
         /*
          * Constructor
          */
         public Map()
         {
             _squares = new Square[ FinalVariables._nbCaseHeight, FinalVariables._nbCaseWidth];
+            _ways = new List<Way>();
 
             // Setting the hen house
             for( int i = 3; i < 6; i++)
@@ -81,8 +65,34 @@ namespace ITI.S3.PI.Chick_End
                     }
                 }
             }
+
+            /*
+            * chaining of the squares
+            */ 
+            for( int i = 13; i > 0; i--)
+            {
+                _squares[3, i].NextSquare = _squares[3, i - 1];
+            }
+            for (int i = 13; i > 0; i--)
+            {
+                _squares[5, i].NextSquare = _squares[3, i - 1];
+            }
+
+            /*
+            * Creation od the different ways
+            */
+            Way w1 = new Way( _squares[3, 13] );
+            Way w2 = new Way( _squares[5, 13] );
+
+            _ways.Add( w1 );
+            _ways.Add( w2 );
         }
 
+
+        internal List<Way> Ways
+        {
+            get { return _ways; }
+        }
         public Square[,] Square
         {
             get { return _squares; }
@@ -91,6 +101,28 @@ namespace ITI.S3.PI.Chick_End
         public Square this[int ligne, int colonne]
         {
             get { return _squares[ligne, colonne]; }
+        }
+
+        public void CreateHen( int ligne, int colonne, Map context )
+        {
+            Square[ligne, colonne].Tower = new Hen();
+        }
+        public void CreateInfantryFarmer( int ligne, int colonne, Map context )
+        {
+            Square[ligne, colonne].Tower = new InfantryFarmer();
+        }
+        public void CreateBomberHen( int ligne, int colonne, Map context )
+        {
+            Square[ligne, colonne].Tower = new BomberHen();
+        }
+        public void CreateGunnerFarmer( int ligne, int colonne, Map context )
+        {
+            Square[ligne, colonne].Tower = new BomberHen();
+        }
+
+        public void Update()
+        {
+            throw new NotImplementedException();
         }
     }
 }
