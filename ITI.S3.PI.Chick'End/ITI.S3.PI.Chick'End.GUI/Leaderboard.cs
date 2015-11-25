@@ -38,7 +38,7 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void showScore()
         {
-            string[,] table = { { "azsher", "02'57","1" }, { "legannon", "67'30","2" }, { "Monart", "10'25", "3" } };
+            string[,] table = { { "Azsher", "02'57","1" }, { "Legannon", "67'30","2" }, { "Monart", "10'25", "3" }, { "Wetcher", "12'25", "2" }, { "Suaremente", "10'25", "1" } };
 
             labelPseudoOne.Text = "";
             labelScoreOne.Text = "";
