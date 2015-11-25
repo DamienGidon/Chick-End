@@ -140,6 +140,7 @@
             this.buttonLevelTwo.TabIndex = 1;
             this.buttonLevelTwo.Text = "Level 2";
             this.buttonLevelTwo.UseVisualStyleBackColor = true;
+            this.buttonLevelTwo.Click += new System.EventHandler(this.buttonLevelTwo_Click);
             // 
             // buttonLevelOne
             // 
@@ -210,6 +211,7 @@
             this.buttonLeaderboard.TabIndex = 3;
             this.buttonLeaderboard.Text = "Leaderboard";
             this.buttonLeaderboard.UseVisualStyleBackColor = false;
+            this.buttonLeaderboard.Click += new System.EventHandler(this.buttonLeaderboard_Click);
             this.buttonLeaderboard.MouseEnter += new System.EventHandler(this.buttonLeaderboard_MouseEnter);
             this.buttonLeaderboard.MouseLeave += new System.EventHandler(this.buttonLeaderboard_MouseLeave);
             // 
@@ -230,7 +232,6 @@
             this.buttonBestiary.UseVisualStyleBackColor = false;
             this.buttonBestiary.MouseEnter += new System.EventHandler(this.buttonBestiary_MouseEnter);
             this.buttonBestiary.MouseLeave += new System.EventHandler(this.buttonBestiary_MouseLeave);
-
             // 
             // buttonContinue
             // 
@@ -275,6 +276,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.MenuPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1024, 768);
             this.MinimumSize = new System.Drawing.Size(1024, 726);
             this.Name = "FormF";
