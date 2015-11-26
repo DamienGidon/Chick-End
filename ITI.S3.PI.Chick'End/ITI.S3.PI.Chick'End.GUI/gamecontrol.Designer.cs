@@ -56,6 +56,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelUnit = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
             this.panelMenu.SuspendLayout();
             this.panelSeed.SuspendLayout();
@@ -72,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonMenu
@@ -159,6 +161,7 @@
             this.buttonBestiary.TabIndex = 1;
             this.buttonBestiary.Text = "Bestiary";
             this.buttonBestiary.UseVisualStyleBackColor = true;
+            this.buttonBestiary.Click += new System.EventHandler(this.buttonBestiary_Click);
             this.buttonBestiary.MouseEnter += new System.EventHandler(this.buttonBestiary_MouseEnter);
             this.buttonBestiary.MouseLeave += new System.EventHandler(this.buttonBestiary_MouseLeave);
             // 
@@ -248,7 +251,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(100, 327);
+            this.pictureBox2.Location = new System.Drawing.Point(100, 403);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(66, 66);
             this.pictureBox2.TabIndex = 2;
@@ -258,6 +261,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Orange;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.pictureBox9);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.pictureBox8);
@@ -278,7 +282,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkOrange;
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(0, 272);
+            this.panel4.Location = new System.Drawing.Point(3, 339);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(185, 40);
             this.panel4.TabIndex = 9;
@@ -316,7 +320,7 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Location = new System.Drawing.Point(100, 409);
+            this.pictureBox8.Location = new System.Drawing.Point(100, 486);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(66, 66);
             this.pictureBox8.TabIndex = 8;
@@ -332,7 +336,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(18, 420);
+            this.pictureBox6.Location = new System.Drawing.Point(22, 498);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(66, 67);
             this.pictureBox6.TabIndex = 5;
@@ -348,7 +352,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(18, 327);
+            this.pictureBox4.Location = new System.Drawing.Point(22, 402);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(66, 67);
             this.pictureBox4.TabIndex = 3;
@@ -391,6 +395,14 @@
             this.labelUnit.TabIndex = 5;
             this.labelUnit.Text = "Units";
             // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Location = new System.Drawing.Point(56, 266);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(66, 67);
+            this.pictureBox9.TabIndex = 10;
+            this.pictureBox9.TabStop = false;
+            // 
             // viewMapControler1
             // 
             this.viewMapControler1.BackColor = System.Drawing.Color.Cyan;
@@ -400,7 +412,7 @@
             this.viewMapControler1.Size = new System.Drawing.Size(700, 450);
             this.viewMapControler1.TabIndex = 4;
             this.viewMapControler1.Text = "viewMapControler1";
-            // 
+            this.viewMapControler1.Click += new System.EventHandler(this.viewMapControler1_Click);
             // gamecontrol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,6 +444,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -465,5 +478,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox9;
     }
 }
