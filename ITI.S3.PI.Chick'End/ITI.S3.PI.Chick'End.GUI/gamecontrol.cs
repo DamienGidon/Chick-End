@@ -14,6 +14,7 @@ namespace ITI.S3.PI.Chick_End.GUI
     public partial class gamecontrol : UserControl
     {
         Panel _panel;
+
         public gamecontrol(Panel panel)
         {
             InitializeComponent();
@@ -80,6 +81,8 @@ namespace ITI.S3.PI.Chick_End.GUI
             pictureBox7.MouseDown += new MouseEventHandler(pictureBox7_MouseDown);
             pictureBox8.DragDrop += new DragEventHandler(pictureBox8_DragDrop);
             pictureBox8.MouseDown += new MouseEventHandler(pictureBox8_MouseDown);
+            viewMapControler1.DragDrop += new DragEventHandler(viewMapControler1_DragDrop);
+            viewMapControler1.MouseDown += new MouseEventHandler(viewMapControler1_MouseDown);
             pictureBox9.DragDrop += new DragEventHandler(pictureBox9_DragDrop);
             pictureBox9.MouseDown += new MouseEventHandler(pictureBox9_MouseDown);
 
@@ -490,7 +493,22 @@ namespace ITI.S3.PI.Chick_End.GUI
                 viewMapControler1.Context.Map.CreateBucher(line, column, viewMapControler1.Context.Map);
             }
         }
+        private void viewMapControler1_DragDrop(object sender, DragEventArgs e)
+        {
+            ViewMapControler v = ((ViewMapControler)sender);
+            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
+        }
+        private void viewMapControler1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ViewMapControler v = ((ViewMapControler)sender);
+            v.Select();
+            v.DoDragDrop(v, DragDropEffects.Copy);
+            MessageBox.Show("E.X est égal à : " + e.X);
+            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
+            int line = e.X / 50;
+            int column = e.Y / 50;
 
+            if (viewMapControler1.Context.Map.Square[line, column].Tower != null)
         private void pictureBox9_DragDrop(object sender, DragEventArgs e)
         {
             PictureBox pb9 = ((PictureBox)sender);
@@ -526,9 +544,13 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
+            {
+                viewMapControler1.Context.Map.Square[line, column].Tower = null;
+                Rectangle r = new Rectangle(line, column, 50, 70);
+                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r);
+                e1.Graphics.Clear(Color.Teal);
 
+            }
         }
 
         private void viewMapControler1_Click(object sender, EventArgs e)
