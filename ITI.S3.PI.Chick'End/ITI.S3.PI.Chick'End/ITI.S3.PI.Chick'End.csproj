@@ -59,7 +59,6 @@
     <Compile Include="IDie.cs" />
     <Compile Include="Ennemi.cs" />
     <Compile Include="Hen.cs" />
-    <Compile Include="IAttack.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="IMove.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
