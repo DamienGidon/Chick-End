@@ -11,6 +11,7 @@ namespace ITI.S3.PI.Chick_End
         readonly List<Way> _ways;
         readonly Square[,] _squares;
         readonly List<Ennemi> _ennemis;
+        readonly List<Tower> _towers;
 
         List<Unit> AllUnits
         {
@@ -24,6 +25,16 @@ namespace ITI.S3.PI.Chick_End
             }
         }
 
+        public List<Tower> Towers
+        {
+            get { return _towers; }
+        }
+
+        public List<Ennemi> Ennemis
+        {
+            get { return _ennemis; }
+        }
+
         /*
          * Constructor
          */
@@ -31,9 +42,11 @@ namespace ITI.S3.PI.Chick_End
         {
             _squares = new Square[ FinalVariables._nbCaseHeight, FinalVariables._nbCaseWidth];
             _ways = new List<Way>();
+            _towers  = new List<Tower>();
+            _ennemis = new List<Ennemi>();
 
             // Setting the hen house
-            for( int i = 3; i < 6; i++)
+            for ( int i = 3; i < 6; i++)
             {
                 int j = 0;
                 _squares[i, j] = new Square(this, i, j, "HomeHen" );

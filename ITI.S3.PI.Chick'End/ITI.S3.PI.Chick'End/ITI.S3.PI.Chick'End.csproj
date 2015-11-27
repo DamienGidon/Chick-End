@@ -47,6 +47,7 @@
     <Compile Include="Fox.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Hyena.cs" />
+    <Compile Include="IAssailant.cs" />
     <Compile Include="Lion.cs" />
     <Compile Include="Rooster.cs" />
     <Compile Include="InfantryFarmer.cs" />
