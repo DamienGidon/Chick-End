@@ -17,7 +17,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             InitializeComponent();
             richTextBox1.SelectionAlignment = HorizontalAlignment.Center;
             richTextBox2.SelectionAlignment = HorizontalAlignment.Center;
-            richTextBox3.SelectionAlignment = HorizontalAlignment.Center;
+            //richTextBox3.SelectionAlignment = HorizontalAlignment.Center;
         }
 
         private void buttonReturn_Click(object sender, EventArgs e)

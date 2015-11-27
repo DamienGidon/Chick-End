@@ -86,12 +86,13 @@
             this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.richTextBox3.Font = new System.Drawing.Font("Rockwell", 15.25F);
-            this.richTextBox3.Location = new System.Drawing.Point(94, 301);
+            this.richTextBox3.Location = new System.Drawing.Point(94, 298);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.Size = new System.Drawing.Size(678, 68);
             this.richTextBox3.TabIndex = 3;
-            this.richTextBox3.Text = "If it turns out that you are incompetent, you will lose the game.\nYour score will" +
-    " be recorded in the leaderboard... but only if you\'re good enough.";
+            this.richTextBox3.Text = "\tIf it turns out that you are incompetent, you will lose the game.\nYour score wil" +
+    "l be recorded in the leaderboard... but only if you\'re good \n\t\t\t\t\t       enough." +
+    "";
             // 
             // buttonReturn
             // 
@@ -115,7 +116,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(58, 114);
+            this.pictureBox1.Location = new System.Drawing.Point(45, 105);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.TabIndex = 5;
@@ -125,7 +126,7 @@
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(58, 214);
+            this.pictureBox2.Location = new System.Drawing.Point(45, 204);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 30);
             this.pictureBox2.TabIndex = 6;
@@ -135,7 +136,7 @@
             // 
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(58, 318);
+            this.pictureBox3.Location = new System.Drawing.Point(45, 298);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 30);
             this.pictureBox3.TabIndex = 7;
