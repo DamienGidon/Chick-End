@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    interface IAttack
+    class Way
     {
-        void Attack(Ennemi ennemi);
+        Square _firstSquare;
+
+        public Way( Square firstSquare )
+        {
+            _firstSquare = firstSquare;
+        }
     }
 }

@@ -9,8 +9,9 @@ namespace ITI.S3.PI.Chick_End
 {
     public class Game
     {
-        Map _context;
-        Stopwatch _stopwatch;
+        readonly Map _context;
+        readonly Stopwatch _stopwatch;
+        bool _isPaused;
 
         public Game()
         {
@@ -26,6 +27,31 @@ namespace ITI.S3.PI.Chick_End
         public Stopwatch Stopwatch
         {
             get { return _stopwatch; }
+        }
+
+        public bool IsPosed
+        {
+            get { return _isPaused; }
+            set { _isPaused = value; }
+        }
+
+        public void GameLoop()
+        {
+            while (!_isPaused)
+            {
+                foreach (Tower t in _context.Towers)
+                {
+
+                }
+                foreach (Ennemi e in _context.Ennemis)
+                {
+                    e.Move();
+                    //e.Attack();
+                }
+
+                int start = (int)_stopwatch.ElapsedMilliseconds;
+                //System.Threading.Thread.Sleep( start + FinalVariables.MS_PER_FRAME - (int)_stopwatch.ElapsedMilliseconds );
+            }
         }
     }
 }

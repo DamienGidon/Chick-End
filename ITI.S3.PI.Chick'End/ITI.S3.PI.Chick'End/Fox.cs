@@ -4,17 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITI.S3.PI.Chick_End.Units
+namespace ITI.S3.PI.Chick_End
 {
-    public class BomberHen : Tower
+    class Fox : Ennemi
     {
-        public BomberHen()
-            : base(10, 15)
+        public override void Attack( Unit opponent )
         {
-
+            throw new NotImplementedException();
         }
 
-        public override void Attack( Unit ennemi )
+        public override void Move()
         {
             throw new NotImplementedException();
         }
