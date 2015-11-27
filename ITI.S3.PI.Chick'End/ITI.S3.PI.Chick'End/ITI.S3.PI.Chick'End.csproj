@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Anubis.cs" />
+    <Compile Include="Bucher.cs" />
     <Compile Include="BomberHen.cs" />
     <Compile Include="Cerberus.cs" />
     <Compile Include="FinalVariables.cs" />
@@ -48,6 +49,8 @@
     <Compile Include="Game.cs" />
     <Compile Include="Hyena.cs" />
     <Compile Include="IAssailant.cs" />
+    <Compile Include="Baker.cs" />
+    <Compile Include="ExplosiveEgg.cs" />
     <Compile Include="Lion.cs" />
     <Compile Include="Rooster.cs" />
     <Compile Include="InfantryFarmer.cs" />

@@ -14,6 +14,7 @@ namespace ITI.S3.PI.Chick_End.GUI
     public partial class gamecontrol : UserControl
     {
         Panel _panel;
+
         public gamecontrol(Panel panel)
         {
             InitializeComponent();
@@ -80,6 +81,8 @@ namespace ITI.S3.PI.Chick_End.GUI
             pictureBox7.MouseDown += new MouseEventHandler(pictureBox7_MouseDown);
             pictureBox8.DragDrop += new DragEventHandler(pictureBox8_DragDrop);
             pictureBox8.MouseDown += new MouseEventHandler(pictureBox8_MouseDown);
+            viewMapControler1.DragDrop += new DragEventHandler(viewMapControler1_DragDrop);
+            viewMapControler1.MouseDown += new MouseEventHandler(viewMapControler1_MouseDown);
             pictureBox9.DragDrop += new DragEventHandler(pictureBox9_DragDrop);
             pictureBox9.MouseDown += new MouseEventHandler(pictureBox9_MouseDown);
 
@@ -118,6 +121,11 @@ namespace ITI.S3.PI.Chick_End.GUI
         private void buttonResume_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
+        }
+        private void buttonBestiary_Click(object sender, EventArgs e)
+        {
+            Bestiary b = new Bestiary();
+            b.ShowDialog();
         }
 
         // Code d'affichage des boutons
@@ -484,16 +492,23 @@ namespace ITI.S3.PI.Chick_End.GUI
                 e1.Graphics.DrawImage(p8, r8);
                 viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
             }
-
-            // création des loups 
-
-        
         }
-
-<<<<<<< HEAD
-        private void viewMapControler1_Click(object sender, EventArgs e)
+        private void viewMapControler1_DragDrop(object sender, DragEventArgs e)
         {
-=======
+            ViewMapControler v = ((ViewMapControler)sender);
+            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
+        }
+        private void viewMapControler1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ViewMapControler v = ((ViewMapControler)sender);
+            v.Select();
+            v.DoDragDrop(v, DragDropEffects.Copy);
+            MessageBox.Show("E.X est égal à : " + e.X);
+            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
+            int line = e.X / 50;
+            int column = e.Y / 50;
+
+            if (viewMapControler1.Context.Map.Square[line, column].Tower != null)
         private void pictureBox9_DragDrop(object sender, DragEventArgs e)
         {
             PictureBox pb9 = ((PictureBox)sender);
@@ -505,7 +520,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             PictureBox pb9 = ((PictureBox)sender);
             pb9.Select();
             pb9.DoDragDrop(pb9.Image, DragDropEffects.Copy);
->>>>>>> 42bac8706102ea96da6e6e8ee9e5c23b7ffb3a83
 
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
             int topLeftCornerX = ((relativePoint.X / 50) * 50);
@@ -513,7 +527,41 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / 50;
             int column = topLeftCornerX / 50;
 
-<<<<<<< HEAD
+            if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
+            {
+
+            }
+            else
+            {
+
+                Bitmap p9 = new Bitmap(@"Rooster.png");
+                Graphics g9 = Graphics.FromImage(p9);
+
+                Rectangle r9 = new Rectangle(topLeftCornerX, topLeftCornerY - 5, 50, 55);
+                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
+                e1.Graphics.DrawImage(p9, r9);
+                viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
+            }
+        }
+
+            {
+                viewMapControler1.Context.Map.Square[line, column].Tower = null;
+                Rectangle r = new Rectangle(line, column, 50, 70);
+                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r);
+                e1.Graphics.Clear(Color.Teal);
+
+            }
+        }
+
+        private void viewMapControler1_Click(object sender, EventArgs e)
+        {
+
+            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
+            int topLeftCornerX = ((relativePoint.X / 50) * 50);
+            int topLeftCornerY = ((relativePoint.Y / 50) * 50);
+            int line = topLeftCornerY / 50;
+            int column = topLeftCornerX / 50;
+
             Bitmap p9 = new Bitmap(@"Wolf.png");
             Graphics g9 = Graphics.FromImage(p9);
 
@@ -529,32 +577,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             else
             {
                 Rectangle r9 = new Rectangle(650, 250 - 20, 50, 70);
-=======
-            if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
-            {
-
-            }
-            else
-            {
-
-                Bitmap p9 = new Bitmap(@"Rooster.png");
-                Graphics g9 = Graphics.FromImage(p9);
-
-                Rectangle r9 = new Rectangle(topLeftCornerX, topLeftCornerY - 5, 50, 55);
->>>>>>> 42bac8706102ea96da6e6e8ee9e5c23b7ffb3a83
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
                 e1.Graphics.DrawImage(p9, r9);
                 viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
             }
         }
-<<<<<<< HEAD
-=======
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-
-        }
-
->>>>>>> 42bac8706102ea96da6e6e8ee9e5c23b7ffb3a83
     }
 }

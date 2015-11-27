@@ -142,7 +142,7 @@
             this.buttonSave.TabIndex = 4;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            //this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             this.buttonSave.MouseEnter += new System.EventHandler(this.buttonSave_MouseEnter);
             this.buttonSave.MouseLeave += new System.EventHandler(this.buttonSave_MouseLeave);
             // 

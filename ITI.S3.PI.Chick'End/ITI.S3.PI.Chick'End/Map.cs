@@ -28,11 +28,53 @@ namespace ITI.S3.PI.Chick_End
         public List<Tower> Towers
         {
             get { return _towers; }
+            Tower t = new Hen();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
+
+            Tower t = new InfantryFarmer();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
+            Tower t = new BomberHen();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
         }
 
         public List<Ennemi> Ennemis
         {
-            get { return _ennemis; }
+            Tower t = new GunnerFarmer();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
+        }
+        public void CreateOldHen(int ligne, int colonne, Map context)
+        {
+            Tower t = new OldHen();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
+        }
+        public void CreateRooster(int ligne, int colonne, Map context)
+        {
+            Tower t = new Rooster();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
+        }
+        public void CreateBaker(int ligne, int colonne, Map context)
+        {
+            Tower t = new Baker();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
+        }
+        public void CreateExplosiveEgg(int ligne, int colonne, Map context)
+        {
+            Tower t = new ExplosiveEgg();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
+        }
+        public void CreateBucher(int ligne, int colonne, Map context)
+        {
+            Tower t = new Bucher();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
         }
 
         /*
