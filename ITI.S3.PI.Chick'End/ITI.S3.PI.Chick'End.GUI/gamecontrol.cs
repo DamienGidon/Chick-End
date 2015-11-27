@@ -381,7 +381,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Rectangle r5 = new Rectangle(topLeftCornerX, topLeftCornerY - 0, 50, 50);
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r5);
                 e1.Graphics.DrawImage(p5, r5);
-                viewMapControler1.Context.Map.CreateGunnerFarmer(line, column, viewMapControler1.Context.Map);
+                viewMapControler1.Context.Map.CreateOldHen(line, column, viewMapControler1.Context.Map);
 
             }
         }
@@ -417,7 +417,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Rectangle r6 = new Rectangle(topLeftCornerX, topLeftCornerY - 20, 50, 70);
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r6);
                 e1.Graphics.DrawImage(p6, r6);
-                viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
+                viewMapControler1.Context.Map.CreateBaker(line, column, viewMapControler1.Context.Map);
             }
         }
 
@@ -452,7 +452,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Rectangle r7 = new Rectangle(topLeftCornerX + 8, topLeftCornerY + 5, 30, 40);
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r7);
                 e1.Graphics.DrawImage(p7, r7);
-                viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
+                viewMapControler1.Context.Map.CreateExplosiveEgg(line, column, viewMapControler1.Context.Map);
             }
         }
 
@@ -487,7 +487,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Rectangle r8 = new Rectangle(topLeftCornerX, topLeftCornerY - 20, 50, 70);
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r8);
                 e1.Graphics.DrawImage(p8, r8);
-                viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
+                viewMapControler1.Context.Map.CreateBucher(line, column, viewMapControler1.Context.Map);
             }
         }
 
@@ -522,7 +522,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Rectangle r9 = new Rectangle(topLeftCornerX, topLeftCornerY - 5, 50, 55);
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
                 e1.Graphics.DrawImage(p9, r9);
-                viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
+                viewMapControler1.Context.Map.CreateRooster(line, column, viewMapControler1.Context.Map);
             }
         }
 
