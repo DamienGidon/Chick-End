@@ -8,7 +8,14 @@ namespace ITI.S3.PI.Chick_End
 {
     public class Wolf : Ennemi
     {
-        public override void Attack( Ennemi opposant )
+        public Wolf()
+            : base()
+        {
+            Health = 50;
+            Speed = 50;
+        }
+
+        public override void Attack( Unit opposant )
         {
             throw new NotImplementedException();
         }

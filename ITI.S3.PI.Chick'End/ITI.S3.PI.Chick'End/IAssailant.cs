@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    interface IAttack
+    interface IAssailant
     {
-        void Attack(Ennemi ennemi);
+        void Attack(Unit ennemi);
     }
 }
