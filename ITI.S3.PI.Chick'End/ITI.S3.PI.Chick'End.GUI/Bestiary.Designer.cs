@@ -30,8 +30,6 @@
         {
             System.Windows.Forms.Panel panelBestiary;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bestiary));
-            this.buttonReturn = new System.Windows.Forms.Button();
-            this.Title = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.richTextBox9 = new System.Windows.Forms.RichTextBox();
@@ -53,6 +51,22 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonReturn = new System.Windows.Forms.Button();
+            this.Title = new System.Windows.Forms.Label();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.richTextBox10 = new System.Windows.Forms.RichTextBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.richTextBox11 = new System.Windows.Forms.RichTextBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.richTextBox12 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox13 = new System.Windows.Forms.RichTextBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.richTextBox14 = new System.Windows.Forms.RichTextBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.richTextBox15 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox16 = new System.Windows.Forms.RichTextBox();
             panelBestiary = new System.Windows.Forms.Panel();
             panelBestiary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -64,44 +78,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonReturn
-            // 
-            this.buttonReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonReturn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonReturn.BackColor = System.Drawing.Color.Transparent;
-            this.buttonReturn.FlatAppearance.BorderSize = 0;
-            this.buttonReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReturn.Font = new System.Drawing.Font("Playbill", 30F);
-            this.buttonReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonReturn.Location = new System.Drawing.Point(632, 529);
-            this.buttonReturn.Name = "buttonReturn";
-            this.buttonReturn.Padding = new System.Windows.Forms.Padding(3);
-            this.buttonReturn.Size = new System.Drawing.Size(140, 70);
-            this.buttonReturn.TabIndex = 5;
-            this.buttonReturn.Text = "Return";
-            this.buttonReturn.UseVisualStyleBackColor = false;
-            this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
-            this.buttonReturn.MouseEnter += new System.EventHandler(this.buttonReturn_MouseEnter);
-            this.buttonReturn.MouseLeave += new System.EventHandler(this.buttonReturn_MouseLeave);
-            // 
-            // Title
-            // 
-            this.Title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Title.AutoSize = true;
-            this.Title.BackColor = System.Drawing.Color.Transparent;
-            this.Title.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Title.Font = new System.Drawing.Font("Playbill", 50.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.Title.Location = new System.Drawing.Point(310, 9);
-            this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(152, 67);
-            this.Title.TabIndex = 6;
-            this.Title.Text = "Bestiary";
-            this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panelBestiary
             // 
@@ -109,8 +93,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             panelBestiary.AutoScroll = true;
-            panelBestiary.AutoScrollMargin = new System.Drawing.Size(0, 400);
+            panelBestiary.AutoScrollMargin = new System.Drawing.Size(0, 10);
             panelBestiary.BackColor = System.Drawing.Color.Transparent;
+            panelBestiary.Controls.Add(this.pictureBox14);
+            panelBestiary.Controls.Add(this.pictureBox15);
+            panelBestiary.Controls.Add(this.pictureBox16);
+            panelBestiary.Controls.Add(this.pictureBox13);
+            panelBestiary.Controls.Add(this.richTextBox16);
+            panelBestiary.Controls.Add(this.richTextBox15);
+            panelBestiary.Controls.Add(this.richTextBox14);
+            panelBestiary.Controls.Add(this.pictureBox12);
+            panelBestiary.Controls.Add(this.richTextBox13);
+            panelBestiary.Controls.Add(this.richTextBox12);
+            panelBestiary.Controls.Add(this.pictureBox11);
+            panelBestiary.Controls.Add(this.richTextBox11);
+            panelBestiary.Controls.Add(this.pictureBox10);
+            panelBestiary.Controls.Add(this.richTextBox10);
             panelBestiary.Controls.Add(this.label3);
             panelBestiary.Controls.Add(this.pictureBox7);
             panelBestiary.Controls.Add(this.richTextBox9);
@@ -142,7 +140,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Playbill", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(30, 1183);
+            this.label3.Location = new System.Drawing.Point(30, 1198);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 33);
             this.label3.TabIndex = 21;
@@ -155,7 +153,7 @@
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox7.Location = new System.Drawing.Point(36, 1034);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(96, 132);
+            this.pictureBox7.Size = new System.Drawing.Size(96, 117);
             this.pictureBox7.TabIndex = 7;
             this.pictureBox7.TabStop = false;
             // 
@@ -166,7 +164,7 @@
             this.richTextBox9.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox9.Location = new System.Drawing.Point(129, 1034);
             this.richTextBox9.Name = "richTextBox9";
-            this.richTextBox9.Size = new System.Drawing.Size(583, 132);
+            this.richTextBox9.Size = new System.Drawing.Size(583, 117);
             this.richTextBox9.TabIndex = 20;
             this.richTextBox9.Text = "\tName : Gunner Farmer\n\n\tDescription : Producing seeds to upgrade Hen Units\n\n\t\t\t  " +
     "   ";
@@ -379,6 +377,199 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // buttonReturn
+            // 
+            this.buttonReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonReturn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonReturn.BackColor = System.Drawing.Color.Transparent;
+            this.buttonReturn.FlatAppearance.BorderSize = 0;
+            this.buttonReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReturn.Font = new System.Drawing.Font("Playbill", 30F);
+            this.buttonReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.buttonReturn.Location = new System.Drawing.Point(632, 529);
+            this.buttonReturn.Name = "buttonReturn";
+            this.buttonReturn.Padding = new System.Windows.Forms.Padding(3);
+            this.buttonReturn.Size = new System.Drawing.Size(140, 70);
+            this.buttonReturn.TabIndex = 5;
+            this.buttonReturn.Text = "Return";
+            this.buttonReturn.UseVisualStyleBackColor = false;
+            this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
+            this.buttonReturn.MouseEnter += new System.EventHandler(this.buttonReturn_MouseEnter);
+            this.buttonReturn.MouseLeave += new System.EventHandler(this.buttonReturn_MouseLeave);
+            // 
+            // Title
+            // 
+            this.Title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Title.AutoSize = true;
+            this.Title.BackColor = System.Drawing.Color.Transparent;
+            this.Title.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Title.Font = new System.Drawing.Font("Playbill", 50.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.Title.Location = new System.Drawing.Point(310, 9);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(152, 67);
+            this.Title.TabIndex = 6;
+            this.Title.Text = "Bestiary";
+            this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.Khaki;
+            this.pictureBox10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.BackgroundImage")));
+            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox10.Location = new System.Drawing.Point(36, 1243);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(116, 96);
+            this.pictureBox10.TabIndex = 22;
+            this.pictureBox10.TabStop = false;
+            // 
+            // richTextBox10
+            // 
+            this.richTextBox10.BackColor = System.Drawing.Color.Khaki;
+            this.richTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox10.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox10.Location = new System.Drawing.Point(129, 1243);
+            this.richTextBox10.Name = "richTextBox10";
+            this.richTextBox10.Size = new System.Drawing.Size(583, 96);
+            this.richTextBox10.TabIndex = 23;
+            this.richTextBox10.Text = "\tName : Wolf\t\n\n\tDescription : Basic unit enemy";
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.Khaki;
+            this.pictureBox11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.BackgroundImage")));
+            this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox11.Location = new System.Drawing.Point(36, 1345);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(116, 96);
+            this.pictureBox11.TabIndex = 24;
+            this.pictureBox11.TabStop = false;
+            // 
+            // richTextBox11
+            // 
+            this.richTextBox11.BackColor = System.Drawing.Color.Khaki;
+            this.richTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox11.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox11.Location = new System.Drawing.Point(129, 1345);
+            this.richTextBox11.Name = "richTextBox11";
+            this.richTextBox11.Size = new System.Drawing.Size(583, 96);
+            this.richTextBox11.TabIndex = 25;
+            this.richTextBox11.Text = "\tName : Fox\t\n\n\tDescription : Unit insensitive to the butcher";
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BackColor = System.Drawing.Color.Khaki;
+            this.pictureBox12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox12.BackgroundImage")));
+            this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox12.Location = new System.Drawing.Point(36, 1447);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(116, 96);
+            this.pictureBox12.TabIndex = 26;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.BackColor = System.Drawing.Color.Khaki;
+            this.pictureBox13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox13.BackgroundImage")));
+            this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox13.Location = new System.Drawing.Point(36, 1549);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(116, 96);
+            this.pictureBox13.TabIndex = 27;
+            this.pictureBox13.TabStop = false;
+            // 
+            // richTextBox12
+            // 
+            this.richTextBox12.BackColor = System.Drawing.Color.Khaki;
+            this.richTextBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox12.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox12.Location = new System.Drawing.Point(129, 1447);
+            this.richTextBox12.Name = "richTextBox12";
+            this.richTextBox12.Size = new System.Drawing.Size(583, 96);
+            this.richTextBox12.TabIndex = 28;
+            this.richTextBox12.Text = "\tName : Cerberus\t\n\n\tDescription : Inflicts heavy damage";
+            // 
+            // richTextBox13
+            // 
+            this.richTextBox13.BackColor = System.Drawing.Color.Khaki;
+            this.richTextBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox13.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox13.Location = new System.Drawing.Point(129, 1549);
+            this.richTextBox13.Name = "richTextBox13";
+            this.richTextBox13.Size = new System.Drawing.Size(583, 96);
+            this.richTextBox13.TabIndex = 29;
+            this.richTextBox13.Text = "\tName : Lion\t\n\n\tDescription : Unit more resistant";
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.BackColor = System.Drawing.Color.Khaki;
+            this.pictureBox14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox14.BackgroundImage")));
+            this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox14.Location = new System.Drawing.Point(36, 1651);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(116, 96);
+            this.pictureBox14.TabIndex = 30;
+            this.pictureBox14.TabStop = false;
+            // 
+            // richTextBox14
+            // 
+            this.richTextBox14.BackColor = System.Drawing.Color.Khaki;
+            this.richTextBox14.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox14.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox14.Location = new System.Drawing.Point(129, 1651);
+            this.richTextBox14.Name = "richTextBox14";
+            this.richTextBox14.Size = new System.Drawing.Size(583, 96);
+            this.richTextBox14.TabIndex = 31;
+            this.richTextBox14.Text = "\tName : Anubis\t\n\n\tDescription : Summons enemy units";
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.BackColor = System.Drawing.Color.Khaki;
+            this.pictureBox15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox15.BackgroundImage")));
+            this.pictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox15.Location = new System.Drawing.Point(36, 1753);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(116, 96);
+            this.pictureBox15.TabIndex = 32;
+            this.pictureBox15.TabStop = false;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.BackColor = System.Drawing.Color.Khaki;
+            this.pictureBox16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox16.BackgroundImage")));
+            this.pictureBox16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox16.Location = new System.Drawing.Point(36, 1855);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(116, 96);
+            this.pictureBox16.TabIndex = 33;
+            this.pictureBox16.TabStop = false;
+            // 
+            // richTextBox15
+            // 
+            this.richTextBox15.BackColor = System.Drawing.Color.Khaki;
+            this.richTextBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox15.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox15.Location = new System.Drawing.Point(129, 1753);
+            this.richTextBox15.Name = "richTextBox15";
+            this.richTextBox15.Size = new System.Drawing.Size(583, 96);
+            this.richTextBox15.TabIndex = 34;
+            this.richTextBox15.Text = "\tName : Hyena\t\n\n\tDescription : The hyena is attracted by fresh meat\n             " +
+    "                     It targets bucher in priority. Quick unit";
+            // 
+            // richTextBox16
+            // 
+            this.richTextBox16.BackColor = System.Drawing.Color.Khaki;
+            this.richTextBox16.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox16.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox16.Location = new System.Drawing.Point(129, 1855);
+            this.richTextBox16.Name = "richTextBox16";
+            this.richTextBox16.Size = new System.Drawing.Size(583, 96);
+            this.richTextBox16.TabIndex = 35;
+            this.richTextBox16.Text = "\tName : WereWolf\n\n\tDescription : World boss. All Farmer Units become \n\t\t\t     ine" +
+    "fective against all enemy units";
+            // 
             // Bestiary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,6 +596,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -435,5 +633,19 @@
         private System.Windows.Forms.RichTextBox richTextBox7;
         private System.Windows.Forms.RichTextBox richTextBox6;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.RichTextBox richTextBox16;
+        private System.Windows.Forms.RichTextBox richTextBox15;
+        private System.Windows.Forms.RichTextBox richTextBox14;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.RichTextBox richTextBox13;
+        private System.Windows.Forms.RichTextBox richTextBox12;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.RichTextBox richTextBox11;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.RichTextBox richTextBox10;
     }
 }
