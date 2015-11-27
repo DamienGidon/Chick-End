@@ -9,6 +9,7 @@ namespace ITI.S3.PI.Chick_End
     public class Map
     {
         readonly Square[,] _squares;
+        readonly List<Tower>  _towers;
         //readonly Dictionary<string, Tower> _towers;
         //readonly Dictionary<string, Ennemi> _ennemis;
 
@@ -26,19 +27,58 @@ namespace ITI.S3.PI.Chick_End
 
         public void CreateHen(int ligne, int colonne, Map context)
         {
-            Square[ligne, colonne].Tower = new Hen();
+            Tower t = new Hen();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
+
         }
         public void CreateInfantryFarmer(int ligne, int colonne, Map context)
         {
-            Square[ligne, colonne].Tower = new InfantryFarmer();
+            Tower t = new InfantryFarmer();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
         }
         public void CreateBomberHen(int ligne, int colonne, Map context)
         {
-            Square[ligne, colonne].Tower = new BomberHen();
+            Tower t = new BomberHen();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
         }
         public void CreateGunnerFarmer(int ligne, int colonne, Map context)
         {
-            Square[ligne, colonne].Tower = new BomberHen();
+            Tower t = new GunnerFarmer();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
+        }
+        public void CreateOldHen(int ligne, int colonne, Map context)
+        {
+            Tower t = new OldHen();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
+        }
+        public void CreateRooster(int ligne, int colonne, Map context)
+        {
+            Tower t = new Rooster();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
+        }
+        public void CreateBaker(int ligne, int colonne, Map context)
+        {
+            Tower t = new Baker();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
+        }
+        public void CreateExplosiveEgg(int ligne, int colonne, Map context)
+        {
+            Tower t = new ExplosiveEgg();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
+        }
+        public void CreateBucher(int ligne, int colonne, Map context)
+        {
+            Tower t = new Bucher();
+            Square[ligne, colonne].Tower = t;
+            _towers.Add(t);
         }
 
         /*
@@ -47,6 +87,7 @@ namespace ITI.S3.PI.Chick_End
         public Map()
         {
             _squares = new Square[ FinalVariables._nbCaseHeight, FinalVariables._nbCaseWidth];
+            _towers = new List<Tower>();
 
             // Setting the hen house
             for( int i = 3; i < 6; i++)
