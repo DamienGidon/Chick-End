@@ -40,6 +40,15 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             string[,] table = { { "Azsher", "02'57","1" }, { "Legannon", "67'30","2" }, { "Monart", "10'25", "3" }, { "Wetcher", "12'25", "2" }, { "Suaremente", "10'25", "1" } };
 
+            for(int i =0; i< table.Length/3; i++)
+            {
+                string str = table[i, 1].Remove(2,1);
+                int numb = int.Parse(str);
+                int[] numbT = { };
+                numbT[i] = numb;
+                MessageBox.Show("" + numbT[i]);
+            }
+
             labelPseudoOne.Text = "";
             labelScoreOne.Text = "";
             labelPseudoTwo.Text = "";
