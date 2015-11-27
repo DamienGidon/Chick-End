@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    public abstract class Ennemi : Unit, IAttack, IMove
+    public abstract class Ennemi : Unit, IAssailant, IMove
     {
         Way _way;
         int _x;
@@ -30,9 +30,12 @@ namespace ITI.S3.PI.Chick_End
             set { _speed = value; }
         }
 
-        public abstract void Attack( Ennemi opposant );
-
         public virtual void Move()
+        {
+
+        }
+
+        public virtual void Attack( Unit ennemi )
         {
 
         }

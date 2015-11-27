@@ -8,7 +8,7 @@ namespace ITI.S3.PI.Chick_End
 {
     class Lion : Ennemi
     {
-        public override void Attack( Ennemi opposant )
+        public override void Attack( Unit opponent )
         {
             throw new NotImplementedException();
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    public abstract class Tower : Unit, IAttack, IRemove
+    public abstract class Tower : Unit, IAssailant, IRemove
     {
         internal readonly int _damages;
         internal readonly float _range;
@@ -27,7 +27,10 @@ namespace ITI.S3.PI.Chick_End
             get { return _range; }
         }
 
-        public abstract void Attack(Ennemi ennemi);
+        public virtual void Attack( Unit ennemi )
+        {
+
+        }
 
         public virtual void Remove()
         {
