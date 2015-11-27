@@ -14,7 +14,7 @@ namespace ITI.S3.PI.Chick_End
             _health = 50;
         }
 
-        public override void Attack(Ennemi ennemi)
+        public override void Attack(Unit ennemi)
         {
             ennemi.Health -= Damages;
         }

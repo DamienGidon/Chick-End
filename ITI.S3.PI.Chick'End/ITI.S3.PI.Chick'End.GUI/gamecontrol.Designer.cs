@@ -60,6 +60,7 @@
             this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
             this.panelMenu.SuspendLayout();
             this.panelSeed.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -186,6 +187,7 @@
             // panelSeed
             // 
             this.panelSeed.BackColor = System.Drawing.Color.Orange;
+            this.panelSeed.Controls.Add(this.pictureBox6);
             this.panelSeed.Controls.Add(this.label2);
             this.panelSeed.Controls.Add(this.label1);
             this.panelSeed.Controls.Add(this.labelSeedNumber);
@@ -196,6 +198,12 @@
             this.panelSeed.Size = new System.Drawing.Size(1007, 58);
             this.panelSeed.TabIndex = 4;
             // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(40, 148);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(66, 66);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // label2
             // 
             this.label2.AutoSize = true;
@@ -420,6 +428,7 @@
             this.panelMenu.ResumeLayout(false);
             this.panelSeed.ResumeLayout(false);
             this.panelSeed.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
