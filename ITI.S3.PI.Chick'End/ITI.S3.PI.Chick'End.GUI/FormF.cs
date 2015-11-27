@@ -17,6 +17,12 @@ namespace ITI.S3.PI.Chick_End.GUI
             InitializeComponent();
         }
 
+        private void buttonRules_Click(object sender, EventArgs e)
+        {
+            Rules r = new Rules();
+            r.ShowDialog();
+        }
+
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             panelLevel.Show(); 
