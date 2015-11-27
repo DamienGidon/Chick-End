@@ -493,22 +493,6 @@ namespace ITI.S3.PI.Chick_End.GUI
                 viewMapControler1.Context.Map.CreateBucher(line, column, viewMapControler1.Context.Map);
             }
         }
-        private void viewMapControler1_DragDrop(object sender, DragEventArgs e)
-        {
-            ViewMapControler v = ((ViewMapControler)sender);
-            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
-        }
-        private void viewMapControler1_MouseDown(object sender, MouseEventArgs e)
-        {
-            ViewMapControler v = ((ViewMapControler)sender);
-            v.Select();
-            v.DoDragDrop(v, DragDropEffects.Copy);
-            MessageBox.Show("E.X est égal à : " + e.X);
-            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
-            int line = e.X / 50;
-            int column = e.Y / 50;
-
-            if (viewMapControler1.Context.Map.Square[line, column].Tower != null)
         private void pictureBox9_DragDrop(object sender, DragEventArgs e)
         {
             PictureBox pb9 = ((PictureBox)sender);
@@ -543,6 +527,23 @@ namespace ITI.S3.PI.Chick_End.GUI
                 viewMapControler1.Context.Map.CreateRooster(line, column, viewMapControler1.Context.Map);
             }
         }
+        private void viewMapControler1_DragDrop(object sender, DragEventArgs e)
+        {
+            ViewMapControler v = ((ViewMapControler)sender);
+            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
+        }
+        private void viewMapControler1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ViewMapControler v = ((ViewMapControler)sender);
+            v.Select();
+            v.DoDragDrop(v, DragDropEffects.Copy);
+            MessageBox.Show("E.X est égal à : " + e.X);
+            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
+            int line = e.X / 50;
+            int column = e.Y / 50;
+
+            if (viewMapControler1.Context.Map.Square[line, column].Tower != null)
+        
 
             {
                 viewMapControler1.Context.Map.Square[line, column].Tower = null;
