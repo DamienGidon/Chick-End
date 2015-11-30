@@ -8,9 +8,10 @@ namespace ITI.S3.PI.Chick_End.Units
 {
     internal class Hen : Tower
     {
-        internal Hen()
-            : base(10, 15)
+        internal Hen(Square context)
+            : base( 15 )
         {
+            _square = context;
             this.Health = 50;
         }
 
@@ -18,7 +19,12 @@ namespace ITI.S3.PI.Chick_End.Units
         {
             ennemi.Health -= Damages;
         }
-        
+
+        public override List<Square> GetRange()
+        {
+            throw new NotImplementedException();
+        }
+
         /*
         public override void Remove()
         {

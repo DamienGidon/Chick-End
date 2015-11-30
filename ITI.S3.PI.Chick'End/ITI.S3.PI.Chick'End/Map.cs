@@ -114,31 +114,31 @@ namespace ITI.S3.PI.Chick_End
 
         public void CreateHen( int ligne, int colonne, Map context )
         {
-            Tower t = new Hen();
+            Tower t = new Hen(context._squares[ligne, colonne]);
             Square[ligne, colonne].Tower = t;
             _towers.Add( t );
         }
         public void CreateOldHen( int ligne, int colonne, Map context )
         {
-            Tower t = new OldHen();
+            Tower t = new OldHen( context._squares[ligne, colonne] );
             Square[ligne, colonne].Tower = t;
             _towers.Add( t );
         }
         public void CreateBomberHen( int ligne, int colonne, Map context )
         {
-            Tower t = new BomberHen();
+            Tower t = new BomberHen( context._squares[ligne, colonne] );
             Square[ligne, colonne].Tower = t;
             _towers.Add( t );
         }
         public void CreateRooster( int ligne, int colonne, Map context )
         {
-            Tower t = new Rooster();
+            Tower t = new Rooster( context._squares[ligne, colonne] );
             Square[ligne, colonne].Tower = t;
             _towers.Add( t );
         }
         public void CreateBaker( int ligne, int colonne, Map context )
         {
-            Tower t = new Baker();
+            Tower t = new Baker( context._squares[ligne, colonne] );
             Square[ligne, colonne].Tower = t;
             _towers.Add( t );
         }
@@ -150,22 +150,22 @@ namespace ITI.S3.PI.Chick_End
         }
         public void CreateBucher( int ligne, int colonne, Map context )
         {
-            Tower t = new Bucher();
+            Tower t = new Bucher( context._squares[ligne, colonne] );
             Square[ligne, colonne].Tower = t;
             _towers.Add( t );
         }
         public void CreateInfantryFarmer( int ligne, int colonne, Map context )
         {
-            Tower t = new InfantryFarmer();
+            Tower t = new InfantryFarmer( context._squares[ligne, colonne] );
             Square[ligne, colonne].Tower = t;
             _towers.Add( t );
         }
         public void CreateGunnerFarmer( int ligne, int colonne, Map context )
         {
-            Tower t = new GunnerFarmer();
+            Tower t = new GunnerFarmer( context._squares[ligne, colonne] );
             Square[ligne, colonne].Tower = t;
             _towers.Add( t );
-        }
+        }        
 
         public void Update()
         {

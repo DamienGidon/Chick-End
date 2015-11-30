@@ -8,13 +8,13 @@ namespace ITI.S3.PI.Chick_End
 {
     public abstract class Tower : Unit, IAssailant, IRemove
     {
+        protected Square _square;
         internal readonly int _damages;
-        internal readonly float _range;
+        protected List<Square> _range;
 
-        protected Tower(int damages, int range)
+        protected Tower(int damages)
         {
             _damages = damages;
-            _range = range;
         }
 
         public int Damages
@@ -22,9 +22,15 @@ namespace ITI.S3.PI.Chick_End
             get { return _damages; }
         }
 
-        internal float Range
+        internal List<Square> Range
         {
             get { return _range; }
+        }
+
+        public Ennemi GetClosestEnnemiAttackable()
+        {
+
+            return null;
         }
 
         public virtual void Attack( Unit ennemi )
@@ -36,5 +42,7 @@ namespace ITI.S3.PI.Chick_End
         {
             throw new NotImplementedException();
         }
+
+        public abstract List<Square> GetRange();
     }
 }

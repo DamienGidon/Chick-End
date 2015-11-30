@@ -8,17 +8,23 @@ namespace ITI.S3.PI.Chick_End.Units
 {
     class GunnerFarmer : Tower
     {
-        internal GunnerFarmer()
-            : base(10, 15)
+        internal GunnerFarmer(Square context)
+            : base( 15 )
         {
             this.Health = 50;
+            _square = context;
         }
 
         public override void Attack(Unit ennemi)
         {
             ennemi.Health -= Damages;
         }
-        
+
+        public override List<Square> GetRange()
+        {
+            throw new NotImplementedException();
+        }
+
         /*
         public override void Remove()
         {

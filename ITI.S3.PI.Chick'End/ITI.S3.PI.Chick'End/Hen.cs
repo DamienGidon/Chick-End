@@ -8,10 +8,16 @@ namespace ITI.S3.PI.Chick_End
 {
     public class Hen : Tower
     {
-        public Hen()
-            : base(10, 15)
+        public Hen(Square context)
+            : base( 15 )
         {
             _health = 50;
+            _square = context;
+        }
+
+        public override List<Square> GetRange()
+        {
+            throw new NotImplementedException();
         }
 
         public override void Attack(Unit ennemi)
