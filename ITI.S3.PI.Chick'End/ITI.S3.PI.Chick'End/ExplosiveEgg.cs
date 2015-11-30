@@ -9,7 +9,7 @@ namespace ITI.S3.PI.Chick_End
     public class ExplosiveEgg : Tower
     {
         public ExplosiveEgg()
-            : base(10, 15)
+            : base( 15 )
         {
             _health = 50;
         }
@@ -17,6 +17,11 @@ namespace ITI.S3.PI.Chick_End
         public override void Attack(Unit ennemi)
         {
             ennemi.Health -= Damages;
+        }
+
+        public override List<Square> GetRange()
+        {
+            throw new NotImplementedException();
         }
 
         /*
