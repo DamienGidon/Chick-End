@@ -30,9 +30,10 @@ namespace ITI.S3.PI.Chick_End.Tests
         [Test]
         public void Create_new_hen()
         {
-            Hen h = new Hen();
+            Map m = new Map();
+            m.CreateHen( 7, 7, m );
 
-            Assert.IsNotNull(h);
+            Assert.IsNotNull( m.Square[7, 7].Tower );
         }
     }
 }

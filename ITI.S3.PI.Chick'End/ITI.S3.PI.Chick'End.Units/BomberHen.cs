@@ -8,13 +8,19 @@ namespace ITI.S3.PI.Chick_End.Units
 {
     public class BomberHen : Tower
     {
-        public BomberHen()
-            : base(10, 15)
+        public BomberHen(Square context)
+            : base( 15 )
         {
-
+            Health = 50;
+            _square = context;
         }
 
         public override void Attack( Unit ennemi )
+        {
+            throw new NotImplementedException();
+        }
+
+        public override List<Square> GetRange()
         {
             throw new NotImplementedException();
         }
