@@ -55,7 +55,9 @@ namespace ITI.S3.PI.Chick_End
 
         public virtual void Attack( Unit ennemi )
         {
-
+            Ennemi closest = GetClosestEnnemiAttackable();
+            if( closest != null )
+                closest.Health -= _damages;
         }
 
         public virtual void Remove()
