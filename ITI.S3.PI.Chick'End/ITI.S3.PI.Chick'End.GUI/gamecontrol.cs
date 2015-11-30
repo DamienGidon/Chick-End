@@ -82,7 +82,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             pictureBox8.DragDrop += new DragEventHandler(pictureBox8_DragDrop);
             pictureBox8.MouseDown += new MouseEventHandler(pictureBox8_MouseDown);
             viewMapControler1.DragDrop += new DragEventHandler(viewMapControler1_DragDrop);
-            viewMapControler1.MouseDown += new MouseEventHandler(viewMapControler1_MouseDown);
+            //viewMapControler1.MouseDown += new MouseEventHandler(viewMapControler1_MouseDown);
             pictureBox9.DragDrop += new DragEventHandler(pictureBox9_DragDrop);
             pictureBox9.MouseDown += new MouseEventHandler(pictureBox9_MouseDown);
 
@@ -533,27 +533,27 @@ namespace ITI.S3.PI.Chick_End.GUI
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
         }
 
-        private void viewMapControler1_MouseDown(object sender, MouseEventArgs e)
-        {
-            ViewMapControler v = ((ViewMapControler)sender);
-            v.Select();
-            v.DoDragDrop(v, DragDropEffects.Copy);
-            //MessageBox.Show("E.X est égal à : " + e.X);
-            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
-            int line = e.X / 50;
-            int column = e.Y / 50;
+        //private void viewMapControler1_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    ViewMapControler v = ((ViewMapControler)sender);
+        //    v.Select();
+        //    v.DoDragDrop(v, DragDropEffects.Copy);
+        //    //MessageBox.Show("E.X est égal à : " + e.X);
+        //    var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
+        //    int line = e.X / 50;
+        //    int column = e.Y / 50;
 
-            if (viewMapControler1.Context.Map.Square[line, column].Tower != null)
+        //    if (viewMapControler1.Context.Map.Square[line, column].Tower != null)
 
 
-            {
-                viewMapControler1.Context.Map.Square[line, column].Tower = null;
-                Rectangle r = new Rectangle(line, column, 50, 70);
-                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r);
-                e1.Graphics.Clear(Color.Teal);
+        //    {
+        //        viewMapControler1.Context.Map.Square[line, column].Tower = null;
+        //        Rectangle r = new Rectangle(line, column, 50, 70);
+        //        PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r);
+        //        e1.Graphics.Clear(Color.Teal);
 
-            }
-        }
+        //    }
+        //}
 
         private void viewMapControler1_Click(object sender, EventArgs e)
         {
@@ -569,19 +569,20 @@ namespace ITI.S3.PI.Chick_End.GUI
 
             Random r = new Random();
             int r2 = r.Next(1,3);
+
             if (r2 == 1)
             {
                 Rectangle r9 = new Rectangle(650, 150 - 20, 50, 70);
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
                 e1.Graphics.DrawImage(p9, r9);
-                viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
+                viewMapControler1.Context.Map.CreateWolf(line, column, viewMapControler1.Context.Map);
             }
             else
             {
                 Rectangle r9 = new Rectangle(650, 250 - 20, 50, 70);
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
                 e1.Graphics.DrawImage(p9, r9);
-                viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
+                viewMapControler1.Context.Map.CreateWolf(line, column, viewMapControler1.Context.Map);
             }
         }
     }

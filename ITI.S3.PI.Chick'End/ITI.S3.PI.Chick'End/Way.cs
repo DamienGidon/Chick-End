@@ -14,5 +14,15 @@ namespace ITI.S3.PI.Chick_End
         {
             _firstSquare = firstSquare;
         }
+
+        public Square FirstSquare
+        {
+            get { return _firstSquare; }
+        }
+
+        public Square Next()
+        {
+            return _firstSquare.NextSquare;
+        }
     }
 }

@@ -167,6 +167,48 @@ namespace ITI.S3.PI.Chick_End
             _towers.Add( t );
         }
 
+        public void CreateWolf( int ligne, int colonne, Map context)
+        {
+            Ennemi e = new Wolf();
+            Square[ligne, colonne].Ennemi = e;
+            _ennemis.Add(e);
+        }
+
+        public void CreateHyena(int ligne, int colonne, Map context)
+        {
+            Ennemi e = new Hyena();
+            Square[ligne, colonne].Ennemi = e;
+            _ennemis.Add(e);
+        }
+
+        public void CreateFox(int ligne, int colonne, Map context)
+        {
+            Ennemi e = new Fox();
+            Square[ligne, colonne].Ennemi = e;
+            _ennemis.Add(e);
+        }
+
+        public void CreateLion(int ligne, int colonne, Map context)
+        {
+            Ennemi e = new Lion();
+            Square[ligne, colonne].Ennemi = e;
+            _ennemis.Add(e);
+        }
+
+        public void CreateAnubis(int ligne, int colonne, Map context)
+        {
+            Ennemi e = new Anubis();
+            Square[ligne, colonne].Ennemi = e;
+            _ennemis.Add(e);
+        }
+
+        public void CreateCerberus(int ligne, int colonne, Map context)
+        {
+            Ennemi e = new Cerberus();
+            Square[ligne, colonne].Ennemi = e;
+            _ennemis.Add(e);
+        }
+
         public void Update()
         {
             throw new NotImplementedException();
