@@ -6,13 +6,23 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    class Way
+    public class Way
     {
         Square _firstSquare;
 
         public Way( Square firstSquare )
         {
             _firstSquare = firstSquare;
+        }
+
+        public Square FirstSquare
+        {
+            get { return _firstSquare; }
+        }
+
+        public Square Next()
+        {
+            return _firstSquare.NextSquare;
         }
     }
 }

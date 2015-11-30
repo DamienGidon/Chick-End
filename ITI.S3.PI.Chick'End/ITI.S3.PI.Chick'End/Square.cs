@@ -14,6 +14,7 @@ namespace ITI.S3.PI.Chick_End
         readonly string _decoration;
         Tower _tower;
         Square _nextSquare;
+        Ennemi _ennemi;
 
         public Square( Map context, int x, int y, string decoration)
         {
@@ -41,10 +42,17 @@ namespace ITI.S3.PI.Chick_End
         {
             get { return _decoration; }
         }
+
         public Tower Tower
         {
             get { return _tower; }
             set { _tower = value; }
+        }
+
+        public Ennemi Ennemi
+        {
+            get { return _ennemi; }
+            set { _ennemi = value; }
         }
 
         public Square NextSquare

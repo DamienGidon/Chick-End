@@ -15,6 +15,18 @@ namespace ITI.S3.PI.Chick_End.GUI
         public FormF()
         {
             InitializeComponent();
+
+            //images
+
+            Bitmap p = new Bitmap(@"HenLeft.png");
+            Graphics g = Graphics.FromImage(p);
+            g.DrawImage(p, 60, 60);
+            pictureBox1.Image = p;
+
+            Bitmap p1 = new Bitmap(@"Wolf.png");
+            Graphics g1 = Graphics.FromImage(p1);
+            g1.DrawImage(p, 60, 60);
+            pictureBox2.Image = p1;
         }
 
         private void buttonRules_Click(object sender, EventArgs e)
@@ -25,7 +37,10 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            panelLevel.Show(); 
+            panelLevel.Show();
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+            player.SoundLocation = "poule2.wav";
+            player.Play();
         }
         private void buttonBestiary_Click(object sender, EventArgs e)
         {
@@ -38,6 +53,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             panelLevel.Hide();
             this.Controls.Add(new gamecontrol(MenuPanel));
             //buttonPlay.BackColor = System.Drawing.Color.Transparent;
+
         }
 
         private void buttonQuit_Click(object sender, EventArgs e)
@@ -163,6 +179,20 @@ namespace ITI.S3.PI.Chick_End.GUI
         private void buttonLevelTwo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+            player.SoundLocation = "poule2.wav";
+            player.Play();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+            player.SoundLocation = "loup.wav";
+            player.Play();
         }
     }
 }
