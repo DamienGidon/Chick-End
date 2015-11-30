@@ -10,17 +10,21 @@ using System.Windows.Forms;
 
 namespace ITI.S3.PI.Chick_End.GUI
 {
-    public partial class Bestiary : Form
+    public partial class Rules : Form
     {
-        public Bestiary()
+        public Rules()
         {
             InitializeComponent();
+            richTextBox1.SelectionAlignment = HorizontalAlignment.Center;
+            richTextBox2.SelectionAlignment = HorizontalAlignment.Center;
+            //richTextBox3.SelectionAlignment = HorizontalAlignment.Center;
         }
 
         private void buttonReturn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void buttonReturn_MouseEnter(object sender, EventArgs e)
         {
             buttonReturn.Font = new System.Drawing.Font("Playbill", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -32,19 +36,6 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             buttonReturn.Font = new System.Drawing.Font("Playbill", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonReturn.Refresh();
-        }
-
-        protected override void OnMouseWheel(MouseEventArgs e)
-        {
-           base.OnMouseWheel(e);
-        }
-
-        private void panelBestiary_OnMouseWheel(object sender, MouseEventArgs e)
-        {
-            AutoScroll.Scroll += new ScrollEventHandler(
-            this.AutoSroll_Scroll);
-            vScrollBar1.ValueChanged += new EventHandler(
-            this.vScrollBar1_ValueChanged);
         }
     }
 }

@@ -193,6 +193,7 @@
             this.buttonRules.TabIndex = 4;
             this.buttonRules.Text = "Rules";
             this.buttonRules.UseVisualStyleBackColor = false;
+            this.buttonRules.Click += new System.EventHandler(this.buttonRules_Click);
             this.buttonRules.MouseEnter += new System.EventHandler(this.buttonRules_MouseEnter);
             this.buttonRules.MouseLeave += new System.EventHandler(this.buttonRules_MouseLeave);
             // 

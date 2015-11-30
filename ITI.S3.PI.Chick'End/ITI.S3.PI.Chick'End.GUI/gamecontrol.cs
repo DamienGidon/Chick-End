@@ -532,18 +532,19 @@ namespace ITI.S3.PI.Chick_End.GUI
             ViewMapControler v = ((ViewMapControler)sender);
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
         }
+
         private void viewMapControler1_MouseDown(object sender, MouseEventArgs e)
         {
             ViewMapControler v = ((ViewMapControler)sender);
             v.Select();
             v.DoDragDrop(v, DragDropEffects.Copy);
-            MessageBox.Show("E.X est égal à : " + e.X);
+            //MessageBox.Show("E.X est égal à : " + e.X);
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
             int line = e.X / 50;
             int column = e.Y / 50;
 
             if (viewMapControler1.Context.Map.Square[line, column].Tower != null)
-        
+
 
             {
                 viewMapControler1.Context.Map.Square[line, column].Tower = null;
