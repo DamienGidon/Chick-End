@@ -1,4 +1,7 @@
-﻿namespace ITI.S3.PI.Chick_End.GUI
+﻿using System;
+using System.Windows.Forms;
+
+namespace ITI.S3.PI.Chick_End.GUI
 {
     partial class Bestiary
     {
@@ -621,6 +624,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void panelBestiary_MouseWheel(object sender, MouseEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

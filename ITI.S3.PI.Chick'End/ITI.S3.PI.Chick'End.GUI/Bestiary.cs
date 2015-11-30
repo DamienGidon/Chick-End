@@ -34,5 +34,17 @@ namespace ITI.S3.PI.Chick_End.GUI
             buttonReturn.Refresh();
         }
 
+        protected override void OnMouseWheel(MouseEventArgs e)
+        {
+           base.OnMouseWheel(e);
+        }
+
+        private void panelBestiary_OnMouseWheel(object sender, MouseEventArgs e)
+        {
+            AutoScroll.Scroll += new ScrollEventHandler(
+            this.AutoSroll_Scroll);
+            vScrollBar1.ValueChanged += new EventHandler(
+            this.vScrollBar1_ValueChanged);
+        }
     }
 }
