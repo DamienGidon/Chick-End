@@ -15,10 +15,14 @@ namespace ITI.S3.PI.Chick_End.GUI
     {
         Panel _panel;
 
-        public gamecontrol(Panel panel)
+        public gamecontrol(Panel panel, int width, int height)
         {
             InitializeComponent();
             _panel = panel;
+
+            //this.Width = width;
+            //this.Height = height;
+
             //viewMapControler1.Context.Stopwatch.Start();
             Bitmap p = new Bitmap(@"HenLeft.png");
             Graphics g = Graphics.FromImage(p);
@@ -105,7 +109,12 @@ namespace ITI.S3.PI.Chick_End.GUI
             viewMapControler1.AllowDrop = true;
             panel1.AllowDrop = true;
         }
-        
+
+        private void ManageUsersControl_Load(object sender, EventArgs e)
+        {
+            this.Dock = DockStyle.Fill;
+        }
+
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             panelMenu.Show();
