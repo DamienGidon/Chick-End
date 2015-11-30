@@ -30,6 +30,16 @@ namespace ITI.S3.PI.Chick_End
             set { _speed = value; }
         }
 
+        public int X
+        {
+            get { return _x; }
+        }
+
+        public int Y
+        {
+            get { return _y; }
+        }
+
         public virtual void Move()
         {
 

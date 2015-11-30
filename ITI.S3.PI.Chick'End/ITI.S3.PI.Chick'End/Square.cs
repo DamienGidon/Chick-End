@@ -24,6 +24,11 @@ namespace ITI.S3.PI.Chick_End
 
         }
 
+        public Map Context
+        {
+            get { return _context; }
+        }
+
         public int Line
         {
             get { return _line; }
