@@ -8,22 +8,24 @@ namespace ITI.S3.PI.Chick_End
 {
     public abstract class Ennemi : Unit, IAssailant, IMove
     {
-        Way _way;
-        int _x;
-        int _y;
-        int _speed;
-        readonly int _damages;
-        readonly float _range;
-        readonly Map _context;
+        protected Way _way;
+        protected int _x;
+        protected int _y;
+        protected int _speed;
+        protected readonly int _damages;
+        protected readonly float _range;
+        public Map _context;
 
-        Random _r;
+        protected static Random _r = new Random();
 
         public Ennemi()
         {
-            int numberOfWays = _context.Ways.Count();
-            _way = _context.Ways[_r.Next( numberOfWays )];
-            _x = _way.FirstSquare.Column * 50 + 30;
-            _y = _way.FirstSquare.Line * 50 +30;
+            
+        }
+
+        public Map Context
+        {
+            get { return _context; }
         }
 
         public int Speed
@@ -32,9 +34,19 @@ namespace ITI.S3.PI.Chick_End
             set { _speed = value; }
         }
 
+        public int GetX
+        {
+            get { return _x; }
+        }
+
+        public int GetY
+        {
+            get { return _y; }
+        }
+
         public virtual void Move()
         {
-            
+            _x = _x + 50;
         }
 
         public virtual void Attack( Unit ennemi )

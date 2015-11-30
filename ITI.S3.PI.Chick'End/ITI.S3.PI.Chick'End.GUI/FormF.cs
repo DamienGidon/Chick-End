@@ -27,11 +27,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             Graphics g1 = Graphics.FromImage(p1);
             g1.DrawImage(p, 60, 60);
             pictureBox2.Image = p1;
-
-            Bitmap p2 = new Bitmap(@"ExplosiveEgg.png");
-            Graphics g2 = Graphics.FromImage(p2);
-            g1.DrawImage(p, 60, 60);
-            pictureBox3.Image = p2;
         }
 
         private void buttonRules_Click(object sender, EventArgs e)
@@ -198,11 +193,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             System.Media.SoundPlayer player = new System.Media.SoundPlayer();
             player.SoundLocation = "loup.wav";
             player.Play();
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -169,7 +169,7 @@ namespace ITI.S3.PI.Chick_End
 
         public void CreateWolf( int ligne, int colonne, Map context)
         {
-            Ennemi e = new Wolf();
+            Ennemi e = new Wolf(context);
             Square[ligne, colonne].Ennemi = e;
             _ennemis.Add(e);
         }
