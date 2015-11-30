@@ -46,7 +46,7 @@ namespace ITI.S3.PI.Chick_End
 
         public virtual void Move()
         {
-            _x = _x + 50;
+            _x = _x - 50;
         }
 
         public virtual void Attack( Unit ennemi )
