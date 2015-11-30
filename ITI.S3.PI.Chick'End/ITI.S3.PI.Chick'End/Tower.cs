@@ -15,6 +15,7 @@ namespace ITI.S3.PI.Chick_End
         protected Tower(int damages)
         {
             _damages = damages;
+            _range = GetRange();
         }
 
         public int Damages
@@ -27,15 +28,36 @@ namespace ITI.S3.PI.Chick_End
             get { return _range; }
         }
 
-        public Ennemi GetClosestEnnemiAttackable()
+        public virtual Ennemi GetClosestEnnemiAttackable()
         {
+            Ennemi closestEnnemi = null;
+            int xClosestEnnemi = FinalVariables._squareWidthInMeters * FinalVariables._nbCaseWidth + FinalVariables._squareWidthInMeters - 1;
+            int yClosestEnnemi = FinalVariables._squareWidthInMeters * FinalVariables._nbCaseHeight + FinalVariables._squareWidthInMeters - 1;
 
-            return null;
+            foreach( Ennemi e in _square.Context.Ennemis )
+            {
+                foreach( Square q in _range)
+                {
+                    if( e.X / 50 == q.Column && e.X < xClosestEnnemi && e.Y < yClosestEnnemi)
+                    {
+                        xClosestEnnemi = e.X - _square.Column * FinalVariables._squareWidthInMeters;
+                        if (e.Y / 50 > _square.Line)
+                            yClosestEnnemi = e.Y - _square.Line * FinalVariables._squareWidthInMeters;
+                        else if (e.Y / 50 < _square.Line)
+                            yClosestEnnemi = _square.Line * FinalVariables._squareWidthInMeters - e.Y;
+                        closestEnnemi = e;
+                    }
+                }
+            }
+
+            return closestEnnemi;
         }
 
         public virtual void Attack( Unit ennemi )
         {
-
+            Ennemi closest = GetClosestEnnemiAttackable();
+            if( closest != null )
+                closest.Health -= _damages;
         }
 
         public virtual void Remove()
@@ -43,6 +65,37 @@ namespace ITI.S3.PI.Chick_End
             throw new NotImplementedException();
         }
 
-        public abstract List<Square> GetRange();
+        public virtual List<Square> GetRange()
+        {
+            List<Square> squaresInRange = new List<Square>();
+            int line = _square.Line;
+            int column = _square.Column;
+
+            for( int i = column; i < FinalVariables._nbCaseWidth; i++ )
+            {
+                if (_square.Context.Square[line, i].Decoration == "path")
+                    squaresInRange.Add( _square.Context.Square[line, i] );
+                else
+                    break;
+            }
+
+            for( int i = line + 1; i < FinalVariables._nbCaseHeight; i++)
+            {
+                if (_square.Context.Square[i, column].Decoration == "path")
+                    squaresInRange.Add( _square.Context.Square[i, column] );
+                else
+                    break;
+            }
+
+            for( int i = line - 1; i >= 0; i--)
+            {
+                if (_square.Context.Square[i, column].Decoration == "path")
+                    squaresInRange.Add( _square.Context.Square[i, column] );
+                else
+                    break;
+            }
+
+            return squaresInRange;
+        }
     }
 }
