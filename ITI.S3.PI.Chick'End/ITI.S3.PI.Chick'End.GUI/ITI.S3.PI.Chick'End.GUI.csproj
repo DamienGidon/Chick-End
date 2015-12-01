@@ -135,6 +135,30 @@
       <Name>ITI.S3.PI.Chick%27End</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Baker.png" />
+    <Content Include="bin\Debug\bomberHen.png" />
+    <Content Include="bin\Debug\Bucher.png" />
+    <Content Include="bin\Debug\cerberus.png" />
+    <Content Include="bin\Debug\ExplosiveEgg.ico" />
+    <Content Include="bin\Debug\ExplosiveEgg.png" />
+    <Content Include="bin\Debug\Fox.png" />
+    <Content Include="bin\Debug\grass.png" />
+    <Content Include="bin\Debug\gunnerFarmer.png" />
+    <Content Include="bin\Debug\HenLeft.png" />
+    <Content Include="bin\Debug\HomeHen.png" />
+    <Content Include="bin\Debug\Hyena.png" />
+    <Content Include="bin\Debug\InfantryFarmer.png" />
+    <Content Include="bin\Debug\Lion.png" />
+    <Content Include="bin\Debug\loup.wav" />
+    <Content Include="bin\Debug\oldHen.png" />
+    <Content Include="bin\Debug\path.png" />
+    <Content Include="bin\Debug\poule2.wav" />
+    <Content Include="bin\Debug\Rooster.png" />
+    <Content Include="bin\Debug\Steak.png" />
+    <Content Include="bin\Debug\Werewolf.png" />
+    <Content Include="bin\Debug\Wolf.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
