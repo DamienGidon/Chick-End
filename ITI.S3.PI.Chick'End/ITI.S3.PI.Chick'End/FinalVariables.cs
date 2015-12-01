@@ -8,9 +8,13 @@ namespace ITI.S3.PI.Chick_End
 {
     public static class FinalVariables
     {
-        public static readonly int _nbCaseWidth = 14;
-        public static readonly int _nbCaseHeight = 9;
+        public static readonly int NbCaseWidth = 14;
+        public static readonly int NbCaseHeight = 9;
 
-        public static readonly int _squareWidthInMeters = 50;
+        public static int SquareWidthInMeters = 50;
+        public static int SquareHeightInMeters = 50;
+
+        public static int MapWidthInMeters = SquareWidthInMeters * NbCaseWidth;
+        public static int MapHeightInMeters = SquareHeightInMeters * NbCaseHeight;
     }
 }

@@ -413,6 +413,7 @@
             this.viewMapControler1.TabIndex = 4;
             this.viewMapControler1.Text = "viewMapControler1";
             this.viewMapControler1.Click += new System.EventHandler(this.viewMapControler1_Click);
+            this.viewMapControler1.Resize += new System.EventHandler(this.viewMapControler1_Resize);
             // 
             // gamecontrol
             // 
@@ -424,7 +425,6 @@
             this.Controls.Add(this.viewMapControler1);
             this.Controls.Add(this.panelSeed);
             this.Controls.Add(this.panel1);
-            this.MinimumSize = new System.Drawing.Size(900, 0);
             this.Name = "gamecontrol";
             this.Size = new System.Drawing.Size(1007, 728);
             this.Load += new System.EventHandler(this.ManageUsersControl_Load);

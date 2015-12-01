@@ -45,21 +45,27 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Image path = Image.FromFile( pathPath );
                 Image HomeHen = Image.FromFile(pathHomeHen);
 
-                for (int i = 0; i < FinalVariables._nbCaseHeight; i++)
+                int CaseShouldBeThatHeight;
+                int CaseShouldBeThatWidth;
+
+                CaseShouldBeThatHeight = e.ClipRectangle.Height / FinalVariables.NbCaseHeight;
+                CaseShouldBeThatWidth = e.ClipRectangle.Width / FinalVariables.NbCaseWidth;
+
+                for (int i = 0; i < FinalVariables.NbCaseHeight; i++)
                 {
-                    for (int j = 0; j < FinalVariables._nbCaseWidth; j++)
+                    for (int j = 0; j < FinalVariables.NbCaseWidth; j++)
                     {
                         if (_context.Map.Square[i, j].Decoration == "grass")
                         {
-                            e.Graphics.DrawImage( grass, _context.Map.Square[i, j].Column * FinalVariables._squareWidthInMeters, _context.Map.Square[i, j].Line * FinalVariables._squareWidthInMeters, FinalVariables._squareWidthInMeters, FinalVariables._squareWidthInMeters );
+                            e.Graphics.DrawImage( grass, _context.Map.Square[i, j].Column * CaseShouldBeThatWidth, _context.Map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
                         }
                         else if (_context.Map.Square[i, j].Decoration == "path")
                         {
-                            e.Graphics.DrawImage( path, _context.Map.Square[i, j].Column * FinalVariables._squareWidthInMeters, _context.Map.Square[i, j].Line * FinalVariables._squareWidthInMeters, FinalVariables._squareWidthInMeters, FinalVariables._squareWidthInMeters );
+                            e.Graphics.DrawImage( path, _context.Map.Square[i, j].Column * CaseShouldBeThatWidth, _context.Map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
                         }
                         else if (_context.Map.Square[i, j].Decoration == "HomeHen")
                         {
-                            e.Graphics.DrawImage(HomeHen, _context.Map.Square[i, j].Column * FinalVariables._squareWidthInMeters, _context.Map.Square[i, j].Line * FinalVariables._squareWidthInMeters, FinalVariables._squareWidthInMeters, FinalVariables._squareWidthInMeters);
+                            e.Graphics.DrawImage(HomeHen, _context.Map.Square[i, j].Column * CaseShouldBeThatWidth, _context.Map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
                         }
                     }
                 }

@@ -37,7 +37,7 @@ namespace ITI.S3.PI.Chick_End
         */
         public Map()
         {
-            _squares = new Square[ FinalVariables._nbCaseHeight, FinalVariables._nbCaseWidth];
+            _squares = new Square[ FinalVariables.NbCaseHeight, FinalVariables.NbCaseWidth];
             _ways = new List<Way>();
             _towers  = new List<Tower>();
             _ennemis = new List<Ennemi>();
@@ -54,14 +54,14 @@ namespace ITI.S3.PI.Chick_End
                 // Setting the trees
                 if( i < 3 || i > 5)
                 {
-                    for( int j = 0; j < FinalVariables._nbCaseWidth; j++)
+                    for( int j = 0; j < FinalVariables.NbCaseWidth; j++)
                     {
                         _squares[i, j] = new Square( this, i, j, "grass" );
                     }
                 }
                 else if( i == 4)
                 {
-                    for( int j = 1; j < FinalVariables._nbCaseWidth; j++)
+                    for( int j = 1; j < FinalVariables.NbCaseWidth; j++)
                     {
                         _squares[i, j] = new Square( this, i, j, "grass" );
                     }
@@ -69,7 +69,7 @@ namespace ITI.S3.PI.Chick_End
                 // Setting the paths
                 else if( i == 3 || i == 5)
                 {
-                    for( int j = 1; j < FinalVariables._nbCaseWidth; j++)
+                    for( int j = 1; j < FinalVariables.NbCaseWidth; j++)
                     {
                         _squares[i, j] = new Square( this, i, j, "path" );
                     }
