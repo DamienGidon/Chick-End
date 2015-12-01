@@ -14,11 +14,16 @@ namespace ITI.S3.PI.Chick_End.GUI
     public partial class gamecontrol : UserControl
     {
         Panel _panel;
+        int _square = FinalVariables._squareWidthInMeters;
 
-        public gamecontrol(Panel panel)
+        public gamecontrol(Panel panel, int width, int height)
         {
             InitializeComponent();
             _panel = panel;
+
+            //this.Width = width;
+            //this.Height = height;
+
             //viewMapControler1.Context.Stopwatch.Start();
             Bitmap p = new Bitmap(@"HenLeft.png");
             Graphics g = Graphics.FromImage(p);
@@ -105,7 +110,12 @@ namespace ITI.S3.PI.Chick_End.GUI
             viewMapControler1.AllowDrop = true;
             panel1.AllowDrop = true;
         }
-        
+
+        private void ManageUsersControl_Load(object sender, EventArgs e)
+        {
+            this.Dock = DockStyle.Fill;
+        }
+
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             panelMenu.Show();
@@ -222,10 +232,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb.DoDragDrop(pb.Image, DragDropEffects.Copy);
 
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
-            int topLeftCornerX = ((relativePoint.X / 50)*50);
-            int topLeftCornerY = ((relativePoint.Y / 50)*50);
-            int line = topLeftCornerY / 50;
-            int column = topLeftCornerX / 50;
+            int topLeftCornerX = ((relativePoint.X / _square) * _square);
+            int topLeftCornerY = ((relativePoint.Y / _square) * _square);
+            int line = topLeftCornerY / _square;
+            int column = topLeftCornerX / _square;
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
@@ -257,10 +267,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb2.DoDragDrop(pb2.Image, DragDropEffects.Copy);
 
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
-            int topLeftCornerX = ((relativePoint.X / 50) * 50);
-            int topLeftCornerY = ((relativePoint.Y / 50) * 50);
-            int line = topLeftCornerY / 50;
-            int column = topLeftCornerX / 50;
+            int topLeftCornerX = ((relativePoint.X / _square) * _square);
+            int topLeftCornerY = ((relativePoint.Y / _square) * _square);
+            int line = topLeftCornerY / _square;
+            int column = topLeftCornerX / _square;
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
@@ -300,10 +310,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb4.DoDragDrop(pb4.Image, DragDropEffects.Copy);
 
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
-            int topLeftCornerX = ((relativePoint.X / 50) * 50);
-            int topLeftCornerY = ((relativePoint.Y / 50) * 50);
-            int line = topLeftCornerY / 50;
-            int column = topLeftCornerX / 50;
+            int topLeftCornerX = ((relativePoint.X / _square) * _square);
+            int topLeftCornerY = ((relativePoint.Y / _square) * _square);
+            int line = topLeftCornerY / _square;
+            int column = topLeftCornerX / _square;
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
@@ -330,10 +340,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb3.DoDragDrop(pb3.Image, DragDropEffects.Copy);
 
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
-            int topLeftCornerX = ((relativePoint.X / 50) * 50);
-            int topLeftCornerY = ((relativePoint.Y / 50) * 50);
-            int line = topLeftCornerY / 50;
-            int column = topLeftCornerX / 50;
+            int topLeftCornerX = ((relativePoint.X / _square) * _square);
+            int topLeftCornerY = ((relativePoint.Y / _square) * _square);
+            int line = topLeftCornerY / _square;
+            int column = topLeftCornerX / _square;
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
@@ -366,10 +376,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb5.DoDragDrop(pb5.Image, DragDropEffects.Copy);
 
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
-            int topLeftCornerX = ((relativePoint.X / 50) * 50);
-            int topLeftCornerY = ((relativePoint.Y / 50) * 50);
-            int line = topLeftCornerY / 50;
-            int column = topLeftCornerX / 50;
+            int topLeftCornerX = ((relativePoint.X / _square) * _square);
+            int topLeftCornerY = ((relativePoint.Y / _square) * _square);
+            int line = topLeftCornerY / _square;
+            int column = topLeftCornerX / _square;
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
@@ -402,10 +412,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb6.DoDragDrop(pb6.Image, DragDropEffects.Copy);
 
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
-            int topLeftCornerX = ((relativePoint.X / 50) * 50);
-            int topLeftCornerY = ((relativePoint.Y / 50) * 50);
-            int line = topLeftCornerY / 50;
-            int column = topLeftCornerX / 50;
+            int topLeftCornerX = ((relativePoint.X / _square) * _square);
+            int topLeftCornerY = ((relativePoint.Y / _square) * _square);
+            int line = topLeftCornerY / _square;
+            int column = topLeftCornerX / _square;
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
@@ -437,10 +447,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb7.DoDragDrop(pb7.Image, DragDropEffects.Copy);
 
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
-            int topLeftCornerX = ((relativePoint.X / 50) * 50);
-            int topLeftCornerY = ((relativePoint.Y / 50) * 50);
-            int line = topLeftCornerY / 50;
-            int column = topLeftCornerX / 50;
+            int topLeftCornerX = ((relativePoint.X / _square) * _square);
+            int topLeftCornerY = ((relativePoint.Y / _square) * _square);
+            int line = topLeftCornerY / _square;
+            int column = topLeftCornerX / _square;
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
@@ -472,10 +482,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb8.DoDragDrop(pb8.Image, DragDropEffects.Copy);
 
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
-            int topLeftCornerX = ((relativePoint.X / 50) * 50);
-            int topLeftCornerY = ((relativePoint.Y / 50) * 50);
-            int line = topLeftCornerY / 50;
-            int column = topLeftCornerX / 50;
+            int topLeftCornerX = ((relativePoint.X / _square) * _square);
+            int topLeftCornerY = ((relativePoint.Y / _square) * _square);
+            int line = topLeftCornerY / _square;
+            int column = topLeftCornerX / _square;
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
@@ -506,10 +516,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb9.DoDragDrop(pb9.Image, DragDropEffects.Copy);
 
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
-            int topLeftCornerX = ((relativePoint.X / 50) * 50);
-            int topLeftCornerY = ((relativePoint.Y / 50) * 50);
-            int line = topLeftCornerY / 50;
-            int column = topLeftCornerX / 50;
+            int topLeftCornerX = ((relativePoint.X / _square) * _square);
+            int topLeftCornerY = ((relativePoint.Y / _square) * _square);
+            int line = topLeftCornerY / _square;
+            int column = topLeftCornerX / _square;
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
@@ -559,10 +569,10 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
 
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
-            int topLeftCornerX = ((relativePoint.X / 50) * 50);
-            int topLeftCornerY = ((relativePoint.Y / 50) * 50);
-            int line = topLeftCornerY / 50;
-            int column = topLeftCornerX / 50;
+            int topLeftCornerX = ((relativePoint.X / _square) * _square);
+            int topLeftCornerY = ((relativePoint.Y / _square) * _square);
+            int line = topLeftCornerY / _square;
+            int column = topLeftCornerX / _square;
 
             Bitmap p9 = new Bitmap(@"Wolf.png");
             Graphics g9 = Graphics.FromImage(p9);
@@ -572,14 +582,14 @@ namespace ITI.S3.PI.Chick_End.GUI
 
             if (r2 == 1)
             {
-                Rectangle r9 = new Rectangle(650, 150 - 20, 50, 70);
+                Rectangle r9 = new Rectangle(_square * 13,_square * 3 , 50, 70);
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
                 e1.Graphics.DrawImage(p9, r9);
                 viewMapControler1.Context.Map.CreateWolf(line, column, viewMapControler1.Context.Map);
             }
             else
             {
-                Rectangle r9 = new Rectangle(650, 250 - 20, 50, 70);
+                Rectangle r9 = new Rectangle(_square * 13,_square * 5, 50, 70);
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
                 e1.Graphics.DrawImage(p9, r9);
                 viewMapControler1.Context.Map.CreateWolf(line, column, viewMapControler1.Context.Map);

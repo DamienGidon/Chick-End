@@ -51,9 +51,9 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             MenuPanel.Hide();
             panelLevel.Hide();
-            this.Controls.Add(new gamecontrol(MenuPanel));
+            this.Controls.Add(new gamecontrol(MenuPanel, this.Width, this.Height));
             //buttonPlay.BackColor = System.Drawing.Color.Transparent;
-
+            
         }
 
         private void buttonQuit_Click(object sender, EventArgs e)
