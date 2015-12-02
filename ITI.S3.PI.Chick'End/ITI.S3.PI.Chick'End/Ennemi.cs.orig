@@ -1,0 +1,68 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ITI.S3.PI.Chick_End
+{
+    public abstract class Ennemi : Unit, IAssailant, IMove
+    {
+        protected Way _way;
+        protected int _x;
+        protected int _y;
+        protected int _speed;
+        protected readonly int _damages;
+        protected readonly float _range;
+        public Map _context;
+
+        protected static Random _r = new Random();
+
+        public Ennemi()
+        {
+            
+        }
+
+        public Map Context
+        {
+            get { return _context; }
+        }
+
+        public int Speed
+        {
+            get { return _speed; }
+            set { _speed = value; }
+        }
+
+<<<<<<< HEAD
+        public int X
+        {
+            get { return _x; }
+        }
+
+        public int Y
+        {
+            get { return _y; }
+=======
+        public int GetX
+        {
+            get { return _x; }
+        }
+
+        public int GetY
+        {
+            get { return _y; }
+>>>>>>> 33d3b31e0df799f65c47e508f9ae6fea7c687d83
+        }
+
+        public virtual void Move()
+        {
+            _x = _x + 50;
+        }
+
+        public virtual void Attack( Unit ennemi )
+        {
+
+        }
+    }
+}

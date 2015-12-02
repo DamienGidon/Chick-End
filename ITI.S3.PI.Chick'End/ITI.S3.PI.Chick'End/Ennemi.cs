@@ -1,0 +1,89 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ITI.S3.PI.Chick_End
+{
+    public abstract class Ennemi : Unit, IAssailant, IMove
+    {
+        protected Way _way;
+        protected int _x;
+        protected int _y;
+        protected int _speed;
+        protected readonly int _damages;
+        protected readonly float _range;
+        public Map _context;
+
+        protected static Random _r = new Random();
+
+        public Ennemi(Map context)
+        {
+            _context = context;
+            int numberOfWays = _context.Ways.Count();
+            _way = _context.Ways[_r.Next( numberOfWays )];
+            _x = _way.FirstSquare.Column * 50 + 30;
+            _y = _way.FirstSquare.Line * 50 + 30;
+        }
+
+        public Map Context
+        {
+            get { return _context; }
+        }
+
+        public int Speed
+        {
+            get { return _speed; }
+            set { _speed = value; }
+        }
+
+        public int X
+        {
+            get { return _x; }
+        }
+
+        public int Y
+        {
+            get { return _y; }
+        }
+
+        public virtual void Move()
+        {
+            if( _way.Current.Column == _way.Next.Column + 1)
+            {
+                _x -= FinalVariables._squareWidthInMeters / 8;
+                if ( _x <= _way.Next.Column * FinalVariables._squareWidthInMeters )
+                {
+                    _way.NextSquare();
+                }
+            }
+            else if( _way.Current.Line == _way.Next.Line + 1)
+            {
+                _y -= FinalVariables._squareHeightInMeters / 8;
+                if (_y <= _way.Next.Line * FinalVariables._squareHeightInMeters)
+                {
+                    _way.NextSquare();
+                }
+            }
+            else if (_way.Current.Line == _way.Next.Line - 1)
+            {
+                _y += FinalVariables._squareHeightInMeters / 8;
+                if (_y >= _way.Next.Line * FinalVariables._squareHeightInMeters)
+                {
+                    _way.NextSquare();
+                }
+            }
+
+        }
+        public Square Position
+        {
+            get;
+            set;
+        }
+        public virtual void Attack( Unit ennemi )
+        {
+
+        }
+    }
+}
