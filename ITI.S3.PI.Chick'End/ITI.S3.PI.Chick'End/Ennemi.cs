@@ -76,7 +76,11 @@ namespace ITI.S3.PI.Chick_End
             }
 
         }
-
+        public Square Position
+        {
+            get;
+            set;
+        }
         public virtual void Attack( Unit ennemi )
         {
 
