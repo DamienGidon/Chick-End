@@ -19,7 +19,7 @@ namespace ITI.S3.PI.Chick_End
             _stopwatch = new Stopwatch();
         }
 
-        public Map Context
+        public Map Map
         {
             get { return _context; }
         }

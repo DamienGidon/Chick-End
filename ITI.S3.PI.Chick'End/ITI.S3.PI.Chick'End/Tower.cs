@@ -33,24 +33,29 @@ namespace ITI.S3.PI.Chick_End
         public virtual Ennemi GetClosestEnnemiAttackable()
         {
             Ennemi closestEnnemi = null;
-            int xClosestEnnemi = FinalVariables._squareWidthInMeters * FinalVariables._nbCaseWidth + FinalVariables._squareWidthInMeters - 1;
-            int yClosestEnnemi = FinalVariables._squareWidthInMeters * FinalVariables._nbCaseHeight + FinalVariables._squareWidthInMeters - 1;
+            List<Ennemi> test = new List<Ennemi>();
 
-            foreach( Ennemi e in _square.Context.Ennemis )
+            int thisX = _square.Column * FinalVariables._squareWidthInMeters + FinalVariables._squareWidthInMeters / 2;
+            int thisY = _square.Line * FinalVariables._squareHeightInMeters + FinalVariables._squareHeightInMeters / 2;
+
+
+            test = _square.Context.Ennemis.Where(e => _range.Contains(e.Position)).ToList();
+            double minpyth = -1;
+            foreach (var en in test)
             {
-                foreach( Square q in _range)
+                double a = pyth(Math.Max(thisX, en.X)-Math.Min(thisX, en.X), Math.Max(thisY, en.Y) - Math.Min(thisY, en.Y));
+                if (minpyth == -1)
                 {
-                    if( e.X / 50 == q.Column && e.X < xClosestEnnemi && e.Y < yClosestEnnemi)
-                    {
-                        xClosestEnnemi = e.X - _square.Column * FinalVariables._squareWidthInMeters;
-                        if (e.Y / 50 > _square.Line)
-                            yClosestEnnemi = e.Y - _square.Line * FinalVariables._squareWidthInMeters;
-                        else if (e.Y / 50 < _square.Line)
-                            yClosestEnnemi = _square.Line * FinalVariables._squareWidthInMeters - e.Y;
-                        closestEnnemi = e;
-                    }
+                    minpyth = a;
+                    closestEnnemi = en;
+                }
+                if (a < minpyth)
+                {
+                    minpyth = a;
+                    closestEnnemi = en;
                 }
             }
+            
 
             return closestEnnemi;
         }
@@ -99,5 +104,9 @@ namespace ITI.S3.PI.Chick_End
 
             return squaresInRange;
         }
-    }
+        public double pyth(int diffX, int diffY)
+        {
+            return (Math.Sqrt(diffX * diffX + diffY * diffY));
+        }
+}
 }

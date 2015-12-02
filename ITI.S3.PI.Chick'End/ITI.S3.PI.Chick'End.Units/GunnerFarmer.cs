@@ -11,8 +11,7 @@ namespace ITI.S3.PI.Chick_End.Units
         internal GunnerFarmer(Square context)
             : base( context, 15 )
         {
-            this.Health = 50;
-            _square = context;
+            Health = 50;
         }
 
         public override void Attack(Unit ennemi)
