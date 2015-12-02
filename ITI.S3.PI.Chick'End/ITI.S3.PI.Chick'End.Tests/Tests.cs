@@ -16,7 +16,6 @@ namespace ITI.S3.PI.Chick_End.Tests
             Game g = new Game();
 
             Assert.IsNotNull( g.Map );
-            Assert.IsNotNull( g.Stopwatch );
         }
 
         [Test]

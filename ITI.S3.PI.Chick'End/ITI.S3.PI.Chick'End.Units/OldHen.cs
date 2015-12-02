@@ -10,10 +10,9 @@ namespace ITI.S3.PI.Chick_End.Units
     internal class OldHen : Tower
     {
         internal OldHen(Square context)
-            : base( 15 )
+            : base( context, 15 )
         {
             Health = 50;
-            _square = context;
         }
 
         public override void Attack(Unit ennemi)

@@ -19,7 +19,7 @@ namespace ITI.S3.PI.Chick_End
             _stopwatch = new Stopwatch();
         }
 
-        public Map Map
+        public Map Context
         {
             get { return _context; }
         }
@@ -35,23 +35,9 @@ namespace ITI.S3.PI.Chick_End
             set { _isPaused = value; }
         }
 
-        public void GameLoop()
+        public void Update()
         {
-            while (!_isPaused)
-            {
-                foreach (Tower t in _context.Towers)
-                {
-
-                }
-                foreach (Ennemi e in _context.Ennemis)
-                {
-                    e.Move();
-                    //e.Attack();
-                }
-
-                int start = (int)_stopwatch.ElapsedMilliseconds;
-                //System.Threading.Thread.Sleep( start + FinalVariables.MS_PER_FRAME - (int)_stopwatch.ElapsedMilliseconds );
-            }
+            //foreach( )
         }
     }
 }

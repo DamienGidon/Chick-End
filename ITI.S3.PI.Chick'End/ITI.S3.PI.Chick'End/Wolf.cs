@@ -9,13 +9,8 @@ namespace ITI.S3.PI.Chick_End
     public class Wolf : Ennemi
     {
         public Wolf(Map context)
-            : base()
+            : base(context)
         {
-            _context = context;
-            int numberOfWays = _context.Ways.Count();
-            _way = _context.Ways[_r.Next(numberOfWays)];
-            _x = _way.FirstSquare.Column * 50 + 30;
-            _y = _way.FirstSquare.Line * 50 + 30;
             Health = 50;
             Speed = 50;
         }

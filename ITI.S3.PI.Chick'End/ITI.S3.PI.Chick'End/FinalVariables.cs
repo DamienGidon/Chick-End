@@ -11,6 +11,7 @@ namespace ITI.S3.PI.Chick_End
         public static readonly int _nbCaseWidth = 14;
         public static readonly int _nbCaseHeight = 9;
 
-        public static readonly int _squareWidthInMeters = 50;
+        public static int _squareWidthInMeters = 50;
+        public static int _squareHeightInMeters = 50;
     }
 }

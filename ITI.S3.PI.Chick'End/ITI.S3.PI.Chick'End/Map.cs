@@ -144,7 +144,7 @@ namespace ITI.S3.PI.Chick_End
         }
         public void CreateExplosiveEgg( int ligne, int colonne, Map context )
         {
-            Tower t = new ExplosiveEgg();
+            Tower t = new ExplosiveEgg(context._squares[ligne, colonne]);
             Square[ligne, colonne].Tower = t;
             _towers.Add( t );
         }
@@ -176,35 +176,35 @@ namespace ITI.S3.PI.Chick_End
 
         public void CreateHyena(int ligne, int colonne, Map context)
         {
-            Ennemi e = new Hyena();
+            Ennemi e = new Hyena(context);
             Square[ligne, colonne].Ennemi = e;
             _ennemis.Add(e);
         }
 
         public void CreateFox(int ligne, int colonne, Map context)
         {
-            Ennemi e = new Fox();
+            Ennemi e = new Fox(context);
             Square[ligne, colonne].Ennemi = e;
             _ennemis.Add(e);
         }
 
         public void CreateLion(int ligne, int colonne, Map context)
         {
-            Ennemi e = new Lion();
+            Ennemi e = new Lion(context);
             Square[ligne, colonne].Ennemi = e;
             _ennemis.Add(e);
         }
 
         public void CreateAnubis(int ligne, int colonne, Map context)
         {
-            Ennemi e = new Anubis();
+            Ennemi e = new Anubis(context);
             Square[ligne, colonne].Ennemi = e;
             _ennemis.Add(e);
         }
 
         public void CreateCerberus(int ligne, int colonne, Map context)
         {
-            Ennemi e = new Cerberus();
+            Ennemi e = new Cerberus(context);
             Square[ligne, colonne].Ennemi = e;
             _ennemis.Add(e);
         }

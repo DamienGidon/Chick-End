@@ -9,10 +9,9 @@ namespace ITI.S3.PI.Chick_End
     class Baker : Tower
     {
         internal Baker(Square context)
-            : base( 15 )
+            : base( context, 15 )
         {
             _health = 50;
-            _square = context;
         }
 
         public override void Attack(Unit ennemi)
@@ -20,10 +19,10 @@ namespace ITI.S3.PI.Chick_End
             ennemi.Health -= Damages;
         }
 
-        public override List<Square> GetRange()
-        {
-            throw new NotImplementedException();
-        }
+        //public override List<Square> GetRange()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         /*
         public override void Remove()

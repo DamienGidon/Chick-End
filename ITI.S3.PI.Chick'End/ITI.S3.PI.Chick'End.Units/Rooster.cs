@@ -9,10 +9,9 @@ namespace ITI.S3.PI.Chick_End.Units
     class Rooster : Tower
     {
         internal Rooster(Square context)
-            : base( 15 )
+            : base( context, 15 )
         {
             Health = 50;
-            _square = context;
         }
 
        

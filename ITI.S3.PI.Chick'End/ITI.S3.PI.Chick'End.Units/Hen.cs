@@ -9,9 +9,8 @@ namespace ITI.S3.PI.Chick_End.Units
     internal class Hen : Tower
     {
         internal Hen(Square context)
-            : base( 15 )
+            : base( context, 15 )
         {
-            _square = context;
             this.Health = 50;
         }
 

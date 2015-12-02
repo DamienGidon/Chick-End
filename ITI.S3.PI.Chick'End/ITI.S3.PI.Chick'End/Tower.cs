@@ -8,14 +8,16 @@ namespace ITI.S3.PI.Chick_End
 {
     public abstract class Tower : Unit, IAssailant, IRemove
     {
-        protected Square _square;
+        protected readonly Square _square;
         internal readonly int _damages;
         protected List<Square> _range;
 
-        protected Tower(int damages)
+        protected Tower(Square context, int damages)
         {
-            _damages = damages;
+            _square = context;
             _range = GetRange();
+            _damages = damages;
+            
         }
 
         public int Damages

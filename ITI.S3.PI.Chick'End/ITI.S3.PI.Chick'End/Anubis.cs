@@ -8,6 +8,13 @@ namespace ITI.S3.PI.Chick_End
 {
     class Anubis : Ennemi
     {
+        public Anubis( Map context )
+            : base(context)
+        {
+            Health = 50;
+            Speed = 50;
+        }
+
         public override void Attack( Unit opponent )
         {
             throw new NotImplementedException();

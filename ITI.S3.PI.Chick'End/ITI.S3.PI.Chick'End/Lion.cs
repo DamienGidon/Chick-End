@@ -8,6 +8,13 @@ namespace ITI.S3.PI.Chick_End
 {
     class Lion : Ennemi
     {
+        public Lion( Map context )
+            : base(context)
+        {
+            Health = 50;
+            Speed = 50;
+        }
+
         public override void Attack( Unit opponent )
         {
             throw new NotImplementedException();

@@ -9,7 +9,7 @@ namespace ITI.S3.PI.Chick_End.Units
     class GunnerFarmer : Tower
     {
         internal GunnerFarmer(Square context)
-            : base( 15 )
+            : base( context, 15 )
         {
             this.Health = 50;
             _square = context;
