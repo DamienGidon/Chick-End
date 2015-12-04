@@ -7,9 +7,11 @@ using System.Diagnostics;
 
 namespace ITI.S3.PI.Chick_End
 {
+    [Serializable]
     public class Game
     {
         readonly Map _context;
+        [NonSerialized]
         readonly Stopwatch _stopwatch;
         bool _isPaused;
 

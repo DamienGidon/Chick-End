@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ITI.S3.PI.Chick_End.GUI
 {
@@ -18,7 +19,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         int _squareHeight;
         int _squareWidth;
 
-        public gamecontrol(Panel panel, int width, int height)
+        public gamecontrol(Panel panel)
         {
             InitializeComponent();
 
@@ -602,6 +603,15 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             ViewMapControler item = (ViewMapControler)sender;
             item.Refresh();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            using (FileStream fs = new FileStream("objet.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                BinaryFormatter ser = new BinaryFormatter();
+                ser.Serialize(fs, viewMapControler1.Context);
+            }
         }
     }
 }

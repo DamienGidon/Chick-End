@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
+    [Serializable]
     public abstract class Tower : Unit, IAssailant, IRemove
     {
         protected Square _square;
@@ -15,6 +16,11 @@ namespace ITI.S3.PI.Chick_End
         protected Tower(int damages)
         {
             _damages = damages;
+        }
+
+        public Square Square
+        {
+            get { return _square; }
         }
 
         public int Damages
