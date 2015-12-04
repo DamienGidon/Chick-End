@@ -144,7 +144,7 @@ namespace ITI.S3.PI.Chick_End
         }
         public void CreateExplosiveEgg( int ligne, int colonne, Map context )
         {
-            Tower t = new ExplosiveEgg(context._squares[ligne, colonne]);
+            Tower t = new ExplosiveEgg(context[ligne, colonne]);
             Square[ligne, colonne].Tower = t;
             _towers.Add( t );
         }

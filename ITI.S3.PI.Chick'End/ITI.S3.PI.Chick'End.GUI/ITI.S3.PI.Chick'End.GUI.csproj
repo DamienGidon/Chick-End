@@ -126,10 +126,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ITI.S3.PI.Chick%27End.Units\ITI.S3.PI.Chick%27End.Units.csproj">
-      <Project>{0806e260-05bf-4fd0-9de1-c2bfc2c692a0}</Project>
-      <Name>ITI.S3.PI.Chick%27End.Units</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ITI.S3.PI.Chick%27End\ITI.S3.PI.Chick%27End.csproj">
       <Project>{0996f6a9-b143-431c-bab2-6e65a49ce6a6}</Project>
       <Name>ITI.S3.PI.Chick%27End</Name>

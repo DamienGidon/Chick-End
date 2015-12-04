@@ -4,26 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITI.S3.PI.Chick_End.Units
+namespace ITI.S3.PI.Chick_End
 {
-    class Rooster : Tower
+    class Bucher : Tower
     {
-        internal Rooster(Square context)
+        internal Bucher(Square context)
             : base( context, 15 )
         {
-            Health = 50;
+            _health = 50;
         }
 
-       
         public override void Attack(Unit ennemi)
         {
             ennemi.Health -= Damages;
         }
 
-        public override List<Square> GetRange()
-        {
-            throw new NotImplementedException();
-        }
+        //public override List<Square> GetRange()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         /*
         public override void Remove()

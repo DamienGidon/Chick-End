@@ -30,11 +30,11 @@ namespace ITI.S3.PI.Chick_End
         public Square Next
         {
             get { return _current.NextSquare; }
-        }        
+        }
 
-        public void NextSquare()
+        public Square NextSquare()
         {
-            _current = _current.NextSquare;
+            return _current = _current.NextSquare;
         }
     }
 }

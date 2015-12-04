@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITI.S3.PI.Chick_End.Units
+namespace ITI.S3.PI.Chick_End
 {
-    internal class Hen : Tower
+    public class InfantryFarmer : Tower
     {
-        internal Hen(Square context)
+        internal InfantryFarmer( Square context )
             : base( context, 15 )
         {
-            this.Health = 50;
+            _health = 50;
         }
 
         public override void Attack(Unit ennemi)
@@ -19,10 +19,10 @@ namespace ITI.S3.PI.Chick_End.Units
             ennemi.Health -= Damages;
         }
 
-        public override List<Square> GetRange()
-        {
-            throw new NotImplementedException();
-        }
+        //public override List<Square> GetRange()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         /*
         public override void Remove()
