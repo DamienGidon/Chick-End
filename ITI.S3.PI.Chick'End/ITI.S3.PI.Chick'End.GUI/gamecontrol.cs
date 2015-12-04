@@ -248,7 +248,7 @@ namespace ITI.S3.PI.Chick_End.GUI
 
                 Bitmap p2 = new Bitmap(@"HenLeft.png");
                 Graphics g = Graphics.FromImage(p2);
-
+                
                 Rectangle r = new Rectangle(topLeftCornerX, topLeftCornerY, _squareWidth, _squareHeight);
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r);
                 e1.Graphics.DrawImage(p2, r);
@@ -601,6 +601,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         private void viewMapControler1_Resize(object sender, EventArgs e)
         {
             ViewMapControler item = (ViewMapControler)sender;
+            //List<Tower> _tower = viewMapControler1.Context.Map.GetTower;
             item.Refresh();
         }
     }

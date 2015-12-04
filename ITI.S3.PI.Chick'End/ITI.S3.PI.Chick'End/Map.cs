@@ -213,5 +213,10 @@ namespace ITI.S3.PI.Chick_End
         {
             throw new NotImplementedException();
         }
+
+        public List<Tower> GetTower
+        {
+            get { return _towers; }
+        }
     }
 }

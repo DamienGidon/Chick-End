@@ -75,7 +75,7 @@
             // 
             // tabLevelOne
             // 
-            this.tabLevelOne.BackColor = System.Drawing.Color.LightGreen;
+            this.tabLevelOne.BackColor = System.Drawing.Color.Orange;
             this.tabLevelOne.Controls.Add(this.labelScoreOne);
             this.tabLevelOne.Controls.Add(this.labelPseudoOne);
             this.tabLevelOne.Controls.Add(this.labelScore);
@@ -134,7 +134,7 @@
             // 
             // tabLevelTwo
             // 
-            this.tabLevelTwo.BackColor = System.Drawing.Color.LightGreen;
+            this.tabLevelTwo.BackColor = System.Drawing.Color.Orange;
             this.tabLevelTwo.Controls.Add(this.labelScoreTwo);
             this.tabLevelTwo.Controls.Add(this.labelPseudoTwo);
             this.tabLevelTwo.Controls.Add(this.label1);
@@ -142,7 +142,7 @@
             this.tabLevelTwo.Location = new System.Drawing.Point(4, 22);
             this.tabLevelTwo.Name = "tabLevelTwo";
             this.tabLevelTwo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLevelTwo.Size = new System.Drawing.Size(488, 472);
+            this.tabLevelTwo.Size = new System.Drawing.Size(488, 500);
             this.tabLevelTwo.TabIndex = 1;
             this.tabLevelTwo.Text = "Level 2";
             // 
@@ -192,7 +192,7 @@
             // 
             // tabLevelThree
             // 
-            this.tabLevelThree.BackColor = System.Drawing.Color.LightGreen;
+            this.tabLevelThree.BackColor = System.Drawing.Color.Orange;
             this.tabLevelThree.Controls.Add(this.labelScoreThree);
             this.tabLevelThree.Controls.Add(this.labelPseudoThree);
             this.tabLevelThree.Controls.Add(this.label3);
@@ -200,7 +200,7 @@
             this.tabLevelThree.Location = new System.Drawing.Point(4, 22);
             this.tabLevelThree.Name = "tabLevelThree";
             this.tabLevelThree.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLevelThree.Size = new System.Drawing.Size(488, 472);
+            this.tabLevelThree.Size = new System.Drawing.Size(488, 500);
             this.tabLevelThree.TabIndex = 2;
             this.tabLevelThree.Text = "Level 3";
             // 
@@ -250,7 +250,7 @@
             // 
             // tabLevelFour
             // 
-            this.tabLevelFour.BackColor = System.Drawing.Color.LightGreen;
+            this.tabLevelFour.BackColor = System.Drawing.Color.Orange;
             this.tabLevelFour.Controls.Add(this.labelScoreFour);
             this.tabLevelFour.Controls.Add(this.labelPseudoFour);
             this.tabLevelFour.Controls.Add(this.label5);
@@ -258,7 +258,7 @@
             this.tabLevelFour.Location = new System.Drawing.Point(4, 22);
             this.tabLevelFour.Name = "tabLevelFour";
             this.tabLevelFour.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLevelFour.Size = new System.Drawing.Size(488, 472);
+            this.tabLevelFour.Size = new System.Drawing.Size(488, 500);
             this.tabLevelFour.TabIndex = 3;
             this.tabLevelFour.Text = "Level 4";
             // 
