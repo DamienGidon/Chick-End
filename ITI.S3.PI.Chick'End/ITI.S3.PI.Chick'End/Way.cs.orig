@@ -6,15 +6,25 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
+<<<<<<< HEAD
     public class Way
     {
         Square _firstSquare;
         Square _current;
+=======
+    [Serializable]
+    public class Way
+    {
+        Square _firstSquare;
+>>>>>>> origin/dev
 
         public Way( Square firstSquare )
         {
             _firstSquare = firstSquare;
+<<<<<<< HEAD
             _current = firstSquare;
+=======
+>>>>>>> origin/dev
         }
 
         public Square FirstSquare
@@ -22,6 +32,7 @@ namespace ITI.S3.PI.Chick_End
             get { return _firstSquare; }
         }
 
+<<<<<<< HEAD
         public Square Current
         {
             get { return _current; }
@@ -30,19 +41,16 @@ namespace ITI.S3.PI.Chick_End
         public Square Next
         {
             get { return _current.NextSquare; }
-<<<<<<< Updated upstream
-        }        
-
-        public void NextSquare()
-        {
-            _current = _current.NextSquare;
-=======
         }
 
         public Square NextSquare()
         {
             return _current = _current.NextSquare;
->>>>>>> Stashed changes
+=======
+        public Square Next()
+        {
+            return _firstSquare.NextSquare;
+>>>>>>> origin/dev
         }
     }
 }

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -53,7 +55,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             panelLevel.Hide();
             this.Controls.Add(new gamecontrol(MenuPanel));
             //buttonPlay.BackColor = System.Drawing.Color.Transparent;
-
+            
         }
 
         private void buttonQuit_Click(object sender, EventArgs e)
@@ -193,6 +195,20 @@ namespace ITI.S3.PI.Chick_End.GUI
             System.Media.SoundPlayer player = new System.Media.SoundPlayer();
             player.SoundLocation = "loup.wav";
             player.Play();
+        }
+        private void buttonContinue_Click(object sender, EventArgs e)
+        {
+            gamecontrol g1 = new gamecontrol(MenuPanel);
+            this.Controls.Add(g1);
+
+            using (FileStream fs = new FileStream("objet.bin", FileMode.Open, FileAccess.Read, FileShare.None))
+            {
+                BinaryFormatter ser = new BinaryFormatter();
+                Game game = (Game)ser.Deserialize(fs);
+                MenuPanel.Hide();
+                //g1.dgv.DataSource = new List<Game> { game };
+
+            }
         }
     }
 }

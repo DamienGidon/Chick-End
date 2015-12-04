@@ -7,26 +7,27 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
+<<<<<<< HEAD
     public abstract class Tower : Unit, IAssailant
+=======
+    [Serializable]
+    public abstract class Tower : Unit, IAssailant, IRemove
+>>>>>>> origin/dev
     {
         protected readonly Square _square;
         internal readonly int _damages;
         protected readonly Square[] _range;
 
-<<<<<<< Updated upstream
-        protected Tower(Square context, int damages)
-        {
-            _square = context;
-            _range = GetRange();
-            _damages = damages;
-            
-=======
         protected Tower( Square context, int damages )
         {
             _square = context;
             _range = ComputeRange().ToArray();
             _damages = damages;
->>>>>>> Stashed changes
+        }
+
+        public Square Square
+        {
+            get { return _square; }
         }
 
         public int Damages
@@ -41,36 +42,7 @@ namespace ITI.S3.PI.Chick_End
 
         public override Point Position
         {
-<<<<<<< Updated upstream
-            Ennemi closestEnnemi = null;
-            List<Ennemi> test = new List<Ennemi>();
-
-            int thisX = _square.Column * FinalVariables._squareWidthInMeters + FinalVariables._squareWidthInMeters / 2;
-            int thisY = _square.Line * FinalVariables._squareHeightInMeters + FinalVariables._squareHeightInMeters / 2;
-
-
-            test = _square.Context.Ennemis.Where(e => _range.Contains(e.Position)).ToList();
-            double minpyth = -1;
-            foreach (var en in test)
-            {
-                double a = pyth(Math.Max(thisX, en.X)-Math.Min(thisX, en.X), Math.Max(thisY, en.Y) - Math.Min(thisY, en.Y));
-                if (minpyth == -1)
-                {
-                    minpyth = a;
-                    closestEnnemi = en;
-                }
-                if (a < minpyth)
-                {
-                    minpyth = a;
-                    closestEnnemi = en;
-                }
-            }
-            
-
-            return closestEnnemi;
-=======
             get { return new Point( _square.Column * FinalVariables._squareWidthInMeters + FinalVariables._squareWidthInMeters / 2, _square.Line * FinalVariables._squareHeightInMeters + FinalVariables._squareHeightInMeters / 2 ); }
->>>>>>> Stashed changes
         }
 
         public IReadOnlyList<Square> Range
@@ -90,18 +62,18 @@ namespace ITI.S3.PI.Chick_End
             List<Square> squaresInRange = new List<Square>();
             int line = _square.Line;
             int column = _square.Column;
-            
-            for( int i = column; i < FinalVariables._nbCaseWidth; i++ )
+
+            for (int i = column; i < FinalVariables._nbCaseWidth; i++)
             {
                 if (_square.Context.Square[line, i].Decoration == "path")
                     squaresInRange.Add( _square.Context.Square[line, i] );
                 else
                     break;
             }
-            
-            for( int i = line + 1; i<FinalVariables._nbCaseHeight; i++ )
+
+            for (int i = line + 1; i < FinalVariables._nbCaseHeight; i++)
             {
-                if( _square.Context.Square[i, column].Decoration == "path" )
+                if (_square.Context.Square[i, column].Decoration == "path")
                     squaresInRange.Add( _square.Context.Square[i, column] );
                 else
                     break;
@@ -117,18 +89,10 @@ namespace ITI.S3.PI.Chick_End
 
             return squaresInRange;
         }
-<<<<<<< Updated upstream
-        public double pyth(int diffX, int diffY)
-        {
-            return (Math.Sqrt(diffX * diffX + diffY * diffY));
-        }
-}
-=======
 
         public virtual void Attack( Unit ennemi )
         {
             throw new NotImplementedException();
         }
     }
->>>>>>> Stashed changes
 }

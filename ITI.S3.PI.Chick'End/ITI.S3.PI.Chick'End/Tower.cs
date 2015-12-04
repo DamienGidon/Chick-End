@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace ITI.S3.PI.Chick_End
 {
     public abstract class Tower : Unit, IAssailant
+    [Serializable]
     {
         protected readonly Square _square;
         internal readonly int _damages;
@@ -18,6 +19,11 @@ namespace ITI.S3.PI.Chick_End
             _square = context;
             _range = ComputeRange().ToArray();
             _damages = damages;
+        }
+
+        public Square Square
+        {
+            get { return _square; }
         }
 
         public int Damages

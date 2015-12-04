@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
+    [Serializable]
     public abstract class Ennemi : Unit, IAssailant, IMove
     {
         protected Way _way;

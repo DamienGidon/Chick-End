@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
+    [Serializable]
     class Anubis : Ennemi
     {
         public Anubis( Map context )
