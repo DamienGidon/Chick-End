@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    class Baker : Tower
+    public class ExplosiveEgg : Tower
     {
-        internal Baker(Square context)
+        public ExplosiveEgg(Square context)
             : base( context, 15 )
         {
             _health = 50;

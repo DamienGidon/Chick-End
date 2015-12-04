@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    interface IAssailant
+    public interface IAssailant
     {
+        IReadOnlyList<Square> Range { get; }
+
+        List<Square> ComputeRange();
         void Attack(Unit ennemi);
     }
 }
