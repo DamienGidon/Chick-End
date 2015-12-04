@@ -66,10 +66,9 @@
             this.MenuPanel.Controls.Add(this.buttonBestiary);
             this.MenuPanel.Controls.Add(this.buttonContinue);
             this.MenuPanel.Controls.Add(this.buttonPlay);
-            this.MenuPanel.Location = new System.Drawing.Point(-3, -2);
-            this.MenuPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.MenuPanel.Location = new System.Drawing.Point(-2, -2);
             this.MenuPanel.Name = "MenuPanel";
-            this.MenuPanel.Size = new System.Drawing.Size(1347, 900);
+            this.MenuPanel.Size = new System.Drawing.Size(1010, 858);
             this.MenuPanel.TabIndex = 0;
             // 
             // pictureBox2
@@ -78,10 +77,9 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(1136, 542);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(852, 567);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(99, 69);
+            this.pictureBox2.Size = new System.Drawing.Size(74, 56);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -94,10 +92,9 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(188, 416);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(141, 338);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(99, 69);
+            this.pictureBox1.Size = new System.Drawing.Size(74, 183);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -111,10 +108,9 @@
             this.panelLevel.Controls.Add(this.buttonLevelThree);
             this.panelLevel.Controls.Add(this.buttonLevelTwo);
             this.panelLevel.Controls.Add(this.buttonLevelOne);
-            this.panelLevel.Location = new System.Drawing.Point(499, 215);
-            this.panelLevel.Margin = new System.Windows.Forms.Padding(4);
+            this.panelLevel.Location = new System.Drawing.Point(374, 175);
             this.panelLevel.Name = "panelLevel";
-            this.panelLevel.Size = new System.Drawing.Size(323, 542);
+            this.panelLevel.Size = new System.Drawing.Size(242, 440);
             this.panelLevel.TabIndex = 6;
             this.panelLevel.Visible = false;
             // 
@@ -125,10 +121,9 @@
             this.buttonReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReturn.Font = new System.Drawing.Font("Playbill", 30F);
             this.buttonReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonReturn.Location = new System.Drawing.Point(67, 417);
-            this.buttonReturn.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonReturn.Location = new System.Drawing.Point(50, 339);
             this.buttonReturn.Name = "buttonReturn";
-            this.buttonReturn.Size = new System.Drawing.Size(187, 86);
+            this.buttonReturn.Size = new System.Drawing.Size(140, 70);
             this.buttonReturn.TabIndex = 4;
             this.buttonReturn.Text = "Return";
             this.buttonReturn.UseVisualStyleBackColor = true;
@@ -144,10 +139,9 @@
             this.buttonLevelFour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLevelFour.Font = new System.Drawing.Font("Playbill", 30F);
             this.buttonLevelFour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLevelFour.Location = new System.Drawing.Point(67, 324);
-            this.buttonLevelFour.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLevelFour.Location = new System.Drawing.Point(50, 263);
             this.buttonLevelFour.Name = "buttonLevelFour";
-            this.buttonLevelFour.Size = new System.Drawing.Size(187, 86);
+            this.buttonLevelFour.Size = new System.Drawing.Size(140, 70);
             this.buttonLevelFour.TabIndex = 3;
             this.buttonLevelFour.Text = "Level 4";
             this.buttonLevelFour.UseVisualStyleBackColor = true;
@@ -160,10 +154,9 @@
             this.buttonLevelThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLevelThree.Font = new System.Drawing.Font("Playbill", 30F);
             this.buttonLevelThree.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLevelThree.Location = new System.Drawing.Point(67, 230);
-            this.buttonLevelThree.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLevelThree.Location = new System.Drawing.Point(50, 187);
             this.buttonLevelThree.Name = "buttonLevelThree";
-            this.buttonLevelThree.Size = new System.Drawing.Size(187, 86);
+            this.buttonLevelThree.Size = new System.Drawing.Size(140, 70);
             this.buttonLevelThree.TabIndex = 2;
             this.buttonLevelThree.Text = "Level 3";
             this.buttonLevelThree.UseVisualStyleBackColor = true;
@@ -176,10 +169,9 @@
             this.buttonLevelTwo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLevelTwo.Font = new System.Drawing.Font("Playbill", 30F);
             this.buttonLevelTwo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLevelTwo.Location = new System.Drawing.Point(67, 134);
-            this.buttonLevelTwo.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLevelTwo.Location = new System.Drawing.Point(50, 109);
             this.buttonLevelTwo.Name = "buttonLevelTwo";
-            this.buttonLevelTwo.Size = new System.Drawing.Size(187, 86);
+            this.buttonLevelTwo.Size = new System.Drawing.Size(140, 70);
             this.buttonLevelTwo.TabIndex = 1;
             this.buttonLevelTwo.Text = "Level 2";
             this.buttonLevelTwo.UseVisualStyleBackColor = true;
@@ -192,10 +184,9 @@
             this.buttonLevelOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLevelOne.Font = new System.Drawing.Font("Playbill", 30F);
             this.buttonLevelOne.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLevelOne.Location = new System.Drawing.Point(67, 46);
-            this.buttonLevelOne.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLevelOne.Location = new System.Drawing.Point(50, 37);
             this.buttonLevelOne.Name = "buttonLevelOne";
-            this.buttonLevelOne.Size = new System.Drawing.Size(187, 81);
+            this.buttonLevelOne.Size = new System.Drawing.Size(140, 66);
             this.buttonLevelOne.TabIndex = 0;
             this.buttonLevelOne.Text = "Level 1";
             this.buttonLevelOne.UseVisualStyleBackColor = false;
@@ -212,10 +203,9 @@
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonQuit.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonQuit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonQuit.Location = new System.Drawing.Point(536, 738);
-            this.buttonQuit.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonQuit.Location = new System.Drawing.Point(402, 600);
             this.buttonQuit.Name = "buttonQuit";
-            this.buttonQuit.Size = new System.Drawing.Size(265, 108);
+            this.buttonQuit.Size = new System.Drawing.Size(199, 88);
             this.buttonQuit.TabIndex = 5;
             this.buttonQuit.Text = "Quit";
             this.buttonQuit.UseVisualStyleBackColor = false;
@@ -232,10 +222,9 @@
             this.buttonRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRules.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRules.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonRules.Location = new System.Drawing.Point(536, 620);
-            this.buttonRules.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRules.Location = new System.Drawing.Point(402, 504);
             this.buttonRules.Name = "buttonRules";
-            this.buttonRules.Size = new System.Drawing.Size(267, 113);
+            this.buttonRules.Size = new System.Drawing.Size(200, 92);
             this.buttonRules.TabIndex = 4;
             this.buttonRules.Text = "Rules";
             this.buttonRules.UseVisualStyleBackColor = false;
@@ -252,10 +241,9 @@
             this.buttonLeaderboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLeaderboard.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLeaderboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLeaderboard.Location = new System.Drawing.Point(469, 494);
-            this.buttonLeaderboard.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLeaderboard.Location = new System.Drawing.Point(352, 401);
             this.buttonLeaderboard.Name = "buttonLeaderboard";
-            this.buttonLeaderboard.Size = new System.Drawing.Size(412, 132);
+            this.buttonLeaderboard.Size = new System.Drawing.Size(309, 107);
             this.buttonLeaderboard.TabIndex = 3;
             this.buttonLeaderboard.Text = "Leaderboard";
             this.buttonLeaderboard.UseVisualStyleBackColor = false;
@@ -272,10 +260,9 @@
             this.buttonBestiary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBestiary.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBestiary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonBestiary.Location = new System.Drawing.Point(536, 393);
-            this.buttonBestiary.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonBestiary.Location = new System.Drawing.Point(402, 319);
             this.buttonBestiary.Name = "buttonBestiary";
-            this.buttonBestiary.Size = new System.Drawing.Size(277, 117);
+            this.buttonBestiary.Size = new System.Drawing.Size(208, 95);
             this.buttonBestiary.TabIndex = 2;
             this.buttonBestiary.Text = "Bestiary";
             this.buttonBestiary.UseVisualStyleBackColor = false;
@@ -292,10 +279,9 @@
             this.buttonContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonContinue.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonContinue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonContinue.Location = new System.Drawing.Point(536, 278);
-            this.buttonContinue.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonContinue.Location = new System.Drawing.Point(402, 226);
             this.buttonContinue.Name = "buttonContinue";
-            this.buttonContinue.Size = new System.Drawing.Size(275, 129);
+            this.buttonContinue.Size = new System.Drawing.Size(206, 105);
             this.buttonContinue.TabIndex = 1;
             this.buttonContinue.Text = "Continue";
             this.buttonContinue.UseVisualStyleBackColor = false;
@@ -312,10 +298,9 @@
             this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPlay.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonPlay.Location = new System.Drawing.Point(536, 160);
-            this.buttonPlay.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonPlay.Location = new System.Drawing.Point(402, 130);
             this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.Size = new System.Drawing.Size(267, 128);
+            this.buttonPlay.Size = new System.Drawing.Size(200, 104);
             this.buttonPlay.TabIndex = 0;
             this.buttonPlay.Text = "Play";
             this.buttonPlay.UseVisualStyleBackColor = false;
@@ -325,13 +310,12 @@
             // 
             // FormF
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1344, 897);
+            this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.MenuPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(18, 789);
+            this.MinimumSize = new System.Drawing.Size(18, 597);
             this.Name = "FormF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormF";

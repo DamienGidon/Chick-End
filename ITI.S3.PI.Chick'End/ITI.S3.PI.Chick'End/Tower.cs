@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    public abstract class Tower : Unit, IAssailant
     [Serializable]
+    public abstract class Tower : Unit, IAssailant
     {
         protected readonly Square _square;
         internal readonly int _damages;
@@ -21,7 +21,7 @@ namespace ITI.S3.PI.Chick_End
             _damages = damages;
         }
 
-        public Square Square
+        public override Square Square
         {
             get { return _square; }
         }
@@ -30,15 +30,10 @@ namespace ITI.S3.PI.Chick_End
         {
             get { return _damages; }
         }
-
-        public override Square Square
-        {
-            get { return _square; }
-        }
-
+       
         public override Point Position
         {
-            get { return new Point( _square.Column * FinalVariables._squareWidthInMeters + FinalVariables._squareWidthInMeters / 2, _square.Line * FinalVariables._squareHeightInMeters + FinalVariables._squareHeightInMeters / 2 ); }
+            get { return new Point( _square.Column * FinalVariables.SquareWidthInMeters + FinalVariables.SquareWidthInMeters / 2, _square.Line * FinalVariables.SquareHeightInMeters + FinalVariables.SquareHeightInMeters / 2 ); }
         }
 
         public IReadOnlyList<Square> Range
@@ -59,7 +54,7 @@ namespace ITI.S3.PI.Chick_End
             int line = _square.Line;
             int column = _square.Column;
 
-            for (int i = column; i < FinalVariables._nbCaseWidth; i++)
+            for (int i = column; i < FinalVariables.NbCaseWidth; i++)
             {
                 if (_square.Context.Square[line, i].Decoration == "path")
                     squaresInRange.Add( _square.Context.Square[line, i] );
@@ -67,7 +62,7 @@ namespace ITI.S3.PI.Chick_End
                     break;
             }
 
-            for (int i = line + 1; i < FinalVariables._nbCaseHeight; i++)
+            for (int i = line + 1; i < FinalVariables.NbCaseHeight; i++)
             {
                 if (_square.Context.Square[i, column].Decoration == "path")
                     squaresInRange.Add( _square.Context.Square[i, column] );

@@ -55,24 +55,24 @@ namespace ITI.S3.PI.Chick_End
         {
             if (_way.Current.Column == _way.Next.Column + 1)
             {
-                _x -= FinalVariables._squareWidthInMeters / 8;
-                if (_x <= _way.Next.Column * FinalVariables._squareWidthInMeters)
+                _x -= FinalVariables.SquareWidthInMeters / 8;
+                if (_x <= _way.Next.Column * FinalVariables.SquareWidthInMeters)
                 {
                     _way.NextSquare();
                 }
             }
             else if (_way.Current.Line == _way.Next.Line + 1)
             {
-                _y -= FinalVariables._squareHeightInMeters / 8;
-                if (_y <= _way.Next.Line * FinalVariables._squareHeightInMeters)
+                _y -= FinalVariables.SquareHeightInMeters / 8;
+                if (_y <= _way.Next.Line * FinalVariables.SquareHeightInMeters)
                 {
                     _way.NextSquare();
                 }
             }
             else if (_way.Current.Line == _way.Next.Line - 1)
             {
-                _y += FinalVariables._squareHeightInMeters / 8;
-                if (_y >= _way.Next.Line * FinalVariables._squareHeightInMeters)
+                _y += FinalVariables.SquareHeightInMeters / 8;
+                if (_y >= _way.Next.Line * FinalVariables.SquareHeightInMeters)
                 {
                     _way.NextSquare();
                 }
@@ -84,8 +84,8 @@ namespace ITI.S3.PI.Chick_End
         {
             get
             {
-                int line = _y / FinalVariables._nbCaseHeight;
-                int column = _x / FinalVariables._nbCaseWidth;
+                int line = _y / FinalVariables.NbCaseHeight;
+                int column = _x / FinalVariables.NbCaseWidth;
 
                 return _context.Square[line, column];
             }
