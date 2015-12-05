@@ -34,16 +34,33 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                string directory = Path.GetDirectoryName( Application.ExecutablePath );
-                string pathGrass = Path.Combine( directory, @"grass.png" );
-                string pathPath = Path.Combine( directory, @"path.png" );
+                string directory = Path.GetDirectoryName(Application.ExecutablePath);
+                string pathGrass = Path.Combine(directory, @"grass.png");
+                string pathPath = Path.Combine(directory, @"path.png");
                 string pathHomeHen = Path.Combine(directory, @"HomeHen.png");
                 string pathHen = Path.Combine(directory, @"HenLeft.png");
+                string pathRooster = Path.Combine(directory, @"Rooster.png");
+                string pathOldHen = Path.Combine(directory, @"OldHen.png");
+                string pathExplosiveEgg = Path.Combine(directory, @"ExplosiveEgg.png");
+                string pathBomberHen = Path.Combine(directory, @"BomberHen.png");
+                string pathBaker = Path.Combine(directory, @"Baker.png");
+                string pathButcher = Path.Combine(directory, @"Bucher.png");
+                string pathgunnerFarmer = Path.Combine(directory, @"gunnerFarmer.png");
+                string pathInfantryFarmer = Path.Combine(directory, @"InfantryFarmer.png");
 
-                Image grass = Image.FromFile( pathGrass );
-                Image path = Image.FromFile( pathPath );
+
+                Image grass = Image.FromFile(pathGrass);
+                Image path = Image.FromFile(pathPath);
                 Image HomeHen = Image.FromFile(pathHomeHen);
                 Image hen = Image.FromFile(pathHen);
+                Image OldHen = Image.FromFile(pathOldHen);
+                Image Rooster = Image.FromFile(pathRooster);
+                Image BomberHen = Image.FromFile(pathBomberHen);
+                Image ExplosiveEgg = Image.FromFile(pathExplosiveEgg);
+                Image Baker = Image.FromFile(pathBaker);
+                Image Butcher = Image.FromFile(pathButcher);
+                Image gunnerFarmer = Image.FromFile(pathgunnerFarmer);
+                Image InfantryFarmer = Image.FromFile(pathInfantryFarmer);
 
                 int CaseShouldBeThatHeight;
                 int CaseShouldBeThatWidth;
@@ -57,11 +74,11 @@ namespace ITI.S3.PI.Chick_End.GUI
                     {
                         if (_context.Map.Square[i, j].Decoration == "grass")
                         {
-                            e.Graphics.DrawImage( grass, _context.Map.Square[i, j].Column * CaseShouldBeThatWidth, _context.Map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                            e.Graphics.DrawImage(grass, _context.Map.Square[i, j].Column * CaseShouldBeThatWidth, _context.Map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
                         }
                         else if (_context.Map.Square[i, j].Decoration == "path")
                         {
-                            e.Graphics.DrawImage( path, _context.Map.Square[i, j].Column * CaseShouldBeThatWidth, _context.Map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                            e.Graphics.DrawImage(path, _context.Map.Square[i, j].Column * CaseShouldBeThatWidth, _context.Map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
                         }
                         else if (_context.Map.Square[i, j].Decoration == "HomeHen")
                         {
@@ -83,8 +100,54 @@ namespace ITI.S3.PI.Chick_End.GUI
                         }
                     }
                 }
-            }
 
+                // On affiche les poules
+                for (int i = 0; i < FinalVariables.NbCaseHeight; i++)
+                {
+                    for (int j = 0; j < FinalVariables.NbCaseWidth; j++)
+                    {
+                        foreach (Tower t in Context.Map.Towers)
+                        {
+                            if (t is Hen)
+                            {
+                                e.Graphics.DrawImage(hen, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                            }
+                            if (t is OldHen)
+                            {
+                                e.Graphics.DrawImage(OldHen, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                            }
+                            if (t is BomberHen)
+                            {
+                                e.Graphics.DrawImage(BomberHen, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                            }
+                            if (t is ExplosiveEgg)
+                            {
+                                e.Graphics.DrawImage(ExplosiveEgg, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                            }
+                            if (t is Rooster)
+                            {
+                                e.Graphics.DrawImage(Rooster, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                            }
+                            if (t is Bucher)
+                            {
+                                e.Graphics.DrawImage(Butcher, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                            }
+                            if (t is Baker)
+                            {
+                                e.Graphics.DrawImage(Baker, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                            }
+                            if (t is GunnerFarmer)
+                            {
+                                e.Graphics.DrawImage(gunnerFarmer, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                            }
+                            if (t is InfantryFarmer)
+                            {
+                                e.Graphics.DrawImage(InfantryFarmer, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                            }
+                        }
+                    }
+                }
+            }
             base.OnPaint( e );
         } 
     }

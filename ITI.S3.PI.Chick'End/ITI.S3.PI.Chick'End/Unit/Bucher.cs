@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    class Bucher : Tower
+    public class Bucher : Tower
     {
         internal Bucher(Square context)
             : base( context, 15 )

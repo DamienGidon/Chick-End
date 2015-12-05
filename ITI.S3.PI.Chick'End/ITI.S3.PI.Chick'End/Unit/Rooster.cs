@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    class Rooster : Tower
+    public class Rooster : Tower
     {
         internal Rooster( Square context )
             : base( context, 15 )
