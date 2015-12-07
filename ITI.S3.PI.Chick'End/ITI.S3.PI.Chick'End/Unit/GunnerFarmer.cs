@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
+    [Serializable]
     public class GunnerFarmer : Tower
     {
         public GunnerFarmer(Square context)
