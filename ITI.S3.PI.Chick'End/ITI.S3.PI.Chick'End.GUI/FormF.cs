@@ -14,6 +14,7 @@ namespace ITI.S3.PI.Chick_End.GUI
 {
     public partial class FormF : Form
     {
+        gamecontrol _gameControl;
         public FormF()
         {
             InitializeComponent();
@@ -53,9 +54,13 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             MenuPanel.Hide();
             panelLevel.Hide();
-            this.Controls.Add(new gamecontrol(MenuPanel));
-            //buttonPlay.BackColor = System.Drawing.Color.Transparent;
-            
+            if (_gameControl != null)
+            {
+                this.Controls.Remove(_gameControl);
+            }
+            _gameControl = new gamecontrol(MenuPanel);
+            this.Controls.Add(_gameControl);
+
         }
 
         private void buttonQuit_Click(object sender, EventArgs e)
