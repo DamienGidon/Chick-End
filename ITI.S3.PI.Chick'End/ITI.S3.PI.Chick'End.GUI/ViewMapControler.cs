@@ -17,6 +17,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         public ViewMapControler()
         {
             _context = new Game();
+            DoubleBuffered = true;
         }
 
         public Game Context
@@ -27,6 +28,7 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         protected override void OnPaint( PaintEventArgs e )
         {
+            
             if (this.IsInDesignMode())
             {
                 //e.Graphics.FillRectangle( Brushes.Yellow, e.ClipRectangle );
