@@ -49,6 +49,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 string pathButcher = Path.Combine(directory, @"Bucher.png");
                 string pathgunnerFarmer = Path.Combine(directory, @"gunnerFarmer.png");
                 string pathInfantryFarmer = Path.Combine(directory, @"InfantryFarmer.png");
+                string pathWolf = Path.Combine(directory, @"Wolf.png");
 
 
                 Image grass = Image.FromFile(pathGrass);
@@ -63,6 +64,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Image Butcher = Image.FromFile(pathButcher);
                 Image gunnerFarmer = Image.FromFile(pathgunnerFarmer);
                 Image InfantryFarmer = Image.FromFile(pathInfantryFarmer);
+                Image Wolf = Image.FromFile(pathWolf);
 
                 int CaseShouldBeThatHeight = e.ClipRectangle.Height / FinalVariables.NbCaseHeight;
                 int CaseShouldBeThatWidth = e.ClipRectangle.Width / FinalVariables.NbCaseWidth;
@@ -111,40 +113,48 @@ namespace ITI.S3.PI.Chick_End.GUI
                             {
                                 e.Graphics.DrawImage(hen, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
                             }
-                            if (t is OldHen)
+                            else if (t is OldHen)
                             {
                                 e.Graphics.DrawImage(OldHen, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
                             }
-                            if (t is BomberHen)
+                            else if (t is BomberHen)
                             {
                                 e.Graphics.DrawImage(BomberHen, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
                             }
-                            if (t is ExplosiveEgg)
+                            else if (t is ExplosiveEgg)
                             {
                                 e.Graphics.DrawImage(ExplosiveEgg, t.Square.Column * CaseShouldBeThatWidth + Convert.ToInt32(CaseShouldBeThatWidth * 0.2), t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth - Convert.ToInt32(CaseShouldBeThatWidth * 0.3), CaseShouldBeThatHeight);
                             }
-                            if (t is Rooster)
+                            else if (t is Rooster)
                             {
                                 e.Graphics.DrawImage(Rooster, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32(CaseShouldBeThatHeight * 0.1), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32((CaseShouldBeThatHeight * 0.1)));
                             }
-                            if (t is Bucher)
+                            else if (t is Bucher)
                             {
                                 e.Graphics.DrawImage(Butcher, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32(CaseShouldBeThatHeight * 0.4), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32((CaseShouldBeThatHeight * 0.4)));
                             }
-                            if (t is Baker)
+                            else if (t is Baker)
                             {
                                 e.Graphics.DrawImage(Baker, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32(CaseShouldBeThatHeight * 0.4), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32((CaseShouldBeThatHeight * 0.4)));
                             }
-                            if (t is GunnerFarmer)
+                            else if (t is GunnerFarmer)
                             {
                                 e.Graphics.DrawImage(gunnerFarmer, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32(CaseShouldBeThatHeight * 0.4), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32((CaseShouldBeThatHeight * 0.4)));
                             }
-                            if (t is InfantryFarmer)
+                            else if (t is InfantryFarmer)
                             {
                                 e.Graphics.DrawImage(InfantryFarmer, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32(CaseShouldBeThatHeight * 0.4), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32((CaseShouldBeThatHeight * 0.4)));
                             }
                             
                         }
+                    }
+                }
+                foreach(Ennemi en in Context.Map.Ennemis)
+                {
+                    if(en is Wolf)
+                    {
+                        
+                        e.Graphics.DrawImage(Wolf, en.Position.X, en.Position.Y -20);
                     }
                 }
             }

@@ -57,8 +57,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelUnit = new System.Windows.Forms.Label();
-            this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
             this.panelMenu.SuspendLayout();
             this.panelSeed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -401,12 +401,18 @@
             this.labelUnit.TabIndex = 5;
             this.labelUnit.Text = "Units";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 250;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // viewMapControler1
             // 
             this.viewMapControler1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.viewMapControler1.BackColor = System.Drawing.Color.Cyan;
+            this.viewMapControler1.BackColor = System.Drawing.Color.Green;
             this.viewMapControler1.Context = ((ITI.S3.PI.Chick_End.Game)(resources.GetObject("viewMapControler1.Context")));
             this.viewMapControler1.Location = new System.Drawing.Point(250, 123);
             this.viewMapControler1.Name = "viewMapControler1";
@@ -415,12 +421,6 @@
             this.viewMapControler1.Text = "viewMapControler1";
             this.viewMapControler1.Click += new System.EventHandler(this.viewMapControler1_Click);
             this.viewMapControler1.Resize += new System.EventHandler(this.viewMapControler1_Resize);
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 250;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // gamecontrol
             // 

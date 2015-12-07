@@ -573,32 +573,15 @@ namespace ITI.S3.PI.Chick_End.GUI
         private void viewMapControler1_Click(object sender, EventArgs e)
         {
 
-            var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
-            int line = topLeftCornerY / (viewMapControler1.Height / 9);
-            int column = topLeftCornerX / (viewMapControler1.Width / 14);
+            Wolf w = viewMapControler1.Context.Map.CreateWolf(viewMapControler1.Context.Map);
 
             Bitmap p9 = new Bitmap(@"Wolf.png");
             Graphics g9 = Graphics.FromImage(p9);
 
-            Random r = new Random();
-            int r2 = r.Next(1,3);
+            Rectangle r9 = new Rectangle(w.Position.X, w.Position.Y, (viewMapControler1.Width / FinalVariables.NbCaseWidth), (viewMapControler1.Height / FinalVariables.NbCaseHeight) + 20);
+            PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
+            e1.Graphics.DrawImage(p9, r9);
 
-            if (r2 == 1)
-            {
-                Rectangle r9 = new Rectangle((viewMapControler1.Width / 14) * 13, (viewMapControler1.Height / 9) * 3, (viewMapControler1.Width / 14), (viewMapControler1.Height / 9) + 20);
-                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
-                e1.Graphics.DrawImage(p9, r9);
-                viewMapControler1.Context.Map.CreateWolf(line, column, viewMapControler1.Context.Map);
-            }
-            else
-            {
-                Rectangle r9 = new Rectangle((viewMapControler1.Width / 14) * 13, (viewMapControler1.Height / 9) * 3, (viewMapControler1.Width / 14), (viewMapControler1.Height / 9) + 20);
-                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
-                e1.Graphics.DrawImage(p9, r9);
-                viewMapControler1.Context.Map.CreateWolf(line, column, viewMapControler1.Context.Map);
-            }
         }
 
         private void viewMapControler1_Resize(object sender, EventArgs e)

@@ -25,8 +25,8 @@ namespace ITI.S3.PI.Chick_End
             _context = context;
             int numberOfWays = _context.Ways.Count();
             _way = _context.Ways[_r.Next( numberOfWays )];
-            _x = _way.FirstSquare.Column * 50 + 30;
-            _y = _way.FirstSquare.Line * 50 + 30;
+            _x = _way.FirstSquare.Column * FinalVariables.SquareWidthInMeters + FinalVariables.SquareWidthInMeters - 1;
+            _y = _way.FirstSquare.Line * FinalVariables.SquareHeightInMeters;
             _range = new List<Square>();
         }
 

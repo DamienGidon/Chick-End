@@ -168,11 +168,11 @@ namespace ITI.S3.PI.Chick_End
             _towers.Add( t );
         }        
 
-        public void CreateWolf( int ligne, int colonne, Map context)
+        public Wolf CreateWolf(Map context)
         {
-            Ennemi e = new Wolf(context);
-            Square[ligne, colonne].Ennemi = e;
+            Wolf e = new Wolf(context);
             _ennemis.Add(e);
+            return e;
         }
 
         public void CreateHyena(int ligne, int colonne, Map context)
