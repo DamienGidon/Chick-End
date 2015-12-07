@@ -614,5 +614,11 @@ namespace ITI.S3.PI.Chick_End.GUI
                 ser.Serialize(fs, viewMapControler1.Context);
             }
         }
+
+        private void timer1_Tick( object sender, EventArgs e )
+        {
+            viewMapControler1.Context.Update();
+            viewMapControler1.Refresh();
+        }
     }
 }

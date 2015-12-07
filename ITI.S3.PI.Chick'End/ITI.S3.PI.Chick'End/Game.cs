@@ -39,7 +39,31 @@ namespace ITI.S3.PI.Chick_End
 
         public void Update()
         {
-            //foreach( )
+            foreach( Ennemi e in _context.Ennemis)
+            {
+                Tower t = e.GetClosestTowerAttackable();
+                if (t == null)
+                {
+                    e.Move();
+                }
+                else
+                {
+                    e.Attack( t );
+                    if (t.Health <= 0)
+                        t.Die();
+                }
+            }
+
+            foreach( Tower t in _context.Towers)
+            {
+                Ennemi e = t.GetClosestEnnemiAttackable();
+                if (e != null)
+                {
+                    t.Attack( e );
+                    if (e.Health <= 0)
+                        e.Die();
+                }
+            }
         }
     }
 }

@@ -20,9 +20,9 @@ namespace ITI.S3.PI.Chick_End
             throw new NotImplementedException();
         }
 
-        public override void Move()
-        {
-            throw new NotImplementedException();
-        }
+        //public override void Move()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
