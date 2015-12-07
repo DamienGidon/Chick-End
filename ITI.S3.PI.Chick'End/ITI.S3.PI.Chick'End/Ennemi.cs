@@ -123,5 +123,10 @@ namespace ITI.S3.PI.Chick_End
 
             return squaresInRange;
         }
+
+        public override void Die()
+        {
+            _context.Ennemis.Remove( this );
+        }
     }
 }

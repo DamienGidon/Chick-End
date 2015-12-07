@@ -83,7 +83,12 @@ namespace ITI.S3.PI.Chick_End
 
         public virtual void Attack( Unit ennemi )
         {
-            throw new NotImplementedException();
+            ennemi.Health -= Damages;
+        }
+
+        public override void Die()
+        {
+            _square.Context.Towers.Remove( this );
         }
     }
 }

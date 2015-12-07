@@ -18,15 +18,10 @@ namespace ITI.S3.PI.Chick_End
             set { _health = value; }
         }
 
-        public void Die()
-        {
-            _health = 0;
-            throw new NotImplementedException();  
-        }
-
+        public abstract void Die();
+        
         public abstract Point Position { get; }
 
         public abstract Square Square { get; }
-
     }
 }

@@ -15,7 +15,7 @@ namespace ITI.S3.PI.Chick_End
             _health = 50;
         }
 
-        //public override List<Square> GetRange()
+        //public override List<Square> ComputeRange()
         //{
         //    throw new NotImplementedException();
         //}
