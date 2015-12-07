@@ -30,7 +30,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             if (this.IsInDesignMode())
             {
                 //e.Graphics.FillRectangle( Brushes.Yellow, e.ClipRectangle );
-                BackColor = Color.Cyan;
+                BackColor = Color.Green;
             }
             else
             {
@@ -62,11 +62,8 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Image gunnerFarmer = Image.FromFile(pathgunnerFarmer);
                 Image InfantryFarmer = Image.FromFile(pathInfantryFarmer);
 
-                int CaseShouldBeThatHeight;
-                int CaseShouldBeThatWidth;
-
-                CaseShouldBeThatHeight = e.ClipRectangle.Height / FinalVariables.NbCaseHeight;
-                CaseShouldBeThatWidth = e.ClipRectangle.Width / FinalVariables.NbCaseWidth;
+                int CaseShouldBeThatHeight = e.ClipRectangle.Height / FinalVariables.NbCaseHeight;
+                int CaseShouldBeThatWidth = e.ClipRectangle.Width / FinalVariables.NbCaseWidth;
 
                 for (int i = 0; i < FinalVariables.NbCaseHeight; i++)
                 {
@@ -144,11 +141,13 @@ namespace ITI.S3.PI.Chick_End.GUI
                             {
                                 e.Graphics.DrawImage(InfantryFarmer, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
                             }
+                            
                         }
                     }
                 }
             }
             base.OnPaint( e );
         } 
+        
     }
 }
