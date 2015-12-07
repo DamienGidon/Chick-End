@@ -467,7 +467,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Bitmap p7 = new Bitmap(@"ExplosiveEgg.png");
                 Graphics g7 = Graphics.FromImage(p7);
 
-                Rectangle r7 = new Rectangle(topLeftCornerX + Convert.ToInt32((viewMapControler1.Width / 14) * 0.2), topLeftCornerY - Convert.ToInt32((viewMapControler1.Width / 14) * 0.2), (viewMapControler1.Width / 14) - Convert.ToInt32((viewMapControler1.Width / 14) * 0.3), (viewMapControler1.Height / 9) + Convert.ToInt32((viewMapControler1.Width / 14) * 0.2));
+                Rectangle r7 = new Rectangle(topLeftCornerX + Convert.ToInt32((viewMapControler1.Width / 14) * 0.2), topLeftCornerY, (viewMapControler1.Width / 14) - Convert.ToInt32((viewMapControler1.Width / 14) * 0.3), (viewMapControler1.Height / 9));
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r7);
                 e1.Graphics.DrawImage(p7, r7);
                 viewMapControler1.Context.Map.CreateExplosiveEgg(line, column, viewMapControler1.Context.Map);

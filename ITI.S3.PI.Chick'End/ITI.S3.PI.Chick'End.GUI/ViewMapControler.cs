@@ -119,8 +119,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                             }
                             if (t is ExplosiveEgg)
                             {
-                                e.Graphics.DrawImage(ExplosiveEgg, t.Square.Column * CaseShouldBeThatWidth + Convert.ToInt32(CaseShouldBeThatHeight * 0.2), t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32(CaseShouldBeThatHeight * 0.4), CaseShouldBeThatWidth - Convert.ToInt32(CaseShouldBeThatHeight * 0.3), CaseShouldBeThatHeight + Convert.ToInt32((CaseShouldBeThatHeight * 0.4)));
-                                //e.Graphics.DrawImage(ExplosiveEgg, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                                e.Graphics.DrawImage(ExplosiveEgg, t.Square.Column * CaseShouldBeThatWidth + Convert.ToInt32(CaseShouldBeThatWidth * 0.2), t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth - Convert.ToInt32(CaseShouldBeThatWidth * 0.3), CaseShouldBeThatHeight);
                             }
                             if (t is Rooster)
                             {
@@ -128,7 +127,6 @@ namespace ITI.S3.PI.Chick_End.GUI
                             }
                             if (t is Bucher)
                             {
-                                //Rectangle r8 = new Rectangle(topLeftCornerX, topLeftCornerY - Convert.ToInt32((viewMapControler1.Width / 14) * 0.4), (viewMapControler1.Width / 14), (viewMapControler1.Height / 9) + Convert.ToInt32((viewMapControler1.Width / 14) * 0.4));
                                 e.Graphics.DrawImage(Butcher, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32(CaseShouldBeThatHeight * 0.4), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32((CaseShouldBeThatHeight * 0.4)));
                             }
                             if (t is Baker)
