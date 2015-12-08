@@ -15,18 +15,20 @@ namespace ITI.S3.PI.Chick_End.GUI
     public partial class gamecontrol : UserControl
     {
         Panel _panel;
-
-        int _squareHeight;
-        int _squareWidth;
+        int _countM = 0;
+        int _countR = 0;
+        int _second= 0;
+        int _minute= 0;
+        int _seeds;
+        string _Ssecond;
+        string _Sminute;
+        HenCreater _henCreater = new HenCreater();
 
         public gamecontrol(Panel panel)
         {
             InitializeComponent();
 
             _panel = panel;
-
-            _squareHeight = this.viewMapControler1.Height / 9;
-            _squareWidth = this.viewMapControler1.Width / 14;
 
             Bitmap p = new Bitmap(@"HenLeft.png");
             Graphics g = Graphics.FromImage(p);
@@ -247,15 +249,18 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                
-                Bitmap p2 = new Bitmap(@"HenLeft.png");
-                Graphics g = Graphics.FromImage(p2);
-                
-                Rectangle r = new Rectangle(topLeftCornerX, topLeftCornerY, (viewMapControler1.Width / 14), (viewMapControler1.Height / 9));
-                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r);
-                e1.Graphics.DrawImage(p2, r);
-                viewMapControler1.Context.Map.CreateHen(line, column, viewMapControler1.Context.Map);
-                //viewMapControler1.Refresh();
+                if (_henCreater.HenCost <= _seeds)
+                {
+                    _seeds = _seeds - _henCreater.HenCost;
+                    Bitmap p2 = new Bitmap(@"HenLeft.png");
+                    Graphics g = Graphics.FromImage(p2);
+
+                    Rectangle r = new Rectangle(topLeftCornerX, topLeftCornerY, (viewMapControler1.Width / 14), (viewMapControler1.Height / 9));
+                    PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r);
+                    e1.Graphics.DrawImage(p2, r);
+                    viewMapControler1.Context.Map.CreateHen(line, column, viewMapControler1.Context.Map);
+                    //viewMapControler1.Context.HenCreater.CreateHen(line, column, viewMapControler1.Context.Map);
+                }
             }
         }
 
@@ -283,14 +288,17 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
+                if (_henCreater.InfantryFarmerCost <= _seeds)
+                {
+                    _seeds = _seeds - _henCreater.InfantryFarmerCost;
+                    Bitmap p2 = new Bitmap(@"InfantryFarmer.png");
+                    Graphics g2 = Graphics.FromImage(p2);
 
-                Bitmap p2 = new Bitmap(@"InfantryFarmer.png");
-                Graphics g2 = Graphics.FromImage(p2);
-
-                Rectangle r2 = new Rectangle(topLeftCornerX, topLeftCornerY - Convert.ToInt32((viewMapControler1.Width / 14) * 0.4), (viewMapControler1.Width / 14) , (viewMapControler1.Height / 9)+ Convert.ToInt32((viewMapControler1.Width / 14) * 0.4));
-                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r2);
-                e1.Graphics.DrawImage(p2, r2);
-                viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
+                    Rectangle r2 = new Rectangle(topLeftCornerX, topLeftCornerY - Convert.ToInt32((viewMapControler1.Width / 14) * 0.4), (viewMapControler1.Width / 14), (viewMapControler1.Height / 9) + Convert.ToInt32((viewMapControler1.Width / 14) * 0.4));
+                    PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r2);
+                    e1.Graphics.DrawImage(p2, r2);
+                    viewMapControler1.Context.Map.CreateInfantryFarmer(line, column, viewMapControler1.Context.Map);
+                }
             }
         }
 
@@ -322,19 +330,21 @@ namespace ITI.S3.PI.Chick_End.GUI
 
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
-                
+
             }
             else
             {
+                if (_henCreater.GunnerFarmerCost <= _seeds)
+                {
+                    _seeds = _seeds - _henCreater.GunnerFarmerCost;
+                    Bitmap p4 = new Bitmap(@"GunnerFarmer.png");
+                    Graphics g4 = Graphics.FromImage(p4);
 
-                Bitmap p4 = new Bitmap(@"GunnerFarmer.png");
-                Graphics g4 = Graphics.FromImage(p4);
-
-                Rectangle r4 = new Rectangle(topLeftCornerX, topLeftCornerY - Convert.ToInt32((viewMapControler1.Width / 14) * 0.4), (viewMapControler1.Width / 14), (viewMapControler1.Height / 9) + Convert.ToInt32((viewMapControler1.Width / 14) * 0.4));
-                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r4);
-                e1.Graphics.DrawImage(p4, r4);
-                viewMapControler1.Context.Map.CreateGunnerFarmer(line, column, viewMapControler1.Context.Map);
-              
+                    Rectangle r4 = new Rectangle(topLeftCornerX, topLeftCornerY - Convert.ToInt32((viewMapControler1.Width / 14) * 0.4), (viewMapControler1.Width / 14), (viewMapControler1.Height / 9) + Convert.ToInt32((viewMapControler1.Width / 14) * 0.4));
+                    PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r4);
+                    e1.Graphics.DrawImage(p4, r4);
+                    viewMapControler1.Context.Map.CreateGunnerFarmer(line, column, viewMapControler1.Context.Map);
+                }
             }
         }
 
@@ -356,14 +366,17 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-               
-                Bitmap p3 = new Bitmap(@"bomberHen.png");
-                Graphics g3 = Graphics.FromImage(p3);
+                if (_henCreater.BomberHenCost <= _seeds)
+                {
+                    _seeds = _seeds - _henCreater.BomberHenCost;
+                    Bitmap p3 = new Bitmap(@"bomberHen.png");
+                    Graphics g3 = Graphics.FromImage(p3);
 
-                Rectangle r3 = new Rectangle(topLeftCornerX, topLeftCornerY, (viewMapControler1.Width / 14), (viewMapControler1.Height / 9));
-                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r3);
-                e1.Graphics.DrawImage(p3, r3);
-                viewMapControler1.Context.Map.CreateBomberHen(line, column, viewMapControler1.Context.Map);
+                    Rectangle r3 = new Rectangle(topLeftCornerX, topLeftCornerY, (viewMapControler1.Width / 14), (viewMapControler1.Height / 9));
+                    PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r3);
+                    e1.Graphics.DrawImage(p3, r3);
+                    viewMapControler1.Context.Map.CreateBomberHen(line, column, viewMapControler1.Context.Map);
+                }
             }
         }
 
@@ -392,15 +405,17 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
+                if (_henCreater.OldHenCost <= _seeds)
+                {
+                    _seeds = _seeds - _henCreater.OldHenCost;
+                    Bitmap p5 = new Bitmap(@"OldHen.png");
+                    Graphics g5 = Graphics.FromImage(p5);
 
-                Bitmap p5 = new Bitmap(@"OldHen.png");
-                Graphics g5 = Graphics.FromImage(p5);
-
-                Rectangle r5 = new Rectangle(topLeftCornerX, topLeftCornerY, (viewMapControler1.Width / 14), (viewMapControler1.Height / 9));
-                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r5);
-                e1.Graphics.DrawImage(p5, r5);
-                viewMapControler1.Context.Map.CreateOldHen(line, column, viewMapControler1.Context.Map);
-
+                    Rectangle r5 = new Rectangle(topLeftCornerX, topLeftCornerY, (viewMapControler1.Width / 14), (viewMapControler1.Height / 9));
+                    PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r5);
+                    e1.Graphics.DrawImage(p5, r5);
+                    viewMapControler1.Context.Map.CreateOldHen(line, column, viewMapControler1.Context.Map);
+                }
             }
         }
 
@@ -428,14 +443,17 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
+                if (_henCreater.BakerCost <= _seeds)
+                {
+                    _seeds = _seeds - _henCreater.BakerCost;
+                    Bitmap p6 = new Bitmap(@"Baker.png");
+                    Graphics g6 = Graphics.FromImage(p6);
 
-                Bitmap p6 = new Bitmap(@"Baker.png");
-                Graphics g6 = Graphics.FromImage(p6);
-
-                Rectangle r6 = new Rectangle(topLeftCornerX, topLeftCornerY - Convert.ToInt32((viewMapControler1.Width / 14) * 0.4), (viewMapControler1.Width / 14), (viewMapControler1.Height / 9) + Convert.ToInt32((viewMapControler1.Width / 14) * 0.4));
-                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r6);
-                e1.Graphics.DrawImage(p6, r6);
-                viewMapControler1.Context.Map.CreateBaker(line, column, viewMapControler1.Context.Map);
+                    Rectangle r6 = new Rectangle(topLeftCornerX, topLeftCornerY - Convert.ToInt32((viewMapControler1.Width / 14) * 0.4), (viewMapControler1.Width / 14), (viewMapControler1.Height / 9) + Convert.ToInt32((viewMapControler1.Width / 14) * 0.4));
+                    PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r6);
+                    e1.Graphics.DrawImage(p6, r6);
+                    viewMapControler1.Context.Map.CreateBaker(line, column, viewMapControler1.Context.Map);
+                }
             }
         }
 
@@ -463,14 +481,17 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
+                if (_henCreater.ExplosiveEggCost <= _seeds)
+                {
+                    _seeds = _seeds - _henCreater.ExplosiveEggCost;
+                    Bitmap p7 = new Bitmap(@"ExplosiveEgg.png");
+                    Graphics g7 = Graphics.FromImage(p7);
 
-                Bitmap p7 = new Bitmap(@"ExplosiveEgg.png");
-                Graphics g7 = Graphics.FromImage(p7);
-
-                Rectangle r7 = new Rectangle(topLeftCornerX + Convert.ToInt32((viewMapControler1.Width / 14) * 0.2), topLeftCornerY, (viewMapControler1.Width / 14) - Convert.ToInt32((viewMapControler1.Width / 14) * 0.3), (viewMapControler1.Height / 9));
-                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r7);
-                e1.Graphics.DrawImage(p7, r7);
-                viewMapControler1.Context.Map.CreateExplosiveEgg(line, column, viewMapControler1.Context.Map);
+                    Rectangle r7 = new Rectangle(topLeftCornerX + Convert.ToInt32((viewMapControler1.Width / 14) * 0.2), topLeftCornerY, (viewMapControler1.Width / 14) - Convert.ToInt32((viewMapControler1.Width / 14) * 0.3), (viewMapControler1.Height / 9));
+                    PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r7);
+                    e1.Graphics.DrawImage(p7, r7);
+                    viewMapControler1.Context.Map.CreateExplosiveEgg(line, column, viewMapControler1.Context.Map);
+                }
             }
         }
 
@@ -498,14 +519,17 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
+                if (_henCreater.ButcherCost <= _seeds)
+                {
+                    _seeds = _seeds - _henCreater.ButcherCost;
+                    Bitmap p8 = new Bitmap(@"Bucher.png");
+                    Graphics g8 = Graphics.FromImage(p8);
 
-                Bitmap p8 = new Bitmap(@"Bucher.png");
-                Graphics g8 = Graphics.FromImage(p8);
-
-                Rectangle r8 = new Rectangle(topLeftCornerX, topLeftCornerY - Convert.ToInt32((viewMapControler1.Width / 14) * 0.4), (viewMapControler1.Width / 14), (viewMapControler1.Height / 9) + Convert.ToInt32((viewMapControler1.Width / 14) * 0.4));
-                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r8);
-                e1.Graphics.DrawImage(p8, r8);
-                viewMapControler1.Context.Map.CreateBucher(line, column, viewMapControler1.Context.Map);
+                    Rectangle r8 = new Rectangle(topLeftCornerX, topLeftCornerY - Convert.ToInt32((viewMapControler1.Width / 14) * 0.4), (viewMapControler1.Width / 14), (viewMapControler1.Height / 9) + Convert.ToInt32((viewMapControler1.Width / 14) * 0.4));
+                    PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r8);
+                    e1.Graphics.DrawImage(p8, r8);
+                    viewMapControler1.Context.Map.CreateButcher(line, column, viewMapControler1.Context.Map);
+                }
             }
         }
         private void pictureBox9_DragDrop(object sender, DragEventArgs e)
@@ -532,14 +556,17 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
+                if (_henCreater.RoosterCost <= _seeds)
+                {
+                    _seeds = _seeds - _henCreater.RoosterCost;
+                    Bitmap p9 = new Bitmap(@"Rooster.png");
+                    Graphics g9 = Graphics.FromImage(p9);
 
-                Bitmap p9 = new Bitmap(@"Rooster.png");
-                Graphics g9 = Graphics.FromImage(p9);
-
-                Rectangle r9 = new Rectangle(topLeftCornerX, topLeftCornerY - Convert.ToInt32((viewMapControler1.Width / 14) * 0.1), (viewMapControler1.Width / 14), (viewMapControler1.Height / 9) + Convert.ToInt32((viewMapControler1.Width / 14) * 0.1));
-                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
-                e1.Graphics.DrawImage(p9, r9);
-                viewMapControler1.Context.Map.CreateRooster(line, column, viewMapControler1.Context.Map);
+                    Rectangle r9 = new Rectangle(topLeftCornerX, topLeftCornerY - Convert.ToInt32((viewMapControler1.Width / 14) * 0.1), (viewMapControler1.Width / 14), (viewMapControler1.Height / 9) + Convert.ToInt32((viewMapControler1.Width / 14) * 0.1));
+                    PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
+                    e1.Graphics.DrawImage(p9, r9);
+                    viewMapControler1.Context.Map.CreateRooster(line, column, viewMapControler1.Context.Map);
+                }
             }
         }
         private void viewMapControler1_DragDrop(object sender, DragEventArgs e)
@@ -600,7 +627,32 @@ namespace ITI.S3.PI.Chick_End.GUI
         }
 
         private void timer1_Tick( object sender, EventArgs e )
-        {
+        {  
+            //affichage Timer
+            _countM++;
+            if(_countM == 20)
+            {
+                _countM = 0;
+                _second++;
+                if(_second == 60)
+                {
+                    _second = 0;
+                    _minute++;
+                }
+            }
+            _Ssecond = _second < 10 ? Convert.ToString("0" + _second) : Convert.ToString(_second);
+            _Sminute = _minute < 10 ? Convert.ToString("0" + _minute) : Convert.ToString(_minute);
+            labelTimer.Text = _Sminute + ":" + _Ssecond;
+            
+            //génération ressources
+            _countR++;
+            if(_countR == 100)
+            {
+                _countR = 0;
+                _seeds += 200;
+            }
+            labelSeedNumber.Text = Convert.ToString(_seeds);
+
             viewMapControler1.Context.Update();
             viewMapControler1.Refresh();
         }

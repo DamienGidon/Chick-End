@@ -37,7 +37,7 @@
             this.buttonBestiary = new System.Windows.Forms.Button();
             this.buttonResume = new System.Windows.Forms.Button();
             this.panelSeed = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelTimer = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelSeedNumber = new System.Windows.Forms.Label();
             this.labelSeed = new System.Windows.Forms.Label();
@@ -190,7 +190,7 @@
             this.panelSeed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelSeed.BackColor = System.Drawing.Color.Orange;
-            this.panelSeed.Controls.Add(this.label2);
+            this.panelSeed.Controls.Add(this.labelTimer);
             this.panelSeed.Controls.Add(this.label1);
             this.panelSeed.Controls.Add(this.labelSeedNumber);
             this.panelSeed.Controls.Add(this.labelSeed);
@@ -200,16 +200,16 @@
             this.panelSeed.Size = new System.Drawing.Size(1007, 58);
             this.panelSeed.TabIndex = 4;
             // 
-            // label2
+            // labelTimer
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Playbill", 20F);
-            this.label2.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label2.Location = new System.Drawing.Point(423, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 27);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "{mm\'ss}";
+            this.labelTimer.AutoSize = true;
+            this.labelTimer.Font = new System.Drawing.Font("Playbill", 20F);
+            this.labelTimer.ForeColor = System.Drawing.Color.DarkGreen;
+            this.labelTimer.Location = new System.Drawing.Point(423, 12);
+            this.labelTimer.Name = "labelTimer";
+            this.labelTimer.Size = new System.Drawing.Size(71, 27);
+            this.labelTimer.TabIndex = 6;
+            this.labelTimer.Text = "{mm\'ss}";
             // 
             // label1
             // 
@@ -404,7 +404,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 250;
+            this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // viewMapControler1
@@ -471,7 +471,7 @@
         private System.Windows.Forms.Panel panelSeed;
         private System.Windows.Forms.Label labelSeedNumber;
         private System.Windows.Forms.Label labelSeed;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelTimer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelUnit;

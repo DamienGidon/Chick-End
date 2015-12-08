@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HenCreater.cs" />
     <Compile Include="UnitExtension.cs" />
     <Compile Include="Unit\Anubis.cs" />
     <Compile Include="Unit\Bucher.cs" />

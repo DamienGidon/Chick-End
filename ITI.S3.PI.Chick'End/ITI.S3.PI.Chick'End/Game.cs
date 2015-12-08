@@ -14,10 +14,12 @@ namespace ITI.S3.PI.Chick_End
         [NonSerialized]
         readonly Stopwatch _stopwatch;
         bool _isPaused;
+        HenCreater _henCreater;
 
         public Game()
         {
             _context = new Map();
+            _henCreater = new HenCreater(_context);
             _stopwatch = new Stopwatch();
         }
 
@@ -29,6 +31,11 @@ namespace ITI.S3.PI.Chick_End
         public Stopwatch Stopwatch
         {
             get { return _stopwatch; }
+        }
+
+        public HenCreater HenCreater
+        {
+            get { return _henCreater; }
         }
 
         public bool IsPosed

@@ -28,7 +28,6 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         protected override void OnPaint( PaintEventArgs e )
         {
-            
             if (this.IsInDesignMode())
             {
                 //e.Graphics.FillRectangle( Brushes.Yellow, e.ClipRectangle );
@@ -50,7 +49,6 @@ namespace ITI.S3.PI.Chick_End.GUI
                 string pathgunnerFarmer = Path.Combine(directory, @"gunnerFarmer.png");
                 string pathInfantryFarmer = Path.Combine(directory, @"InfantryFarmer.png");
                 string pathWolf = Path.Combine(directory, @"Wolf.png");
-
 
                 Image grass = Image.FromFile(pathGrass);
                 Image path = Image.FromFile(pathPath);
@@ -97,7 +95,6 @@ namespace ITI.S3.PI.Chick_End.GUI
                             {
                                 e.Graphics.DrawImage(hen, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
                             }
-
                         }
                     }
                 }
@@ -145,7 +142,6 @@ namespace ITI.S3.PI.Chick_End.GUI
                             {
                                 e.Graphics.DrawImage(InfantryFarmer, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32(CaseShouldBeThatHeight * 0.4), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32((CaseShouldBeThatHeight * 0.4)));
                             }
-                            
                         }
                     }
                 }
@@ -153,13 +149,15 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     if(en is Wolf)
                     {
-                        
-                        e.Graphics.DrawImage(Wolf, en.Position.X, en.Position.Y -20);
+                        int X = en.Position.X;
+                        int Y = en.Position.Y;
+                        int MapXWidth = FinalVariables.NbCaseWidth * CaseShouldBeThatWidth;
+                        //X = X / MapXWidth * X;
+                        e.Graphics.DrawImage(Wolf, X, Y -20);
                     }
                 }
             }
             base.OnPaint( e );
         } 
-        
     }
 }
