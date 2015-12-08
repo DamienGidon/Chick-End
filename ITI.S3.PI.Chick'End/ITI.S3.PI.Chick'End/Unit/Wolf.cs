@@ -12,14 +12,14 @@ namespace ITI.S3.PI.Chick_End
         public Wolf(Map context)
             : base(context)
         {
-            Health = 50;
+            Health = 5000;
             Speed = 50;
         }
 
-        public override void Attack( Unit opposant )
-        {
-            throw new NotImplementedException();
-        }
+        //public override void Attack( Unit opposant )
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         //public override void Move()
         //{

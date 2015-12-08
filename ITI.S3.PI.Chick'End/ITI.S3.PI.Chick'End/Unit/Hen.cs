@@ -12,7 +12,7 @@ namespace ITI.S3.PI.Chick_End
         public Hen(Square context)
             : base( context, 15 )
         {
-            _health = 50;
+            _health = 0;
         }
 
         //public override List<Square> ComputeRange()

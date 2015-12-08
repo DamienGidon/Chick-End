@@ -27,7 +27,7 @@ namespace ITI.S3.PI.Chick_End
             _way = _context.Ways[_r.Next( numberOfWays )];
             _x = _way.FirstSquare.Column * FinalVariables.SquareWidthInMeters + FinalVariables.SquareWidthInMeters - 1;
             _y = _way.FirstSquare.Line * FinalVariables.SquareHeightInMeters;
-            _range = new List<Square>();
+            _range = ComputeRange();
         }
 
         public Map Context
@@ -55,7 +55,7 @@ namespace ITI.S3.PI.Chick_End
         {
             if (_way.Current.Column == _way.Next.Column + 1)
             {
-                _x -= FinalVariables.SquareWidthInMeters / 8;
+                _x -= FinalVariables.SquareWidthInMeters / 20;
                 if (_x <= _way.Next.Column * FinalVariables.SquareWidthInMeters)
                 {
                     _way.NextSquare();
@@ -63,7 +63,7 @@ namespace ITI.S3.PI.Chick_End
             }
             else if (_way.Current.Line == _way.Next.Line + 1)
             {
-                _y -= FinalVariables.SquareHeightInMeters / 8;
+                _y -= FinalVariables.SquareHeightInMeters / 20;
                 if (_y <= _way.Next.Line * FinalVariables.SquareHeightInMeters)
                 {
                     _way.NextSquare();
@@ -71,21 +71,21 @@ namespace ITI.S3.PI.Chick_End
             }
             else if (_way.Current.Line == _way.Next.Line - 1)
             {
-                _y += FinalVariables.SquareHeightInMeters / 8;
+                _y += FinalVariables.SquareHeightInMeters / 20;
                 if (_y >= _way.Next.Line * FinalVariables.SquareHeightInMeters)
                 {
                     _way.NextSquare();
                 }
             }
-
+            ComputeRange();
         }
 
         public override Square Square
         {
             get
             {
-                int line = _y / FinalVariables.NbCaseHeight;
-                int column = _x / FinalVariables.NbCaseWidth;
+                int line = _y / FinalVariables.SquareHeightInMeters;
+                int column = _x / FinalVariables.SquareWidthInMeters;
 
                 return _context.Square[line, column];
             }
@@ -101,25 +101,15 @@ namespace ITI.S3.PI.Chick_End
             return this.GetClosestUnit( _context.Towers );
         }
 
-        public virtual void Attack( Unit ennemi )
+        public virtual void Attack( Unit tower )
         {
-            Tower closest = GetClosestTowerAttackable();
-            if (closest != null)
-                closest.Health -= _damages;
+                tower.Health -= _damages;
         }
 
         public List<Square> ComputeRange()
         {
             List<Square> squaresInRange = new List<Square>();
-            int line = Square.Line;
-            int column = Square.Column;
-
-            if (Square.Context.Square[line, column - 1].Decoration == "path")
-                squaresInRange.Add( Square.Context.Square[line, column - 1] );
-            if (Square.Context.Square[line - 1, column].Decoration == "path")
-                squaresInRange.Add( Square.Context.Square[line - 1, column] );
-            if (Square.Context.Square[line + 1, column].Decoration == "path")
-                squaresInRange.Add( Square.Context.Square[line + 1, column] );
+            squaresInRange.Add( Square );
 
             return squaresInRange;
         }
