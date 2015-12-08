@@ -28,6 +28,10 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             InitializeComponent();
 
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+            player.SoundLocation = "bassecour.wav";
+            player.Play();
+
             _panel = panel;
 
             Bitmap p = new Bitmap(@"HenLeft.png");
@@ -648,6 +652,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             _countR++;
             if(_countR == 100)
             {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                player.SoundLocation = "bassecour.wav";
+                player.Play();
+
                 _countR = 0;
                 _seeds += 200;
             }
