@@ -9,8 +9,8 @@ namespace ITI.S3.PI.Chick_End
     [Serializable]
     class Hyena : Ennemi
     {
-        public Hyena( Map context )
-            : base(context)
+        public Hyena( Map context, int damages )
+            : base(context, damages)
         {
             Health = 50;
             Speed = 50;

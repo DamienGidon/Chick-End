@@ -89,6 +89,7 @@ namespace ITI.S3.PI.Chick_End
         public override void Die()
         {
             _square.Context.Towers.Remove( this );
+            _square.Tower = null;
         }
     }
 }
