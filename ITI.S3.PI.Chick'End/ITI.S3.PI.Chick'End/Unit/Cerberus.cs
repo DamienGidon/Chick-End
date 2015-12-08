@@ -9,8 +9,8 @@ namespace ITI.S3.PI.Chick_End
     [Serializable]
     class Cerberus : Ennemi
     {
-        public Cerberus( Map context )
-            : base(context)
+        public Cerberus( Map context, int damages )
+            : base(context, damages)
         {
             Health = 50;
             Speed = 50;

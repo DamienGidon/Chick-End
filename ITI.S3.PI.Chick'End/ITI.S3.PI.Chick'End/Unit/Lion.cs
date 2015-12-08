@@ -9,8 +9,8 @@ namespace ITI.S3.PI.Chick_End
     [Serializable]
     class Lion : Ennemi
     {
-        public Lion( Map context )
-            : base(context)
+        public Lion( Map context, int damages )
+            : base(context, damages)
         {
             Health = 50;
             Speed = 50;

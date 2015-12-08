@@ -85,6 +85,22 @@ namespace ITI.S3.PI.Chick_End.GUI
                         }
                     }
                 }
+<<<<<<< HEAD
+                for (int i = 0; i < FinalVariables.NbCaseHeight; i++)
+                {
+                    for (int j = 0; j < FinalVariables.NbCaseWidth; j++)
+                    {
+                        foreach (Tower t in Context.Map.Towers)
+                        {
+                            if (t is Hen)
+                            {
+                                e.Graphics.DrawImage(hen, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                            }
+                        }
+                    }
+                }
+=======
+>>>>>>> 97b643abd81c1cbeb74660274b907057f8a910b6
 
                 // On affiche les poules
                 for (int i = 0; i < FinalVariables.NbCaseHeight; i++)
@@ -136,11 +152,15 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     if(en is Wolf)
                     {
+<<<<<<< HEAD
                         int X = en.Position.X;
                         int Y = en.Position.Y;
                         int MapXWidth = FinalVariables.NbCaseWidth * CaseShouldBeThatWidth;
                         //X = X / MapXWidth * X;
                         e.Graphics.DrawImage(Wolf, X, Y -20);
+=======
+                        e.Graphics.DrawImage(Wolf, en.Position.X, en.Position.Y -20);
+>>>>>>> 97b643abd81c1cbeb74660274b907057f8a910b6
                     }
                 }
             }
