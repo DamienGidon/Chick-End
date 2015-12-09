@@ -18,6 +18,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         int _countM = 0;
         int _countR = 0;
         int _countS = 0;
+        int _countW = 0;
         int _second= 0;
         int _minute= 0;
         int _seeds = 200;
@@ -702,6 +703,21 @@ namespace ITI.S3.PI.Chick_End.GUI
                     player.Play();
                     _countS = 0;
                 }
+            }
+
+            //génération ennemis
+            _countW++;
+            if(_countW == 60)
+            {
+                _countW = 0;
+                Wolf w = viewMapControler1.Context.Map.CreateWolf(viewMapControler1.Context.Map);
+
+                Bitmap p9 = new Bitmap(@"Wolf.png");
+                Graphics g9 = Graphics.FromImage(p9);
+
+                Rectangle r9 = new Rectangle(w.Position.X, w.Position.Y, (viewMapControler1.Width / FinalVariables.NbCaseWidth), (viewMapControler1.Height / FinalVariables.NbCaseHeight) + 20);
+                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
+                e1.Graphics.DrawImage(p9, r9);
             }
 
             viewMapControler1.Context.Update();
