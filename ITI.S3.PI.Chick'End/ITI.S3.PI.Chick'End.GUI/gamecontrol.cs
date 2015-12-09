@@ -16,11 +16,11 @@ namespace ITI.S3.PI.Chick_End.GUI
     {
         Panel _panel;
         int _countM = 0;
-        int _countR = 200;
+        int _countR = 0;
         int _countS = 0;
         int _second= 0;
         int _minute= 0;
-        int _seeds;
+        int _seeds = 200;
         string _Ssecond;
         string _Sminute;
         bool sound = true;
@@ -635,7 +635,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
-        /*private void viewMapControler1_Click(object sender, EventArgs e)
+        private void viewMapControler1_Click(object sender, EventArgs e)
         {
 
             Wolf w = viewMapControler1.Context.Map.CreateWolf(viewMapControler1.Context.Map);
@@ -647,7 +647,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
             e1.Graphics.DrawImage(p9, r9);
 
-        }*/
+        }
 
         private void viewMapControler1_Resize(object sender, EventArgs e)
         {
