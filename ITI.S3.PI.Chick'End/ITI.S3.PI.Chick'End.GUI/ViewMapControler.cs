@@ -13,6 +13,8 @@ namespace ITI.S3.PI.Chick_End.GUI
     public class ViewMapControler : Control
     {
         Game _context;
+        public Bitmap _animatedWolf = new Bitmap("WolfMove.gif");
+        bool currentlyAnimating = false;
 
         public ViewMapControler()
         {
@@ -26,9 +28,9 @@ namespace ITI.S3.PI.Chick_End.GUI
             set { _context = value; }
         }
 
-        protected override void OnPaint( PaintEventArgs e )
+        protected override void OnPaint(PaintEventArgs e)
         {
-            
+
             if (this.IsInDesignMode())
             {
                 //e.Graphics.FillRectangle( Brushes.Yellow, e.ClipRectangle );
@@ -49,7 +51,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 string pathButcher = Path.Combine(directory, @"Bucher.png");
                 string pathgunnerFarmer = Path.Combine(directory, @"gunnerFarmer.png");
                 string pathInfantryFarmer = Path.Combine(directory, @"InfantryFarmer.png");
-                string pathWolf = Path.Combine(directory, @"Wolf.png");
+                string pathWolfMove = Path.Combine(directory, @"WolfMove.gif");
 
 
                 Image grass = Image.FromFile(pathGrass);
@@ -64,7 +66,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Image Butcher = Image.FromFile(pathButcher);
                 Image gunnerFarmer = Image.FromFile(pathgunnerFarmer);
                 Image InfantryFarmer = Image.FromFile(pathInfantryFarmer);
-                Image Wolf = Image.FromFile(pathWolf);
+                Image WolfMove = Image.FromFile(pathWolfMove);
 
                 int CaseShouldBeThatHeight = e.ClipRectangle.Height / FinalVariables.NbCaseHeight;
                 int CaseShouldBeThatWidth = e.ClipRectangle.Width / FinalVariables.NbCaseWidth;
@@ -134,16 +136,34 @@ namespace ITI.S3.PI.Chick_End.GUI
                         }
                     }
                 }
-                foreach(Ennemi en in Context.Map.Ennemis)
+                foreach (Ennemi en in Context.Map.Ennemis)
                 {
-                    if(en is Wolf)
+                    if (en is Wolf)
                     {
-                        e.Graphics.DrawImage(Wolf, en.Position.X, en.Position.Y -20);
+                        Animation();
+                        ImageAnimator.UpdateFrames();
+                        e.Graphics.DrawImage(this._animatedWolf, en.Position.X, en.Position.Y - 20);
                     }
                 }
             }
-            base.OnPaint( e );
-        } 
-        
+            base.OnPaint(e);
+        }
+
+
+        public void Animation()
+        {
+            if (!currentlyAnimating)
+            {
+                currentlyAnimating = true;
+                ImageAnimator.Animate(_animatedWolf, new EventHandler(this.OnFrameChanged));
+                ImageAnimator.UpdateFrames();
+            }
+        }
+
+        private void OnFrameChanged(object o, EventArgs e)
+        {
+            this.Invalidate();
+        }
+
     }
 }
