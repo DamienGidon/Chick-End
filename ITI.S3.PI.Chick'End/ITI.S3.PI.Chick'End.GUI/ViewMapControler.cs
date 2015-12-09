@@ -13,13 +13,13 @@ namespace ITI.S3.PI.Chick_End.GUI
     public class ViewMapControler : Control
     {
         Game _context;
-        public Bitmap _animatedWolf = new Bitmap("WolfMove.gif");
-        bool currentlyAnimating = false;
+        Animate _animate;
 
         public ViewMapControler()
         {
             _context = new Game();
             DoubleBuffered = true;
+            _animate = new Animate(this);
         }
 
         public Game Context
@@ -138,35 +138,18 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     if (en is Wolf)
                     {
-                        Animation();
+                        _animate.AnimationWolf();
                         ImageAnimator.UpdateFrames();
-                        e.Graphics.DrawImage(this._animatedWolf, en.Position.X, en.Position.Y - 20);
+                        e.Graphics.DrawImage(_animate._animatedWolf, en.Position.X, en.Position.Y - 20);
                         int X = en.Position.X;
                         int Y = en.Position.Y;
                         int MapXWidth = FinalVariables.NbCaseWidth * CaseShouldBeThatWidth;
                         //X = X / MapXWidth * X;
-                        e.Graphics.DrawImage(this._animatedWolf, X, Y -20);
+                        e.Graphics.DrawImage(_animate._animatedWolf, X, Y -20);
                     }
                 }
             }
             base.OnPaint(e);
         }
-
-
-        public void Animation()
-        {
-            if (!currentlyAnimating)
-            {
-                currentlyAnimating = true;
-                ImageAnimator.Animate(_animatedWolf, new EventHandler(this.OnFrameChanged));
-                ImageAnimator.UpdateFrames();
-            }
-        }
-
-        private void OnFrameChanged(object o, EventArgs e)
-        {
-            this.Invalidate();
-        }
-
     }
 }

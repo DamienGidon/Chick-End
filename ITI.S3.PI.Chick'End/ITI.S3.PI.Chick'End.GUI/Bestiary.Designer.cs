@@ -70,6 +70,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonReturn = new System.Windows.Forms.Button();
             this.Title = new System.Windows.Forms.Label();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
             panelBestiary = new System.Windows.Forms.Panel();
             panelBestiary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
@@ -88,6 +92,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBestiary
@@ -588,6 +596,46 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.Title.Text = "Bestiary";
             this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // pictureBox17
+            // 
+            this.pictureBox17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox17.BackgroundImage")));
+            this.pictureBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox17.Location = new System.Drawing.Point(12, 578);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox17.TabIndex = 8;
+            this.pictureBox17.TabStop = false;
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox18.BackgroundImage")));
+            this.pictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox18.Location = new System.Drawing.Point(739, 578);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox18.TabIndex = 9;
+            this.pictureBox18.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox19.BackgroundImage")));
+            this.pictureBox19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox19.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox19.TabIndex = 10;
+            this.pictureBox19.TabStop = false;
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox20.BackgroundImage")));
+            this.pictureBox20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox20.Location = new System.Drawing.Point(739, 9);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(33, 29);
+            this.pictureBox20.TabIndex = 11;
+            this.pictureBox20.TabStop = false;
+            // 
             // Bestiary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,6 +643,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.BackColor = System.Drawing.Color.Goldenrod;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 619);
+            this.Controls.Add(this.pictureBox20);
+            this.Controls.Add(this.pictureBox19);
+            this.Controls.Add(this.pictureBox18);
+            this.Controls.Add(this.pictureBox17);
             this.Controls.Add(this.buttonReturn);
             this.Controls.Add(panelBestiary);
             this.Controls.Add(this.Title);
@@ -621,6 +673,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -670,5 +726,9 @@ namespace ITI.S3.PI.Chick_End.GUI
         private System.Windows.Forms.RichTextBox richTextBox10;
         private System.Windows.Forms.RichTextBox richTextBox17;
         private System.Windows.Forms.RichTextBox richTextBox7;
+        private PictureBox pictureBox17;
+        private PictureBox pictureBox18;
+        private PictureBox pictureBox19;
+        private PictureBox pictureBox20;
     }
 }
