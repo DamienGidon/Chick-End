@@ -145,7 +145,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                         int Y = en.Position.Y;
                         int MapXWidth = FinalVariables.NbCaseWidth * CaseShouldBeThatWidth;
                         //X = X / MapXWidth * X;
-                        e.Graphics.DrawImage(Wolf, X, Y -20);
+                        e.Graphics.DrawImage(this._animatedWolf, X, Y -20);
                     }
                 }
             }
