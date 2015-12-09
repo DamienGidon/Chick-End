@@ -61,7 +61,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelUnit = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
             this.panelMenu.SuspendLayout();
             this.panelSeed.SuspendLayout();
@@ -79,7 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonMenu
@@ -196,7 +196,7 @@
             this.panelSeed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelSeed.BackColor = System.Drawing.Color.Orange;
-            this.panelSeed.Controls.Add(this.pictureBox10);
+            this.panelSeed.Controls.Add(this.pictureBox11);
             this.panelSeed.Controls.Add(this.labelTimer);
             this.panelSeed.Controls.Add(this.label1);
             this.panelSeed.Controls.Add(this.labelSeedNumber);
@@ -458,13 +458,13 @@
             // 
             // pictureBox10
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.Orange;
-            this.pictureBox10.Location = new System.Drawing.Point(686, 3);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(55, 52);
-            this.pictureBox10.TabIndex = 7;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
+            this.pictureBox11.BackColor = System.Drawing.Color.Orange;
+            this.pictureBox11.Location = new System.Drawing.Point(686, 3);
+            this.pictureBox11.Name = "pictureBox10";
+            this.pictureBox11.Size = new System.Drawing.Size(55, 52);
+            this.pictureBox11.TabIndex = 7;
+            this.pictureBox11.TabStop = false;
+            this.pictureBox11.Click += new System.EventHandler(this.pictureBox10_Click);
             // 
             // viewMapControler1
             // 
@@ -515,7 +515,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -554,6 +554,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Label labelPriceT;
-        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox11;
     }
 }

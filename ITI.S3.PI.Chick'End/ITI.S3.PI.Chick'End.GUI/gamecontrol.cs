@@ -84,10 +84,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             g8.DrawImage(p9, 60, 60);
             pictureBox9.Image = p9;
 
-            Bitmap p10 = new Bitmap(@"volume.png");
-            Graphics g10 = Graphics.FromImage(p);
-            g10.DrawImage(p10, 60, 60);
-            pictureBox10.Image = p10;
+            Bitmap p11 = new Bitmap(@"volume.png");
+            Graphics g11 = Graphics.FromImage(p);
+            g11.DrawImage(p11, 60, 60);
+            pictureBox11.Image = p11;
 
             pictureBox1.DragDrop += new DragEventHandler(pictureBox1_DragDrop);
             pictureBox1.MouseDown += new MouseEventHandler(pictureBox1_MouseDown);
@@ -689,7 +689,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             {
                 sound = false;
                 _countS = 90;
-                pictureBox10.Image = new Bitmap(@"muet.png");
+                pictureBox11.Image = new Bitmap(@"muet.png");
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer();
                 player.SoundLocation = "poule2.wav";
                 player.Play();
@@ -697,7 +697,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             else
             {
                 sound = true;
-                pictureBox10.Image = new Bitmap("volume.png");
+                pictureBox11.Image = new Bitmap("volume.png");
             }
         }
 
