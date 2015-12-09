@@ -52,6 +52,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animate.cs" />
     <Compile Include="Bestiary.cs">
       <SubType>Form</SubType>
     </Compile>
