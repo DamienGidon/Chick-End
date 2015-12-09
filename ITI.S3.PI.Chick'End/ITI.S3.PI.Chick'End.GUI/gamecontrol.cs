@@ -16,7 +16,7 @@ namespace ITI.S3.PI.Chick_End.GUI
     {
         Panel _panel;
         int _countM = 0;
-        int _countR = 0;
+        int _countR = 200;
         int _countS = 0;
         int _second= 0;
         int _minute= 0;
