@@ -84,6 +84,11 @@ namespace ITI.S3.PI.Chick_End.GUI
             g8.DrawImage(p9, 60, 60);
             pictureBox9.Image = p9;
 
+            Bitmap p10 = new Bitmap(@"ClosedLitter.png");
+            Graphics g10 = Graphics.FromImage(p);
+            g10.DrawImage(p10, 60, 60);
+            pictureBox10.Image = p10;
+
             Bitmap p11 = new Bitmap(@"volume.png");
             Graphics g11 = Graphics.FromImage(p);
             g11.DrawImage(p11, 60, 60);
@@ -105,13 +110,15 @@ namespace ITI.S3.PI.Chick_End.GUI
             pictureBox7.MouseDown += new MouseEventHandler(pictureBox7_MouseDown);
             pictureBox8.DragDrop += new DragEventHandler(pictureBox8_DragDrop);
             pictureBox8.MouseDown += new MouseEventHandler(pictureBox8_MouseDown);
-            viewMapControler1.DragDrop += new DragEventHandler(viewMapControler1_DragDrop);
-            //viewMapControler1.MouseDown += new MouseEventHandler(viewMapControler1_MouseDown);
             pictureBox9.DragDrop += new DragEventHandler(pictureBox9_DragDrop);
             pictureBox9.MouseDown += new MouseEventHandler(pictureBox9_MouseDown);
-
-            viewMapControler1.DragEnter += new DragEventHandler( viewMapControler1_DragEnter );
-            panel1.DragEnter += new DragEventHandler( viewMapControler1_DragEnter );
+            pictureBox10.DragDrop += new DragEventHandler(pictureBox9_DragDrop);
+            //pictureBox10.MouseDown += new MouseEventHandler(pictureBox9_MouseDown);
+            viewMapControler1.DragDrop += new DragEventHandler(viewMapControler1_DragDrop);
+            viewMapControler1.MouseDown += new MouseEventHandler(viewMapControler1_MouseDown);
+            viewMapControler1.DragEnter += new DragEventHandler(viewMapControler1_DragEnter);
+            pictureBox10.DragEnter += new DragEventHandler(pictureBox10_DragEnter);
+            //panelSeed.DragEnter += new DragEventHandler(panelSeed_DragEnter);
 
             pictureBox1.AllowDrop = false;
             pictureBox2.AllowDrop = true;
@@ -122,7 +129,8 @@ namespace ITI.S3.PI.Chick_End.GUI
             pictureBox7.AllowDrop = true;
             pictureBox8.AllowDrop = true;
             pictureBox9.AllowDrop = true;
-
+            pictureBox10.AllowDrop = true;
+            panelSeed.AllowDrop = true;
             viewMapControler1.AllowDrop = true;
             panel1.AllowDrop = true;
         }
@@ -224,15 +232,31 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         //pb.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
 
-        private void viewMapControler1_DragEnter( object sender, DragEventArgs e )
+        private void viewMapControler1_DragEnter(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent( DataFormats.Bitmap ))
+            if (e.Data.GetDataPresent(DataFormats.Bitmap))
             {
                 e.Effect = DragDropEffects.Copy;
             }
             else
             {
                 e.Effect = DragDropEffects.None;
+            }
+        }
+        private void pictureBox10_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Bitmap))
+            {
+                e.Effect = DragDropEffects.None;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.Copy;
+                Bitmap p10 = new Bitmap(@"OpenedLitter.png");
+                Graphics g10 = Graphics.FromImage(p10);
+                g10.DrawImage(p10, 60, 60);
+                pictureBox10.Image = p10;
+
             }
         }
 
@@ -588,29 +612,30 @@ namespace ITI.S3.PI.Chick_End.GUI
             var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
         }
 
-        //private void viewMapControler1_MouseDown(object sender, MouseEventArgs e)
-        //{
-        //    ViewMapControler v = ((ViewMapControler)sender);
-        //    v.Select();
-        //    v.DoDragDrop(v, DragDropEffects.Copy);
-        //    //MessageBox.Show("E.X est égal à : " + e.X);
-        //    var relativePoint = viewMapControler1.PointToClient(Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y));
-        //    int line = e.X / 50;
-        //    int column = e.Y / 50;
+        private void viewMapControler1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ViewMapControler v = ((ViewMapControler)sender);
+            v.Select();
+            v.DoDragDrop(v, DragDropEffects.Copy);
+            int line = e.Y / (viewMapControler1.Height / 9);
+            int column = e.X / (viewMapControler1.Width / 14);
+            var trashPosition = pictureBox10.PointToScreen(new Point(10, 10));
+            var x = Cursor.Position.X;
+            var y = Cursor.Position.Y;
+            var trashX = trashPosition.X;
+            var trashY = trashPosition.Y;
 
-        //    if (viewMapControler1.Context.Map.Square[line, column].Tower != null)
+            Bitmap p10 = new Bitmap(@"ClosedLitter.png");
+            Graphics g10 = Graphics.FromImage(p10);
+            g10.DrawImage(p10, 60, 60);
+            pictureBox10.Image = p10;
+            if (viewMapControler1.Context.Map.Square[line, column].Tower != null && x < trashX + 50 && x > trashX && y < trashY + 50 && y > trashY)
+            {
+                viewMapControler1.Context.Map.Square[line, column].Tower.Die();
+            }
+        }
 
-
-        //    {
-        //        viewMapControler1.Context.Map.Square[line, column].Tower = null;
-        //        Rectangle r = new Rectangle(line, column, 50, 70);
-        //        PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r);
-        //        e1.Graphics.Clear(Color.Teal);
-
-        //    }
-        //}
-
-        private void viewMapControler1_Click(object sender, EventArgs e)
+        /*private void viewMapControler1_Click(object sender, EventArgs e)
         {
 
             Wolf w = viewMapControler1.Context.Map.CreateWolf(viewMapControler1.Context.Map);
@@ -622,7 +647,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
             e1.Graphics.DrawImage(p9, r9);
 
-        }
+        }*/
 
         private void viewMapControler1_Resize(object sender, EventArgs e)
         {
