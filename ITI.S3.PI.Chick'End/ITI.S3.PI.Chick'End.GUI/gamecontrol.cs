@@ -636,19 +636,19 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
-        private void viewMapControler1_Click(object sender, EventArgs e)
-        {
+        //private void viewMapControler1_Click(object sender, EventArgs e)
+        //{
 
-            Wolf w = viewMapControler1.Context.Map.CreateWolf(viewMapControler1.Context.Map);
+        //    Wolf w = viewMapControler1.Context.Map.CreateWolf(viewMapControler1.Context.Map);
 
-            Bitmap p9 = new Bitmap(@"Wolf.png");
-            Graphics g9 = Graphics.FromImage(p9);
+        //    Bitmap p9 = new Bitmap(@"Wolf.png");
+        //    Graphics g9 = Graphics.FromImage(p9);
 
-            Rectangle r9 = new Rectangle(w.Position.X, w.Position.Y, (viewMapControler1.Width / FinalVariables.NbCaseWidth), (viewMapControler1.Height / FinalVariables.NbCaseHeight) + 20);
-            PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
-            e1.Graphics.DrawImage(p9, r9);
+        //    Rectangle r9 = new Rectangle(w.Position.X, w.Position.Y, (viewMapControler1.Width / FinalVariables.NbCaseWidth), (viewMapControler1.Height / FinalVariables.NbCaseHeight) + 20);
+        //    PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
+        //    e1.Graphics.DrawImage(p9, r9);
 
-        }
+        //}
 
         private void viewMapControler1_Resize(object sender, EventArgs e)
         {
