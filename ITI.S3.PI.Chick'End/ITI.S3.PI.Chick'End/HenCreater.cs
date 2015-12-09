@@ -31,7 +31,6 @@ namespace ITI.S3.PI.Chick_End
             
         }
 
-
         public int HenCost
         {
             get { return _henCost; }

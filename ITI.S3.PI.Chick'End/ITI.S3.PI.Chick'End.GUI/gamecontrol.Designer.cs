@@ -44,6 +44,9 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.labelPrice = new System.Windows.Forms.Label();
+            this.labelPriceT = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,12 +61,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelUnit = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
             this.panelMenu.SuspendLayout();
             this.panelSeed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -74,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonMenu
@@ -190,6 +196,7 @@
             this.panelSeed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelSeed.BackColor = System.Drawing.Color.Orange;
+            this.panelSeed.Controls.Add(this.pictureBox10);
             this.panelSeed.Controls.Add(this.labelTimer);
             this.panelSeed.Controls.Add(this.label1);
             this.panelSeed.Controls.Add(this.labelSeedNumber);
@@ -251,6 +258,7 @@
             this.pictureBox6.Size = new System.Drawing.Size(66, 67);
             this.pictureBox6.TabIndex = 5;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.MouseEnter += new System.EventHandler(this.pictureBox6_MouseEnter);
             // 
             // pictureBox2
             // 
@@ -260,6 +268,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(66, 66);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
             // 
             // panel1
             // 
@@ -267,6 +276,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.Orange;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.pictureBox9);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
@@ -283,6 +293,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(185, 728);
             this.panel1.TabIndex = 4;
+            this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel5.Controls.Add(this.labelPrice);
+            this.panel5.Controls.Add(this.labelPriceT);
+            this.panel5.Location = new System.Drawing.Point(0, 571);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(185, 40);
+            this.panel5.TabIndex = 5;
+            // 
+            // labelPrice
+            // 
+            this.labelPrice.AutoSize = true;
+            this.labelPrice.Font = new System.Drawing.Font("Playbill", 20F);
+            this.labelPrice.ForeColor = System.Drawing.Color.DarkGreen;
+            this.labelPrice.Location = new System.Drawing.Point(95, 6);
+            this.labelPrice.Name = "labelPrice";
+            this.labelPrice.Size = new System.Drawing.Size(61, 27);
+            this.labelPrice.TabIndex = 1;
+            this.labelPrice.Text = "{price}";
+            // 
+            // labelPriceT
+            // 
+            this.labelPriceT.AutoSize = true;
+            this.labelPriceT.Font = new System.Drawing.Font("Playbill", 20F);
+            this.labelPriceT.ForeColor = System.Drawing.Color.DarkGreen;
+            this.labelPriceT.Location = new System.Drawing.Point(40, 6);
+            this.labelPriceT.Name = "labelPriceT";
+            this.labelPriceT.Size = new System.Drawing.Size(54, 27);
+            this.labelPriceT.TabIndex = 0;
+            this.labelPriceT.Text = "Price :";
             // 
             // pictureBox9
             // 
@@ -291,6 +334,7 @@
             this.pictureBox9.Size = new System.Drawing.Size(66, 67);
             this.pictureBox9.TabIndex = 10;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.MouseEnter += new System.EventHandler(this.pictureBox9_MouseEnter);
             // 
             // panel4
             // 
@@ -347,6 +391,7 @@
             this.pictureBox7.Size = new System.Drawing.Size(66, 66);
             this.pictureBox7.TabIndex = 7;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.MouseEnter += new System.EventHandler(this.pictureBox7_MouseEnter);
             // 
             // pictureBox5
             // 
@@ -355,6 +400,7 @@
             this.pictureBox5.Size = new System.Drawing.Size(66, 67);
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.MouseEnter += new System.EventHandler(this.pictureBox5_MouseEnter);
             // 
             // pictureBox4
             // 
@@ -363,6 +409,7 @@
             this.pictureBox4.Size = new System.Drawing.Size(66, 67);
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.MouseEnter += new System.EventHandler(this.pictureBox4_MouseEnter);
             // 
             // pictureBox3
             // 
@@ -371,6 +418,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(66, 67);
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.pictureBox3_MouseEnter);
             // 
             // pictureBox1
             // 
@@ -380,6 +428,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(66, 66);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             // 
             // panel2
             // 
@@ -406,6 +455,16 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.Orange;
+            this.pictureBox10.Location = new System.Drawing.Point(686, 3);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(55, 52);
+            this.pictureBox10.TabIndex = 7;
+            this.pictureBox10.TabStop = false;
+            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
             // 
             // viewMapControler1
             // 
@@ -441,6 +500,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -454,6 +515,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -489,5 +551,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label labelPrice;
+        private System.Windows.Forms.Label labelPriceT;
+        private System.Windows.Forms.PictureBox pictureBox10;
     }
 }

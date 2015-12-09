@@ -17,16 +17,21 @@ namespace ITI.S3.PI.Chick_End.GUI
         Panel _panel;
         int _countM = 0;
         int _countR = 0;
+        int _countS = 0;
         int _second= 0;
         int _minute= 0;
         int _seeds;
         string _Ssecond;
         string _Sminute;
+        bool sound = true;
         HenCreater _henCreater = new HenCreater();
+        
 
         public gamecontrol(Panel panel)
         {
             InitializeComponent();
+
+            labelPrice.Text = "";
 
             System.Media.SoundPlayer player = new System.Media.SoundPlayer();
             player.SoundLocation = "bassecour.wav";
@@ -79,6 +84,11 @@ namespace ITI.S3.PI.Chick_End.GUI
             g8.DrawImage(p9, 60, 60);
             pictureBox9.Image = p9;
 
+            Bitmap p10 = new Bitmap(@"volume.png");
+            Graphics g10 = Graphics.FromImage(p);
+            g10.DrawImage(p10, 60, 60);
+            pictureBox10.Image = p10;
+
             pictureBox1.DragDrop += new DragEventHandler(pictureBox1_DragDrop);
             pictureBox1.MouseDown += new MouseEventHandler(pictureBox1_MouseDown);
             pictureBox2.DragDrop += new DragEventHandler(pictureBox2_DragDrop);
@@ -116,8 +126,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             viewMapControler1.AllowDrop = true;
             panel1.AllowDrop = true;
         }
-
-
 
         private void ManageUsersControl_Load(object sender, EventArgs e)
         {
@@ -246,7 +254,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / 9);
             int column = topLeftCornerX / (viewMapControler1.Width / 14);
             
-
             if (viewMapControler1.Context.Map.Square[line, column].Decoration != "path" || viewMapControler1.Context.Map.Square[line, column].Tower != null)
             {
                 
@@ -312,7 +319,9 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb3.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
 
 
+
         }
+
         private void pictureBox4_DragDrop(object sender, DragEventArgs e)
         {
             PictureBox pb4 = ((PictureBox)sender);
@@ -652,17 +661,89 @@ namespace ITI.S3.PI.Chick_End.GUI
             _countR++;
             if(_countR == 100)
             {
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-                player.SoundLocation = "bassecour.wav";
-                player.Play();
-
                 _countR = 0;
                 _seeds += 200;
             }
             labelSeedNumber.Text = Convert.ToString(_seeds);
 
+            //génération du son
+            if (sound == true)
+            {
+                _countS++;
+                if (_countS == 100)
+                {
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                    player.SoundLocation = "bassecour.wav";
+                    player.Play();
+                    _countS = 0;
+                }
+            }
+
             viewMapControler1.Context.Update();
             viewMapControler1.Refresh();
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            if (sound == true)
+            {
+                sound = false;
+                _countS = 90;
+                pictureBox10.Image = new Bitmap(@"muet.png");
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                player.SoundLocation = "poule2.wav";
+                player.Play();
+            }
+            else
+            {
+                sound = true;
+                pictureBox10.Image = new Bitmap("volume.png");
+            }
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            labelPrice.Text = Convert.ToString(_henCreater.HenCost);
+        }
+
+        private void pictureBox5_MouseEnter(object sender, EventArgs e)
+        {
+            labelPrice.Text = Convert.ToString(_henCreater.OldHenCost);
+        }
+
+        private void pictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            labelPrice.Text = Convert.ToString(_henCreater.BomberHenCost);
+        }
+
+        private void pictureBox7_MouseEnter(object sender, EventArgs e)
+        {
+            labelPrice.Text = Convert.ToString(_henCreater.ExplosiveEggCost);
+        }
+
+        private void pictureBox9_MouseEnter(object sender, EventArgs e)
+        {
+            labelPrice.Text = Convert.ToString(_henCreater.RoosterCost);
+        }
+
+        private void pictureBox4_MouseEnter(object sender, EventArgs e)
+        {
+            labelPrice.Text = Convert.ToString(_henCreater.GunnerFarmerCost);
+        }
+
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            labelPrice.Text = Convert.ToString(_henCreater.InfantryFarmerCost);
+        }
+
+        private void pictureBox6_MouseEnter(object sender, EventArgs e)
+        {
+            labelPrice.Text = Convert.ToString(_henCreater.BakerCost);
+        }
+
+        private void panel1_MouseEnter(object sender, EventArgs e)
+        {
+            labelPrice.Text = Convert.ToString(_henCreater.ButcherCost);
         }
     }
 }
