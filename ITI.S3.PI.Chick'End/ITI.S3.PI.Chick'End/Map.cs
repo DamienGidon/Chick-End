@@ -149,7 +149,7 @@ namespace ITI.S3.PI.Chick_End
             Square[ligne, colonne].Tower = t;
             _towers.Add( t );
         }
-        public void CreateBucher( int ligne, int colonne, Map context )
+        public void CreateButcher( int ligne, int colonne, Map context )
         {
             Tower t = new Bucher( context._squares[ligne, colonne] );
             Square[ligne, colonne].Tower = t;
@@ -170,42 +170,42 @@ namespace ITI.S3.PI.Chick_End
 
         public Wolf CreateWolf(Map context)
         {
-            Wolf e = new Wolf(context);
+            Wolf e = new Wolf(context, 10);
             _ennemis.Add(e);
             return e;
         }
 
         public void CreateHyena(int ligne, int colonne, Map context)
         {
-            Ennemi e = new Hyena(context);
+            Ennemi e = new Hyena(context, 15);
             Square[ligne, colonne].Ennemi = e;
             _ennemis.Add(e);
         }
 
         public void CreateFox(int ligne, int colonne, Map context)
         {
-            Ennemi e = new Fox(context);
+            Ennemi e = new Fox(context, 10);
             Square[ligne, colonne].Ennemi = e;
             _ennemis.Add(e);
         }
 
         public void CreateLion(int ligne, int colonne, Map context)
         {
-            Ennemi e = new Lion(context);
+            Ennemi e = new Lion(context, 20);
             Square[ligne, colonne].Ennemi = e;
             _ennemis.Add(e);
         }
 
         public void CreateAnubis(int ligne, int colonne, Map context)
         {
-            Ennemi e = new Anubis(context);
+            Ennemi e = new Anubis(context, 20);
             Square[ligne, colonne].Ennemi = e;
             _ennemis.Add(e);
         }
 
         public void CreateCerberus(int ligne, int colonne, Map context)
         {
-            Ennemi e = new Cerberus(context);
+            Ennemi e = new Cerberus(context, 30);
             Square[ligne, colonne].Ennemi = e;
             _ennemis.Add(e);
         }

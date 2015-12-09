@@ -9,8 +9,8 @@ namespace ITI.S3.PI.Chick_End
     [Serializable]
     class Anubis : Ennemi
     {
-        public Anubis( Map context )
-            : base(context)
+        public Anubis( Map context, int damages )
+            : base(context, damages)
         {
             Health = 50;
             Speed = 50;

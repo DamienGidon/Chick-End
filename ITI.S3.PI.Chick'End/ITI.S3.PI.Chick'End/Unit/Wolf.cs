@@ -9,8 +9,8 @@ namespace ITI.S3.PI.Chick_End
     [Serializable]
     public class Wolf : Ennemi
     {
-        public Wolf(Map context)
-            : base(context)
+        public Wolf(Map context, int damages)
+            : base(context, damages)
         {
             Health = 5000;
             Speed = 50;

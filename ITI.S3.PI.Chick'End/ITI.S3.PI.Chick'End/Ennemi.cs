@@ -15,14 +15,15 @@ namespace ITI.S3.PI.Chick_End
         protected int _y;
         protected int _speed;
         protected readonly int _damages;
-        protected readonly List<Square> _range;
+        protected List<Square> _range;
         public Map _context;
 
         protected static Random _r = new Random();
 
-        public Ennemi( Map context )
+        public Ennemi( Map context, int damages )
         {
             _context = context;
+            _damages = damages;
             int numberOfWays = _context.Ways.Count();
             _way = _context.Ways[_r.Next( numberOfWays )];
             _x = _way.FirstSquare.Column * FinalVariables.SquareWidthInMeters + FinalVariables.SquareWidthInMeters - 1;
@@ -77,7 +78,7 @@ namespace ITI.S3.PI.Chick_End
                     _way.NextSquare();
                 }
             }
-            ComputeRange();
+            _range = ComputeRange();
         }
 
         public override Square Square
@@ -94,6 +95,7 @@ namespace ITI.S3.PI.Chick_End
         public IReadOnlyList<Square> Range
         {
             get { return _range; }
+            set { _range = ComputeRange(); }
         }
 
         public Tower GetClosestTowerAttackable()
