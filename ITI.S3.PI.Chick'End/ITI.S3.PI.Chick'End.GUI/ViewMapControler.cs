@@ -51,7 +51,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 string pathgunnerFarmer = Path.Combine(directory, @"gunnerFarmer.png");
                 string pathInfantryFarmer = Path.Combine(directory, @"InfantryFarmer.png");
                 string pathWolf = Path.Combine(directory, @"Wolf.png");
-                string pathWolfMove = Path.Combine(directory, @"WolfMove.gif");
+                //string pathWolfMove = Path.Combine(directory, @"WolfMove.gif");
 
                 Image grass = Image.FromFile(pathGrass);
                 Image path = Image.FromFile(pathPath);
@@ -66,7 +66,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Image gunnerFarmer = Image.FromFile(pathgunnerFarmer);
                 Image InfantryFarmer = Image.FromFile(pathInfantryFarmer);
                 Image Wolf = Image.FromFile(pathWolf);
-                Image WolfMove = Image.FromFile(pathWolfMove);
+                //Image WolfMove = Image.FromFile(pathWolfMove);
 
                 int CaseShouldBeThatHeight = e.ClipRectangle.Height / FinalVariables.NbCaseHeight;
                 int CaseShouldBeThatWidth = e.ClipRectangle.Width / FinalVariables.NbCaseWidth;

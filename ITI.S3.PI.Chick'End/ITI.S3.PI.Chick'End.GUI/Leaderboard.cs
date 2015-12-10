@@ -38,7 +38,7 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void showScore()
         {
-            string[,] table = { { "Azsher", "02'57","1" }, { "Legannon", "67'30","2" }, { "Monart", "10'25", "3" }, { "Wetcher", "12'25", "2" }, { "Suaremente", "10'25", "1" } };
+            string[,] table = { { "Azsher", "0257","1" }, { "Legannon", "6730","2" }, { "Monart", "1025", "3" }, { "Wetcher", "1225", "2" }, { "Suaremente", "1025", "1" } };
 
             //for(int i =0; i< table.Length/3; i++)
             //{
@@ -48,6 +48,30 @@ namespace ITI.S3.PI.Chick_End.GUI
             //    numbT[i] = numb;
             //    MessageBox.Show("" + numbT[i]);
             //}
+            int i, j;
+            string[,] tmp = { { "Azsher", "0257", "1" } };
+
+            for (j = 0; j < (table.Length/3) - 1; j++)
+            {
+                for (i = 0; i < (table.Length/3) - 1; i++)
+                {
+                    if (Convert.ToInt32(table[i,1]) < Convert.ToInt32(table[i + 1,1]))
+                    {
+                        tmp[0, 0] = table[i,0];
+                        tmp[0, 1] = table[i, 1];
+                        tmp[0, 2] = table[i, 2];
+
+                        table[i, 0] = table[i + 1, 0];
+                        table[i, 1] = table[i + 1, 1];
+                        table[i, 2] = table[i + 1, 2];
+
+                        table[i + 1, 0] = tmp[0, 0];
+                        table[i + 1, 1] = tmp[0, 1];
+                        table[i + 1, 2] = tmp[0, 2];
+
+                    }
+                }
+            }
 
             labelPseudoOne.Text = "";
             labelScoreOne.Text = "";
@@ -58,7 +82,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             labelPseudoFour.Text = "";
             labelScoreFour.Text = "";
 
-            for (int i=0; i < table.Length/3; i++)
+            for (i=0; i < table.Length/3; i++)
             {
                 if (table[i, 2] == "1")
                 {
