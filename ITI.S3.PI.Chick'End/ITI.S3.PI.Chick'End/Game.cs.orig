@@ -14,8 +14,11 @@ namespace ITI.S3.PI.Chick_End
         [NonSerialized]
         readonly Stopwatch _stopwatch;
         bool _isPaused;
+<<<<<<< HEAD
         bool _isLost;
+=======
         HenCreater _henCreater;
+>>>>>>> e314d0a0edce945713fa91cada69211c2b6a9616
 
         public Game()
         {

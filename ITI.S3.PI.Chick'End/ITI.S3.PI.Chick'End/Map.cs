@@ -196,7 +196,7 @@ namespace ITI.S3.PI.Chick_End
             Square[ligne, colonne].Tower = t;
             _towers.Add( t );
         }
-        public void CreateBucher( int ligne, int colonne, Map context )
+        public void CreateButcher( int ligne, int colonne, Map context )
         {
             Tower t = new Bucher( context._squares[ligne, colonne] );
             Square[ligne, colonne].Tower = t;
