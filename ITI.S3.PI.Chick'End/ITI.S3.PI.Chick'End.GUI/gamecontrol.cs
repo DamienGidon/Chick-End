@@ -143,9 +143,6 @@ namespace ITI.S3.PI.Chick_End.GUI
 
             _panel = panel;
 
-            _squareHeight = this.viewMapControler1.Height / FinalVariables.NbCaseHeightMap2;
-            _squareWidth = this.viewMapControler1.Width / FinalVariables.NbCaseWidthMap2;
-
             Bitmap p = new Bitmap( @"HenLeft.png" );
             Graphics g = Graphics.FromImage( p );
             g.DrawImage( p, 60, 60 );
@@ -813,8 +810,22 @@ namespace ITI.S3.PI.Chick_End.GUI
                 e1.Graphics.DrawImage(p9, r9);
             }
 
-            viewMapControler1.Context.Update();
-            viewMapControler1.Refresh();
+            foreach (Ennemi en in viewMapControler1.Context.Map.Ennemis)
+            {
+                if (en.Way.Next.Decoration == "HomeHen")
+                {
+                    viewMapControler1.Context.IsLost = true;
+                }
+            }
+            if (viewMapControler1.Context.IsLost)
+            {
+                panelMenu.Show();
+            }
+            else
+            {
+                viewMapControler1.Context.Update();
+                viewMapControler1.Refresh();
+            }
         }
 
         private void pictureBox10_Click(object sender, EventArgs e)
@@ -859,13 +870,14 @@ namespace ITI.S3.PI.Chick_End.GUI
                     viewMapControler1.Context.IsLost = true;
                 }
             }
-            if( viewMapControler1.Context.IsLost)
+            if (viewMapControler1.Context.IsLost)
             {
                 panelMenu.Show();
             }
             else
             {
-            labelPrice.Text = Convert.ToString(_henCreater.ExplosiveEggCost);
+                labelPrice.Text = Convert.ToString( _henCreater.ExplosiveEggCost );
+            }
         }
 
         private void pictureBox9_MouseEnter(object sender, EventArgs e)
@@ -878,11 +890,8 @@ namespace ITI.S3.PI.Chick_End.GUI
             labelPrice.Text = Convert.ToString(_henCreater.GunnerFarmerCost);
         }
 
-                viewMapControler1.Context.Update();
-                viewMapControler1.Refresh();
         private void pictureBox2_MouseEnter(object sender, EventArgs e)
         {
-            }
             labelPrice.Text = Convert.ToString(_henCreater.InfantryFarmerCost);
         }
 
