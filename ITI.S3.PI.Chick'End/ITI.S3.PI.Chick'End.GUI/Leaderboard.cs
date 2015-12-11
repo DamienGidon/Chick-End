@@ -44,7 +44,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             int i, j;
             string[,] tmp = { { "Azsher", "0257", "1" } };
 
-            for (j = 0; j < (table.Length/3) - 1; j++)
+            for (j = 0; j < (table.Length/3); j++)
             {
                 for (i = 0; i < (table.Length/3) - 1; i++)
                 {
