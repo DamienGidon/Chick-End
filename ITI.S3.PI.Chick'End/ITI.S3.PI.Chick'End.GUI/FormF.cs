@@ -62,6 +62,18 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.Controls.Add(_gameControl);
 
         }
+        private void buttonLevelTwo_Click( object sender, EventArgs e )
+        {
+            MenuPanel.Hide();
+            panelLevel.Hide();
+            if (_gameControl != null)
+            {
+                this.Controls.Remove( _gameControl );
+            }
+            _gameControl = new gamecontrol( MenuPanel, "test" );
+            this.Controls.Add( _gameControl );
+        }
+
 
         private void buttonQuit_Click(object sender, EventArgs e)
         {
@@ -181,11 +193,6 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             Leaderboard l = new Leaderboard();
             l.ShowDialog();
-        }
-
-        private void buttonLevelTwo_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

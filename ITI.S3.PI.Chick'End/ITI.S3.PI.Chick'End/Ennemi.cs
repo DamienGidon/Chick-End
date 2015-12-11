@@ -36,6 +36,11 @@ namespace ITI.S3.PI.Chick_End
             get { return _context; }
         }
 
+        public Way Way
+        {
+            get { return _way; }
+        }
+
         public int Speed
         {
             get { return _speed; }

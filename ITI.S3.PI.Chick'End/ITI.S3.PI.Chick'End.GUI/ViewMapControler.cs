@@ -15,6 +15,12 @@ namespace ITI.S3.PI.Chick_End.GUI
         Game _context;
         //Animate _animate;
 
+        public ViewMapControler(string test)
+        {
+            _context = new Game(test);
+            DoubleBuffered = true;
+        }
+
         public ViewMapControler()
         {
             _context = new Game();
@@ -68,12 +74,12 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Image Wolf = Image.FromFile(pathWolf);
                 //Image WolfMove = Image.FromFile(pathWolfMove);
 
-                int CaseShouldBeThatHeight = e.ClipRectangle.Height / FinalVariables.NbCaseHeight;
-                int CaseShouldBeThatWidth = e.ClipRectangle.Width / FinalVariables.NbCaseWidth;
+                int CaseShouldBeThatHeight = e.ClipRectangle.Height / FinalVariables.NbCaseHeightMap1;
+                int CaseShouldBeThatWidth = e.ClipRectangle.Width / FinalVariables.NbCaseWidthMap1;
 
-                for (int i = 0; i < FinalVariables.NbCaseHeight; i++)
+                for (int i = 0; i < FinalVariables.NbCaseHeightMap1; i++)
                 {
-                    for (int j = 0; j < FinalVariables.NbCaseWidth; j++)
+                    for (int j = 0; j < FinalVariables.NbCaseWidthMap1; j++)
                     {
                         if (_context.Map.Square[i, j].Decoration == "grass")
                         {
@@ -91,9 +97,9 @@ namespace ITI.S3.PI.Chick_End.GUI
                 }
 
                 // On affiche les poules
-                for (int i = 0; i < FinalVariables.NbCaseHeight; i++)
+                for (int i = 0; i < FinalVariables.NbCaseHeightMap1; i++)
                 {
-                    for (int j = 0; j < FinalVariables.NbCaseWidth; j++)
+                    for (int j = 0; j < FinalVariables.NbCaseWidthMap1; j++)
                     {
                         foreach (Tower t in Context.Map.Towers)
                         {
@@ -145,7 +151,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                         //e.Graphics.DrawImage(_animate._animatedWolf, en.Position.X, en.Position.Y - 20);
                         int X = en.Position.X;
                         int Y = en.Position.Y;
-                        int MapXWidth = FinalVariables.NbCaseWidth * CaseShouldBeThatWidth;
+                        int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
                         e.Graphics.DrawImage(Wolf, X, Y - 20);
                         //X = X / MapXWidth * X;
                         //e.Graphics.DrawImage(_animate._animatedWolf, X, Y -20);
