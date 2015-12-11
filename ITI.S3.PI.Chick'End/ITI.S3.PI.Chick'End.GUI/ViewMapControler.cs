@@ -14,6 +14,12 @@ namespace ITI.S3.PI.Chick_End.GUI
     {
         Game _context;
 
+        public ViewMapControler(string test)
+        {
+            _context = new Game(test);
+            DoubleBuffered = true;
+        }
+
         public ViewMapControler()
         {
             _context = new Game();
@@ -66,12 +72,12 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Image InfantryFarmer = Image.FromFile(pathInfantryFarmer);
                 Image Wolf = Image.FromFile(pathWolf);
 
-                int CaseShouldBeThatHeight = e.ClipRectangle.Height / FinalVariables.NbCaseHeight;
-                int CaseShouldBeThatWidth = e.ClipRectangle.Width / FinalVariables.NbCaseWidth;
+                int CaseShouldBeThatHeight = e.ClipRectangle.Height / FinalVariables.NbCaseHeightMap1;
+                int CaseShouldBeThatWidth = e.ClipRectangle.Width / FinalVariables.NbCaseWidthMap1;
 
-                for (int i = 0; i < FinalVariables.NbCaseHeight; i++)
+                for (int i = 0; i < FinalVariables.NbCaseHeightMap1; i++)
                 {
-                    for (int j = 0; j < FinalVariables.NbCaseWidth; j++)
+                    for (int j = 0; j < FinalVariables.NbCaseWidthMap1; j++)
                     {
                         if (_context.Map.Square[i, j].Decoration == "grass")
                         {
@@ -89,9 +95,9 @@ namespace ITI.S3.PI.Chick_End.GUI
                 }
 
                 // On affiche les poules
-                for (int i = 0; i < FinalVariables.NbCaseHeight; i++)
+                for (int i = 0; i < FinalVariables.NbCaseHeightMap1; i++)
                 {
-                    for (int j = 0; j < FinalVariables.NbCaseWidth; j++)
+                    for (int j = 0; j < FinalVariables.NbCaseWidthMap1; j++)
                     {
                         foreach (Tower t in Context.Map.Towers)
                         {

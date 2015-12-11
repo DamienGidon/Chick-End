@@ -14,10 +14,16 @@ namespace ITI.S3.PI.Chick_End
         [NonSerialized]
         readonly Stopwatch _stopwatch;
         bool _isPaused;
+        bool _isLost;
 
         public Game()
         {
             _context = new Map();
+            _stopwatch = new Stopwatch();
+        }
+        public Game(string test)
+        {
+            _context = new Map(test);
             _stopwatch = new Stopwatch();
         }
 
@@ -35,6 +41,12 @@ namespace ITI.S3.PI.Chick_End
         {
             get { return _isPaused; }
             set { _isPaused = value; }
+        }
+
+        public bool IsLost
+        {
+            get { return _isLost; }
+            set { _isLost = value; }
         }
 
         public void Update()

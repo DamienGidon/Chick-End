@@ -161,7 +161,6 @@
             // 
             // buttonLevelTwo
             // 
-            this.buttonLevelTwo.Enabled = false;
             this.buttonLevelTwo.FlatAppearance.BorderSize = 0;
             this.buttonLevelTwo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonLevelTwo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
