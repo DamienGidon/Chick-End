@@ -822,6 +822,9 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             if (viewMapControler1.Context.IsLost)
             {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                player.SoundLocation = "defaite.wav";
+                player.Play();
                 this.timer1.Stop();
                 GameOver g = new GameOver(labelTimer.Text);
                 g.ShowDialog();
