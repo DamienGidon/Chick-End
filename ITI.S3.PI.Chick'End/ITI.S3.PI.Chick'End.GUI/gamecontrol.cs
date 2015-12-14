@@ -234,18 +234,20 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void buttonMenu_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
             panelMenu.Show();
         }
 
         private void buttonQuit_Click(object sender, EventArgs e)
         {
+            //timer1.Stop();
             panelMenu.Hide();
-
             _panel.Show();
         }
 
         private void buttonResume_Click(object sender, EventArgs e)
         {
+            timer1.Start();
             panelMenu.Hide();
             viewMapControler1.Refresh();
         }
@@ -259,27 +261,27 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void buttonBestiary_MouseEnter(object sender, EventArgs e)
         {
-            buttonBestiary.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonBestiary.Font = new System.Drawing.Font("Playbill", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonBestiary.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             buttonBestiary.Refresh();
         }
 
         private void buttonBestiary_MouseLeave(object sender, EventArgs e)
         {
-            buttonBestiary.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonBestiary.Font = new System.Drawing.Font("Playbill", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonBestiary.Refresh();
         }
 
         private void buttonResume_MouseEnter(object sender, EventArgs e)
         {
-            buttonResume.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonResume.Font = new System.Drawing.Font("Playbill", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonResume.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             buttonResume.Refresh();
         }
 
         private void buttonResume_MouseLeave(object sender, EventArgs e)
         {
-            buttonResume.Font = new System.Drawing.Font("Playbill", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonResume.Font = new System.Drawing.Font("Playbill", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonResume.Refresh();
         }
 
@@ -298,27 +300,27 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void buttonSave_MouseEnter(object sender, EventArgs e)
         {
-            buttonSave.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonSave.Font = new System.Drawing.Font("Playbill", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             buttonSave.Refresh();
         }
 
         private void buttonSave_MouseLeave(object sender, EventArgs e)
         {
-            buttonSave.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonSave.Font = new System.Drawing.Font("Playbill", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonSave.Refresh();
         }
 
         private void buttonQuit_MouseEnter(object sender, EventArgs e)
         {
-            buttonQuit.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonQuit.Font = new System.Drawing.Font("Playbill", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonQuit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             buttonQuit.Refresh();
         }
 
         private void buttonQuit_MouseLeave(object sender, EventArgs e)
         {
-            buttonQuit.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonQuit.Font = new System.Drawing.Font("Playbill", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonQuit.Refresh();
         }
 

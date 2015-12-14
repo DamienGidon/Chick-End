@@ -124,7 +124,7 @@
             this.buttonQuit.FlatAppearance.BorderSize = 0;
             this.buttonQuit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonQuit.Font = new System.Drawing.Font("Playbill", 20F);
+            this.buttonQuit.Font = new System.Drawing.Font("Playbill", 25F);
             this.buttonQuit.ForeColor = System.Drawing.Color.DarkGreen;
             this.buttonQuit.Location = new System.Drawing.Point(44, 191);
             this.buttonQuit.Name = "buttonQuit";
@@ -143,7 +143,7 @@
             this.buttonSave.FlatAppearance.BorderSize = 0;
             this.buttonSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Font = new System.Drawing.Font("Playbill", 20F);
+            this.buttonSave.Font = new System.Drawing.Font("Playbill", 25F);
             this.buttonSave.ForeColor = System.Drawing.Color.DarkGreen;
             this.buttonSave.Location = new System.Drawing.Point(44, 124);
             this.buttonSave.Name = "buttonSave";
@@ -162,7 +162,7 @@
             this.buttonBestiary.FlatAppearance.BorderSize = 0;
             this.buttonBestiary.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonBestiary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBestiary.Font = new System.Drawing.Font("Playbill", 20F);
+            this.buttonBestiary.Font = new System.Drawing.Font("Playbill", 25F);
             this.buttonBestiary.ForeColor = System.Drawing.Color.DarkGreen;
             this.buttonBestiary.Location = new System.Drawing.Point(44, 67);
             this.buttonBestiary.Name = "buttonBestiary";
@@ -176,12 +176,13 @@
             // 
             // buttonResume
             // 
-            this.buttonResume.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonResume.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonResume.BackColor = System.Drawing.Color.Transparent;
             this.buttonResume.FlatAppearance.BorderSize = 0;
             this.buttonResume.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonResume.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonResume.Font = new System.Drawing.Font("Playbill", 20F);
+            this.buttonResume.Font = new System.Drawing.Font("Playbill", 25F);
             this.buttonResume.ForeColor = System.Drawing.Color.DarkGreen;
             this.buttonResume.Location = new System.Drawing.Point(44, 3);
             this.buttonResume.Name = "buttonResume";
