@@ -106,12 +106,14 @@
             // panelMenu
             // 
             this.panelMenu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panelMenu.BackColor = System.Drawing.Color.Orange;
+            this.panelMenu.BackColor = System.Drawing.Color.Transparent;
+            this.panelMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMenu.BackgroundImage")));
+            this.panelMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelMenu.Controls.Add(this.buttonQuit);
             this.panelMenu.Controls.Add(this.buttonSave);
             this.panelMenu.Controls.Add(this.buttonBestiary);
             this.panelMenu.Controls.Add(this.buttonResume);
-            this.panelMenu.Location = new System.Drawing.Point(400, 250);
+            this.panelMenu.Location = new System.Drawing.Point(464, 244);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 262);
             this.panelMenu.TabIndex = 3;
@@ -125,8 +127,8 @@
             this.buttonQuit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonQuit.Font = new System.Drawing.Font("Playbill", 25F);
-            this.buttonQuit.ForeColor = System.Drawing.Color.DarkGreen;
-            this.buttonQuit.Location = new System.Drawing.Point(44, 191);
+            this.buttonQuit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonQuit.Location = new System.Drawing.Point(40, 197);
             this.buttonQuit.Name = "buttonQuit";
             this.buttonQuit.Size = new System.Drawing.Size(117, 57);
             this.buttonQuit.TabIndex = 3;
@@ -144,8 +146,8 @@
             this.buttonSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Playbill", 25F);
-            this.buttonSave.ForeColor = System.Drawing.Color.DarkGreen;
-            this.buttonSave.Location = new System.Drawing.Point(44, 124);
+            this.buttonSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonSave.Location = new System.Drawing.Point(40, 129);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(117, 61);
             this.buttonSave.TabIndex = 4;
@@ -163,8 +165,8 @@
             this.buttonBestiary.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonBestiary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBestiary.Font = new System.Drawing.Font("Playbill", 25F);
-            this.buttonBestiary.ForeColor = System.Drawing.Color.DarkGreen;
-            this.buttonBestiary.Location = new System.Drawing.Point(44, 67);
+            this.buttonBestiary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonBestiary.Location = new System.Drawing.Point(40, 67);
             this.buttonBestiary.Name = "buttonBestiary";
             this.buttonBestiary.Size = new System.Drawing.Size(117, 51);
             this.buttonBestiary.TabIndex = 1;
@@ -183,13 +185,13 @@
             this.buttonResume.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonResume.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonResume.Font = new System.Drawing.Font("Playbill", 25F);
-            this.buttonResume.ForeColor = System.Drawing.Color.DarkGreen;
-            this.buttonResume.Location = new System.Drawing.Point(44, 3);
+            this.buttonResume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonResume.Location = new System.Drawing.Point(40, 3);
             this.buttonResume.Name = "buttonResume";
             this.buttonResume.Size = new System.Drawing.Size(117, 58);
             this.buttonResume.TabIndex = 0;
             this.buttonResume.Text = "Resume";
-            this.buttonResume.UseVisualStyleBackColor = true;
+            this.buttonResume.UseVisualStyleBackColor = false;
             this.buttonResume.Click += new System.EventHandler(this.buttonResume_Click);
             this.buttonResume.MouseEnter += new System.EventHandler(this.buttonResume_MouseEnter);
             this.buttonResume.MouseLeave += new System.EventHandler(this.buttonResume_MouseLeave);
