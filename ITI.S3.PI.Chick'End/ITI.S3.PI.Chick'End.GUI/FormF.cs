@@ -70,7 +70,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             {
                 this.Controls.Remove( _gameControl );
             }
-            _gameControl = new gamecontrol( MenuPanel, "test" );
+            _gameControl = new gamecontrol( MenuPanel );
             this.Controls.Add( _gameControl );
         }
 

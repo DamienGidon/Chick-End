@@ -63,7 +63,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelUnit = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            //this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
+            this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
             this.panelMenu.SuspendLayout();
             this.panelSeed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();

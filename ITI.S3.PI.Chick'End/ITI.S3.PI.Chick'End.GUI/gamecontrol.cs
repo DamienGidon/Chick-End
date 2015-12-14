@@ -30,7 +30,7 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         public gamecontrol(Panel panel)
         {
-            this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
+            // this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
             InitializeComponent();
 
             labelPrice.Text = "";
@@ -136,95 +136,96 @@ namespace ITI.S3.PI.Chick_End.GUI
             viewMapControler1.AllowDrop = true;
             panel1.AllowDrop = true;
         }
-        public gamecontrol( Panel panel, string test )
-        {
-            this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler( test );
-            InitializeComponent();
 
-            _panel = panel;
+        //public gamecontrol( Panel panel, string test )
+        //{
+        //    this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler( test );
+        //    InitializeComponent();
 
-            Bitmap p = new Bitmap( @"HenLeft.png" );
-            Graphics g = Graphics.FromImage( p );
-            g.DrawImage( p, 60, 60 );
-            pictureBox1.Image = p;
+        //    _panel = panel;
 
-            Bitmap p2 = new Bitmap( @"InfantryFarmer.png" );
-            Graphics g2 = Graphics.FromImage( p );
-            g2.DrawImage( p2, 60, 60 );
-            pictureBox2.Image = p2;
+        //    Bitmap p = new Bitmap( @"HenLeft.png" );
+        //    Graphics g = Graphics.FromImage( p );
+        //    g.DrawImage( p, 60, 60 );
+        //    pictureBox1.Image = p;
 
-            Bitmap p3 = new Bitmap( @"bomberHen.png" );
-            Graphics g3 = Graphics.FromImage( p );
-            g3.DrawImage( p3, 60, 60 );
-            pictureBox3.Image = p3;
+        //    Bitmap p2 = new Bitmap( @"InfantryFarmer.png" );
+        //    Graphics g2 = Graphics.FromImage( p );
+        //    g2.DrawImage( p2, 60, 60 );
+        //    pictureBox2.Image = p2;
 
-            Bitmap p4 = new Bitmap( @"GunnerFarmer.png" );
-            Graphics g4 = Graphics.FromImage( p );
-            g4.DrawImage( p4, 60, 60 );
-            pictureBox4.Image = p4;
+        //    Bitmap p3 = new Bitmap( @"bomberHen.png" );
+        //    Graphics g3 = Graphics.FromImage( p );
+        //    g3.DrawImage( p3, 60, 60 );
+        //    pictureBox3.Image = p3;
 
-            Bitmap p5 = new Bitmap( @"OldHen.png" );
-            Graphics g5 = Graphics.FromImage( p );
-            g5.DrawImage( p5, 60, 60 );
-            pictureBox5.Image = p5;
+        //    Bitmap p4 = new Bitmap( @"GunnerFarmer.png" );
+        //    Graphics g4 = Graphics.FromImage( p );
+        //    g4.DrawImage( p4, 60, 60 );
+        //    pictureBox4.Image = p4;
 
-            Bitmap p6 = new Bitmap( @"Baker.png" );
-            Graphics g6 = Graphics.FromImage( p );
-            g6.DrawImage( p6, 60, 60 );
-            pictureBox6.Image = p6;
+        //    Bitmap p5 = new Bitmap( @"OldHen.png" );
+        //    Graphics g5 = Graphics.FromImage( p );
+        //    g5.DrawImage( p5, 60, 60 );
+        //    pictureBox5.Image = p5;
 
-            Bitmap p7 = new Bitmap( @"ExplosiveEgg.png" );
-            Graphics g7 = Graphics.FromImage( p );
-            g7.DrawImage( p7, 60, 60 );
-            pictureBox7.Image = p7;
+        //    Bitmap p6 = new Bitmap( @"Baker.png" );
+        //    Graphics g6 = Graphics.FromImage( p );
+        //    g6.DrawImage( p6, 60, 60 );
+        //    pictureBox6.Image = p6;
 
-            Bitmap p8 = new Bitmap( @"Bucher.png" );
-            Graphics g8 = Graphics.FromImage( p );
-            g8.DrawImage( p8, 60, 60 );
-            pictureBox8.Image = p8;
+        //    Bitmap p7 = new Bitmap( @"ExplosiveEgg.png" );
+        //    Graphics g7 = Graphics.FromImage( p );
+        //    g7.DrawImage( p7, 60, 60 );
+        //    pictureBox7.Image = p7;
 
-            Bitmap p9 = new Bitmap( @"Rooster.png" );
-            Graphics g9 = Graphics.FromImage( p );
-            g8.DrawImage( p9, 60, 60 );
-            pictureBox9.Image = p9;
+        //    Bitmap p8 = new Bitmap( @"Bucher.png" );
+        //    Graphics g8 = Graphics.FromImage( p );
+        //    g8.DrawImage( p8, 60, 60 );
+        //    pictureBox8.Image = p8;
 
-            pictureBox1.DragDrop += new DragEventHandler( pictureBox1_DragDrop );
-            pictureBox1.MouseDown += new MouseEventHandler( pictureBox1_MouseDown );
-            pictureBox2.DragDrop += new DragEventHandler( pictureBox2_DragDrop );
-            pictureBox2.MouseDown += new MouseEventHandler( pictureBox2_MouseDown );
-            pictureBox3.DragDrop += new DragEventHandler( pictureBox3_DragDrop );
-            pictureBox3.MouseDown += new MouseEventHandler( pictureBox3_MouseDown );
-            pictureBox4.DragDrop += new DragEventHandler( pictureBox4_DragDrop );
-            pictureBox4.MouseDown += new MouseEventHandler( pictureBox4_MouseDown );
-            pictureBox5.DragDrop += new DragEventHandler( pictureBox5_DragDrop );
-            pictureBox5.MouseDown += new MouseEventHandler( pictureBox5_MouseDown );
-            pictureBox6.DragDrop += new DragEventHandler( pictureBox6_DragDrop );
-            pictureBox6.MouseDown += new MouseEventHandler( pictureBox6_MouseDown );
-            pictureBox7.DragDrop += new DragEventHandler( pictureBox7_DragDrop );
-            pictureBox7.MouseDown += new MouseEventHandler( pictureBox7_MouseDown );
-            pictureBox8.DragDrop += new DragEventHandler( pictureBox8_DragDrop );
-            pictureBox8.MouseDown += new MouseEventHandler( pictureBox8_MouseDown );
-            viewMapControler1.DragDrop += new DragEventHandler( viewMapControler1_DragDrop );
-            //viewMapControler1.MouseDown += new MouseEventHandler(viewMapControler1_MouseDown);
-            pictureBox9.DragDrop += new DragEventHandler( pictureBox9_DragDrop );
-            pictureBox9.MouseDown += new MouseEventHandler( pictureBox9_MouseDown );
+        //    Bitmap p9 = new Bitmap( @"Rooster.png" );
+        //    Graphics g9 = Graphics.FromImage( p );
+        //    g8.DrawImage( p9, 60, 60 );
+        //    pictureBox9.Image = p9;
 
-            viewMapControler1.DragEnter += new DragEventHandler( viewMapControler1_DragEnter );
-            panel1.DragEnter += new DragEventHandler( viewMapControler1_DragEnter );
+        //    pictureBox1.DragDrop += new DragEventHandler( pictureBox1_DragDrop );
+        //    pictureBox1.MouseDown += new MouseEventHandler( pictureBox1_MouseDown );
+        //    pictureBox2.DragDrop += new DragEventHandler( pictureBox2_DragDrop );
+        //    pictureBox2.MouseDown += new MouseEventHandler( pictureBox2_MouseDown );
+        //    pictureBox3.DragDrop += new DragEventHandler( pictureBox3_DragDrop );
+        //    pictureBox3.MouseDown += new MouseEventHandler( pictureBox3_MouseDown );
+        //    pictureBox4.DragDrop += new DragEventHandler( pictureBox4_DragDrop );
+        //    pictureBox4.MouseDown += new MouseEventHandler( pictureBox4_MouseDown );
+        //    pictureBox5.DragDrop += new DragEventHandler( pictureBox5_DragDrop );
+        //    pictureBox5.MouseDown += new MouseEventHandler( pictureBox5_MouseDown );
+        //    pictureBox6.DragDrop += new DragEventHandler( pictureBox6_DragDrop );
+        //    pictureBox6.MouseDown += new MouseEventHandler( pictureBox6_MouseDown );
+        //    pictureBox7.DragDrop += new DragEventHandler( pictureBox7_DragDrop );
+        //    pictureBox7.MouseDown += new MouseEventHandler( pictureBox7_MouseDown );
+        //    pictureBox8.DragDrop += new DragEventHandler( pictureBox8_DragDrop );
+        //    pictureBox8.MouseDown += new MouseEventHandler( pictureBox8_MouseDown );
+        //    viewMapControler1.DragDrop += new DragEventHandler( viewMapControler1_DragDrop );
+        //    //viewMapControler1.MouseDown += new MouseEventHandler(viewMapControler1_MouseDown);
+        //    pictureBox9.DragDrop += new DragEventHandler( pictureBox9_DragDrop );
+        //    pictureBox9.MouseDown += new MouseEventHandler( pictureBox9_MouseDown );
 
-            pictureBox1.AllowDrop = false;
-            pictureBox2.AllowDrop = true;
-            pictureBox3.AllowDrop = true;
-            pictureBox4.AllowDrop = true;
-            pictureBox5.AllowDrop = true;
-            pictureBox6.AllowDrop = true;
-            pictureBox7.AllowDrop = true;
-            pictureBox8.AllowDrop = true;
-            pictureBox9.AllowDrop = true;
+        //    viewMapControler1.DragEnter += new DragEventHandler( viewMapControler1_DragEnter );
+        //    panel1.DragEnter += new DragEventHandler( viewMapControler1_DragEnter );
 
-            viewMapControler1.AllowDrop = true;
-            panel1.AllowDrop = true;
-        }
+        //    pictureBox1.AllowDrop = false;
+        //    pictureBox2.AllowDrop = true;
+        //    pictureBox3.AllowDrop = true;
+        //    pictureBox4.AllowDrop = true;
+        //    pictureBox5.AllowDrop = true;
+        //    pictureBox6.AllowDrop = true;
+        //    pictureBox7.AllowDrop = true;
+        //    pictureBox8.AllowDrop = true;
+        //    pictureBox9.AllowDrop = true;
+
+        //    viewMapControler1.AllowDrop = true;
+        //    panel1.AllowDrop = true;
+        //}
 
         private void ManageUsersControl_Load(object sender, EventArgs e)
         {
