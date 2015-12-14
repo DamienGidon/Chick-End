@@ -20,10 +20,12 @@ namespace ITI.S3.PI.Chick_End
             ennemi.Health -= Damages;
         }
 
-        //public override List<Square> GetRange()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public override List<Square> ComputeRange()
+        {
+            List<Square> range = new List<Square>();
+            range.Add( Square );
+            return range;
+        }
 
         /*
         public override void Remove()
