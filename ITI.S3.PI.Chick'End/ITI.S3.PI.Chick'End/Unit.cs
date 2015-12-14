@@ -10,7 +10,7 @@ namespace ITI.S3.PI.Chick_End
     [Serializable]
     public abstract class Unit : IDie
     {
-        internal int _health;
+        protected int _health;
 
         public int Health
         {
