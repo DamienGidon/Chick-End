@@ -44,10 +44,12 @@
             this.buttonBestiary = new System.Windows.Forms.Button();
             this.buttonContinue = new System.Windows.Forms.Button();
             this.buttonPlay = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelLevel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuPanel
@@ -57,6 +59,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MenuPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuPanel.BackgroundImage")));
             this.MenuPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MenuPanel.Controls.Add(this.pictureBox3);
             this.MenuPanel.Controls.Add(this.pictureBox2);
             this.MenuPanel.Controls.Add(this.pictureBox1);
             this.MenuPanel.Controls.Add(this.panelLevel);
@@ -161,6 +164,7 @@
             // 
             // buttonLevelTwo
             // 
+            this.buttonLevelTwo.Enabled = false;
             this.buttonLevelTwo.FlatAppearance.BorderSize = 0;
             this.buttonLevelTwo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonLevelTwo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -305,6 +309,19 @@
             this.buttonPlay.MouseEnter += new System.EventHandler(this.buttonPlay_MouseEnter);
             this.buttonPlay.MouseLeave += new System.EventHandler(this.buttonPlay_MouseLeave);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(274, 35);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(429, 112);
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
+            // 
             // FormF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,6 +337,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelLevel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -341,5 +359,6 @@
         private System.Windows.Forms.Button buttonReturn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
