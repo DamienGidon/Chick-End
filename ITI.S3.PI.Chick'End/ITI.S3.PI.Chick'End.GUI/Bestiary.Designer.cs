@@ -154,6 +154,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.richTextBox17.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox17.Location = new System.Drawing.Point(129, 1034);
             this.richTextBox17.Name = "richTextBox17";
+            this.richTextBox17.ReadOnly = true;
             this.richTextBox17.Size = new System.Drawing.Size(583, 117);
             this.richTextBox17.TabIndex = 36;
             this.richTextBox17.Text = "\tName : Baker\n\n\tDescription : Producing seeds to upgrade Hen Units";
@@ -210,6 +211,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.richTextBox16.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox16.Location = new System.Drawing.Point(129, 1855);
             this.richTextBox16.Name = "richTextBox16";
+            this.richTextBox16.ReadOnly = true;
             this.richTextBox16.Size = new System.Drawing.Size(583, 96);
             this.richTextBox16.TabIndex = 35;
             this.richTextBox16.Text = "\tName : WereWolf\n\n\tDescription : World boss. All Farmer Units become \n\t\t\t     ine" +
@@ -223,6 +225,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.richTextBox15.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox15.Location = new System.Drawing.Point(129, 1753);
             this.richTextBox15.Name = "richTextBox15";
+            this.richTextBox15.ReadOnly = true;
             this.richTextBox15.Size = new System.Drawing.Size(583, 96);
             this.richTextBox15.TabIndex = 34;
             this.richTextBox15.Text = "\tName : Hyena\t\n\n\tDescription : The hyena is attracted by fresh meat\n             " +
@@ -236,6 +239,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.richTextBox14.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox14.Location = new System.Drawing.Point(129, 1651);
             this.richTextBox14.Name = "richTextBox14";
+            this.richTextBox14.ReadOnly = true;
             this.richTextBox14.Size = new System.Drawing.Size(583, 96);
             this.richTextBox14.TabIndex = 31;
             this.richTextBox14.Text = "\tName : Anubis\t\n\n\tDescription : Summons enemy units";
@@ -259,6 +263,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.richTextBox13.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox13.Location = new System.Drawing.Point(129, 1549);
             this.richTextBox13.Name = "richTextBox13";
+            this.richTextBox13.ReadOnly = true;
             this.richTextBox13.Size = new System.Drawing.Size(583, 96);
             this.richTextBox13.TabIndex = 29;
             this.richTextBox13.Text = "\tName : Lion\t\n\n\tDescription : Unit more resistant";
@@ -271,6 +276,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.richTextBox12.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox12.Location = new System.Drawing.Point(129, 1447);
             this.richTextBox12.Name = "richTextBox12";
+            this.richTextBox12.ReadOnly = true;
             this.richTextBox12.Size = new System.Drawing.Size(583, 96);
             this.richTextBox12.TabIndex = 28;
             this.richTextBox12.Text = "\tName : Cerberus\t\n\n\tDescription : Inflicts heavy damage";
@@ -294,6 +300,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.richTextBox11.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox11.Location = new System.Drawing.Point(129, 1345);
             this.richTextBox11.Name = "richTextBox11";
+            this.richTextBox11.ReadOnly = true;
             this.richTextBox11.Size = new System.Drawing.Size(583, 96);
             this.richTextBox11.TabIndex = 25;
             this.richTextBox11.Text = "\tName : Fox\t\n\n\tDescription : Unit insensitive to the butcher";
@@ -317,6 +324,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.richTextBox10.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox10.Location = new System.Drawing.Point(129, 1243);
             this.richTextBox10.Name = "richTextBox10";
+            this.richTextBox10.ReadOnly = true;
             this.richTextBox10.Size = new System.Drawing.Size(583, 96);
             this.richTextBox10.TabIndex = 23;
             this.richTextBox10.Text = "\tName : Wolf\t\n\n\tDescription : Basic unit enemy";
@@ -362,6 +370,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.richTextBox8.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox8.Location = new System.Drawing.Point(129, 896);
             this.richTextBox8.Name = "richTextBox8";
+            this.richTextBox8.ReadOnly = true;
             this.richTextBox8.Size = new System.Drawing.Size(583, 132);
             this.richTextBox8.TabIndex = 19;
             this.richTextBox8.Text = "\tName : Gunner Farmer\n\n\tDescription : Farmer armed with a rifle and inflict only " +
@@ -386,6 +395,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.richTextBox7.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox7.Location = new System.Drawing.Point(129, 758);
             this.richTextBox7.Name = "richTextBox7";
+            this.richTextBox7.ReadOnly = true;
             this.richTextBox7.Size = new System.Drawing.Size(583, 132);
             this.richTextBox7.TabIndex = 18;
             this.richTextBox7.Text = "\tName : Infantry Farmer\n\n\tDescription : Farmer armed with a pitchfork that attack" +
@@ -410,6 +420,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.richTextBox6.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox6.Location = new System.Drawing.Point(129, 620);
             this.richTextBox6.Name = "richTextBox6";
+            this.richTextBox6.ReadOnly = true;
             this.richTextBox6.Size = new System.Drawing.Size(583, 132);
             this.richTextBox6.TabIndex = 17;
             this.richTextBox6.Text = resources.GetString("richTextBox6.Text");
@@ -457,6 +468,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.richTextBox5.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox5.Location = new System.Drawing.Point(129, 448);
             this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.ReadOnly = true;
             this.richTextBox5.Size = new System.Drawing.Size(583, 107);
             this.richTextBox5.TabIndex = 14;
             this.richTextBox5.Text = "\tName : Explosive Egg\n\n\tDescription : Egg explodes when the enemy steps on it .\n\t" +
@@ -482,6 +494,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.richTextBox4.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox4.Location = new System.Drawing.Point(129, 346);
             this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.ReadOnly = true;
             this.richTextBox4.Size = new System.Drawing.Size(583, 96);
             this.richTextBox4.TabIndex = 13;
             this.richTextBox4.Text = "\tName : Rooster\n\n\tDescription : Inflicts heavy damages on all enemy units .\n\t\t\t  " +
@@ -506,6 +519,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.richTextBox3.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox3.Location = new System.Drawing.Point(129, 244);
             this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.ReadOnly = true;
             this.richTextBox3.Size = new System.Drawing.Size(583, 96);
             this.richTextBox3.TabIndex = 12;
             this.richTextBox3.Text = "\tName : Old Hen\n\n\tDescription : Throw rotten eggs that slow temporarily and \n\t\t\t " +
@@ -530,6 +544,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.richTextBox2.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox2.Location = new System.Drawing.Point(129, 142);
             this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
             this.richTextBox2.Size = new System.Drawing.Size(583, 96);
             this.richTextBox2.TabIndex = 11;
             this.richTextBox2.Text = "\tName : Bomber Hen\n\n\tDescription : Fat hen throwing eggs that inflict heavy area " +
@@ -543,6 +558,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.richTextBox1.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(129, 40);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(583, 96);
             this.richTextBox1.TabIndex = 10;
             this.richTextBox1.Text = "\tName : Hen\n\n\tDescription : Basic unit, launches eggs that inflict damages.";
