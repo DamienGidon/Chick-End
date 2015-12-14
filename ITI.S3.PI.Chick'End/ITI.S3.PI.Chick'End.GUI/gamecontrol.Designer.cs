@@ -215,6 +215,7 @@
             // 
             // pictureBox10
             // 
+            this.pictureBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox10.BackColor = System.Drawing.Color.Orange;
             this.pictureBox10.Location = new System.Drawing.Point(886, 0);
             this.pictureBox10.Name = "pictureBox10";
@@ -224,6 +225,7 @@
             // 
             // pictureBox11
             // 
+            this.pictureBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox11.BackColor = System.Drawing.Color.Orange;
             this.pictureBox11.Location = new System.Drawing.Point(825, 0);
             this.pictureBox11.Name = "pictureBox11";
