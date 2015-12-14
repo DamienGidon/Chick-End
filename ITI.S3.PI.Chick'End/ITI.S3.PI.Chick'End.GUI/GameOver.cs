@@ -12,27 +12,35 @@ namespace ITI.S3.PI.Chick_End.GUI
 {
     public partial class GameOver : Form
     {
-        public GameOver()
+        string _timer;
+        public GameOver(string timer)
         {
             InitializeComponent();
+            _timer = timer;
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
         {
-            
+
+            Close();
         }
 
         private void buttonMenu_MouseEnter(object sender, EventArgs e)
         {
-            buttonMenu.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            buttonMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            buttonMenu.Refresh();
+            buttonReturn.Font = new System.Drawing.Font("Playbill", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            buttonReturn.Refresh();
         }
 
         private void buttonMenu_MouseLeave(object sender, EventArgs e)
         {
-            buttonMenu.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            buttonMenu.Refresh();
+            buttonReturn.Font = new System.Drawing.Font("Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            buttonReturn.Refresh();
+        }
+
+        private void GameOver_Load(object sender, EventArgs e)
+        {
+            label3.Text = _timer;
         }
     }
 }

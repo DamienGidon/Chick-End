@@ -749,11 +749,11 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            using (FileStream fs = new FileStream("objet.bin", FileMode.Create, FileAccess.Write, FileShare.None))
-            {
-                BinaryFormatter ser = new BinaryFormatter();
-                ser.Serialize(fs, viewMapControler1.Context);
-            }
+            //using (FileStream fs = new FileStream("objet.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+            //{
+            //    BinaryFormatter ser = new BinaryFormatter();
+            //    ser.Serialize(fs, viewMapControler1.Context);
+            //}
         }
 
         private void timer1_Tick( object sender, EventArgs e )
@@ -820,7 +820,9 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             if (viewMapControler1.Context.IsLost)
             {
-                panelMenu.Show();
+                this.timer1.Stop();
+                GameOver g = new GameOver(labelTimer.Text);
+                g.ShowDialog();
             }
             else
             {
