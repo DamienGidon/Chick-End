@@ -15,21 +15,15 @@ namespace ITI.S3.PI.Chick_End
             _health = 5000;
         }
 
-        //public override List<Square> ComputeRange()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public override List<Square> ComputeRange()
+        {
+            return this.GetRange( Math.Max(Square.Context.NbCaseHeight, Square.Context.NbCaseWidth ) );
+            //return this.GetRange( Square.Context.NbCaseWidth );
+        }
 
         public override void Attack(Unit ennemi)
         {
             ennemi.Health -= Damages;
         }
-        
-        /*
-        public override void Remove()
-        {
-
-        }
-        */
     }
 }

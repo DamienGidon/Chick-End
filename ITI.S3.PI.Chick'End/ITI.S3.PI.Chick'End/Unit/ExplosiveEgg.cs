@@ -17,7 +17,17 @@ namespace ITI.S3.PI.Chick_End
 
         public override void Attack(Unit ennemi)
         {
-            ennemi.Health -= Damages;
+            foreach( Ennemi e in Square.Context.Ennemis)
+            {
+                if( (e.Square == ennemi.Square)
+                    || ((e.Square.Line == ennemi.Square.Line) && (e.Square.Column == ennemi.Square.Column + 1) )
+                    || ((e.Square.Line == ennemi.Square.Line) && (e.Square.Column == ennemi.Square.Column - 1) )
+                    || ((e.Square.Line == ennemi.Square.Line + 1) && (e.Square.Column == ennemi.Square.Column) )
+                    || ((e.Square.Line == ennemi.Square.Line - 1) && (e.Square.Column == ennemi.Square.Column) ))
+                {
+                    ennemi.Health -= Damages;
+                }
+            }
         }
 
         public override List<Square> ComputeRange()
@@ -26,12 +36,5 @@ namespace ITI.S3.PI.Chick_End
             range.Add( Square );
             return range;
         }
-
-        /*
-        public override void Remove()
-        {
-
-        }
-        */
     }
 }
