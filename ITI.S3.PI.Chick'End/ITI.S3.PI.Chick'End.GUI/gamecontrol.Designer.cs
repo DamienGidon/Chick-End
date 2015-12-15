@@ -113,7 +113,7 @@
             this.panelMenu.Controls.Add(this.buttonSave);
             this.panelMenu.Controls.Add(this.buttonBestiary);
             this.panelMenu.Controls.Add(this.buttonResume);
-            this.panelMenu.Location = new System.Drawing.Point(464, 244);
+            this.panelMenu.Location = new System.Drawing.Point(467, 244);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 262);
             this.panelMenu.TabIndex = 3;

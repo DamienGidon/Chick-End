@@ -58,7 +58,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             {
                 this.Controls.Remove(_gameControl);
             }
-            _gameControl = new gamecontrol(MenuPanel);
+            _gameControl = new gamecontrol(MenuPanel, "1");
             this.Controls.Add(_gameControl);
 
         }
@@ -70,7 +70,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             {
                 this.Controls.Remove( _gameControl );
             }
-            _gameControl = new gamecontrol( MenuPanel );
+            _gameControl = new gamecontrol( MenuPanel, "2" );
             this.Controls.Add( _gameControl );
         }
 

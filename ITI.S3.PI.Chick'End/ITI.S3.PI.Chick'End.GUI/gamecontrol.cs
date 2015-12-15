@@ -22,18 +22,19 @@ namespace ITI.S3.PI.Chick_End.GUI
         int _second= 0;
         int _minute= 0;
         int _seeds = 200;
+        string _level;
         string _Ssecond;
         string _Sminute;
         bool sound = true;
         HenCreater _henCreater = new HenCreater();
         
 
-        public gamecontrol(Panel panel)
+        public gamecontrol(Panel panel, string level)
         {
-            // this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
             InitializeComponent();
 
             labelPrice.Text = "";
+            _level = level;
 
             System.Media.SoundPlayer player = new System.Media.SoundPlayer();
             player.SoundLocation = "bassecour.wav";
@@ -115,12 +116,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pictureBox9.DragDrop += new DragEventHandler(pictureBox9_DragDrop);
             pictureBox9.MouseDown += new MouseEventHandler(pictureBox9_MouseDown);
             pictureBox10.DragDrop += new DragEventHandler(pictureBox9_DragDrop);
-            //pictureBox10.MouseDown += new MouseEventHandler(pictureBox9_MouseDown);
             viewMapControler1.DragDrop += new DragEventHandler(viewMapControler1_DragDrop);
             viewMapControler1.MouseDown += new MouseEventHandler(viewMapControler1_MouseDown);
             viewMapControler1.DragEnter += new DragEventHandler(viewMapControler1_DragEnter);
             pictureBox10.DragEnter += new DragEventHandler(pictureBox10_DragEnter);
-            //panelSeed.DragEnter += new DragEventHandler(panelSeed_DragEnter);
 
             pictureBox1.AllowDrop = false;
             pictureBox2.AllowDrop = true;
@@ -137,96 +136,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             panel1.AllowDrop = true;
         }
 
-        //public gamecontrol( Panel panel, string test )
-        //{
-        //    this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler( test );
-        //    InitializeComponent();
-
-        //    _panel = panel;
-
-        //    Bitmap p = new Bitmap( @"HenLeft.png" );
-        //    Graphics g = Graphics.FromImage( p );
-        //    g.DrawImage( p, 60, 60 );
-        //    pictureBox1.Image = p;
-
-        //    Bitmap p2 = new Bitmap( @"InfantryFarmer.png" );
-        //    Graphics g2 = Graphics.FromImage( p );
-        //    g2.DrawImage( p2, 60, 60 );
-        //    pictureBox2.Image = p2;
-
-        //    Bitmap p3 = new Bitmap( @"bomberHen.png" );
-        //    Graphics g3 = Graphics.FromImage( p );
-        //    g3.DrawImage( p3, 60, 60 );
-        //    pictureBox3.Image = p3;
-
-        //    Bitmap p4 = new Bitmap( @"GunnerFarmer.png" );
-        //    Graphics g4 = Graphics.FromImage( p );
-        //    g4.DrawImage( p4, 60, 60 );
-        //    pictureBox4.Image = p4;
-
-        //    Bitmap p5 = new Bitmap( @"OldHen.png" );
-        //    Graphics g5 = Graphics.FromImage( p );
-        //    g5.DrawImage( p5, 60, 60 );
-        //    pictureBox5.Image = p5;
-
-        //    Bitmap p6 = new Bitmap( @"Baker.png" );
-        //    Graphics g6 = Graphics.FromImage( p );
-        //    g6.DrawImage( p6, 60, 60 );
-        //    pictureBox6.Image = p6;
-
-        //    Bitmap p7 = new Bitmap( @"ExplosiveEgg.png" );
-        //    Graphics g7 = Graphics.FromImage( p );
-        //    g7.DrawImage( p7, 60, 60 );
-        //    pictureBox7.Image = p7;
-
-        //    Bitmap p8 = new Bitmap( @"Bucher.png" );
-        //    Graphics g8 = Graphics.FromImage( p );
-        //    g8.DrawImage( p8, 60, 60 );
-        //    pictureBox8.Image = p8;
-
-        //    Bitmap p9 = new Bitmap( @"Rooster.png" );
-        //    Graphics g9 = Graphics.FromImage( p );
-        //    g8.DrawImage( p9, 60, 60 );
-        //    pictureBox9.Image = p9;
-
-        //    pictureBox1.DragDrop += new DragEventHandler( pictureBox1_DragDrop );
-        //    pictureBox1.MouseDown += new MouseEventHandler( pictureBox1_MouseDown );
-        //    pictureBox2.DragDrop += new DragEventHandler( pictureBox2_DragDrop );
-        //    pictureBox2.MouseDown += new MouseEventHandler( pictureBox2_MouseDown );
-        //    pictureBox3.DragDrop += new DragEventHandler( pictureBox3_DragDrop );
-        //    pictureBox3.MouseDown += new MouseEventHandler( pictureBox3_MouseDown );
-        //    pictureBox4.DragDrop += new DragEventHandler( pictureBox4_DragDrop );
-        //    pictureBox4.MouseDown += new MouseEventHandler( pictureBox4_MouseDown );
-        //    pictureBox5.DragDrop += new DragEventHandler( pictureBox5_DragDrop );
-        //    pictureBox5.MouseDown += new MouseEventHandler( pictureBox5_MouseDown );
-        //    pictureBox6.DragDrop += new DragEventHandler( pictureBox6_DragDrop );
-        //    pictureBox6.MouseDown += new MouseEventHandler( pictureBox6_MouseDown );
-        //    pictureBox7.DragDrop += new DragEventHandler( pictureBox7_DragDrop );
-        //    pictureBox7.MouseDown += new MouseEventHandler( pictureBox7_MouseDown );
-        //    pictureBox8.DragDrop += new DragEventHandler( pictureBox8_DragDrop );
-        //    pictureBox8.MouseDown += new MouseEventHandler( pictureBox8_MouseDown );
-        //    viewMapControler1.DragDrop += new DragEventHandler( viewMapControler1_DragDrop );
-        //    //viewMapControler1.MouseDown += new MouseEventHandler(viewMapControler1_MouseDown);
-        //    pictureBox9.DragDrop += new DragEventHandler( pictureBox9_DragDrop );
-        //    pictureBox9.MouseDown += new MouseEventHandler( pictureBox9_MouseDown );
-
-        //    viewMapControler1.DragEnter += new DragEventHandler( viewMapControler1_DragEnter );
-        //    panel1.DragEnter += new DragEventHandler( viewMapControler1_DragEnter );
-
-        //    pictureBox1.AllowDrop = false;
-        //    pictureBox2.AllowDrop = true;
-        //    pictureBox3.AllowDrop = true;
-        //    pictureBox4.AllowDrop = true;
-        //    pictureBox5.AllowDrop = true;
-        //    pictureBox6.AllowDrop = true;
-        //    pictureBox7.AllowDrop = true;
-        //    pictureBox8.AllowDrop = true;
-        //    pictureBox9.AllowDrop = true;
-
-        //    viewMapControler1.AllowDrop = true;
-        //    panel1.AllowDrop = true;
-        //}
-
         private void ManageUsersControl_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
@@ -240,7 +149,6 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void buttonQuit_Click(object sender, EventArgs e)
         {
-            //timer1.Stop();
             panelMenu.Hide();
             _panel.Show();
         }
@@ -323,8 +231,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             buttonQuit.Font = new System.Drawing.Font("Playbill", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonQuit.Refresh();
         }
-
-        //pb.Image = (Image)e.Data.GetData(DataFormats.Bitmap);
 
         private void viewMapControler1_DragEnter(object sender, DragEventArgs e)
         {
@@ -663,6 +569,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 }
             }
         }
+
         private void pictureBox9_DragDrop(object sender, DragEventArgs e)
         {
             PictureBox pb9 = ((PictureBox)sender);
@@ -700,6 +607,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 }
             }
         }
+
         private void viewMapControler1_DragDrop(object sender, DragEventArgs e)
         {
             ViewMapControler v = ((ViewMapControler)sender);
@@ -728,20 +636,6 @@ namespace ITI.S3.PI.Chick_End.GUI
                 viewMapControler1.Context.Map.Square[line, column].Tower.Die();
             }
         }
-
-        //private void viewMapControler1_Click(object sender, EventArgs e)
-        //{
-
-        //    Wolf w = viewMapControler1.Context.Map.CreateWolf(viewMapControler1.Context.Map);
-
-        //    Bitmap p9 = new Bitmap(@"Wolf.png");
-        //    Graphics g9 = Graphics.FromImage(p9);
-
-        //    Rectangle r9 = new Rectangle(w.Position.X, w.Position.Y, (viewMapControler1.Width / FinalVariables.NbCaseWidth), (viewMapControler1.Height / FinalVariables.NbCaseHeight) + 20);
-        //    PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
-        //    e1.Graphics.DrawImage(p9, r9);
-
-        //}
 
         private void viewMapControler1_Resize(object sender, EventArgs e)
         {
@@ -829,7 +723,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                     player.Play();
                 }
                 this.timer1.Stop();
-                GameOver g = new GameOver(labelTimer.Text);
+                GameOver g = new GameOver(labelTimer.Text, _level);
                 g.ShowDialog();
             }
             else

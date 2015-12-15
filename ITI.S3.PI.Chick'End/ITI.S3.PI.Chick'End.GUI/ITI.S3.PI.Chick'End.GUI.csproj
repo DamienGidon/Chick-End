@@ -95,6 +95,7 @@
     <Compile Include="ViewMapControler.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Xml.cs" />
     <EmbeddedResource Include="Bestiary.resx">
       <DependentUpon>Bestiary.cs</DependentUpon>
     </EmbeddedResource>
