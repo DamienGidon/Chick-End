@@ -60,6 +60,7 @@
       <DependentUpon>Bestiary.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlExtension.cs" />
+    <Compile Include="DragDropHelper.cs" />
     <Compile Include="FormF.cs">
       <SubType>Form</SubType>
     </Compile>

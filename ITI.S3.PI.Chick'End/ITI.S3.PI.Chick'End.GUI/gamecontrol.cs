@@ -232,6 +232,11 @@ namespace ITI.S3.PI.Chick_End.GUI
             buttonQuit.Refresh();
         }
 
+        private void DragEnter(object sender, DragEventArgs e)
+        {
+
+        }
+
         private void viewMapControler1_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Bitmap))
@@ -294,7 +299,6 @@ namespace ITI.S3.PI.Chick_End.GUI
                     PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r);
                     e1.Graphics.DrawImage(p2, r);
                     viewMapControler1.Context.Map.CreateHen(line, column, viewMapControler1.Context.Map);
-                    //viewMapControler1.Context.HenCreater.CreateHen(line, column, viewMapControler1.Context.Map);
                 }
             }
         }

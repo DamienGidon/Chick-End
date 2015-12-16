@@ -38,8 +38,15 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void showScore()
         {
-            Xml Xml = Xml.LoadFromFile("leaderboard.xml");
+            Xml Xml = new Xml();
+            List<Result> r = Xml.LoadFromFile("leaderboard.xml");
 
+            List<Result> _results = new List<Result>();
+
+            foreach (Result element in r)
+            {
+                _results.Add(element);
+            }
 
             string _noScores = "No scores are registered";
             string[,] table = { { "Azsher", "0257","1" }, { "Legannon", "6730","2" }, { "Monart", "1025", "3" }, { "Wetcher", "1225", "2" }, { "Suaremente", "1025", "1" } };
