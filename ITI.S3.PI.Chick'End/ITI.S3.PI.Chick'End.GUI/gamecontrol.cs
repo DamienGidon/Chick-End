@@ -696,10 +696,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
 
             //génération ennemis
-            _countW++;
             Spawn s = new Spawn(_tick, viewMapControler1);
-            s.SpawnWolf();
-            s.SpawnFox();
 
             // Défaite
 
