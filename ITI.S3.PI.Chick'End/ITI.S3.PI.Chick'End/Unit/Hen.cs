@@ -12,7 +12,7 @@ namespace ITI.S3.PI.Chick_End
         public Hen(Square context)
             : base( context, 15 )
         {
-            _health = 5000;
+            _health = 100;
         }
 
         //public override List<Square> ComputeRange()
@@ -20,9 +20,12 @@ namespace ITI.S3.PI.Chick_End
         //    throw new NotImplementedException();
         //}
 
-        public override void Attack(Unit ennemi)
+        public override void Attack(Unit ennemi, int tick)
         {
-            ennemi.Health -= Damages;
+            if (tick % 20 == 0)
+            {
+                ennemi.Health -= Damages;
+            }
         }
         
         /*

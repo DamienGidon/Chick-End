@@ -15,14 +15,17 @@ namespace ITI.S3.PI.Chick_End
             _health = 5000;
         }
 
-        public override void Attack(Unit ennemi)
+        public override void Attack(Unit ennemi, int tick)
         {
-            Ennemi _ennemi = (Ennemi) ennemi;
-            ennemi.Health -= Damages;
-            if (_ennemi.AlreadySlow == false)
+            if (tick % 20 == 0)
             {
-                _ennemi.Speed = _ennemi.Speed *2;
-                _ennemi.AlreadySlow = true;
+                Ennemi _ennemi = (Ennemi)ennemi;
+                ennemi.Health -= Damages;
+                if (_ennemi.AlreadySlow == false)
+                {
+                    _ennemi.Speed = _ennemi.Speed * 2;
+                    _ennemi.AlreadySlow = true;
+                }
             }
         }
 

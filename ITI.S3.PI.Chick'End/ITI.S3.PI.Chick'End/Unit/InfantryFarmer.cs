@@ -10,14 +10,24 @@ namespace ITI.S3.PI.Chick_End
     public class InfantryFarmer : Tower
     {
         internal InfantryFarmer( Square context )
-            : base( context, 15 )
+            : base( context, 30 )
         {
-            _health = 50;
+            _health = 5000;
         }
 
-        public override void Attack(Unit ennemi)
+        public override void Attack(Unit ennemi, int tick)
         {
-            ennemi.Health -= Damages;
+            foreach (Ennemi e in Square.Context.Ennemis)
+            {
+                if (tick % 20 == 0)
+                {
+                    if ((e.Square == ennemi.Square)
+                        || ((e.Square.Line == ennemi.Square.Line) && (e.Square.Column == ennemi.Square.Column + 1)))
+                    {
+                        ennemi.Health -= Damages;
+                    }
+                }
+            }
         }
 
         //public override List<Square> GetRange()

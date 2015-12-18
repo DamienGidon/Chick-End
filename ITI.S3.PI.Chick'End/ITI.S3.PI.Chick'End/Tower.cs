@@ -81,10 +81,7 @@ namespace ITI.S3.PI.Chick_End
             return squaresInRange;
         }
 
-        public virtual void Attack( Unit ennemi )
-        {
-            ennemi.Health -= Damages;
-        }
+        public abstract void Attack(Unit ennemi, int tick);
 
         public override void Die()
         {

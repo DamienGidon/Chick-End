@@ -116,9 +116,12 @@ namespace ITI.S3.PI.Chick_End
             return this.GetClosestUnit( _context.Towers );
         }
 
-        public virtual void Attack( Unit tower )
+        public virtual void Attack( Unit tower, int tick )
         {
-                tower.Health -= _damages;
+            if (tick % 20 == 0)
+            {
+                tower.Health -= Damages;
+            }
         }
 
         public List<Square> ComputeRange()

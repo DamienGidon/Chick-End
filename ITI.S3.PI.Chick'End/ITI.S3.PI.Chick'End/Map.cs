@@ -217,14 +217,14 @@ namespace ITI.S3.PI.Chick_End
 
         public Wolf CreateWolf(Map context)
         {
-            Wolf e = new Wolf(context, 10);
+            Wolf e = new Wolf(context, 20);
             _ennemis.Add(e);
             return e;
         }
 
         public Hyena CreateHyena(Map context)
         {
-            Hyena e = new Hyena(context, 10);
+            Hyena e = new Hyena(context, 30);
             _ennemis.Add(e);
             return e;
         }
@@ -238,21 +238,21 @@ namespace ITI.S3.PI.Chick_End
 
         public Lion CreateLion(Map context)
         {
-            Lion e = new Lion(context, 10);
+            Lion e = new Lion(context, 15);
             _ennemis.Add(e);
             return e;
         }
 
         public Anubis CreateAnubis( Map context)
         {
-            Anubis e = new Anubis(context, 10);
+            Anubis e = new Anubis(context, 50);
             _ennemis.Add(e);
             return e;
         }
 
         public Cerberus CreateCerberus(Map context)
         {
-            Cerberus e = new Cerberus(context, 10);
+            Cerberus e = new Cerberus(context, 100);
             _ennemis.Add(e);
             return e;
         }

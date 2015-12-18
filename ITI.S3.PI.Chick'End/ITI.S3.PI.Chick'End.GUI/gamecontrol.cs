@@ -21,10 +21,10 @@ namespace ITI.S3.PI.Chick_End.GUI
         int _countM = 0;
         int _countR = 0;
         int _countS = 0;
-        int _countW = 0;
         int _second= 0;
         int _minute= 0;
         int _seeds = 200;
+        int _nbBaker;
         string _level;
         string _Ssecond;
         string _Sminute;
@@ -675,10 +675,20 @@ namespace ITI.S3.PI.Chick_End.GUI
             
             //génération ressources
             _countR++;
-            if(_countR == 100)
+            if (_countR == 100)
             {
                 _countR = 0;
-                _seeds += 200;
+                _seeds += 100;
+
+                foreach (Tower t in viewMapControler1.Context.Map.Towers)
+                {
+                    if (t is Baker)
+                    {
+                        _nbBaker++;
+                    }
+                }
+                _seeds += 100 * _nbBaker;
+                _nbBaker = 0;
             }
             labelSeedNumber.Text = Convert.ToString(_seeds);
 
@@ -721,7 +731,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                viewMapControler1.Context.Update();
+                viewMapControler1.Context.Update(_tick);
                 viewMapControler1.Refresh();
             }
         }

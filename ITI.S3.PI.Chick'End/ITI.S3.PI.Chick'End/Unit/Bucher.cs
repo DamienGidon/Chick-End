@@ -12,12 +12,15 @@ namespace ITI.S3.PI.Chick_End
         internal Bucher(Square context)
             : base( context, 15 )
         {
-            _health = 50;
+            _health = 100;
         }
 
-        public override void Attack(Unit ennemi)
+        public override void Attack(Unit ennemi, int tick)
         {
-            ennemi.Health -= Damages;
+            if (tick % 20 == 0)
+            {
+                ennemi.Health -= Damages;
+            }
         }
 
         //public override List<Square> GetRange()

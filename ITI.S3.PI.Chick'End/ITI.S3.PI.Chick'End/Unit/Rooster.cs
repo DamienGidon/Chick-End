@@ -9,22 +9,37 @@ namespace ITI.S3.PI.Chick_End
     [Serializable]
     public class Rooster : Tower
     {
-        internal Rooster( Square context )
-            : base( context, 15 )
+        internal Rooster( Square context)
+            : base( context, 1500 )
         {
             _health = 50;
         }
 
        
-        public override void Attack(Unit ennemi)
+        public override void Attack(Unit ennemi, int tick)
         {
-            ennemi.Health -= Damages;
+            if (tick % 20 * 60 == 0)
+            {
+                foreach(Ennemi e in Square.Context.Ennemis)
+                    ennemi.Health -= Damages;
+            }
         }
 
-        //public override List<Square> GetRange()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public override List<Square> ComputeRange()
+        {
+            List<Square> list = new List<Square>();
+            for( int i = 0; i < FinalVariables.NbCaseHeightMap1; i++)
+            {
+                for( int j = 0; j < FinalVariables.NbCaseWidthMap1; j++)
+                {
+                    if (Square.Context.Square[i, j].Decoration == "path")
+                    {
+                        list.Add(Square.Context.Square[i, j]);
+                    }
+                }
+            }
+            return list;
+        }
 
         /*
         public override void Remove()

@@ -15,9 +15,12 @@ namespace ITI.S3.PI.Chick_End
             _health = 50;
         }
 
-        public override void Attack(Unit ennemi)
+        public override void Attack(Unit ennemi, int tick)
         {
-            ennemi.Health -= Damages;
+            if (tick % 20 == 0)
+            {
+                ennemi.Health -= Damages;
+            }
         }
 
         //public override List<Square> GetRange()

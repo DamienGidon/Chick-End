@@ -12,7 +12,7 @@ namespace ITI.S3.PI.Chick_End
         public Wolf(Map context, int damages)
             : base(context, damages)
         {
-            Health = 5000;
+            Health = 100;
             Speed = 20;
         }
 
