@@ -706,7 +706,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Bitmap p9 = new Bitmap(@"Wolf.png");
                 Graphics g9 = Graphics.FromImage(p9);
 
-            Rectangle r9 = new Rectangle(w.Position.X, w.Position.Y, (viewMapControler1.Width / FinalVariables.NbCaseWidthMap1), (viewMapControler1.Height / FinalVariables.NbCaseHeightMap1) + 20);
+                Rectangle r9 = new Rectangle(w.Position.X, w.Position.Y, (viewMapControler1.Width / FinalVariables.NbCaseWidthMap1), (viewMapControler1.Height / FinalVariables.NbCaseHeightMap1) + 20);
                 PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
                 e1.Graphics.DrawImage(p9, r9);
             }

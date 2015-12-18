@@ -17,6 +17,7 @@ namespace ITI.S3.PI.Chick_End
         protected readonly int _damages;
         protected List<Square> _range;
         public Map _context;
+        bool _alreadySlow = false;
 
         protected static Random _r = new Random();
 
@@ -31,6 +32,13 @@ namespace ITI.S3.PI.Chick_End
             _range = ComputeRange();
         }
 
+        public bool AlreadySlow
+        {
+            get { return _alreadySlow; }
+            set { _alreadySlow = value; }
+        }
+
+
         public Map Context
         {
             get { return _context; }
@@ -41,15 +49,15 @@ namespace ITI.S3.PI.Chick_End
             get { return _way; }
         }
 
+        public int Damages
+        {
+            get { return _damages; }
+        }
+
         public int Speed
         {
             get { return _speed; }
             set { _speed = value; }
-        }
-
-        public int Damages
-        {
-            get { return _damages; }
         }
 
         public override Point Position
@@ -61,7 +69,7 @@ namespace ITI.S3.PI.Chick_End
         {
             if (_way.Current.Column == _way.Next.Column + 1)
             {
-                _x -= FinalVariables.SquareWidthInMeters / 20;
+                _x -= FinalVariables.SquareWidthInMeters / Speed;
                 if (_x <= _way.Next.Column * FinalVariables.SquareWidthInMeters)
                 {
                     _way.NextSquare();
@@ -69,7 +77,7 @@ namespace ITI.S3.PI.Chick_End
             }
             else if (_way.Current.Line == _way.Next.Line + 1)
             {
-                _y -= FinalVariables.SquareHeightInMeters / 20;
+                _y -= FinalVariables.SquareHeightInMeters / Speed;
                 if (_y <= _way.Next.Line * FinalVariables.SquareHeightInMeters)
                 {
                     _way.NextSquare();
@@ -77,7 +85,7 @@ namespace ITI.S3.PI.Chick_End
             }
             else if (_way.Current.Line == _way.Next.Line - 1)
             {
-                _y += FinalVariables.SquareHeightInMeters / 20;
+                _y += FinalVariables.SquareHeightInMeters / Speed;
                 if (_y >= _way.Next.Line * FinalVariables.SquareHeightInMeters)
                 {
                     _way.NextSquare();

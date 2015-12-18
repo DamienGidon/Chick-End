@@ -12,8 +12,8 @@ namespace ITI.S3.PI.Chick_End
         public Fox( Map context, int damages )
             : base(context, damages)
         {
-            Health = 50;
-            Speed = 50;
+            Health = 5000;
+            Speed = 10;
         }
 
         public override void Attack( Unit opponent )

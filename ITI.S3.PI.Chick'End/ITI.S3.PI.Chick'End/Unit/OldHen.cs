@@ -10,14 +10,20 @@ namespace ITI.S3.PI.Chick_End
     public class OldHen : Tower
     {
         internal OldHen( Square context )
-            : base( context, 15 )
+            : base( context, 10 )
         {
-            _health = 50;
+            _health = 5000;
         }
 
         public override void Attack(Unit ennemi)
         {
+            Ennemi _ennemi = (Ennemi) ennemi;
             ennemi.Health -= Damages;
+            if (_ennemi.AlreadySlow == false)
+            {
+                _ennemi.Speed += 20;
+                _ennemi.AlreadySlow = true;
+            }
         }
 
         //public override List<Square> GetRange()

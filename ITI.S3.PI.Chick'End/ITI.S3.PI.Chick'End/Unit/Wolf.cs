@@ -13,7 +13,7 @@ namespace ITI.S3.PI.Chick_End
             : base(context, damages)
         {
             Health = 5000;
-            Speed = 50;
+            Speed = 20;
         }
 
         //public override void Attack( Unit opposant )

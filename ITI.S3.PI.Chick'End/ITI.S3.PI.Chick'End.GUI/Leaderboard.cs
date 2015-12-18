@@ -41,9 +41,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             Xml Xml = new Xml();
             List<Result> _results = Xml.LoadFromFile("leaderboard.xml");
 
-            string _noScores = "No scores are registered";
-            string[,] table = { { "Azsher", "0257","1" }, { "Legannon", "6730","2" }, { "Monart", "1025", "3" }, { "Wetcher", "1225", "2" }, { "Suaremente", "1025", "1" } };
-
             int i, j;
             List<Result> tmp = new List<Result>();
             tmp.Add(_results[0]);
