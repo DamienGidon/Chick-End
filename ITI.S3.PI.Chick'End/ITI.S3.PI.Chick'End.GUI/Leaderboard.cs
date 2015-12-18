@@ -39,38 +39,23 @@ namespace ITI.S3.PI.Chick_End.GUI
         private void showScore()
         {
             Xml Xml = new Xml();
-            List<Result> r = Xml.LoadFromFile("leaderboard.xml");
-
-            List<Result> _results = new List<Result>();
-
-            foreach (Result element in r)
-            {
-                _results.Add(element);
-            }
+            List<Result> _results = Xml.LoadFromFile("leaderboard.xml");
 
             string _noScores = "No scores are registered";
             string[,] table = { { "Azsher", "0257","1" }, { "Legannon", "6730","2" }, { "Monart", "1025", "3" }, { "Wetcher", "1225", "2" }, { "Suaremente", "1025", "1" } };
 
             int i, j;
-            string[,] tmp = { { "Azsher", "0257", "1" } };
-
-            for (j = 0; j < (table.Length/3); j++)
+            List<Result> tmp = new List<Result>();
+            tmp.Add(_results[0]);
+            for (j = 0; j < _results.Count(); j++)
             {
-                for (i = 0; i < (table.Length/3) - 1; i++)
+                for (i = 0; i < _results.Count() - 1; i++)
                 {
-                    if (Convert.ToInt32(table[i,1]) < Convert.ToInt32(table[i + 1,1]))
+                    if (Convert.ToInt32(_results[i].ScoreR) < Convert.ToInt32(_results[i+1].ScoreR))
                     {
-                        tmp[0, 0] = table[i,0];
-                        tmp[0, 1] = table[i, 1];
-                        tmp[0, 2] = table[i, 2];
-
-                        table[i, 0] = table[i + 1, 0];
-                        table[i, 1] = table[i + 1, 1];
-                        table[i, 2] = table[i + 1, 2];
-
-                        table[i + 1, 0] = tmp[0, 0];
-                        table[i + 1, 1] = tmp[0, 1];
-                        table[i + 1, 2] = tmp[0, 2];
+                        tmp[0] = _results[i];
+                        _results[i] = _results[i + 1];
+                        _results[i + 1] = tmp[0];
                     }
                 }
             }
@@ -84,27 +69,27 @@ namespace ITI.S3.PI.Chick_End.GUI
             labelPseudoFour.Text = "";
             labelScoreFour.Text = "";
 
-            for (i=0; i < table.Length/3; i++)
+            for (i = 0; i < _results.Count(); i++)
             {
-                if (table[i, 2] == "1")
+                if (_results[i].LevelR == "1")
                 {
-                    labelPseudoOne.Text += table[i, 0] + "\n\n";
-                    labelScoreOne.Text += table[i, 1].Insert(2, ":") + "\n\n";
+                    labelPseudoOne.Text += _results[i].PseudoR + "\n\n";
+                    labelScoreOne.Text += _results[i].ScoreR.Insert(2, ":") + "\n\n";
                 }
-                else if (table[i, 2] == "2")
+                else if (_results[i].LevelR == "2")
                 {
-                    labelPseudoTwo.Text += table[i, 0] + "\n\n";
-                    labelScoreTwo.Text += table[i, 1].Insert(2, ":") + "\n\n";
+                    labelPseudoTwo.Text += _results[i].PseudoR + "\n\n";
+                    labelScoreTwo.Text += _results[i].ScoreR.Insert(2, ":") + "\n\n";
                 }
-                else if (table[i, 2] == "3")
+                else if (_results[i].LevelR == "3")
                 {
-                    labelPseudoThree.Text += table[i, 0] + "\n\n";
-                    labelScoreThree.Text += table[i, 1].Insert(2, ":") + "\n\n";
+                    labelPseudoThree.Text += _results[i].PseudoR + "\n\n";
+                    labelScoreThree.Text += _results[i].ScoreR.Insert(2, ":") + "\n\n";
                 }
-                else if (table[i, 2] == "4")
+                else if (_results[i].LevelR == "4")
                 {
-                    labelPseudoFour.Text += table[i, 0] + "\n\n";
-                    labelScoreFour.Text += table[i, 1].Insert(2, ":") + "\n\n";
+                    labelPseudoFour.Text += _results[i].PseudoR + "\n\n";
+                    labelScoreFour.Text += _results[i].ScoreR.Insert(2, ":") + "\n\n";
                 }
                 else
                 {

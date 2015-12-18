@@ -29,6 +29,8 @@ namespace ITI.S3.PI.Chick_End.GUI
             {
                 Xml Xml = new Xml();
                 Xml.Pseudo = textBoxPseudo.Text;
+                string []_timer2 = _timer.Split(':');
+                _timer = _timer2[0] + _timer2[1];
                 Xml.Score = _timer;
                 Xml.Level = _level;
                 Xml.Save("leaderboard.xml");
