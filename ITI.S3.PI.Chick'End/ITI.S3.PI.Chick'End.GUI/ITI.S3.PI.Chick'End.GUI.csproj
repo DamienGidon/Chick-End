@@ -93,6 +93,7 @@
     <Compile Include="Rules.Designer.cs">
       <DependentUpon>Rules.cs</DependentUpon>
     </Compile>
+    <Compile Include="Spawn.cs" />
     <Compile Include="ViewMapControler.cs">
       <SubType>Component</SubType>
     </Compile>

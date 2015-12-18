@@ -229,11 +229,11 @@ namespace ITI.S3.PI.Chick_End
             _ennemis.Add(e);
         }
 
-        public void CreateFox(int ligne, int colonne, Map context)
+        public Fox CreateFox(Map context)
         {
-            Ennemi e = new Fox(context, 10);
-            Square[ligne, colonne].Ennemi = e;
+            Fox e = new Fox(context, 10);
             _ennemis.Add(e);
+            return e;
         }
 
         public void CreateLion(int ligne, int colonne, Map context)

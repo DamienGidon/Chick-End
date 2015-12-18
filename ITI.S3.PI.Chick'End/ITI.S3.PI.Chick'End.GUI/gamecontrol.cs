@@ -17,6 +17,7 @@ namespace ITI.S3.PI.Chick_End.GUI
     public partial class gamecontrol : UserControl
     {
         Panel _panel;
+        int _tick;
         int _countM = 0;
         int _countR = 0;
         int _countS = 0;
@@ -659,7 +660,8 @@ namespace ITI.S3.PI.Chick_End.GUI
         }
 
         private void timer1_Tick( object sender, EventArgs e )
-        {  
+        {
+            _tick++;
             //affichage Timer
             _countM++;
             if(_countM == 20)
@@ -700,18 +702,11 @@ namespace ITI.S3.PI.Chick_End.GUI
 
             //génération ennemis
             _countW++;
-            if(_countW == 60)
-            {
-                _countW = 0;
-                Wolf w = viewMapControler1.Context.Map.CreateWolf(viewMapControler1.Context.Map);
+            Spawn s = new Spawn(_tick, viewMapControler1);
+            s.SpawnWolf();
+            s.SpawnFox();
 
-                Bitmap p9 = new Bitmap(@"Wolf.png");
-                Graphics g9 = Graphics.FromImage(p9);
-
-                Rectangle r9 = new Rectangle(w.Position.X, w.Position.Y, (viewMapControler1.Width / FinalVariables.NbCaseWidthMap1), (viewMapControler1.Height / FinalVariables.NbCaseHeightMap1) + 20);
-                PaintEventArgs e1 = new PaintEventArgs(viewMapControler1.CreateGraphics(), r9);
-                e1.Graphics.DrawImage(p9, r9);
-            }
+            // Défaite
 
             foreach (Ennemi en in viewMapControler1.Context.Map.Ennemis)
             {
