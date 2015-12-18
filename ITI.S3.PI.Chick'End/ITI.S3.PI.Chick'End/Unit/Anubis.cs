@@ -12,8 +12,16 @@ namespace ITI.S3.PI.Chick_End
         public Anubis( Map context, int damages )
             : base(context, damages)
         {
-            Health = 50000;
+            Health = 500;
             Speed = 50;
+        }
+
+        public void Summon(int tick)
+        {
+            if (tick % 20 == 0)
+            {
+                Context.CreateWolf(Square.Context);
+            }
         }
 
         //public override void Attack( Unit opponent )
