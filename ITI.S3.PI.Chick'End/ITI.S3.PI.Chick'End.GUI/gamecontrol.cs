@@ -233,12 +233,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             buttonQuit.Font = new System.Drawing.Font("Playbill", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonQuit.Refresh();
         }
-
-        private void DragEnter(object sender, DragEventArgs e)
-        {
-
-        }
-
+        
         private void viewMapControler1_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Bitmap))
