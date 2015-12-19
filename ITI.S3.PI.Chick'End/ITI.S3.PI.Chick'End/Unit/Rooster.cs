@@ -18,7 +18,7 @@ namespace ITI.S3.PI.Chick_End
        
         public override void Attack(Unit ennemi, int tick)
         {
-            if (tick % 20 * 60 == 0)
+            if (tick % (20 * 60) == 0)
             {
                 foreach(Ennemi e in Square.Context.Ennemis)
                     ennemi.Health -= Damages;
