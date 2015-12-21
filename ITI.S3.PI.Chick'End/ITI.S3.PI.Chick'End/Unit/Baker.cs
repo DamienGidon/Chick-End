@@ -10,14 +10,14 @@ namespace ITI.S3.PI.Chick_End
     public class Baker : Tower
     {
         internal Baker(Square context)
-            : base( context, 15 )
+            : base( context, 0 )
         {
-            _health = 50;
+            _health = 500;
         }
 
-        public override void Attack(Unit ennemi)
+        public override void Attack(Unit ennemi, int tick)
         {
-            ennemi.Health -= Damages;
+            
         }
 
         //public override List<Square> GetRange()

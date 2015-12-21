@@ -7,12 +7,18 @@ using System.Threading.Tasks;
 namespace ITI.S3.PI.Chick_End
 {
     [Serializable]
-    public class GunnerFarmer : Tower
+    public class Hen : Tower
     {
-        public GunnerFarmer(Square context)
+        public Hen(Square context)
             : base( context, 15 )
         {
-            _health = 50;
+            _health = 100;
+        }
+
+        public override List<Square> ComputeRange()
+        {
+            return this.GetRange( Math.Max(Square.Context.NbCaseHeight, Square.Context.NbCaseWidth ) );
+            //return this.GetRange( Square.Context.NbCaseWidth );
         }
 
         public override void Attack(Unit ennemi, int tick)
@@ -21,11 +27,6 @@ namespace ITI.S3.PI.Chick_End
             {
                 ennemi.Health -= Damages;
             }
-        }
-
-        public override List<Square> ComputeRange()
-        {
-            return this.GetRange( 6 );
         }
     }
 }

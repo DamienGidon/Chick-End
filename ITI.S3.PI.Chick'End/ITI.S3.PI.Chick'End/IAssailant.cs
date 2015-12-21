@@ -11,6 +11,6 @@ namespace ITI.S3.PI.Chick_End
         IReadOnlyList<Square> Range { get; }
 
         List<Square> ComputeRange();
-        void Attack(Unit ennemi);
+        void Attack(Unit ennemi, int tick);
     }
 }

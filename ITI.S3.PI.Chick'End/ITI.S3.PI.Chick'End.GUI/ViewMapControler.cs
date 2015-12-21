@@ -13,7 +13,6 @@ namespace ITI.S3.PI.Chick_End.GUI
     public class ViewMapControler : Control
     {
         Game _context;
-        //Animate _animate;
 
         public ViewMapControler(string test)
         {
@@ -25,7 +24,6 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             _context = new Game();
             DoubleBuffered = true;
-            //_animate = new Animate(this);
         }
 
         public Game Context
@@ -57,6 +55,11 @@ namespace ITI.S3.PI.Chick_End.GUI
                 string pathgunnerFarmer = Path.Combine(directory, @"gunnerFarmer.png");
                 string pathInfantryFarmer = Path.Combine(directory, @"InfantryFarmer.png");
                 string pathWolf = Path.Combine(directory, @"Wolf.png");
+                string pathFox = Path.Combine(directory, @"Fox.png");
+                string pathHyena = Path.Combine(directory, @"Hyena.png");
+                string pathLion = Path.Combine(directory, @"Lion.png");
+                string pathCerberus = Path.Combine(directory, @"Cerberus.png");
+                string pathAnubis = Path.Combine(directory, @"Anubis.png");
                 //string pathWolfMove = Path.Combine(directory, @"WolfMove.gif");
 
                 Image grass = Image.FromFile(pathGrass);
@@ -72,6 +75,11 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Image gunnerFarmer = Image.FromFile(pathgunnerFarmer);
                 Image InfantryFarmer = Image.FromFile(pathInfantryFarmer);
                 Image Wolf = Image.FromFile(pathWolf);
+                Image Fox = Image.FromFile(pathFox);
+                Image Hyena = Image.FromFile(pathHyena);
+                Image Lion = Image.FromFile(pathLion);
+                Image Cerberus = Image.FromFile(pathCerberus);
+                Image Anubis = Image.FromFile(pathAnubis);
                 //Image WolfMove = Image.FromFile(pathWolfMove);
 
                 int CaseShouldBeThatHeight = e.ClipRectangle.Height / FinalVariables.NbCaseHeightMap1;
@@ -146,15 +154,50 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     if (en is Wolf)
                     {
-                        //_animate.AnimationWolf();
-                        //ImageAnimator.UpdateFrames();
-                        //e.Graphics.DrawImage(_animate._animatedWolf, en.Position.X, en.Position.Y - 20);
                         int X = en.Position.X;
                         int Y = en.Position.Y;
                         int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
                         e.Graphics.DrawImage(Wolf, X, Y - 20);
-                        //X = X / MapXWidth * X;
-                        //e.Graphics.DrawImage(_animate._animatedWolf, X, Y -20);
+                    }
+
+                    if (en is Fox)
+                    {
+                        int X = en.Position.X;
+                        int Y = en.Position.Y;
+                        int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
+                        e.Graphics.DrawImage(Fox, X, Y);
+                    }
+
+                    if (en is Hyena)
+                    {
+                        int X = en.Position.X;
+                        int Y = en.Position.Y;
+                        int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
+                        e.Graphics.DrawImage(Hyena, X, Y);
+                    }
+
+                    if (en is Lion)
+                    {
+                        int X = en.Position.X;
+                        int Y = en.Position.Y;
+                        int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
+                        e.Graphics.DrawImage(Lion, X, Y);
+                    }
+
+                    if (en is Cerberus)
+                    {
+                        int X = en.Position.X;
+                        int Y = en.Position.Y;
+                        int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
+                        e.Graphics.DrawImage(Cerberus, X, Y);
+                    }
+
+                    if (en is Anubis)
+                    {
+                        int X = en.Position.X;
+                        int Y = en.Position.Y;
+                        int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
+                        e.Graphics.DrawImage(Anubis, X, Y);
                     }
                 }
             }

@@ -58,7 +58,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             {
                 this.Controls.Remove(_gameControl);
             }
-            _gameControl = new gamecontrol(MenuPanel);
+            _gameControl = new gamecontrol(MenuPanel, "1");
             this.Controls.Add(_gameControl);
 
         }
@@ -70,7 +70,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             {
                 this.Controls.Remove( _gameControl );
             }
-            _gameControl = new gamecontrol( MenuPanel );
+            _gameControl = new gamecontrol( MenuPanel, "2" );
             this.Controls.Add( _gameControl );
         }
 
@@ -210,17 +210,16 @@ namespace ITI.S3.PI.Chick_End.GUI
         }
         private void buttonContinue_Click(object sender, EventArgs e)
         {
-            gamecontrol g1 = new gamecontrol(MenuPanel);
-            this.Controls.Add(g1);
+            //gamecontrol g1 = new gamecontrol(MenuPanel, "1");
+            //this.Controls.Add(g1);
 
-            using (FileStream fs = new FileStream("objet.bin", FileMode.Open, FileAccess.Read, FileShare.None))
-            {
-                BinaryFormatter ser = new BinaryFormatter();
-                Game game = (Game)ser.Deserialize(fs);
-                MenuPanel.Hide();
-                //g1.dgv.DataSource = new List<Game> { game };
+            //using (FileStream fs = new FileStream("objet.bin", FileMode.Open, FileAccess.Read, FileShare.None))
+            //{
+            //    BinaryFormatter ser = new BinaryFormatter();
+            //    Game game = (Game)ser.Deserialize(fs);
+            //    MenuPanel.Hide();
 
-            }
+            //}
         }
     }
 }

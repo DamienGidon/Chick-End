@@ -56,9 +56,9 @@ namespace ITI.S3.PI.Chick_End
             set { _isLost = value; }
         }
 
-        public void Update()
+        public void Update(int tick)
         {
-            foreach( Ennemi e in _context.Ennemis)
+            foreach ( Ennemi e in _context.Ennemis)
             {
                 Tower t = e.GetClosestTowerAttackable();
                 if (t == null)
@@ -67,9 +67,12 @@ namespace ITI.S3.PI.Chick_End
                 }
                 else
                 {
-                    e.Attack( t );
+                    e.Attack( t, tick );
                     if (t.Health <= 0)
                         t.Die();
+                }
+                if (e is Anubis)
+                {
                 }
             }
 
@@ -78,7 +81,7 @@ namespace ITI.S3.PI.Chick_End
                 Ennemi e = t.GetClosestEnnemiAttackable();
                 if (e != null)
                 {
-                    t.Attack( e );
+                    t.Attack( e, tick );
                     if (e.Health <= 0)
                         e.Die();
                 }

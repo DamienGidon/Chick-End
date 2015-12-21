@@ -12,13 +12,17 @@ namespace ITI.S3.PI.Chick_End
         public Hen(Square context)
             : base( context, 15 )
         {
-            _health = 5000;
+            _health = 100;
         }
 
         public override List<Square> ComputeRange()
+        public override void Attack(Unit ennemi, int tick)
         {
+            if (tick % 20 == 0)
+            {
             return this.GetRange( Math.Max(Square.Context.NbCaseHeight, Square.Context.NbCaseWidth ) );
-            //return this.GetRange( Square.Context.NbCaseWidth );
+                ennemi.Health -= Damages;
+            }
         }
 
         public override void Attack(Unit ennemi)

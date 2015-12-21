@@ -7,23 +7,23 @@ using System.Threading.Tasks;
 namespace ITI.S3.PI.Chick_End
 {
     [Serializable]
-    class Lion : Ennemi
+    public class Lion : Ennemi
     {
         public Lion( Map context, int damages )
             : base(context, damages)
         {
             Health = 50;
-            Speed = 50;
+            Speed = 30;
         }
 
-        public override void Attack( Unit opponent )
-        {
-            throw new NotImplementedException();
-        }
+        //public override void Attack( Unit opponent )
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public override void Move()
-        {
-            throw new NotImplementedException();
-        }
+        //public override void Move()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

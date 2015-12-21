@@ -60,6 +60,7 @@
       <DependentUpon>Bestiary.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlExtension.cs" />
+    <Compile Include="DragDropHelper.cs" />
     <Compile Include="FormF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,9 +93,11 @@
     <Compile Include="Rules.Designer.cs">
       <DependentUpon>Rules.cs</DependentUpon>
     </Compile>
+    <Compile Include="Spawn.cs" />
     <Compile Include="ViewMapControler.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Xml.cs" />
     <EmbeddedResource Include="Bestiary.resx">
       <DependentUpon>Bestiary.cs</DependentUpon>
     </EmbeddedResource>
