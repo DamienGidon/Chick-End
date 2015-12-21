@@ -32,12 +32,6 @@
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelLevel = new System.Windows.Forms.Panel();
-            this.buttonReturn = new System.Windows.Forms.Button();
-            this.buttonLevelFour = new System.Windows.Forms.Button();
-            this.buttonLevelThree = new System.Windows.Forms.Button();
-            this.buttonLevelTwo = new System.Windows.Forms.Button();
-            this.buttonLevelOne = new System.Windows.Forms.Button();
             this.buttonQuit = new System.Windows.Forms.Button();
             this.buttonRules = new System.Windows.Forms.Button();
             this.buttonLeaderboard = new System.Windows.Forms.Button();
@@ -47,7 +41,6 @@
             this.MenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelLevel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuPanel
@@ -56,7 +49,6 @@
             this.MenuPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuPanel.Controls.Add(this.pictureBox2);
             this.MenuPanel.Controls.Add(this.pictureBox1);
-            this.MenuPanel.Controls.Add(this.panelLevel);
             this.MenuPanel.Controls.Add(this.buttonQuit);
             this.MenuPanel.Controls.Add(this.buttonRules);
             this.MenuPanel.Controls.Add(this.buttonLeaderboard);
@@ -92,93 +84,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(71, 83);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
-            // 
-            // panelLevel
-            // 
-            this.panelLevel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panelLevel.BackColor = System.Drawing.Color.Cornsilk;
-            this.panelLevel.Controls.Add(this.buttonReturn);
-            this.panelLevel.Controls.Add(this.buttonLevelFour);
-            this.panelLevel.Controls.Add(this.buttonLevelThree);
-            this.panelLevel.Controls.Add(this.buttonLevelTwo);
-            this.panelLevel.Controls.Add(this.buttonLevelOne);
-            this.panelLevel.Location = new System.Drawing.Point(360, 175);
-            this.panelLevel.Name = "panelLevel";
-            this.panelLevel.Size = new System.Drawing.Size(239, 440);
-            this.panelLevel.TabIndex = 6;
-            this.panelLevel.Visible = false;
-            // 
-            // buttonReturn
-            // 
-            this.buttonReturn.FlatAppearance.BorderSize = 0;
-            this.buttonReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReturn.Font = new System.Drawing.Font("Playbill", 30F);
-            this.buttonReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonReturn.Location = new System.Drawing.Point(50, 339);
-            this.buttonReturn.Name = "buttonReturn";
-            this.buttonReturn.Size = new System.Drawing.Size(137, 70);
-            this.buttonReturn.TabIndex = 4;
-            this.buttonReturn.Text = "Return";
-            this.buttonReturn.UseVisualStyleBackColor = true;
-            // 
-            // buttonLevelFour
-            // 
-            this.buttonLevelFour.Enabled = false;
-            this.buttonLevelFour.FlatAppearance.BorderSize = 0;
-            this.buttonLevelFour.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonLevelFour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLevelFour.Font = new System.Drawing.Font("Playbill", 30F);
-            this.buttonLevelFour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLevelFour.Location = new System.Drawing.Point(50, 263);
-            this.buttonLevelFour.Name = "buttonLevelFour";
-            this.buttonLevelFour.Size = new System.Drawing.Size(137, 70);
-            this.buttonLevelFour.TabIndex = 3;
-            this.buttonLevelFour.Text = "Level 4";
-            this.buttonLevelFour.UseVisualStyleBackColor = true;
-            // 
-            // buttonLevelThree
-            // 
-            this.buttonLevelThree.Enabled = false;
-            this.buttonLevelThree.FlatAppearance.BorderSize = 0;
-            this.buttonLevelThree.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonLevelThree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLevelThree.Font = new System.Drawing.Font("Playbill", 30F);
-            this.buttonLevelThree.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLevelThree.Location = new System.Drawing.Point(50, 187);
-            this.buttonLevelThree.Name = "buttonLevelThree";
-            this.buttonLevelThree.Size = new System.Drawing.Size(137, 70);
-            this.buttonLevelThree.TabIndex = 2;
-            this.buttonLevelThree.Text = "Level 3";
-            this.buttonLevelThree.UseVisualStyleBackColor = true;
-            // 
-            // buttonLevelTwo
-            // 
-            this.buttonLevelTwo.FlatAppearance.BorderSize = 0;
-            this.buttonLevelTwo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonLevelTwo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLevelTwo.Font = new System.Drawing.Font("Playbill", 30F);
-            this.buttonLevelTwo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLevelTwo.Location = new System.Drawing.Point(50, 109);
-            this.buttonLevelTwo.Name = "buttonLevelTwo";
-            this.buttonLevelTwo.Size = new System.Drawing.Size(137, 70);
-            this.buttonLevelTwo.TabIndex = 1;
-            this.buttonLevelTwo.Text = "Level 2";
-            this.buttonLevelTwo.UseVisualStyleBackColor = true;
-            // 
-            // buttonLevelOne
-            // 
-            this.buttonLevelOne.FlatAppearance.BorderSize = 0;
-            this.buttonLevelOne.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonLevelOne.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLevelOne.Font = new System.Drawing.Font("Playbill", 30F);
-            this.buttonLevelOne.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLevelOne.Location = new System.Drawing.Point(50, 37);
-            this.buttonLevelOne.Name = "buttonLevelOne";
-            this.buttonLevelOne.Size = new System.Drawing.Size(137, 66);
-            this.buttonLevelOne.TabIndex = 0;
-            this.buttonLevelOne.Text = "Level 1";
-            this.buttonLevelOne.UseVisualStyleBackColor = false;
             // 
             // buttonQuit
             // 
@@ -284,10 +189,10 @@
             this.Controls.Add(this.MenuPanel);
             this.Name = "MainMenu";
             this.Size = new System.Drawing.Size(983, 719);
+            this.Load += new System.EventHandler(this.ManageUsersControl_Load);
             this.MenuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelLevel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -297,12 +202,6 @@
         private System.Windows.Forms.Panel MenuPanel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panelLevel;
-        private System.Windows.Forms.Button buttonReturn;
-        private System.Windows.Forms.Button buttonLevelFour;
-        private System.Windows.Forms.Button buttonLevelThree;
-        private System.Windows.Forms.Button buttonLevelTwo;
-        private System.Windows.Forms.Button buttonLevelOne;
         private System.Windows.Forms.Button buttonQuit;
         private System.Windows.Forms.Button buttonRules;
         private System.Windows.Forms.Button buttonLeaderboard;
