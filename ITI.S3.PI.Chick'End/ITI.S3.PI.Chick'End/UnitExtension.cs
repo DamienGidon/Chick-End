@@ -45,7 +45,7 @@ namespace ITI.S3.PI.Chick_End
             int line = t.Square.Line;
             int column = t.Square.Column;
 
-            for (int i = column; i <= column + rangeInSquare || i <= t.Square.Context.NbCaseWidth; i++)
+            for (int i = column; i <= column + rangeInSquare && i < t.Square.Context.NbCaseWidth; i++)
             {
                 if (t.Square.Context.Square[line, i].Decoration == "path")
                     squaresInRange.Add( t.Square.Context.Square[line, i] );
@@ -53,7 +53,7 @@ namespace ITI.S3.PI.Chick_End
                     break;
             }
 
-            for (int i = line + 1; i <= i + rangeInSquare || i <= t.Square.Context.NbCaseHeight; i++)
+            for (int i = line + 1; i <= i + rangeInSquare || i < t.Square.Context.NbCaseHeight; i++)
             {
                 if (t.Square.Context.Square[i, column].Decoration == "path")
                     squaresInRange.Add( t.Square.Context.Square[i, column] );

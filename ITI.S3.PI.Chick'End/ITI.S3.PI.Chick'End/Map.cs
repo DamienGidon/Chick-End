@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    [Serializable]
+    //[Serializable]
     public class Map
     {
         readonly List<Way> _ways;
         readonly Square[,] _squares;
         readonly List<Ennemi> _ennemis;
         readonly List<Tower> _towers;
-        readonly int _nbCaseWidth = 14;
-        readonly int _nbCaseHeight = 9;
+        readonly int _nbCaseWidth;
+        readonly int _nbCaseHeight;
 
         //List<Unit> AllUnits
         //{
@@ -37,11 +37,11 @@ namespace ITI.S3.PI.Chick_End
 
         public int NbCaseWidth
         {
-            get { return 14; }
+            get { return _nbCaseWidth; }
         }
         public int NbCaseHeight
         {
-            get { return 9; }
+            get { return _nbCaseHeight; }
         }
 
         /*
