@@ -11,12 +11,12 @@ namespace ITI.S3.PI.Chick_End.GUI
     class Spawn
     {
         int _tick;
-        ViewMapControler _map;
+        Game _game;
 
-        public Spawn(int tick, ViewMapControler Context)
+        public Spawn( int tick, Game Context )
         {
             _tick = tick;
-            _map = Context;
+            _game = Context;
             SpawnAll();
         }
 
@@ -24,32 +24,32 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             if (_tick % 60 == 0)
             {
-                Wolf w = _map.Context.Map.CreateWolf(_map.Context.Map);
+                Wolf w = _game.Map.CreateWolf( _game.Map );
             }
 
             if (_tick % 200 == 0)
             {
-                Fox f = _map.Context.Map.CreateFox(_map.Context.Map);
+                Fox f = _game.Map.CreateFox( _game.Map );
             }
 
             if (_tick % 500 == 0)
             {
-                Hyena h = _map.Context.Map.CreateHyena(_map.Context.Map);
+                Hyena h = _game.Map.CreateHyena( _game.Map );
             }
 
             if (_tick % 120 == 0)
             {
-                Lion l = _map.Context.Map.CreateLion(_map.Context.Map);
+                Lion l = _game.Map.CreateLion( _game.Map );
             }
 
             if (_tick % 6000 == 0)
             {
-                Anubis a = _map.Context.Map.CreateAnubis(_map.Context.Map);
+                Anubis a = _game.Map.CreateAnubis( _game.Map );
             }
 
             if (_tick % 4000 == 0)
             {
-                Cerberus c = _map.Context.Map.CreateCerberus(_map.Context.Map);
+                Cerberus c = _game.Map.CreateCerberus( _game.Map );
             }
         }
     }

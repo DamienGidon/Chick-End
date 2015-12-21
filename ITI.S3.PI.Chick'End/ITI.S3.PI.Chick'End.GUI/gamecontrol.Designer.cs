@@ -31,11 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gamecontrol));
             this.buttonMenu = new System.Windows.Forms.Button();
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.buttonQuit = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonBestiary = new System.Windows.Forms.Button();
-            this.buttonResume = new System.Windows.Forms.Button();
             this.panelSeed = new System.Windows.Forms.Panel();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -64,7 +59,6 @@
             this.labelUnit = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
-            this.panelMenu.SuspendLayout();
             this.panelSeed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -102,99 +96,6 @@
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             this.buttonMenu.MouseEnter += new System.EventHandler(this.buttonMenu_MouseEnter);
             this.buttonMenu.MouseLeave += new System.EventHandler(this.buttonMenu_MouseLeave);
-            // 
-            // panelMenu
-            // 
-            this.panelMenu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panelMenu.BackColor = System.Drawing.Color.Transparent;
-            this.panelMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMenu.BackgroundImage")));
-            this.panelMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelMenu.Controls.Add(this.buttonQuit);
-            this.panelMenu.Controls.Add(this.buttonSave);
-            this.panelMenu.Controls.Add(this.buttonBestiary);
-            this.panelMenu.Controls.Add(this.buttonResume);
-            this.panelMenu.Location = new System.Drawing.Point(467, 244);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 262);
-            this.panelMenu.TabIndex = 3;
-            this.panelMenu.Visible = false;
-            // 
-            // buttonQuit
-            // 
-            this.buttonQuit.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonQuit.BackColor = System.Drawing.Color.Transparent;
-            this.buttonQuit.FlatAppearance.BorderSize = 0;
-            this.buttonQuit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonQuit.Font = new System.Drawing.Font("Playbill", 25F);
-            this.buttonQuit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.buttonQuit.Location = new System.Drawing.Point(40, 197);
-            this.buttonQuit.Name = "buttonQuit";
-            this.buttonQuit.Size = new System.Drawing.Size(117, 57);
-            this.buttonQuit.TabIndex = 3;
-            this.buttonQuit.Text = "Quit";
-            this.buttonQuit.UseVisualStyleBackColor = true;
-            this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
-            this.buttonQuit.MouseEnter += new System.EventHandler(this.buttonQuit_MouseEnter);
-            this.buttonQuit.MouseLeave += new System.EventHandler(this.buttonQuit_MouseLeave);
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonSave.BackColor = System.Drawing.Color.Transparent;
-            this.buttonSave.FlatAppearance.BorderSize = 0;
-            this.buttonSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Font = new System.Drawing.Font("Playbill", 25F);
-            this.buttonSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.buttonSave.Location = new System.Drawing.Point(40, 129);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(117, 61);
-            this.buttonSave.TabIndex = 4;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            this.buttonSave.MouseEnter += new System.EventHandler(this.buttonSave_MouseEnter);
-            this.buttonSave.MouseLeave += new System.EventHandler(this.buttonSave_MouseLeave);
-            // 
-            // buttonBestiary
-            // 
-            this.buttonBestiary.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonBestiary.BackColor = System.Drawing.Color.Transparent;
-            this.buttonBestiary.FlatAppearance.BorderSize = 0;
-            this.buttonBestiary.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonBestiary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBestiary.Font = new System.Drawing.Font("Playbill", 25F);
-            this.buttonBestiary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.buttonBestiary.Location = new System.Drawing.Point(40, 67);
-            this.buttonBestiary.Name = "buttonBestiary";
-            this.buttonBestiary.Size = new System.Drawing.Size(117, 51);
-            this.buttonBestiary.TabIndex = 1;
-            this.buttonBestiary.Text = "Bestiary";
-            this.buttonBestiary.UseVisualStyleBackColor = true;
-            this.buttonBestiary.Click += new System.EventHandler(this.buttonBestiary_Click);
-            this.buttonBestiary.MouseEnter += new System.EventHandler(this.buttonBestiary_MouseEnter);
-            this.buttonBestiary.MouseLeave += new System.EventHandler(this.buttonBestiary_MouseLeave);
-            // 
-            // buttonResume
-            // 
-            this.buttonResume.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonResume.BackColor = System.Drawing.Color.Transparent;
-            this.buttonResume.FlatAppearance.BorderSize = 0;
-            this.buttonResume.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonResume.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonResume.Font = new System.Drawing.Font("Playbill", 25F);
-            this.buttonResume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.buttonResume.Location = new System.Drawing.Point(40, 3);
-            this.buttonResume.Name = "buttonResume";
-            this.buttonResume.Size = new System.Drawing.Size(117, 58);
-            this.buttonResume.TabIndex = 0;
-            this.buttonResume.Text = "Resume";
-            this.buttonResume.UseVisualStyleBackColor = false;
-            this.buttonResume.Click += new System.EventHandler(this.buttonResume_Click);
-            this.buttonResume.MouseEnter += new System.EventHandler(this.buttonResume_MouseEnter);
-            this.buttonResume.MouseLeave += new System.EventHandler(this.buttonResume_MouseLeave);
             // 
             // panelSeed
             // 
@@ -508,7 +409,6 @@
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
@@ -518,8 +418,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.viewMapControler1.BackColor = System.Drawing.Color.Green;
-            this.viewMapControler1.Context = ((ITI.S3.PI.Chick_End.Game)(resources.GetObject("viewMapControler1.Context")));
             this.viewMapControler1.Location = new System.Drawing.Point(250, 123);
+            this.viewMapControler1.Map = null;
             this.viewMapControler1.Name = "viewMapControler1";
             this.viewMapControler1.Size = new System.Drawing.Size(700, 450);
             this.viewMapControler1.TabIndex = 4;
@@ -535,14 +435,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.viewMapControler1);
             this.Controls.Add(this.panelSeed);
             this.Controls.Add(this.panel1);
             this.Name = "gamecontrol";
             this.Size = new System.Drawing.Size(1007, 728);
             this.Load += new System.EventHandler(this.ManageUsersControl_Load);
-            this.panelMenu.ResumeLayout(false);
             this.panelSeed.ResumeLayout(false);
             this.panelSeed.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
@@ -572,11 +470,6 @@
         #endregion
 
         private System.Windows.Forms.Button buttonMenu;
-        private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Button buttonQuit;
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button buttonBestiary;
-        private System.Windows.Forms.Button buttonResume;
         private ViewMapControler viewMapControler1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelSeed;

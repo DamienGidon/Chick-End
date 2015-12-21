@@ -18,19 +18,20 @@ namespace ITI.S3.PI.Chick_End
         /// <summary>
         /// For now, Bomber Hens attack every enemy which is on the square of the closest enemy attackable.
         /// </summary>
-        public override void Attack(Unit ennemi, int tick)
+        public override void Attack( Unit ennemi, int tick )
         {
             if (tick % 60 == 0)
-        /// <param name="ennemi"></param>
+            /// <param name="ennemi"></param>
             {
-            foreach( Ennemi e in Square.Context.Ennemis)
-            {
-                if ( ( e.Square == ennemi.Square) 
-                    || ( (e.Square.Line == ennemi.Square.Line) && ( e.Square.Column == ennemi.Square.Column + 1 ) ) 
-                    || ( ( e.Square.Line == ennemi.Square.Line + 1 ) && ( e.Square.Column == ennemi.Square.Column ) )
-                    || ( ( e.Square.Line == ennemi.Square.Line - 1 ) && ( e.Square.Column == ennemi.Square.Column) ) )
+                foreach (Ennemi e in Square.Context.Ennemis)
                 {
-                    e.Health -= Damages;
+                    if ((e.Square == ennemi.Square)
+                        || ((e.Square.Line == ennemi.Square.Line) && (e.Square.Column == ennemi.Square.Column + 1))
+                        || ((e.Square.Line == ennemi.Square.Line + 1) && (e.Square.Column == ennemi.Square.Column))
+                        || ((e.Square.Line == ennemi.Square.Line - 1) && (e.Square.Column == ennemi.Square.Column)))
+                    {
+                        e.Health -= Damages;
+                    }
                 }
             }
         }

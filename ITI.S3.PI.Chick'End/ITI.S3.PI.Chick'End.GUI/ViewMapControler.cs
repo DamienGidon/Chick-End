@@ -1,85 +1,81 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.ComponentModel;
 
 namespace ITI.S3.PI.Chick_End.GUI
 {
-    public class ViewMapControler : Control
+    public class ViewMapControler : Panel
     {
-        Game _context;
-
-        public ViewMapControler(string test)
-        {
-            _context = new Game(test);
-            DoubleBuffered = true;
-        }
+        Map _map;
+        //Animate _animate;
 
         public ViewMapControler()
         {
-            _context = new Game();
             DoubleBuffered = true;
         }
 
-        public Game Context
+        public Map Map
         {
-            get { return _context; }
-            set { _context = value; }
+            get { return _map; }
+            set
+            {
+                if (_map != value)
+                {
+                    _map = value;
+                    Invalidate();
+                }
+            }
         }
 
-        protected override void OnPaint(PaintEventArgs e)
+        protected override void OnPaint( PaintEventArgs e )
         {
-            if (this.IsInDesignMode())
+            if (this.IsInDesignMode() || _map == null)
             {
                 //e.Graphics.FillRectangle( Brushes.Yellow, e.ClipRectangle );
                 BackColor = Color.Green;
             }
             else
             {
-                string directory = Path.GetDirectoryName(Application.ExecutablePath);
-                string pathGrass = Path.Combine(directory, @"grass.png");
-                string pathPath = Path.Combine(directory, @"path.png");
-                string pathHomeHen = Path.Combine(directory, @"HomeHen.png");
-                string pathHen = Path.Combine(directory, @"HenLeft.png");
-                string pathRooster = Path.Combine(directory, @"Rooster.png");
-                string pathOldHen = Path.Combine(directory, @"OldHen.png");
-                string pathExplosiveEgg = Path.Combine(directory, @"ExplosiveEgg.png");
-                string pathBomberHen = Path.Combine(directory, @"BomberHen.png");
-                string pathBaker = Path.Combine(directory, @"Baker.png");
-                string pathButcher = Path.Combine(directory, @"Bucher.png");
-                string pathgunnerFarmer = Path.Combine(directory, @"gunnerFarmer.png");
-                string pathInfantryFarmer = Path.Combine(directory, @"InfantryFarmer.png");
-                string pathWolf = Path.Combine(directory, @"Wolf.png");
-                string pathFox = Path.Combine(directory, @"Fox.png");
-                string pathHyena = Path.Combine(directory, @"Hyena.png");
-                string pathLion = Path.Combine(directory, @"Lion.png");
-                string pathCerberus = Path.Combine(directory, @"Cerberus.png");
-                string pathAnubis = Path.Combine(directory, @"Anubis.png");
+                string directory = Path.GetDirectoryName( Application.ExecutablePath );
+                string pathGrass = Path.Combine( directory, @"grass.png" );
+                string pathPath = Path.Combine( directory, @"path.png" );
+                string pathHomeHen = Path.Combine( directory, @"HomeHen.png" );
+                string pathHen = Path.Combine( directory, @"HenLeft.png" );
+                string pathRooster = Path.Combine( directory, @"Rooster.png" );
+                string pathOldHen = Path.Combine( directory, @"OldHen.png" );
+                string pathExplosiveEgg = Path.Combine( directory, @"ExplosiveEgg.png" );
+                string pathBomberHen = Path.Combine( directory, @"BomberHen.png" );
+                string pathBaker = Path.Combine( directory, @"Baker.png" );
+                string pathButcher = Path.Combine( directory, @"Bucher.png" );
+                string pathgunnerFarmer = Path.Combine( directory, @"gunnerFarmer.png" );
+                string pathInfantryFarmer = Path.Combine( directory, @"InfantryFarmer.png" );
+                string pathWolf = Path.Combine( directory, @"Wolf.png" );
+                string pathFox = Path.Combine( directory, @"Fox.png" );
+                string pathHyena = Path.Combine( directory, @"Hyena.png" );
+                string pathLion = Path.Combine( directory, @"Lion.png" );
+                string pathCerberus = Path.Combine( directory, @"Cerberus.png" );
+                string pathAnubis = Path.Combine( directory, @"Anubis.png" );
                 //string pathWolfMove = Path.Combine(directory, @"WolfMove.gif");
 
-                Image grass = Image.FromFile(pathGrass);
-                Image path = Image.FromFile(pathPath);
-                Image HomeHen = Image.FromFile(pathHomeHen);
-                Image hen = Image.FromFile(pathHen);
-                Image OldHen = Image.FromFile(pathOldHen);
-                Image Rooster = Image.FromFile(pathRooster);
-                Image BomberHen = Image.FromFile(pathBomberHen);
-                Image ExplosiveEgg = Image.FromFile(pathExplosiveEgg);
-                Image Baker = Image.FromFile(pathBaker);
-                Image Butcher = Image.FromFile(pathButcher);
-                Image gunnerFarmer = Image.FromFile(pathgunnerFarmer);
-                Image InfantryFarmer = Image.FromFile(pathInfantryFarmer);
-                Image Wolf = Image.FromFile(pathWolf);
-                Image Fox = Image.FromFile(pathFox);
-                Image Hyena = Image.FromFile(pathHyena);
-                Image Lion = Image.FromFile(pathLion);
-                Image Cerberus = Image.FromFile(pathCerberus);
-                Image Anubis = Image.FromFile(pathAnubis);
+                Image grass = Image.FromFile( pathGrass );
+                Image path = Image.FromFile( pathPath );
+                Image HomeHen = Image.FromFile( pathHomeHen );
+                Image hen = Image.FromFile( pathHen );
+                Image OldHen = Image.FromFile( pathOldHen );
+                Image Rooster = Image.FromFile( pathRooster );
+                Image BomberHen = Image.FromFile( pathBomberHen );
+                Image ExplosiveEgg = Image.FromFile( pathExplosiveEgg );
+                Image Baker = Image.FromFile( pathBaker );
+                Image Butcher = Image.FromFile( pathButcher );
+                Image gunnerFarmer = Image.FromFile( pathgunnerFarmer );
+                Image InfantryFarmer = Image.FromFile( pathInfantryFarmer );
+                Image Wolf = Image.FromFile( pathWolf );
+                Image Fox = Image.FromFile( pathFox );
+                Image Hyena = Image.FromFile( pathHyena );
+                Image Lion = Image.FromFile( pathLion );
+                Image Cerberus = Image.FromFile( pathCerberus );
+                Image Anubis = Image.FromFile( pathAnubis );
                 //Image WolfMove = Image.FromFile(pathWolfMove);
 
                 int CaseShouldBeThatHeight = e.ClipRectangle.Height / FinalVariables.NbCaseHeightMap1;
@@ -89,17 +85,17 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     for (int j = 0; j < FinalVariables.NbCaseWidthMap1; j++)
                     {
-                        if (_context.Map.Square[i, j].Decoration == "grass")
+                        if (_map.Square[i, j].Decoration == "grass")
                         {
-                            e.Graphics.DrawImage(grass, _context.Map.Square[i, j].Column * CaseShouldBeThatWidth, _context.Map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                            e.Graphics.DrawImage( grass, _map.Square[i, j].Column * CaseShouldBeThatWidth, _map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight );
                         }
-                        else if (_context.Map.Square[i, j].Decoration == "path")
+                        else if (_map.Square[i, j].Decoration == "path")
                         {
-                            e.Graphics.DrawImage(path, _context.Map.Square[i, j].Column * CaseShouldBeThatWidth, _context.Map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                            e.Graphics.DrawImage( path, _map.Square[i, j].Column * CaseShouldBeThatWidth, _map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight );
                         }
-                        else if (_context.Map.Square[i, j].Decoration == "HomeHen")
+                        else if (_map.Square[i, j].Decoration == "HomeHen")
                         {
-                            e.Graphics.DrawImage(HomeHen, _context.Map.Square[i, j].Column * CaseShouldBeThatWidth, _context.Map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                            e.Graphics.DrawImage( HomeHen, _map.Square[i, j].Column * CaseShouldBeThatWidth, _map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight );
                         }
                     }
                 }
@@ -109,55 +105,55 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     for (int j = 0; j < FinalVariables.NbCaseWidthMap1; j++)
                     {
-                        foreach (Tower t in Context.Map.Towers)
+                        foreach (Tower t in Map.Towers)
                         {
                             if (t is Hen)
                             {
-                                e.Graphics.DrawImage(hen, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                                e.Graphics.DrawImage( hen, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight );
                             }
                             else if (t is OldHen)
                             {
-                                e.Graphics.DrawImage(OldHen, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                                e.Graphics.DrawImage( OldHen, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight );
                             }
                             else if (t is BomberHen)
                             {
-                                e.Graphics.DrawImage(BomberHen, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight);
+                                e.Graphics.DrawImage( BomberHen, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight );
                             }
                             else if (t is ExplosiveEgg)
                             {
-                                e.Graphics.DrawImage(ExplosiveEgg, t.Square.Column * CaseShouldBeThatWidth + Convert.ToInt32(CaseShouldBeThatWidth * 0.2), t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth - Convert.ToInt32(CaseShouldBeThatWidth * 0.3), CaseShouldBeThatHeight);
+                                e.Graphics.DrawImage( ExplosiveEgg, t.Square.Column * CaseShouldBeThatWidth + Convert.ToInt32( CaseShouldBeThatWidth * 0.2 ), t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth - Convert.ToInt32( CaseShouldBeThatWidth * 0.3 ), CaseShouldBeThatHeight );
                             }
                             else if (t is Rooster)
                             {
-                                e.Graphics.DrawImage(Rooster, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32(CaseShouldBeThatHeight * 0.1), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32((CaseShouldBeThatHeight * 0.1)));
+                                e.Graphics.DrawImage( Rooster, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32( CaseShouldBeThatHeight * 0.1 ), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32( (CaseShouldBeThatHeight * 0.1) ) );
                             }
                             else if (t is Bucher)
                             {
-                                e.Graphics.DrawImage(Butcher, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32(CaseShouldBeThatHeight * 0.4), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32((CaseShouldBeThatHeight * 0.4)));
+                                e.Graphics.DrawImage( Butcher, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32( CaseShouldBeThatHeight * 0.4 ), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32( (CaseShouldBeThatHeight * 0.4) ) );
                             }
                             else if (t is Baker)
                             {
-                                e.Graphics.DrawImage(Baker, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32(CaseShouldBeThatHeight * 0.4), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32((CaseShouldBeThatHeight * 0.4)));
+                                e.Graphics.DrawImage( Baker, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32( CaseShouldBeThatHeight * 0.4 ), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32( (CaseShouldBeThatHeight * 0.4) ) );
                             }
                             else if (t is GunnerFarmer)
                             {
-                                e.Graphics.DrawImage(gunnerFarmer, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32(CaseShouldBeThatHeight * 0.4), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32((CaseShouldBeThatHeight * 0.4)));
+                                e.Graphics.DrawImage( gunnerFarmer, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32( CaseShouldBeThatHeight * 0.4 ), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32( (CaseShouldBeThatHeight * 0.4) ) );
                             }
                             else if (t is InfantryFarmer)
                             {
-                                e.Graphics.DrawImage(InfantryFarmer, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32(CaseShouldBeThatHeight * 0.4), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32((CaseShouldBeThatHeight * 0.4)));
+                                e.Graphics.DrawImage( InfantryFarmer, t.Square.Column * CaseShouldBeThatWidth, t.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32( CaseShouldBeThatHeight * 0.4 ), CaseShouldBeThatWidth, CaseShouldBeThatHeight + Convert.ToInt32( (CaseShouldBeThatHeight * 0.4) ) );
                             }
                         }
                     }
                 }
-                foreach (Ennemi en in Context.Map.Ennemis)
+                foreach (Ennemi en in Map.Ennemis)
                 {
                     if (en is Wolf)
                     {
                         int X = en.Position.X;
                         int Y = en.Position.Y;
                         int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
-                        e.Graphics.DrawImage(Wolf, X, Y - 20);
+                        e.Graphics.DrawImage( Wolf, X, Y - 20 );
                     }
 
                     if (en is Fox)
@@ -165,7 +161,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                         int X = en.Position.X;
                         int Y = en.Position.Y;
                         int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
-                        e.Graphics.DrawImage(Fox, X, Y);
+                        e.Graphics.DrawImage( Fox, X, Y );
                     }
 
                     if (en is Hyena)
@@ -173,7 +169,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                         int X = en.Position.X;
                         int Y = en.Position.Y;
                         int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
-                        e.Graphics.DrawImage(Hyena, X, Y);
+                        e.Graphics.DrawImage( Hyena, X, Y );
                     }
 
                     if (en is Lion)
@@ -181,7 +177,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                         int X = en.Position.X;
                         int Y = en.Position.Y;
                         int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
-                        e.Graphics.DrawImage(Lion, X, Y);
+                        e.Graphics.DrawImage( Lion, X, Y );
                     }
 
                     if (en is Cerberus)
@@ -189,7 +185,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                         int X = en.Position.X;
                         int Y = en.Position.Y;
                         int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
-                        e.Graphics.DrawImage(Cerberus, X, Y);
+                        e.Graphics.DrawImage( Cerberus, X, Y );
                     }
 
                     if (en is Anubis)
@@ -197,11 +193,11 @@ namespace ITI.S3.PI.Chick_End.GUI
                         int X = en.Position.X;
                         int Y = en.Position.Y;
                         int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
-                        e.Graphics.DrawImage(Anubis, X, Y);
+                        e.Graphics.DrawImage( Anubis, X, Y );
                     }
                 }
             }
-            base.OnPaint(e);
+            base.OnPaint( e );
         }
     }
 }
