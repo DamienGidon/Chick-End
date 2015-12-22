@@ -114,9 +114,8 @@
             this.labelScoreOne.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labelScoreOne.Location = new System.Drawing.Point(280, 60);
             this.labelScoreOne.Name = "labelScoreOne";
-            this.labelScoreOne.Size = new System.Drawing.Size(58, 20);
+            this.labelScoreOne.Size = new System.Drawing.Size(0, 20);
             this.labelScoreOne.TabIndex = 3;
-            this.labelScoreOne.Text = "{score}";
             // 
             // labelPseudoOne
             // 
@@ -125,9 +124,8 @@
             this.labelPseudoOne.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labelPseudoOne.Location = new System.Drawing.Point(140, 60);
             this.labelPseudoOne.Name = "labelPseudoOne";
-            this.labelPseudoOne.Size = new System.Drawing.Size(72, 20);
+            this.labelPseudoOne.Size = new System.Drawing.Size(0, 20);
             this.labelPseudoOne.TabIndex = 2;
-            this.labelPseudoOne.Text = "{pseudo}";
             // 
             // labelScore
             // 
@@ -184,9 +182,8 @@
             this.labelScoreTwo.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labelScoreTwo.Location = new System.Drawing.Point(280, 60);
             this.labelScoreTwo.Name = "labelScoreTwo";
-            this.labelScoreTwo.Size = new System.Drawing.Size(58, 20);
+            this.labelScoreTwo.Size = new System.Drawing.Size(0, 20);
             this.labelScoreTwo.TabIndex = 5;
-            this.labelScoreTwo.Text = "{score}";
             // 
             // labelPseudoTwo
             // 
@@ -195,9 +192,8 @@
             this.labelPseudoTwo.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labelPseudoTwo.Location = new System.Drawing.Point(140, 60);
             this.labelPseudoTwo.Name = "labelPseudoTwo";
-            this.labelPseudoTwo.Size = new System.Drawing.Size(72, 20);
+            this.labelPseudoTwo.Size = new System.Drawing.Size(0, 20);
             this.labelPseudoTwo.TabIndex = 4;
-            this.labelPseudoTwo.Text = "{pseudo}";
             // 
             // label1
             // 
@@ -254,9 +250,8 @@
             this.labelScoreThree.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labelScoreThree.Location = new System.Drawing.Point(280, 60);
             this.labelScoreThree.Name = "labelScoreThree";
-            this.labelScoreThree.Size = new System.Drawing.Size(58, 20);
+            this.labelScoreThree.Size = new System.Drawing.Size(0, 20);
             this.labelScoreThree.TabIndex = 5;
-            this.labelScoreThree.Text = "{score}";
             // 
             // labelPseudoThree
             // 
@@ -265,9 +260,8 @@
             this.labelPseudoThree.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labelPseudoThree.Location = new System.Drawing.Point(140, 60);
             this.labelPseudoThree.Name = "labelPseudoThree";
-            this.labelPseudoThree.Size = new System.Drawing.Size(72, 20);
+            this.labelPseudoThree.Size = new System.Drawing.Size(0, 20);
             this.labelPseudoThree.TabIndex = 4;
-            this.labelPseudoThree.Text = "{pseudo}";
             // 
             // label3
             // 
@@ -324,9 +318,8 @@
             this.labelScoreFour.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labelScoreFour.Location = new System.Drawing.Point(280, 60);
             this.labelScoreFour.Name = "labelScoreFour";
-            this.labelScoreFour.Size = new System.Drawing.Size(58, 20);
+            this.labelScoreFour.Size = new System.Drawing.Size(0, 20);
             this.labelScoreFour.TabIndex = 5;
-            this.labelScoreFour.Text = "{score}";
             // 
             // labelPseudoFour
             // 
@@ -335,9 +328,8 @@
             this.labelPseudoFour.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.labelPseudoFour.Location = new System.Drawing.Point(140, 60);
             this.labelPseudoFour.Name = "labelPseudoFour";
-            this.labelPseudoFour.Size = new System.Drawing.Size(72, 20);
+            this.labelPseudoFour.Size = new System.Drawing.Size(0, 20);
             this.labelPseudoFour.TabIndex = 4;
-            this.labelPseudoFour.Text = "{pseudo}";
             // 
             // label5
             // 

@@ -53,6 +53,18 @@ namespace ITI.S3.PI.Chick_End.GUI
             panel1.AllowDrop = true;
         }
 
+        public int Minute
+        {
+            get { return _minute; }
+            set { _minute = value; }
+        }
+
+        public int Seconde
+        {
+            get { return _second; }
+            set { _second = value; }
+        }
+
         private void OnCurrentGameChanged( object sender, EventArgs e )
         {
             Pause();
@@ -84,12 +96,12 @@ namespace ITI.S3.PI.Chick_End.GUI
         
         private void buttonMenu_MouseEnter( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFont_MouseEnter( sender );
+            MouseEventsHelper.ChangeFontSize( sender, 28F );
         }
 
         private void buttonMenu_MouseLeave( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFont_MouseLeave( sender );
+            MouseEventsHelper.ChangeFontSize( sender, 25F );
 
         }
 

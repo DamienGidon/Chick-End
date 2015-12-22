@@ -94,12 +94,15 @@
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonQuit.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonQuit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonQuit.Location = new System.Drawing.Point(388, 600);
+            this.buttonQuit.Location = new System.Drawing.Point(389, 583);
             this.buttonQuit.Name = "buttonQuit";
             this.buttonQuit.Size = new System.Drawing.Size(196, 88);
             this.buttonQuit.TabIndex = 5;
             this.buttonQuit.Text = "Quit";
             this.buttonQuit.UseVisualStyleBackColor = false;
+            this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
+            this.buttonQuit.MouseEnter += new System.EventHandler(this.buttonQuit_MouseEnter);
+            this.buttonQuit.MouseLeave += new System.EventHandler(this.buttonQuit_MouseLeave);
             // 
             // buttonRules
             // 
@@ -110,12 +113,15 @@
             this.buttonRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRules.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRules.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonRules.Location = new System.Drawing.Point(388, 504);
+            this.buttonRules.Location = new System.Drawing.Point(389, 487);
             this.buttonRules.Name = "buttonRules";
             this.buttonRules.Size = new System.Drawing.Size(197, 92);
             this.buttonRules.TabIndex = 4;
             this.buttonRules.Text = "Rules";
             this.buttonRules.UseVisualStyleBackColor = false;
+            this.buttonRules.Click += new System.EventHandler(this.buttonRules_Click);
+            this.buttonRules.MouseEnter += new System.EventHandler(this.buttonRules_MouseEnter);
+            this.buttonRules.MouseLeave += new System.EventHandler(this.buttonRules_MouseLeave);
             // 
             // buttonLeaderboard
             // 
@@ -126,12 +132,15 @@
             this.buttonLeaderboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLeaderboard.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLeaderboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLeaderboard.Location = new System.Drawing.Point(338, 401);
+            this.buttonLeaderboard.Location = new System.Drawing.Point(339, 384);
             this.buttonLeaderboard.Name = "buttonLeaderboard";
             this.buttonLeaderboard.Size = new System.Drawing.Size(306, 107);
             this.buttonLeaderboard.TabIndex = 3;
             this.buttonLeaderboard.Text = "Leaderboard";
             this.buttonLeaderboard.UseVisualStyleBackColor = false;
+            this.buttonLeaderboard.Click += new System.EventHandler(this.buttonLeaderboard_Click);
+            this.buttonLeaderboard.MouseEnter += new System.EventHandler(this.buttonLeaderboard_MouseEnter);
+            this.buttonLeaderboard.MouseLeave += new System.EventHandler(this.buttonBestiary_MouseLeave);
             // 
             // buttonBestiary
             // 
@@ -142,12 +151,15 @@
             this.buttonBestiary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBestiary.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBestiary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonBestiary.Location = new System.Drawing.Point(388, 319);
+            this.buttonBestiary.Location = new System.Drawing.Point(389, 302);
             this.buttonBestiary.Name = "buttonBestiary";
             this.buttonBestiary.Size = new System.Drawing.Size(205, 95);
             this.buttonBestiary.TabIndex = 2;
             this.buttonBestiary.Text = "Bestiary";
             this.buttonBestiary.UseVisualStyleBackColor = false;
+            this.buttonBestiary.Click += new System.EventHandler(this.buttonBestiary_Click);
+            this.buttonBestiary.MouseEnter += new System.EventHandler(this.buttonBestiary_MouseEnter);
+            this.buttonBestiary.MouseLeave += new System.EventHandler(this.buttonBestiary_MouseLeave);
             // 
             // buttonContinue
             // 
@@ -158,12 +170,14 @@
             this.buttonContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonContinue.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonContinue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonContinue.Location = new System.Drawing.Point(388, 226);
+            this.buttonContinue.Location = new System.Drawing.Point(389, 206);
             this.buttonContinue.Name = "buttonContinue";
             this.buttonContinue.Size = new System.Drawing.Size(203, 105);
             this.buttonContinue.TabIndex = 1;
             this.buttonContinue.Text = "Continue";
             this.buttonContinue.UseVisualStyleBackColor = false;
+            this.buttonContinue.MouseEnter += new System.EventHandler(this.buttonContinue_MouseEnter);
+            this.buttonContinue.MouseLeave += new System.EventHandler(this.buttonContinue_MouseLeave);
             // 
             // buttonPlay
             // 
@@ -174,13 +188,15 @@
             this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPlay.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonPlay.Location = new System.Drawing.Point(388, 130);
+            this.buttonPlay.Location = new System.Drawing.Point(389, 113);
             this.buttonPlay.Name = "buttonPlay";
             this.buttonPlay.Size = new System.Drawing.Size(197, 104);
             this.buttonPlay.TabIndex = 0;
             this.buttonPlay.Text = "Play";
             this.buttonPlay.UseVisualStyleBackColor = false;
             this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
+            this.buttonPlay.MouseEnter += new System.EventHandler(this.buttonPlay_MouseEnter);
+            this.buttonPlay.MouseLeave += new System.EventHandler(this.buttonPlay_MouseLeave);
             // 
             // MainMenu
             // 
