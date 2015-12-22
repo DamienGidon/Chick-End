@@ -39,6 +39,11 @@ namespace ITI.S3.PI.Chick_End.GUI
             get { return _finalForm; }
         }
 
+        public gamecontrol Gamecontrol
+        {
+            get { return _gamecontrol; }
+        }
+
         public void DisplayMainMenu()
         {
             _mainMenu.Show();
@@ -108,6 +113,17 @@ namespace ITI.S3.PI.Chick_End.GUI
         public void HideRules()
         {
             _rules.Close();
+        }
+
+        public void DisplayGameMenu()
+        {
+            _gameMenu.Show();
+            _gameMenu.BringToFront();
+        }
+
+        public void HideGameMenu()
+        {
+            _gameMenu.Hide();
         }
 
         public void CloseGame()

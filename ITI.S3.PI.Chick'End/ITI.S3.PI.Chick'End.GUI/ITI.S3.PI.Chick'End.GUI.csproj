@@ -61,7 +61,7 @@
     </Compile>
     <Compile Include="Controler.cs" />
     <Compile Include="ControlExtension.cs" />
-    <Compile Include="DragDropHelper.cs" />
+    <Compile Include="MouseEventsHelper.cs" />
     <Compile Include="FormF.cs">
       <SubType>Form</SubType>
     </Compile>
