@@ -248,9 +248,8 @@
             this.labelPrice.ForeColor = System.Drawing.Color.DarkGreen;
             this.labelPrice.Location = new System.Drawing.Point(95, 6);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(61, 27);
+            this.labelPrice.Size = new System.Drawing.Size(0, 27);
             this.labelPrice.TabIndex = 1;
-            this.labelPrice.Text = "{price}";
             // 
             // labelPriceT
             // 

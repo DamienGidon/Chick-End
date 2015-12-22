@@ -11,7 +11,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         int _tick = 0;
         int _countM = 0;
         int _countR = 0;
-        int _countS = 0;
+        int _countS = -20;
         int _second = 0;
         int _minute = 0;
         int _seeds = 200;
@@ -30,13 +30,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             InitializeComponent();
 
             _level = level;
-
-            labelPrice.Text = "";
-
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-            player.SoundLocation = "bassecour.wav";
-            player.Play();
-
             
             pictureBox1.AllowDrop = false;
             pictureBox2.AllowDrop = true;
@@ -500,12 +493,12 @@ namespace ITI.S3.PI.Chick_End.GUI
             if (sound == true)
             {
                 _countS++;
-                if (_countS == 100)
+                if (_countS == 100 || _countS == -1)
                 {
                     System.Media.SoundPlayer player = new System.Media.SoundPlayer();
                     player.SoundLocation = "bassecour.wav";
                     player.Play();
-                    _countS = 0;
+                    _countS = 1;
                 }
             }
 

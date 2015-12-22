@@ -235,6 +235,15 @@ namespace ITI.S3.PI.Chick_End
             return e;
         }
 
+        public Wolf CreateAnubisWolf(Map context, int x, int y)
+        {
+            Wolf e = new Wolf(context, 20);
+            e.GetX = x;
+            e.GetY = y;
+            _ennemis.Add(e);
+            return e;
+        }
+
         public Hyena CreateHyena(Map context)
         {
             Hyena e = new Hyena(context, 30);

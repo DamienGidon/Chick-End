@@ -18,9 +18,9 @@ namespace ITI.S3.PI.Chick_End
 
         public void Summon(int tick)
         {
-            if (tick % 20 == 0)
+            if (tick % 60 == 0)
             {
-                Context.CreateWolf(Square.Context);
+                Context.CreateAnubisWolf(Square.Context, this.GetX, this.GetY);
             }
         }
 

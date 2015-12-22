@@ -32,6 +32,18 @@ namespace ITI.S3.PI.Chick_End
             _range = ComputeRange();
         }
 
+        public int GetX
+        {
+            get { return _x; }
+            set { _x = value; }
+        }
+
+        public int GetY
+        {
+            get { return _y; }
+            set { _y = value; }
+        }
+
         public bool AlreadySlow
         {
             get { return _alreadySlow; }

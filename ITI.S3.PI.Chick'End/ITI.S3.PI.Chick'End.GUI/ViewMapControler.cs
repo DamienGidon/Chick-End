@@ -51,7 +51,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 string pathgunnerFarmer = Path.Combine( directory, @"gunnerFarmer.png" );
                 string pathInfantryFarmer = Path.Combine( directory, @"InfantryFarmer.png" );
                 string pathWolf = Path.Combine( directory, @"Wolf.png" );
-                string pathFox = Path.Combine( directory, @"Fox.png" );
+                string pathFox = Path.Combine( directory, @"Foxt.png" );
                 string pathHyena = Path.Combine( directory, @"Hyena.png" );
                 string pathLion = Path.Combine( directory, @"Lion.png" );
                 string pathCerberus = Path.Combine( directory, @"Cerberus.png" );
@@ -146,13 +146,14 @@ namespace ITI.S3.PI.Chick_End.GUI
                         }
                     }
                 }
+
+                //On affiche les ennemis
                 foreach (Ennemi en in Map.Ennemis)
                 {
                     if (en is Wolf)
                     {
                         int X = en.Position.X;
                         int Y = en.Position.Y;
-                        int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
                         e.Graphics.DrawImage( Wolf, X, Y - 20 );
                     }
 
@@ -160,7 +161,6 @@ namespace ITI.S3.PI.Chick_End.GUI
                     {
                         int X = en.Position.X;
                         int Y = en.Position.Y;
-                        int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
                         e.Graphics.DrawImage( Fox, X, Y );
                     }
 
@@ -168,7 +168,6 @@ namespace ITI.S3.PI.Chick_End.GUI
                     {
                         int X = en.Position.X;
                         int Y = en.Position.Y;
-                        int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
                         e.Graphics.DrawImage( Hyena, X, Y );
                     }
 
@@ -176,7 +175,6 @@ namespace ITI.S3.PI.Chick_End.GUI
                     {
                         int X = en.Position.X;
                         int Y = en.Position.Y;
-                        int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
                         e.Graphics.DrawImage( Lion, X, Y );
                     }
 
@@ -184,7 +182,6 @@ namespace ITI.S3.PI.Chick_End.GUI
                     {
                         int X = en.Position.X;
                         int Y = en.Position.Y;
-                        int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
                         e.Graphics.DrawImage( Cerberus, X, Y );
                     }
 
@@ -192,7 +189,6 @@ namespace ITI.S3.PI.Chick_End.GUI
                     {
                         int X = en.Position.X;
                         int Y = en.Position.Y;
-                        int MapXWidth = FinalVariables.NbCaseWidthMap1 * CaseShouldBeThatWidth;
                         e.Graphics.DrawImage( Anubis, X, Y );
                     }
                 }

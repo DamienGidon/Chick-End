@@ -71,9 +71,6 @@ namespace ITI.S3.PI.Chick_End
                     if (t.Health <= 0)
                         t.Die();
                 }
-                if (e is Anubis)
-                {
-                }
             }
 
             foreach( Tower t in _context.Towers)
