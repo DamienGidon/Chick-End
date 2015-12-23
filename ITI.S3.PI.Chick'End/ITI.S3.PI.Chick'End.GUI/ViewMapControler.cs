@@ -51,7 +51,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 string pathgunnerFarmer = Path.Combine( directory, @"gunnerFarmer.png" );
                 string pathInfantryFarmer = Path.Combine( directory, @"InfantryFarmer.png" );
                 string pathWolf = Path.Combine( directory, @"Wolf.png" );
-                string pathFox = Path.Combine( directory, @"Foxt.png" );
+                string pathFox = Path.Combine( directory, @"Fox.png" );
                 string pathHyena = Path.Combine( directory, @"Hyena.png" );
                 string pathLion = Path.Combine( directory, @"Lion.png" );
                 string pathCerberus = Path.Combine( directory, @"Cerberus.png" );
@@ -162,7 +162,9 @@ namespace ITI.S3.PI.Chick_End.GUI
 
                     if (en is Fox)
                     {
-                        e.Graphics.DrawImage( Fox, X, Y );
+                        Bitmap imgDest = new Bitmap(50, 50);
+
+                        e.Graphics.DrawImage( Fox, X, Y , imgDest.Width , imgDest.Height );
                     }
 
                     if (en is Hyena)
