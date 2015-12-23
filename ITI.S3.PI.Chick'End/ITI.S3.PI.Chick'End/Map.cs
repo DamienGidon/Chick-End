@@ -13,6 +13,7 @@ namespace ITI.S3.PI.Chick_End
         readonly Square[,] _squares;
         readonly List<Ennemi> _ennemis;
         readonly List<Tower> _towers;
+        readonly List<EggLauncher> _eggs;
         readonly int _nbCaseWidth;
         readonly int _nbCaseHeight;
 
@@ -35,6 +36,11 @@ namespace ITI.S3.PI.Chick_End
             get { return _ennemis; }
         }
 
+        public List<EggLauncher> Eggs
+        {
+            get { return _eggs; }
+        }
+
         public int NbCaseWidth
         {
             get { return _nbCaseWidth; }
@@ -53,6 +59,7 @@ namespace ITI.S3.PI.Chick_End
             _ways = new List<Way>();
             _towers  = new List<Tower>();
             _ennemis = new List<Ennemi>();
+            _eggs = new List<EggLauncher>();
             _nbCaseHeight = 9;
             _nbCaseWidth = 14;
 
@@ -276,6 +283,15 @@ namespace ITI.S3.PI.Chick_End
         {
             Cerberus e = new Cerberus(context, 100);
             _ennemis.Add(e);
+            return e;
+        }
+
+        public NormalEgg CreateNormalEgg(Map context, int x, int y,int damage)
+        {
+            NormalEgg e = new NormalEgg(context, damage);
+            e.GetX = x;
+            e.GetY = y - 20;
+            _eggs.Add(e);
             return e;
         }
 

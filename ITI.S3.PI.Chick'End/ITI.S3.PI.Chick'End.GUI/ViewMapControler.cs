@@ -56,6 +56,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 string pathLion = Path.Combine( directory, @"Lion.png" );
                 string pathCerberus = Path.Combine( directory, @"Cerberus.png" );
                 string pathAnubis = Path.Combine( directory, @"Anubis.png" );
+                string pathNormalEgg = Path.Combine(directory, @"NormalEgg.png");
                 //string pathWolfMove = Path.Combine(directory, @"WolfMove.gif");
 
                 Image grass = Image.FromFile( pathGrass );
@@ -76,6 +77,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Image Lion = Image.FromFile( pathLion );
                 Image Cerberus = Image.FromFile( pathCerberus );
                 Image Anubis = Image.FromFile( pathAnubis );
+                Image NormalEgg = Image.FromFile(pathNormalEgg);
                 //Image WolfMove = Image.FromFile(pathWolfMove);
 
                 int CaseShouldBeThatHeight = e.ClipRectangle.Height / FinalVariables.NbCaseHeightMap1;
@@ -150,46 +152,49 @@ namespace ITI.S3.PI.Chick_End.GUI
                 //On affiche les ennemis
                 foreach (Ennemi en in Map.Ennemis)
                 {
+                    int X = en.Position.X;
+                    int Y = en.Position.Y;
+
                     if (en is Wolf)
                     {
-                        int X = en.Position.X;
-                        int Y = en.Position.Y;
                         e.Graphics.DrawImage( Wolf, X, Y - 20 );
                     }
 
                     if (en is Fox)
                     {
-                        int X = en.Position.X;
-                        int Y = en.Position.Y;
                         e.Graphics.DrawImage( Fox, X, Y );
                     }
 
                     if (en is Hyena)
                     {
-                        int X = en.Position.X;
-                        int Y = en.Position.Y;
                         e.Graphics.DrawImage( Hyena, X, Y );
                     }
 
                     if (en is Lion)
                     {
-                        int X = en.Position.X;
-                        int Y = en.Position.Y;
                         e.Graphics.DrawImage( Lion, X, Y );
                     }
 
                     if (en is Cerberus)
                     {
-                        int X = en.Position.X;
-                        int Y = en.Position.Y;
                         e.Graphics.DrawImage( Cerberus, X, Y );
                     }
 
                     if (en is Anubis)
                     {
-                        int X = en.Position.X;
-                        int Y = en.Position.Y;
                         e.Graphics.DrawImage( Anubis, X, Y );
+                    }
+                }
+
+                // On affiche les oeufs
+                foreach(EggLauncher eg in Map.Eggs)
+                {
+                    int X = eg.Position.X;
+                    int Y = eg.Position.Y;
+
+                    if (eg is NormalEgg)
+                    {
+                        e.Graphics.DrawImage(NormalEgg, X, Y);
                     }
                 }
             }

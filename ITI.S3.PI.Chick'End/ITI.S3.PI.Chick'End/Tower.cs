@@ -13,9 +13,11 @@ namespace ITI.S3.PI.Chick_End
         protected readonly Square _square;
         internal readonly int _damages;
         protected readonly Square[] _range;
+        public Square _context;
 
         protected Tower( Square context, int damages )
         {
+            _context = context;
             _square = context;
             _range = ComputeRange().ToArray();
             _damages = damages;
@@ -87,6 +89,11 @@ namespace ITI.S3.PI.Chick_End
         {
             _square.Context.Towers.Remove( this );
             _square.Tower = null;
+        }
+
+        public Square Context
+        {
+            get { return _context; }
         }
     }
 }
