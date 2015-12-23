@@ -71,6 +71,7 @@
     <Compile Include="Square.cs" />
     <Compile Include="Tower.cs" />
     <Compile Include="Unit.cs" />
+    <Compile Include="Unit\RottenEgg.cs" />
     <Compile Include="Way.cs" />
     <Compile Include="Unit\Wolf.cs" />
   </ItemGroup>

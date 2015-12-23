@@ -19,13 +19,7 @@ namespace ITI.S3.PI.Chick_End
         {
             if (tick % 20 == 0)
             {
-                Ennemi _ennemi = (Ennemi)ennemi;
-                ennemi.Health -= Damages;
-                if (_ennemi.AlreadySlow == false)
-                {
-                    _ennemi.Speed = _ennemi.Speed * 2;
-                    _ennemi.AlreadySlow = true;
-                }
+                Context.Context.CreateRottenEgg(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 10);
             }
         }
 

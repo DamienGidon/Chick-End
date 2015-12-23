@@ -46,8 +46,6 @@ namespace ITI.S3.PI.Chick_End
         public Ennemi GetClosestEnnemiAttackable()
         {
             return this.GetClosestUnit( _square.Context.Ennemis );
-            //return UnitExtension.GetClosestUnit( this, _square.Context.Ennemis );
-            //return GetClosestUnit<Ennemi>( _square.Context.Ennemis );
         }
 
         public virtual List<Square> ComputeRange()

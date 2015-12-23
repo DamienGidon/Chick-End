@@ -61,13 +61,21 @@ namespace ITI.S3.PI.Chick_End
             List<EggLauncher> _eggLaunchers = new List<EggLauncher>();
             foreach ( EggLauncher e in _map.Eggs)
             {
-                Ennemi en = e.GetClosestEnnemiAttackable();
-                if (en == null)
+                Ennemi enemy = e.GetClosestEnnemiAttackable();
+                if (enemy == null)
                 {
-                    e.Move();
-                } else
+                    if(e.Position.X < (FinalVariables.MapWidthInMeters - 35))
+                    {
+                        e.Move();
+                    }
+                    else
+                    {
+                        _eggLaunchers.Add(e);
+                    }
+                }
+                else
                 {
-                    e.Attack(en, tick);
+                    e.Attack(enemy, tick);
                     _eggLaunchers.Add(e);
                 }
             }

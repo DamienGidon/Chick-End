@@ -13,20 +13,22 @@ namespace ITI.S3.PI.Chick_End
         protected List<Square> _range;
         internal readonly int _damages;
 
-        public EggLauncher(Map context, int damage)
+        public EggLauncher(Map context, int damage, int x, int y)
         {
+            _x = x;
+            _y = y;
             _damages = damage;
             _context = context;
             _range = ComputeRange();
         }
 
-        public int GetX
+        public int X
         {
             get { return _x; }
             set { _x = value; }
         }
 
-        public int GetY
+        public int Y
         {
             get { return _y; }
             set { _y = value; }
@@ -50,14 +52,6 @@ namespace ITI.S3.PI.Chick_End
         public virtual void Move()
         {
             _x = _x + 30;
-            //if (_way.Current.Column == _way.Next.Column + 1)
-            //{
-            //    _x -= FinalVariables.SquareWidthInMeters / 30;
-            //    if (_x <= _way.Next.Column * FinalVariables.SquareWidthInMeters)
-            //    {
-            //        _way.NextSquare();
-            //    }
-            //}
             _range = ComputeRange();
         }
 
@@ -101,7 +95,7 @@ namespace ITI.S3.PI.Chick_End
             get { return _damages; }
         }
 
-        public void Attack(Unit ennemi, int tick)
+        public virtual void Attack(Unit ennemi, int tick)
         {
             ennemi.Health -= Damages;
         }

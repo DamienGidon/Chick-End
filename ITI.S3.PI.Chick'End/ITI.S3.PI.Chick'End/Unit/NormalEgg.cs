@@ -9,8 +9,8 @@ namespace ITI.S3.PI.Chick_End
     public class NormalEgg : EggLauncher
     {
 
-        public NormalEgg(Map context, int damage)
-            : base(context, damage)
+        public NormalEgg(Map context, int damage, int x, int y)
+            : base(context, damage, x, y)
         {
 
         }

@@ -288,9 +288,14 @@ namespace ITI.S3.PI.Chick_End
 
         public NormalEgg CreateNormalEgg(Map context, int x, int y,int damage)
         {
-            NormalEgg e = new NormalEgg(context, damage);
-            e.GetX = x;
-            e.GetY = y - 20;
+            NormalEgg e = new NormalEgg(context, damage, x, y-20);
+            _eggs.Add(e);
+            return e;
+        }
+
+        public RottenEgg CreateRottenEgg(Map context, int x, int y, int damage)
+        {
+            RottenEgg e = new RottenEgg(context, damage, x, y - 20);
             _eggs.Add(e);
             return e;
         }

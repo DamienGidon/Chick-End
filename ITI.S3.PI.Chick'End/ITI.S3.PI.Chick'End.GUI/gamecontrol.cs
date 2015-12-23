@@ -154,7 +154,6 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     _seeds = _seeds - _henCreater.HenCost;
                     viewMapControler1.Map.CreateHen( line, column, viewMapControler1.Map );
-                    //viewMapControler1.Context.HenCreater.CreateHen(line, column, viewMapControler1.Context.Map);
                 }
             }
         }
