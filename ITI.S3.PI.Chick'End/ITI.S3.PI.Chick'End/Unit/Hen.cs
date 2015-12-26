@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +15,8 @@ namespace ITI.S3.PI.Chick_End
             : base( context, 15 )
         {
             _health = 100;
+            _kind = "hen";
+            _image = Image.FromFile("HenLeft.png");
         }
 
         public override List<Square> ComputeRange()

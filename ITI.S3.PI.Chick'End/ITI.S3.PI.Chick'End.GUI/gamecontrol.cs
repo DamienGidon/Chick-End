@@ -12,6 +12,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         int _countM = 0;
         int _countR = 0;
         int _countS = -20;
+        int _countBaker;
         int _second = 0;
         int _minute = 0;
         int _seeds = 200;
@@ -484,7 +485,15 @@ namespace ITI.S3.PI.Chick_End.GUI
             if (_countR == 100)
             {
                 _countR = 0;
-                _seeds += 200;
+                foreach(Tower t in viewMapControler1.Map.Towers)
+                {
+                    if(t is Baker)
+                    {
+                        _countBaker++;
+                    }
+                }
+                _seeds += 200 + _countBaker*50;
+                _countBaker = 0;
             }
             labelSeedNumber.Text = Convert.ToString( _seeds );
 

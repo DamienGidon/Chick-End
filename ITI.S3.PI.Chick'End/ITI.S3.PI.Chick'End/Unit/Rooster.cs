@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace ITI.S3.PI.Chick_End
             : base( context, 1500 )
         {
             _health = 50;
+            _kind = "hen";
+            _image = Image.FromFile("Rooster.png");
         }
 
        

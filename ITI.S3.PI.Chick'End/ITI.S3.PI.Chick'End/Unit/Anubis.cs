@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,9 @@ namespace ITI.S3.PI.Chick_End
         {
             Health = 500;
             Speed = 50;
+            _image = Image.FromFile("Anubis.png");
+            _imageWidth = 60;
+            _imageHeight = 70;
         }
 
         public void Summon(int tick)
