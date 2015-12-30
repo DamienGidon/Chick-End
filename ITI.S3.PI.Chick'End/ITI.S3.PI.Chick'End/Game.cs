@@ -105,6 +105,7 @@ namespace ITI.S3.PI.Chick_End
                 if (e != null)
                 {
                     t.Attack( e, tick );
+                    t.AttackAnimate(tick);
                     if (e.Health <= 0)
                         e.Die();
                 }

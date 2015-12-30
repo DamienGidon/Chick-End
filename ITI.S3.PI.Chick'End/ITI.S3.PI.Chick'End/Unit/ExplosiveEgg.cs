@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,9 @@ namespace ITI.S3.PI.Chick_End
             : base( context, 15 )
         {
             _health = 50;
+            _image = Image.FromFile("ExplosiveEgg.png");
+            _passivImage = Image.FromFile("ExplosiveEgg.png");
+            _attackImage = Image.FromFile("ExplosiveEgg.png");
         }
 
         public override void Attack(Unit ennemi, int tick)

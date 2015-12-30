@@ -17,6 +17,8 @@ namespace ITI.S3.PI.Chick_End
             _health = 100;
             _kind = "hen";
             _image = Image.FromFile("HenLeft.png");
+            _passivImage = Image.FromFile("HenLeft.png");
+            _attackImage = Image.FromFile("HenAttack.png");
         }
 
         public override List<Square> ComputeRange()
