@@ -15,7 +15,9 @@ namespace ITI.S3.PI.Chick_End
         {
             Health = 100;
             Speed = 10;
-            _image = Image.FromFile("Fox.png");
+            _passivImage = Image.FromFile("Fox.png");
+            _attackImage = Image.FromFile("Fox.png");
+            _image = _passivImage;
             _imageWidth = 50;
             _imageHeight = 40;
         }

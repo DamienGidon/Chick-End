@@ -13,16 +13,17 @@ namespace ITI.S3.PI.Chick_End
         internal OldHen( Square context )
             : base( context, 10 )
         {
+            _attackSpeed = 20;
             _health = 100;
             _kind = "hen";
-            _image = Image.FromFile("OldHen.png");
             _passivImage = Image.FromFile("OldHen.png");
             _attackImage = Image.FromFile("OldHenAttack.png");
+            _image = _passivImage;
         }
 
         public override void Attack(Unit ennemi, int tick)
         {
-            if (tick % 20 == 0)
+            if (tick % _attackSpeed == 0)
             {
                 Context.Context.CreateRottenEgg(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 10);
             }

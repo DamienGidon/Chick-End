@@ -15,7 +15,9 @@ namespace ITI.S3.PI.Chick_End
         {
             Health = 1000;
             Speed = 50;
-            _image = Image.FromFile("Cerberus.png");
+            _passivImage = Image.FromFile("Cerberus.png");
+            _attackImage = Image.FromFile("Cerberus.png");
+            _image = _passivImage;
             _imageWidth = 80;
             _imageHeight = 70;
         }

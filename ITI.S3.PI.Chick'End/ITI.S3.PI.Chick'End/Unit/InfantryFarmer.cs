@@ -13,18 +13,19 @@ namespace ITI.S3.PI.Chick_End
         internal InfantryFarmer( Square context )
             : base( context, 30 )
         {
+            _attackSpeed = 20;
             _health = 5000;
             _kind = "human";
-            _image = Image.FromFile("InfantryFarmer.png");
             _passivImage = Image.FromFile("InfantryFarmer.png");
             _attackImage = Image.FromFile("InfantryFarmer.png");
+            _image = _passivImage;
         }
 
         public override void Attack(Unit ennemi, int tick)
         {
             foreach (Ennemi e in Square.Context.Ennemis)
             {
-                if (tick % 20 == 0)
+                if (tick % _attackSpeed == 0)
                 {
                     if ((e.Square == ennemi.Square)
                         || ((e.Square.Line == ennemi.Square.Line) && (e.Square.Column == ennemi.Square.Column + 1)))

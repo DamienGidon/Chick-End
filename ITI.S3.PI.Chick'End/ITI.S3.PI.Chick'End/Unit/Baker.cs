@@ -15,9 +15,9 @@ namespace ITI.S3.PI.Chick_End
         {
             _health = 500;
             _kind = "human";
-            _image = Image.FromFile("Baker.png");
             _passivImage = Image.FromFile("Baker.png");
             _attackImage = Image.FromFile("Baker.png");
+            _image = _passivImage;
         }
 
         public override void Attack(Unit ennemi, int tick)

@@ -299,6 +299,13 @@ namespace ITI.S3.PI.Chick_End
             _eggs.Add(e);
             return e;
         }
+        public RobotEgg CreateRobotEgg(Map context, int x, int y, int damage)
+        {
+            RobotEgg e = new RobotEgg(context, damage, x, y - 20);
+            _eggs.Add(e);
+            return e;
+        }
+
 
         public List<Tower> GetTower
         {

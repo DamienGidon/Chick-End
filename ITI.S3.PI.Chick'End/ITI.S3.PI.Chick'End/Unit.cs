@@ -18,6 +18,12 @@ namespace ITI.S3.PI.Chick_End
         protected int _imageWidth;
         protected int _imageHeight;
         protected string _kind;
+        protected int _attackSpeed;
+
+        public int AttackSpeed
+        {
+            get { return _attackSpeed; }
+        }
 
         public int Health
         {
@@ -35,9 +41,9 @@ namespace ITI.S3.PI.Chick_End
             get { return _imageWidth; }
         }
 
-        public virtual void AttackAnimate(int tick)
+        public virtual void AttackAnimate(int tick,  int attackSpeed)
         {
-            if (tick % 20 >= 0 && tick % 20 <= 10)
+            if (tick % attackSpeed >= 0 && tick % attackSpeed <= 10)
             {
                 _image = _attackImage;
             }
