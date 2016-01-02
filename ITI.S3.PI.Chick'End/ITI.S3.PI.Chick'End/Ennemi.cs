@@ -130,7 +130,7 @@ namespace ITI.S3.PI.Chick_End
 
         public virtual void Attack( Unit tower, int tick )
         {
-            if (tick % 20 == 0)
+            if (tick % _attackSpeed == 0)
             {
                 tower.Health -= Damages;
             }
