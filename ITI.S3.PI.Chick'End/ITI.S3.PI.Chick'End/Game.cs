@@ -90,11 +90,12 @@ namespace ITI.S3.PI.Chick_End
                 if (t == null)
                 {
                     e.Move();
+                    e.MoveAnimate(tick);
                 }
                 else
                 {
                     e.Attack( t, tick );
-                    t.AttackAnimate(tick, t.AttackSpeed);
+                    e.AttackAnimate(tick, t.AttackSpeed);
                     if (t.Health <= 0)
                         t.Die();
                 }

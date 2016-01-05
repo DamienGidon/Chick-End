@@ -15,6 +15,7 @@ namespace ITI.S3.PI.Chick_End
         protected Image _image;
         protected Image _passivImage;
         protected Image _attackImage;
+        protected Image _moveImage;
         protected int _imageWidth;
         protected int _imageHeight;
         protected string _kind;
@@ -46,6 +47,18 @@ namespace ITI.S3.PI.Chick_End
             if (tick % attackSpeed >= 0 && tick % attackSpeed <= 10)
             {
                 _image = _attackImage;
+            }
+            else
+            {
+                _image = _passivImage;
+            }
+        }
+
+        public virtual void MoveAnimate(int tick)
+        {
+            if (tick % 15 >= 0 && tick % 15 <= 7)
+            {
+                _image = _moveImage;
             }
             else
             {
