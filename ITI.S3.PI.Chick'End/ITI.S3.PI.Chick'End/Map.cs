@@ -16,14 +16,22 @@ namespace ITI.S3.PI.Chick_End
         readonly int _nbCaseWidth;
         readonly int _nbCaseHeight;
 
-        //List<Unit> AllUnits
-        //{
-        //    get
-        //    {
-        //        List<Unit> units = new List<Unit>();
-        //        return units;
-        //    }
-        //}
+        List<Unit> AllUnits
+        {
+            get
+            {
+                List<Unit> AllUnits = new List<Unit>();
+                foreach( Ennemi e in _ennemis)
+                {
+                    AllUnits.Add( e );
+                }
+                foreach( Tower t in _towers)
+                {
+                    AllUnits.Add( t );
+                }
+                return AllUnits;
+            }
+        }
 
         public List<Tower> Towers
         {
@@ -49,12 +57,12 @@ namespace ITI.S3.PI.Chick_End
         */
         public Map()
         {
-            _squares = new Square[FinalVariables.NbCaseHeightMap1, FinalVariables.NbCaseWidthMap1];
+            _nbCaseHeight = 9;
+            _nbCaseWidth = 14;
+            _squares = new Square[_nbCaseHeight, _nbCaseWidth];
             _ways = new List<Way>();
             _towers  = new List<Tower>();
             _ennemis = new List<Ennemi>();
-            _nbCaseHeight = 9;
-            _nbCaseWidth = 14;
 
             // Setting the hen house
             for ( int i = 3; i < 6; i++)
@@ -68,14 +76,14 @@ namespace ITI.S3.PI.Chick_End
                 // Setting the trees
                 if( i < 3 || i > 5)
                 {
-                    for( int j = 0; j < FinalVariables.NbCaseWidthMap1; j++)
+                    for( int j = 0; j < _nbCaseWidth; j++)
                     {
                         _squares[i, j] = new Square( this, i, j, "grass" );
                     }
                 }
                 else if( i == 4)
                 {
-                    for( int j = 1; j < FinalVariables.NbCaseWidthMap1; j++)
+                    for( int j = 1; j < _nbCaseWidth; j++)
                     {
                         _squares[i, j] = new Square( this, i, j, "grass" );
                     }
@@ -112,9 +120,12 @@ namespace ITI.S3.PI.Chick_End
             _ways.Add( w2 );
         }
 
-        public Map(string test )
+        // Constructor of Map lvl 2
+        public Map( string test )
         {
-            _squares = new Square[FinalVariables.NbCaseHeightMap2, FinalVariables.NbCaseWidthMap2];
+            _nbCaseHeight = 11;
+            _nbCaseWidth = 15;
+            _squares = new Square[_nbCaseHeight - 1, _nbCaseWidth - 1];
             _ways = new List<Way>();
             _towers = new List<Tower>();
             _ennemis = new List<Ennemi>();
@@ -157,6 +168,45 @@ namespace ITI.S3.PI.Chick_End
                     _squares[i, j] = new Square( this, i, j, "grass" );
                 }
             }
+
+            // Chaining of the squares
+            for( int i = _nbCaseWidth - 1; i > 2; i--)
+            {
+                _squares[0, i].NextSquare = _squares[0, i - 1];
+            }
+            for( int i = 0; i <= 3; i++)
+            {
+                _squares[i, 2].NextSquare = _squares[i - 1, 2];
+            }
+            for( int i= _nbCaseWidth - 1; i > 1; i--)
+            {
+                _squares[4, i].NextSquare = _squares[4, i - 1];
+            }
+            _squares[4, 0].NextSquare = _squares[5, 0];
+            _squares[6, 0].NextSquare = _squares[5, 0];
+            for( int i = _nbCaseWidth - 1; i > 2; i--)
+            {
+                _squares[_nbCaseHeight - 1, i].NextSquare = _squares[_nbCaseHeight - 1, i - 1];
+            }
+            for( int i = _nbCaseHeight - 1; i > 6; i-- )
+            {
+                _squares[i, 2].NextSquare = _squares[i, 2];
+            }
+            for( int i = _nbCaseWidth - 1; i > 1; i--)
+            {
+                _squares[6, i].NextSquare = _squares[6, i - 1];
+            }
+
+            // Creation of the ways
+            Way w1 = new Way( _squares[0, _nbCaseWidth - 1] );
+            Way w2 = new Way( _squares[4, _nbCaseWidth - 1] );
+            Way w3 = new Way( _squares[6, _nbCaseWidth - 1] );
+            Way w4 = new Way( _squares[_nbCaseHeight - 1, _nbCaseWidth - 1] );
+
+            _ways.Add( w1 );
+            _ways.Add( w2 );
+            _ways.Add( w3 );
+            _ways.Add( w4 );
         }
 
         internal List<Way> Ways
@@ -234,35 +284,30 @@ namespace ITI.S3.PI.Chick_End
             _ennemis.Add(e);
             return e;
         }
-
         public Hyena CreateHyena(Map context)
         {
             Hyena e = new Hyena(context, 30);
             _ennemis.Add(e);
             return e;
         }
-
         public Fox CreateFox(Map context)
         {
             Fox e = new Fox(context, 10);
             _ennemis.Add(e);
             return e;
         }
-
         public Lion CreateLion(Map context)
         {
             Lion e = new Lion(context, 15);
             _ennemis.Add(e);
             return e;
         }
-
         public Anubis CreateAnubis( Map context)
         {
             Anubis e = new Anubis(context, 50);
             _ennemis.Add(e);
             return e;
         }
-
         public Cerberus CreateCerberus(Map context)
         {
             Cerberus e = new Cerberus(context, 100);

@@ -13,6 +13,7 @@ namespace ITI.S3.PI.Chick_End
         protected readonly Square _square;
         internal readonly int _damages;
         protected readonly Square[] _range;
+        protected readonly int cost;
 
         protected Tower( Square context, int damages )
         {
@@ -44,8 +45,6 @@ namespace ITI.S3.PI.Chick_End
         public Ennemi GetClosestEnnemiAttackable()
         {
             return this.GetClosestUnit( _square.Context.Ennemis );
-            //return UnitExtension.GetClosestUnit( this, _square.Context.Ennemis );
-            //return GetClosestUnit<Ennemi>( _square.Context.Ennemis );
         }
 
         public virtual List<Square> ComputeRange()
@@ -82,6 +81,8 @@ namespace ITI.S3.PI.Chick_End
         }
 
         public abstract void Attack(Unit ennemi, int tick);
+
+        public abstract void CreateTower( int line, int column, Map map );
 
         public override void Die()
         {

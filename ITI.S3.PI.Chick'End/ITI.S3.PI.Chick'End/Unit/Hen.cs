@@ -27,5 +27,10 @@ namespace ITI.S3.PI.Chick_End
                 ennemi.Health -= Damages;
             }
         }
+
+        public override void CreateTower( int line, int column, Map map )
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -18,9 +18,8 @@ namespace ITI.S3.PI.Chick_End.GUI
         string _level;
         string _Ssecond;
         string _Sminute;
-        bool sound = true;
-        HenCreater _henCreater = new HenCreater();
-
+        bool _sound = true;
+        HenCreater _henCreater;
 
         public gamecontrol( Controler controler, string level )
         {
@@ -30,7 +29,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             InitializeComponent();
 
             _level = level;
-
+            _henCreater = new HenCreater();
             labelPrice.Text = "";
 
             System.Media.SoundPlayer player = new System.Media.SoundPlayer();
@@ -51,6 +50,16 @@ namespace ITI.S3.PI.Chick_End.GUI
             panelSeed.AllowDrop = true;
             viewMapControler1.AllowDrop = true;
             panel1.AllowDrop = true;
+        }
+
+        public HenCreater HenCreater
+        {
+            get { return _henCreater; }
+        }
+        public int Seeds
+        {
+            get { return _seeds; }
+            set { _seeds = value; }
         }
 
         private void OnCurrentGameChanged( object sender, EventArgs e )
@@ -86,11 +95,9 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             MouseEventsHelper.ChangeFont_MouseEnter( sender );
         }
-
         private void buttonMenu_MouseLeave( object sender, EventArgs e )
         {
             MouseEventsHelper.ChangeFont_MouseLeave( sender );
-
         }
 
         private void viewMapControler1_DragEnter( object sender, DragEventArgs e )
@@ -104,29 +111,12 @@ namespace ITI.S3.PI.Chick_End.GUI
                 e.Effect = DragDropEffects.None;
             }
         }
-        private void pictureBox10_DragEnter( object sender, DragEventArgs e )
-        {
-            if (e.Data.GetDataPresent( DataFormats.Bitmap ))
-            {
-                e.Effect = DragDropEffects.None;
-            }
-            else
-            {
-                e.Effect = DragDropEffects.Copy;
-                Bitmap p10 = new Bitmap( @"OpenedLitter.png" );
-                Graphics g10 = Graphics.FromImage( p10 );
-                g10.DrawImage( p10, 60, 60 );
-                pictureBox10.Image = p10;
 
-            }
-        }
-
+        // Function to create and set units on the map when dragging from the units picturebox to the map
         private void pictureBox1_DragDrop( object sender, DragEventArgs e )
         {
-            PictureBox pb = ((PictureBox)sender);
-            pb.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
+            MouseEventsHelper.DragDrop_UnitPicturebox( sender, e );
         }
-
         private void pictureBox1_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb = ((PictureBox)sender);
@@ -152,14 +142,13 @@ namespace ITI.S3.PI.Chick_End.GUI
                     //viewMapControler1.Context.HenCreater.CreateHen(line, column, viewMapControler1.Context.Map);
                 }
             }
+            this.MouseDown_UnitPicturebox( sender, e, viewMapControler1 );
         }
 
         private void pictureBox2_DragDrop( object sender, DragEventArgs e )
         {
-            PictureBox pb2 = ((PictureBox)sender);
-            pb2.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
+            MouseEventsHelper.DragDrop_UnitPicturebox( sender, e );
         }
-
         private void pictureBox2_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb2 = ((PictureBox)sender);
@@ -184,46 +173,13 @@ namespace ITI.S3.PI.Chick_End.GUI
                     viewMapControler1.Map.CreateInfantryFarmer( line, column, viewMapControler1.Map );
                 }
             }
+            this.MouseDown_UnitPicturebox( sender, e, viewMapControler1 );
         }
 
         private void pictureBox3_DragDrop( object sender, DragEventArgs e )
         {
-            PictureBox pb3 = ((PictureBox)sender);
-            pb3.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
+            MouseEventsHelper.DragDrop_UnitPicturebox( sender, e );
         }
-
-        private void pictureBox4_DragDrop( object sender, DragEventArgs e )
-        {
-            PictureBox pb4 = ((PictureBox)sender);
-            pb4.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
-        }
-
-        private void pictureBox4_MouseDown( object sender, MouseEventArgs e )
-        {
-            PictureBox pb4 = ((PictureBox)sender);
-            pb4.Select();
-            pb4.DoDragDrop( pb4.Image, DragDropEffects.Copy );
-
-            var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
-            int line = topLeftCornerY / (viewMapControler1.Height / 9);
-            int column = topLeftCornerX / (viewMapControler1.Width / 14);
-
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
-            {
-
-            }
-            else
-            {
-                if (_henCreater.GunnerFarmerCost <= _seeds)
-                {
-                    _seeds = _seeds - _henCreater.GunnerFarmerCost;
-                    viewMapControler1.Map.CreateGunnerFarmer( line, column, viewMapControler1.Map );
-                }
-            }
-        }
-
         private void pictureBox3_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb3 = ((PictureBox)sender);
@@ -250,13 +206,40 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
-        private void pictureBox5_DragDrop( object sender, DragEventArgs e )
+        private void pictureBox4_DragDrop( object sender, DragEventArgs e )
+        {
+            MouseEventsHelper.DragDrop_UnitPicturebox( sender, e );
+        }
+        private void pictureBox4_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb4 = ((PictureBox)sender);
-            pb4.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
+            pb4.Select();
+            pb4.DoDragDrop( pb4.Image, DragDropEffects.Copy );
 
+            var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
+            int line = topLeftCornerY / (viewMapControler1.Height / 9);
+            int column = topLeftCornerX / (viewMapControler1.Width / 14);
+
+            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            {
+
+            }
+            else
+            {
+                if (_henCreater.GunnerFarmerCost <= _seeds)
+                {
+                    _seeds = _seeds - _henCreater.GunnerFarmerCost;
+                    viewMapControler1.Map.CreateGunnerFarmer( line, column, viewMapControler1.Map );
+                }
+            }
         }
-
+        
+        private void pictureBox5_DragDrop( object sender, DragEventArgs e )
+        {
+            MouseEventsHelper.DragDrop_UnitPicturebox( sender, e );
+        }
         private void pictureBox5_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb5 = ((PictureBox)sender);
@@ -285,10 +268,8 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void pictureBox6_DragDrop( object sender, DragEventArgs e )
         {
-            PictureBox pb6 = ((PictureBox)sender);
-            pb6.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
+            MouseEventsHelper.DragDrop_UnitPicturebox( sender, e );
         }
-
         private void pictureBox6_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb6 = ((PictureBox)sender);
@@ -317,10 +298,8 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void pictureBox7_DragDrop( object sender, DragEventArgs e )
         {
-            PictureBox pb7 = ((PictureBox)sender);
-            pb7.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
+            MouseEventsHelper.DragDrop_UnitPicturebox( sender, e );
         }
-
         private void pictureBox7_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb7 = ((PictureBox)sender);
@@ -349,10 +328,8 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void pictureBox8_DragDrop( object sender, DragEventArgs e )
         {
-            PictureBox pb8 = ((PictureBox)sender);
-            pb8.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
+            MouseEventsHelper.DragDrop_UnitPicturebox( sender, e );
         }
-
         private void pictureBox8_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb8 = ((PictureBox)sender);
@@ -381,10 +358,8 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void pictureBox9_DragDrop( object sender, DragEventArgs e )
         {
-            PictureBox pb9 = ((PictureBox)sender);
-            pb9.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
+            MouseEventsHelper.DragDrop_UnitPicturebox( sender, e );
         }
-
         private void pictureBox9_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb9 = ((PictureBox)sender);
@@ -411,12 +386,12 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
+        // Functions to delete towers from the map when dragging from the map to the trash picturebox
         private void viewMapControler1_DragDrop( object sender, DragEventArgs e )
         {
             ViewMapControler v = ((ViewMapControler)sender);
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
         }
-
         private void viewMapControler1_MouseDown( object sender, MouseEventArgs e )
         {
             ViewMapControler v = ((ViewMapControler)sender);
@@ -439,6 +414,21 @@ namespace ITI.S3.PI.Chick_End.GUI
                 viewMapControler1.Map.Square[line, column].Tower.Die();
             }
         }
+        private void pictureBox10_DragEnter( object sender, DragEventArgs e )
+        {
+            if (e.Data.GetDataPresent( DataFormats.Bitmap ))
+            {
+                e.Effect = DragDropEffects.None;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.Copy;
+                Bitmap p10 = new Bitmap( @"OpenedLitter.png" );
+                Graphics g10 = Graphics.FromImage( p10 );
+                g10.DrawImage( p10, 60, 60 );
+                pictureBox10.Image = p10;
+            }
+        }
 
         private void viewMapControler1_Resize( object sender, EventArgs e )
         {
@@ -455,6 +445,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             //}
         }
 
+        // Gameloop
         private void timer1_Tick( object sender, EventArgs e )
         {
             _tick++;
@@ -485,7 +476,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             labelSeedNumber.Text = Convert.ToString( _seeds );
 
             //génération du son
-            if (sound == true)
+            if (_sound == true)
             {
                 _countS++;
                 if (_countS == 100)
@@ -509,7 +500,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             if (_controler.FinalForm.CurrentGame.IsLost)
             {
-                if (sound == true)
+                if (_sound == true)
                 {
                     System.Media.SoundPlayer player = new System.Media.SoundPlayer();
                     player.SoundLocation = "defaite.wav";
@@ -526,11 +517,12 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
+        // Function to enable or disable the sound of the game when click on the soundplayer
         private void pictureBox10_Click( object sender, EventArgs e )
         {
-            if (sound == true)
+            if (_sound == true)
             {
-                sound = false;
+                _sound = false;
                 _countS = 90;
                 pictureBox11.Image = new Bitmap( @"muet.png" );
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer();
@@ -539,11 +531,12 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                sound = true;
+                _sound = true;
                 pictureBox11.Image = new Bitmap( "volume.png" );
             }
         }
 
+        // Functions displaying the price of the unit corresponding to its picturebox
         private void pictureBox1_MouseEnter( object sender, EventArgs e )
         {
             labelPrice.Text = Convert.ToString( _henCreater.HenCost );

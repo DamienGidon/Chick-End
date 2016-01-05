@@ -23,6 +23,11 @@ namespace ITI.S3.PI.Chick_End
             }
         }
 
+        public override void CreateTower( int line, int column, Map map )
+        {
+            throw new NotImplementedException();
+        }
+
         //public override List<Square> GetRange()
         //{
         //    throw new NotImplementedException();

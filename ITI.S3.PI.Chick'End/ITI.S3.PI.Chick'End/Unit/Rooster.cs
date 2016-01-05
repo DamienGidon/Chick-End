@@ -41,6 +41,11 @@ namespace ITI.S3.PI.Chick_End
             return list;
         }
 
+        public override void CreateTower( int line, int column, Map map )
+        {
+            throw new NotImplementedException();
+        }
+
         /*
         public override void Remove()
         {

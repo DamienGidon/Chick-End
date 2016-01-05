@@ -15,6 +15,13 @@ namespace ITI.S3.PI.Chick_End
             _health = 500;
         }
 
+        public override void CreateTower( int line, int column, Map map )
+        {
+            Tower t = new Baker(Square.Context.Square[line, column] );
+            Square.Context.Square[line, column].Tower = t;
+            Square.Context.Towers.Add( t );
+        }
+
         public override void Attack(Unit ennemi, int tick)
         {
             
