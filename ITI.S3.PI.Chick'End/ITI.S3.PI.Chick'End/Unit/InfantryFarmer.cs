@@ -17,13 +17,13 @@ namespace ITI.S3.PI.Chick_End
             _health = 100;
             _kind = "human";
             _passivImage = Image.FromFile("InfantryFarmer.png");
-            _attackImage = Image.FromFile("Baker.png");
+            _attackImage = Image.FromFile("InfantryFarmerAttack.png");
             _image = _passivImage;
         }
 
         public override void Attack(Unit ennemi, int tick)
         {
-            foreach (Ennemi e in Square.Context.Ennemis)
+            foreach (Enemy e in Square.Context.Enemies)
             {
                 if (tick % _attackSpeed == 0)
                 {

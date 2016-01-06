@@ -21,7 +21,7 @@ namespace ITI.S3.PI.Chick_End
 
         public override void Attack(Unit ennemi, int tick)
         {
-            foreach (Ennemi e in Square.Context.Ennemis)
+            foreach (Enemy e in Square.Context.Enemies)
             {
                 if ((e.Square == ennemi.Square)
                     || ((e.Square.Line == ennemi.Square.Line) && (e.Square.Column == ennemi.Square.Column + 1))

@@ -63,7 +63,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         public void SpawnFromAnubis()
         {
             List<Anubis> _anubis = new List<Anubis>();
-            foreach( Ennemi e in _game.Map.Ennemis)
+            foreach( Enemy e in _game.Map.Enemies)
             {
                 if (e is Anubis)
                 {
@@ -80,17 +80,17 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         public void SpawnSteak()
         {
-            List<Bucher> _butchers = new List<Bucher>();
+            List<Butcher> _butchers = new List<Butcher>();
             foreach (Tower t in _game.Map.Towers)
             {
-                if (t is Bucher)
+                if (t is Butcher)
                 {
-                    Bucher i = (Bucher)t;
+                    Butcher i = (Butcher)t;
                     _butchers.Add(i);
                 }
             }
 
-            foreach (Bucher a in _butchers)
+            foreach (Butcher a in _butchers)
             {
                 a.Summon(_tick);
             }

@@ -62,7 +62,7 @@ namespace ITI.S3.PI.Chick_End
             List<ExplosiveEgg> _explosiveEggs = new List<ExplosiveEgg>();
             foreach ( EggLauncher e in _map.Eggs)
             {
-                Ennemi enemy = e.GetClosestEnnemiAttackable();
+                Enemy enemy = e.GetClosestEnemyAttackable();
                 if (enemy == null)
                 {
                     if(e.Position.X < (FinalVariables.MapWidthInMeters - 35))
@@ -85,7 +85,7 @@ namespace ITI.S3.PI.Chick_End
                 egg.Die();
             }
 
-            foreach ( Ennemi e in _map.Ennemis)
+            foreach ( Enemy e in _map.Enemies)
             {
                 Tower t = e.GetClosestTowerAttackable();
 
@@ -108,7 +108,7 @@ namespace ITI.S3.PI.Chick_End
                 }
                 else
                 {
-                    if (e is Hyena && t is Bucher)
+                    if (e is Hyena && t is Butcher)
                     {
                         e.Damages = 200;
                     }
@@ -116,13 +116,12 @@ namespace ITI.S3.PI.Chick_End
                     e.AttackAnimate(tick, t.AttackSpeed);
                     if (t.Health <= 0)
                         t.Die();
-
                 }
             }
 
             foreach( Tower t in _map.Towers)
             {
-                Ennemi e = t.GetClosestEnnemiAttackable();
+                Enemy e = t.GetClosestEnemyAttackable();
                 if (e != null)
                 {
                     t.Attack( e, tick );

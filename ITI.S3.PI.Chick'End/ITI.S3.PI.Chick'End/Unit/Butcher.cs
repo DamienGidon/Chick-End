@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 namespace ITI.S3.PI.Chick_End
 {
     [Serializable]
-    public class Bucher : Tower
+    public class Butcher : Tower
     {
 
         Random r = new Random();
 
-        internal Bucher(Square context)
+        internal Butcher(Square context)
             : base( context, 15 )
         {
             _attackSpeed = 100;
