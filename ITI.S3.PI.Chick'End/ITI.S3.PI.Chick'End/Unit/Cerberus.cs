@@ -18,6 +18,8 @@ namespace ITI.S3.PI.Chick_End
             _attackSpeed = 20;
             _passivImage = Image.FromFile("Cerberus.png");
             _attackImage = Image.FromFile("Cerberus.png");
+            _moveImage = Image.FromFile("Cerberus.png");
+
             _image = _passivImage;
             _imageWidth = 80;
             _imageHeight = 70;
