@@ -59,6 +59,7 @@ namespace ITI.S3.PI.Chick_End
         public void Update(int tick)
         {
             List<EggLauncher> _eggLaunchers = new List<EggLauncher>();
+            List<ExplosiveEgg> _explosiveEggs = new List<ExplosiveEgg>();
             foreach ( EggLauncher e in _map.Eggs)
             {
                 Ennemi enemy = e.GetClosestEnnemiAttackable();
@@ -87,16 +88,26 @@ namespace ITI.S3.PI.Chick_End
             foreach ( Ennemi e in _map.Ennemis)
             {
                 Tower t = e.GetClosestTowerAttackable();
+
                 if (t == null)
                 {
-                    e.Move();
+                    if (e is Anubis && tick % e.AttackSpeed >= 0 && tick % e.AttackSpeed <= 10)
+                    {
+                        e.UnitImage = e.AttackImage;
+                    }
+                    else
+                    {
+                        e.Move();
+                        e.UnitImage = e.PassiveImage;
+                    }
                 }
                 else
                 {
                     e.Attack( t, tick );
-                    t.AttackAnimate(tick, t.AttackSpeed);
+                    e.AttackAnimate(tick, t.AttackSpeed);
                     if (t.Health <= 0)
                         t.Die();
+                    
                 }
             }
 
@@ -109,7 +120,24 @@ namespace ITI.S3.PI.Chick_End
                     t.AttackAnimate(tick, t.AttackSpeed);
                     if (e.Health <= 0)
                         e.Die();
+
+                    if (t is ExplosiveEgg)
+                    {
+                        ExplosiveEgg ex = (ExplosiveEgg)t;
+                        if (ex.Exploded == true)
+                        {
+                            _explosiveEggs.Add(ex);
+                        }
+                    }
                 }
+                else
+                {
+                    t.UnitImage = t.PassiveImage;
+                }
+            }
+            foreach (ExplosiveEgg ex in _explosiveEggs)
+            {
+                ex.Die();
             }
         }
     }

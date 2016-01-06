@@ -15,9 +15,9 @@ namespace ITI.S3.PI.Chick_End
         {
             Health = 500;
             Speed = 50;
-            _attackSpeed = 20;
+            _attackSpeed = 60;
             _passivImage = Image.FromFile("Anubis.png");
-            _attackImage = Image.FromFile("Anubis.png");
+            _attackImage = Image.FromFile("AnubisAttack.png");
             _image = _passivImage;
             _imageWidth = 60;
             _imageHeight = 70;
@@ -25,7 +25,7 @@ namespace ITI.S3.PI.Chick_End
 
         public void Summon(int tick)
         {
-            if (tick % 60 == 0)
+            if (tick % _attackSpeed == 0)
             {
                 Context.CreateAnubisWolf(Square.Context, this.GetX, this.GetY);
             }

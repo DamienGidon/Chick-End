@@ -25,6 +25,16 @@ namespace ITI.S3.PI.Chick_End
             get { return _attackSpeed; }
         }
 
+        public Image PassiveImage
+        {
+            get { return _passivImage; }
+        }
+
+        public Image AttackImage
+        {
+            get { return _attackImage; }
+        }
+
         public int Health
         {
             get { return _health;}
@@ -61,6 +71,7 @@ namespace ITI.S3.PI.Chick_End
         public Image UnitImage
         {
             get { return _image; }
+            set { _image = value; }
         }
 
         public abstract void Die();

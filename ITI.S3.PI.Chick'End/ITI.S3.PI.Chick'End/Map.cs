@@ -233,7 +233,14 @@ namespace ITI.S3.PI.Chick_End
             Tower t = new GunnerFarmer( context._squares[ligne, colonne] );
             Square[ligne, colonne].Tower = t;
             _towers.Add( t );
-        }        
+        }
+
+        public void CreateSteak(Map context, int line, int column)
+        {
+            Tower t = new Steak(context._squares[line, column]);
+            Square[line, column].Tower = t;
+            _towers.Add( t );
+        }
 
         public Wolf CreateWolf(Map context)
         {
@@ -299,13 +306,13 @@ namespace ITI.S3.PI.Chick_End
             _eggs.Add(e);
             return e;
         }
+
         public RobotEgg CreateRobotEgg(Map context, int x, int y, int damage)
         {
             RobotEgg e = new RobotEgg(context, damage, x, y - 20);
             _eggs.Add(e);
             return e;
         }
-
 
         public List<Tower> GetTower
         {

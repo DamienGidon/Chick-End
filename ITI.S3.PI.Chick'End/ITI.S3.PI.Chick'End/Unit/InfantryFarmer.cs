@@ -11,13 +11,13 @@ namespace ITI.S3.PI.Chick_End
     public class InfantryFarmer : Tower
     {
         internal InfantryFarmer( Square context )
-            : base( context, 30 )
+            : base( context, 50 )
         {
             _attackSpeed = 20;
-            _health = 5000;
+            _health = 100;
             _kind = "human";
             _passivImage = Image.FromFile("InfantryFarmer.png");
-            _attackImage = Image.FromFile("InfantryFarmer.png");
+            _attackImage = Image.FromFile("Baker.png");
             _image = _passivImage;
         }
 
@@ -27,19 +27,16 @@ namespace ITI.S3.PI.Chick_End
             {
                 if (tick % _attackSpeed == 0)
                 {
-                    if ((e.Square == ennemi.Square)
-                        || ((e.Square.Line == ennemi.Square.Line) && (e.Square.Column == ennemi.Square.Column + 1)))
-                    {
-                        ennemi.Health -= Damages;
-                    }
+                        ennemi.Health -= Damages;   
                 }
             }
         }
 
-        //public override List<Square> GetRange()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public override List<Square> ComputeRange()
+        {
+            return this.GetRange(0);
+        }
+
 
         /*
         public override void Remove()

@@ -10,12 +10,15 @@ namespace ITI.S3.PI.Chick_End
     [Serializable]
     public class ExplosiveEgg : Tower
     {
+        bool _exploded = false;
+
         public ExplosiveEgg(Square context)
-            : base( context, 15 )
+            : base( context, 200 )
         {
-            _health = 50;
+            _attackSpeed = 40;
+            _health = 1000;
             _passivImage = Image.FromFile("ExplosiveEgg.png");
-            _attackImage = Image.FromFile("ExplosiveEgg.png");
+            _attackImage = Image.FromFile("Baker.png");
             _image = _passivImage;
         }
 
@@ -30,8 +33,14 @@ namespace ITI.S3.PI.Chick_End
                     || ((e.Square.Line == ennemi.Square.Line - 1) && (e.Square.Column == ennemi.Square.Column) ))
                 {
                     ennemi.Health -= Damages;
+                    _exploded = true;
                 }
             }
+        }
+
+        public bool Exploded
+        {
+            get { return _exploded; }
         }
 
         public override List<Square> ComputeRange()

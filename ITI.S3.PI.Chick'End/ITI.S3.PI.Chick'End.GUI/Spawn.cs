@@ -19,6 +19,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             _game = Context;
             SpawnAll();
             SpawnFromAnubis();
+            SpawnSteak();
         }
 
         public void SpawnAll()
@@ -67,6 +68,24 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
 
             foreach(Anubis a in _anubis)
+            {
+                a.Summon(_tick);
+            }
+        }
+
+        public void SpawnSteak()
+        {
+            List<Bucher> _butchers = new List<Bucher>();
+            foreach (Tower t in _game.Map.Towers)
+            {
+                if (t is Bucher)
+                {
+                    Bucher i = (Bucher)t;
+                    _butchers.Add(i);
+                }
+            }
+
+            foreach (Bucher a in _butchers)
             {
                 a.Summon(_tick);
             }
