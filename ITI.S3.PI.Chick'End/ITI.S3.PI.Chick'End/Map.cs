@@ -286,6 +286,13 @@ namespace ITI.S3.PI.Chick_End
             return e;
         }
 
+        public Werewolf CreateWerewolf(Map context)
+        {
+            Werewolf e = new Werewolf(context, 75);
+            _ennemis.Add(e);
+            return e;
+        }
+
         public NormalEgg CreateNormalEgg(Map context, int x, int y,int damage)
         {
             NormalEgg e = new NormalEgg(context, damage, x, y-20);
