@@ -4,6 +4,7 @@ using System.Drawing;
 
 namespace ITI.S3.PI.Chick_End
 {
+    [Serializable]
     public class EggLauncher : Unit, IAssailant, IMove
     {
         Map _context;

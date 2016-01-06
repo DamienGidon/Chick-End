@@ -92,8 +92,17 @@ namespace ITI.S3.PI.Chick_End
                     e.Move();
                     e.MoveAnimate(tick);
                 }
+                else if (t is Bucher && e is Fox)
+                {
+                    e.Move();
+                    e.MoveAnimate(tick);
+                }
                 else
                 {
+                    if(e is Hyena && t is Bucher)
+                    {
+                        e.Damages = 200;
+                    }
                     e.Attack( t, tick );
                     e.AttackAnimate(tick, t.AttackSpeed);
                     if (t.Health <= 0)

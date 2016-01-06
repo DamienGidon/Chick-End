@@ -14,7 +14,7 @@ namespace ITI.S3.PI.Chick_End
             : base( context, 15 )
         {
             _attackSpeed = 20;
-            _health = 100;
+            _health = 400;
             _kind = "human";
             _passivImage = Image.FromFile("Butcher.png");
             _attackImage = Image.FromFile("Butcher.png");

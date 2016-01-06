@@ -305,7 +305,12 @@ namespace ITI.S3.PI.Chick_End
             _eggs.Add(e);
             return e;
         }
-
+        public Bullet CreateBullet(Map context, int x, int y, int damage)
+        {
+            Bullet b = new Bullet(context, damage, x, y - 20);
+            _eggs.Add(b);
+            return b;
+        }
 
         public List<Tower> GetTower
         {

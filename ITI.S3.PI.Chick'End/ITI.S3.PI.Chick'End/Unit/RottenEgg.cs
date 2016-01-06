@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
+    [Serializable]
     public class RottenEgg : EggLauncher
     {
 

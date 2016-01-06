@@ -13,8 +13,8 @@ namespace ITI.S3.PI.Chick_End
         public Cerberus( Map context, int damages )
             : base(context, damages)
         {
-            Health = 1000;
-            Speed = 50;
+            Health = 500;
+            Speed = 40;
             _attackSpeed = 20;
             _passivImage = Image.FromFile("Cerberus.png");
             _attackImage = Image.FromFile("Cerberus.png");
