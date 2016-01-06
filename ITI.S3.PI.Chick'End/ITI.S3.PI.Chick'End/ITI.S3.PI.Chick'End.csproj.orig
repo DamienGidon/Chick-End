@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,32 +41,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Anubis.cs" />
-=======
-    <Compile Include="Bucher.cs" />
->>>>>>> 46ef6d0afc723bc6bdef376c76c94f2fe34e50dd
-    <Compile Include="BomberHen.cs" />
-    <Compile Include="Cerberus.cs" />
+    <Compile Include="EggLauncher.cs" />
+    <Compile Include="HenCreater.cs" />
+    <Compile Include="UnitExtension.cs" />
+    <Compile Include="Unit\Anubis.cs" />
+    <Compile Include="Unit\Bucher.cs" />
+    <Compile Include="Unit\BomberHen.cs" />
+    <Compile Include="Unit\Cerberus.cs" />
     <Compile Include="FinalVariables.cs" />
-    <Compile Include="Fox.cs" />
+    <Compile Include="Unit\Fox.cs" />
     <Compile Include="Game.cs" />
-<<<<<<< HEAD
-    <Compile Include="Hyena.cs" />
+    <Compile Include="Unit\Hyena.cs" />
     <Compile Include="IAssailant.cs" />
-    <Compile Include="Lion.cs" />
-=======
-    <Compile Include="Baker.cs" />
-    <Compile Include="ExplosiveEgg.cs" />
->>>>>>> 46ef6d0afc723bc6bdef376c76c94f2fe34e50dd
-    <Compile Include="Rooster.cs" />
-    <Compile Include="InfantryFarmer.cs" />
-    <Compile Include="GunnerFarmer.cs" />
-    <Compile Include="OldHen.cs" />
+    <Compile Include="Unit\Baker.cs" />
+    <Compile Include="Unit\ExplosiveEgg.cs" />
+    <Compile Include="Unit\Lion.cs" />
+    <Compile Include="Unit\NormalEgg.cs" />
+    <Compile Include="Unit\RobotEgg.cs" />
+    <Compile Include="Unit\Rooster.cs" />
+    <Compile Include="Unit\InfantryFarmer.cs" />
+    <Compile Include="Unit\GunnerFarmer.cs" />
+    <Compile Include="Unit\OldHen.cs" />
     <Compile Include="IDie.cs" />
     <Compile Include="Ennemi.cs" />
-    <Compile Include="Hen.cs" />
-    <Compile Include="IAttack.cs" />
+    <Compile Include="Unit\Hen.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="IMove.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,8 +72,15 @@
     <Compile Include="Square.cs" />
     <Compile Include="Tower.cs" />
     <Compile Include="Unit.cs" />
+    <Compile Include="Unit\Bullet.cs" />
+    <Compile Include="Unit\RottenEgg.cs" />
+<<<<<<< HEAD
+    <Compile Include="Unit\Steak.cs" />
+=======
+    <Compile Include="Unit\Werewolf.cs" />
+>>>>>>> 43a7d0a6e3df549730539716ffef1a001c2bd6f0
     <Compile Include="Way.cs" />
-    <Compile Include="Wolf.cs" />
+    <Compile Include="Unit\Wolf.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

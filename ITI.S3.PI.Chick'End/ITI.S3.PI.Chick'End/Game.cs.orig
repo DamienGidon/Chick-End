@@ -10,31 +10,32 @@ namespace ITI.S3.PI.Chick_End
     [Serializable]
     public class Game
     {
-        readonly Map _context;
+        readonly Map _map;
         [NonSerialized]
         readonly Stopwatch _stopwatch;
         bool _isPaused;
-<<<<<<< HEAD
         bool _isLost;
-=======
         HenCreater _henCreater;
->>>>>>> e314d0a0edce945713fa91cada69211c2b6a9616
 
         public Game()
         {
-            _context = new Map();
-            _henCreater = new HenCreater(_context);
+<<<<<<< HEAD
+            List<EggLauncher> _eggLaunchers = new List<EggLauncher>();
+            List<ExplosiveEgg> _explosiveEggs = new List<ExplosiveEgg>();
+=======
+            _map = new Map();
+            _henCreater = new HenCreater(_map);
             _stopwatch = new Stopwatch();
         }
         public Game(string test)
         {
-            _context = new Map(test);
+            _map = new Map(test);
             _stopwatch = new Stopwatch();
         }
 
         public Map Map
         {
-            get { return _context; }
+            get { return _map; }
         }
 
         public Stopwatch Stopwatch
@@ -59,29 +60,129 @@ namespace ITI.S3.PI.Chick_End
             set { _isLost = value; }
         }
 
-        public void Update()
+        public void Update(int tick)
         {
-            foreach( Ennemi e in _context.Ennemis)
+            List<EggLauncher> _eggLaunchers = new List<EggLauncher>();
+>>>>>>> 43a7d0a6e3df549730539716ffef1a001c2bd6f0
+            foreach ( EggLauncher e in _map.Eggs)
+            {
+                Ennemi enemy = e.GetClosestEnnemiAttackable();
+                if (enemy == null)
+                {
+                    if(e.Position.X < (FinalVariables.MapWidthInMeters - 35))
+                    {
+                        e.Move();
+                    }
+                    else
+                    {
+                        _eggLaunchers.Add(e);
+                    }
+                }
+                else
+                {
+                    e.Attack(enemy, tick);
+                    _eggLaunchers.Add(e);
+                }
+            }
+            foreach (EggLauncher egg in _eggLaunchers)
+            {
+                egg.Die();
+<<<<<<< HEAD
+            }
+
+            foreach ( Ennemi e in _map.Ennemis)
+            {
+                Tower t = e.GetClosestTowerAttackable();
+
+                if (t == null)
+                {
+                    if (e is Anubis && tick % e.AttackSpeed >= 0 && tick % e.AttackSpeed <= 10)
+                    {
+                        e.UnitImage = e.AttackImage;
+                    }
+                    else
+                    {
+                        e.Move();
+                        e.UnitImage = e.PassiveImage;
+                    }
+                }
+                else
+                {
+                    e.Attack( t, tick );
+                    e.AttackAnimate(tick, t.AttackSpeed);
+                    if (t.Health <= 0)
+                        t.Die();
+                    
+                }
+            }
+
+            foreach( Tower t in _map.Towers)
+            {
+                Ennemi e = t.GetClosestEnnemiAttackable();
+                if (e != null)
+                {
+                    t.Attack( e, tick );
+                    t.AttackAnimate(tick, t.AttackSpeed);
+                    if (e.Health <= 0)
+                        e.Die();
+
+                    if (t is ExplosiveEgg)
+                    {
+                        ExplosiveEgg ex = (ExplosiveEgg)t;
+                        if (ex.Exploded == true)
+                        {
+                            _explosiveEggs.Add(ex);
+                        }
+                    }
+                }
+                else
+                {
+                    t.UnitImage = t.PassiveImage;
+                }
+            }
+            foreach (ExplosiveEgg ex in _explosiveEggs)
+            {
+                ex.Die();
+            }
+        }
+    }
+}
+=======
+            }
+
+            foreach ( Ennemi e in _map.Ennemis)
             {
                 Tower t = e.GetClosestTowerAttackable();
                 if (t == null)
                 {
                     e.Move();
+                    e.MoveAnimate(tick);
+                }
+                else if (t is Bucher && e is Fox)
+                {
+                    e.Move();
+                    e.MoveAnimate(tick);
                 }
                 else
                 {
-                    e.Attack( t );
+                    if(e is Hyena && t is Bucher)
+                    {
+                        e.Damages = 200;
+                    }
+                    e.Attack( t, tick );
+                    e.AttackAnimate(tick, t.AttackSpeed);
                     if (t.Health <= 0)
                         t.Die();
                 }
             }
 
-            foreach( Tower t in _context.Towers)
+            foreach( Tower t in _map.Towers)
             {
                 Ennemi e = t.GetClosestEnnemiAttackable();
                 if (e != null)
                 {
-                    t.Attack( e );
+                    t.Attack( e, tick );
+                    t.AttackAnimate(tick, t.AttackSpeed);
                     if (e.Health <= 0)
                         e.Die();
                 }
@@ -89,3 +190,4 @@ namespace ITI.S3.PI.Chick_End
         }
     }
 }
+>>>>>>> 43a7d0a6e3df549730539716ffef1a001c2bd6f0
