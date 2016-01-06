@@ -14,7 +14,7 @@ namespace ITI.S3.PI.Chick_End
         protected int _x;
         protected int _y;
         protected int _speed;
-        protected readonly int _damages;
+        protected int _damages;
         protected List<Square> _range;
         public Map _context;
         bool _alreadySlow = false;
@@ -64,6 +64,7 @@ namespace ITI.S3.PI.Chick_End
         public int Damages
         {
             get { return _damages; }
+            set { _damages = value; }
         }
 
         public int Speed

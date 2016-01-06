@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
 namespace ITI.S3.PI.Chick_End.GUI
@@ -28,7 +30,11 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void buttonSave_Click( object sender, EventArgs e )
         {
-            MessageBox.Show( "Your game has been saved." );
+            using (FileStream fs = new FileStream("save.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                BinaryFormatter ser = new BinaryFormatter();
+                ser.Serialize(fs, _controler.FinalForm.CurrentGame);
+            }
         }
 
         private void buttonQuit_Click( object sender, EventArgs e )

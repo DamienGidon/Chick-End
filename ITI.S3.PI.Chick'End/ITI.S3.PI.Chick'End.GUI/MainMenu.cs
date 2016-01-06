@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
 namespace ITI.S3.PI.Chick_End.GUI
@@ -45,20 +47,21 @@ namespace ITI.S3.PI.Chick_End.GUI
             this.Dock = DockStyle.Fill;
         }
 
-        private void buttonContinue_Click( object sender, EventArgs e )
+        private void buttonContinue_Click(object sender, EventArgs e)
         {
-            //gamecontrol g1 = new gamecontrol();
-            //g1.SetPanel(MenuPanel);
-            //this.Controls.Add(g1);
+            using (FileStream fs = new FileStream("save.bin", FileMode.Open, FileAccess.Read, FileShare.None))
+            {
+                BinaryFormatter ser = new BinaryFormatter();
+                Game game = (Game)ser.Deserialize(fs);
+                MenuPanel.Hide();
+                _controler.FinalForm.CurrentGame = game;
+                _controler.DisplayExistingGame();
 
-            //using (FileStream fs = new FileStream("objet.bin", FileMode.Open, FileAccess.Read, FileShare.None))
-            //{
-            //    BinaryFormatter ser = new BinaryFormatter();
-            //    Game game = (Game)ser.Deserialize(fs);
-            //    MenuPanel.Hide();
-            //    //g1.dgv.DataSource = new List<Game> { game };
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                player.SoundLocation = "poule2.wav";
+                player.Play();
 
-            //}
+            }
         }
 
         private void buttonRules_Click( object sender, EventArgs e )

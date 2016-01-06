@@ -8,24 +8,23 @@ using System.Threading.Tasks;
 namespace ITI.S3.PI.Chick_End
 {
     [Serializable]
-    public class Hyena : Ennemi
+    public class Werewolf : Ennemi
     {
-        public Hyena( Map context, int damages )
+        public Werewolf(Map context, int damages)
             : base(context, damages)
         {
-            Health = 50;
-            Speed = 50;
+            Health = 500;
+            Speed = 30;
             _attackSpeed = 20;
-            _passivImage = Image.FromFile("Hyena.png");
-            _attackImage = Image.FromFile("HyenaAttack.png");
-            _moveImage = Image.FromFile("HyenaMove.png");
-
+            _passivImage = Image.FromFile("Werewolf.png");
+            _attackImage = Image.FromFile("WerewolfAttack.png");
+            _moveImage = Image.FromFile("WerewolfMove.png");
             _image = _passivImage;
-            _imageWidth = 40;
-            _imageHeight = 40;
+            _imageWidth = 60;
+            _imageHeight = 50;
         }
 
-        //public override void Attack( Unit opponent )
+        //public override void Attack( Unit opposant )
         //{
         //    throw new NotImplementedException();
         //}
@@ -36,3 +35,4 @@ namespace ITI.S3.PI.Chick_End
         //}
     }
 }
+
