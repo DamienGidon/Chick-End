@@ -10,7 +10,7 @@ namespace ITI.S3.PI.Chick_End
     [Serializable]
     public class Game
     {
-        readonly Map _context;
+        readonly Map _map;
         [NonSerialized]
         readonly Stopwatch _stopwatch;
         bool _isPaused;
@@ -19,19 +19,19 @@ namespace ITI.S3.PI.Chick_End
 
         public Game()
         {
-            _context = new Map();
-            _henCreater = new HenCreater(_context);
+            _map = new Map();
+            _henCreater = new HenCreater(_map);
             _stopwatch = new Stopwatch();
         }
         public Game(string test)
         {
-            _context = new Map(test);
+            _map = new Map(test);
             _stopwatch = new Stopwatch();
         }
 
         public Map Map
         {
-            get { return _context; }
+            get { return _map; }
         }
 
         public Stopwatch Stopwatch
@@ -58,7 +58,33 @@ namespace ITI.S3.PI.Chick_End
 
         public void Update(int tick)
         {
-            foreach ( Ennemi e in _context.Ennemis)
+            List<EggLauncher> _eggLaunchers = new List<EggLauncher>();
+            foreach ( EggLauncher e in _map.Eggs)
+            {
+                Ennemi enemy = e.GetClosestEnnemiAttackable();
+                if (enemy == null)
+                {
+                    if(e.Position.X < (FinalVariables.MapWidthInMeters - 35))
+                    {
+                        e.Move();
+                    }
+                    else
+                    {
+                        _eggLaunchers.Add(e);
+                    }
+                }
+                else
+                {
+                    e.Attack(enemy, tick);
+                    _eggLaunchers.Add(e);
+                }
+            }
+            foreach (EggLauncher egg in _eggLaunchers)
+            {
+                egg.Die();
+            }
+
+            foreach ( Ennemi e in _map.Ennemis)
             {
                 Tower t = e.GetClosestTowerAttackable();
                 if (t == null)
@@ -68,20 +94,19 @@ namespace ITI.S3.PI.Chick_End
                 else
                 {
                     e.Attack( t, tick );
+                    t.AttackAnimate(tick, t.AttackSpeed);
                     if (t.Health <= 0)
                         t.Die();
                 }
-                if (e is Anubis)
-                {
-                }
             }
 
-            foreach( Tower t in _context.Towers)
+            foreach( Tower t in _map.Towers)
             {
                 Ennemi e = t.GetClosestEnnemiAttackable();
                 if (e != null)
                 {
                     t.Attack( e, tick );
+                    t.AttackAnimate(tick, t.AttackSpeed);
                     if (e.Health <= 0)
                         e.Die();
                 }

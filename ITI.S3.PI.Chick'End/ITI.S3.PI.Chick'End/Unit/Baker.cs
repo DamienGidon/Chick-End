@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,10 @@ namespace ITI.S3.PI.Chick_End
             : base( context, 0 )
         {
             _health = 500;
+            _kind = "human";
+            _passivImage = Image.FromFile("Baker.png");
+            _attackImage = Image.FromFile("Baker.png");
+            _image = _passivImage;
         }
 
         public override void CreateTower( int line, int column, Map map )

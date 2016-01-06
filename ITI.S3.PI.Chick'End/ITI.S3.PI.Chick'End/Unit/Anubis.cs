@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,13 +15,19 @@ namespace ITI.S3.PI.Chick_End
         {
             Health = 500;
             Speed = 50;
+            _attackSpeed = 20;
+            _passivImage = Image.FromFile("Anubis.png");
+            _attackImage = Image.FromFile("Anubis.png");
+            _image = _passivImage;
+            _imageWidth = 60;
+            _imageHeight = 70;
         }
 
         public void Summon(int tick)
         {
-            if (tick % 20 == 0)
+            if (tick % 60 == 0)
             {
-                Context.CreateWolf(Square.Context);
+                Context.CreateAnubisWolf(Square.Context, this.GetX, this.GetY);
             }
         }
 

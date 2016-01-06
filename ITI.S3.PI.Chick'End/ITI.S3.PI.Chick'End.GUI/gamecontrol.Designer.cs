@@ -119,7 +119,7 @@
             this.pictureBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox10.BackColor = System.Drawing.Color.Orange;
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(886, 0);
+            this.pictureBox10.Location = new System.Drawing.Point(858, 0);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(55, 52);
             this.pictureBox10.TabIndex = 8;
@@ -131,7 +131,7 @@
             this.pictureBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox11.BackColor = System.Drawing.Color.Orange;
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(825, 0);
+            this.pictureBox11.Location = new System.Drawing.Point(784, 0);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(55, 52);
             this.pictureBox11.TabIndex = 7;
@@ -248,9 +248,8 @@
             this.labelPrice.ForeColor = System.Drawing.Color.DarkGreen;
             this.labelPrice.Location = new System.Drawing.Point(95, 6);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(61, 27);
+            this.labelPrice.Size = new System.Drawing.Size(0, 27);
             this.labelPrice.TabIndex = 1;
-            this.labelPrice.Text = "{price}";
             // 
             // labelPriceT
             // 

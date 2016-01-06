@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,13 +13,18 @@ namespace ITI.S3.PI.Chick_End
         internal Rooster( Square context)
             : base( context, 1500 )
         {
+            _attackSpeed = 20 * 60;
             _health = 50;
+            _kind = "hen";
+            _passivImage = Image.FromFile("Rooster.png");
+            _attackImage = Image.FromFile("Rooster.png");
+            _image = _passivImage;
         }
 
        
         public override void Attack(Unit ennemi, int tick)
         {
-            if (tick % (20 * 60) == 0)
+            if (tick % _attackSpeed == 0)
             {
                 foreach(Ennemi e in Square.Context.Ennemis)
                     ennemi.Health -= Damages;

@@ -12,6 +12,13 @@ namespace ITI.S3.PI.Chick_End.GUI
             b.FlatAppearance.MouseOverBackColor = Color.Transparent;
             b.Refresh();
         }
+<<<<<<< HEAD
+        public static void ChangeFont_MouseLeave( object sender )
+        {
+            Button b = (Button)sender;
+            b.Font = new Font( "Playbill", 25F, FontStyle.Regular, GraphicsUnit.Point, 0 );
+            b.Refresh();
+        }
 
         public static void DragDrop_UnitPicturebox( object sender, DragEventArgs e )
         {
@@ -45,5 +52,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 }
             }
         }
+=======
+>>>>>>> 9c547c9fb0e69b5525bd5aaf4338fc8170042071
     }
 }

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EggLauncher.cs" />
     <Compile Include="HenCreater.cs" />
     <Compile Include="UnitExtension.cs" />
     <Compile Include="Unit\Anubis.cs" />
@@ -55,6 +56,8 @@
     <Compile Include="Unit\Baker.cs" />
     <Compile Include="Unit\ExplosiveEgg.cs" />
     <Compile Include="Unit\Lion.cs" />
+    <Compile Include="Unit\NormalEgg.cs" />
+    <Compile Include="Unit\RobotEgg.cs" />
     <Compile Include="Unit\Rooster.cs" />
     <Compile Include="Unit\InfantryFarmer.cs" />
     <Compile Include="Unit\GunnerFarmer.cs" />
@@ -69,6 +72,7 @@
     <Compile Include="Square.cs" />
     <Compile Include="Tower.cs" />
     <Compile Include="Unit.cs" />
+    <Compile Include="Unit\RottenEgg.cs" />
     <Compile Include="Way.cs" />
     <Compile Include="Unit\Wolf.cs" />
   </ItemGroup>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,20 +13,19 @@ namespace ITI.S3.PI.Chick_End
         internal OldHen( Square context )
             : base( context, 10 )
         {
-            _health = 5000;
+            _attackSpeed = 20;
+            _health = 100;
+            _kind = "hen";
+            _passivImage = Image.FromFile("OldHen.png");
+            _attackImage = Image.FromFile("OldHenAttack.png");
+            _image = _passivImage;
         }
 
         public override void Attack(Unit ennemi, int tick)
         {
-            if (tick % 20 == 0)
+            if (tick % _attackSpeed == 0)
             {
-                Ennemi _ennemi = (Ennemi)ennemi;
-                ennemi.Health -= Damages;
-                if (_ennemi.AlreadySlow == false)
-                {
-                    _ennemi.Speed = _ennemi.Speed * 2;
-                    _ennemi.AlreadySlow = true;
-                }
+                Context.Context.CreateRottenEgg(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 10);
             }
         }
 

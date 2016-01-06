@@ -44,38 +44,38 @@ namespace ITI.S3.PI.Chick_End.GUI
         // Code d'affichage des boutons
         private void buttonBestiary_MouseEnter( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFont_MouseEnter( sender );
+            MouseEventsHelper.ChangeFontSize( sender, 28F );
         }
         private void buttonBestiary_MouseLeave( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFont_MouseLeave( sender );
+            MouseEventsHelper.ChangeFontSize( sender, 25F );
         }
 
         private void buttonResume_MouseEnter( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFont_MouseEnter( sender );
+            MouseEventsHelper.ChangeFontSize( sender, 28F );
         }
         private void buttonResume_MouseLeave( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFont_MouseLeave( sender );
+            MouseEventsHelper.ChangeFontSize( sender, 25F );
         }
 
         private void buttonSave_MouseEnter( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFont_MouseEnter( sender );
+            MouseEventsHelper.ChangeFontSize( sender, 28F );
         }
         private void buttonSave_MouseLeave( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFont_MouseLeave( sender );
+            MouseEventsHelper.ChangeFontSize( sender, 25F );
         }
         
         private void buttonQuit_MouseEnter( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFont_MouseEnter( sender );
+            MouseEventsHelper.ChangeFontSize( sender, 28F );
         }
         private void buttonQuit_MouseLeave( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFont_MouseLeave( sender );
+            MouseEventsHelper.ChangeFontSize( sender, 25F );
         }
     }
 }

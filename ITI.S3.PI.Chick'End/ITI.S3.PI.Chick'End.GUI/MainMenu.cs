@@ -98,93 +98,66 @@ namespace ITI.S3.PI.Chick_End.GUI
         // Rendre les boutons plus propres
         private void ChangeFont_MouseEnter( object sender )
         {
-            Button b = (Button)sender;
-            b.Font = new Font( "Playbill", 58F, FontStyle.Regular, GraphicsUnit.Point, 0 );
-            b.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            b.Refresh();
+            MouseEventsHelper.ChangeFontSize(sender, 58F);
         }
         private void buttonPlay_MouseEnter( object sender, EventArgs e )
         {
-            buttonPlay.Font = new System.Drawing.Font( "Playbill", 58F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)) );
-            buttonPlay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            buttonPlay.Refresh();
-            //ChangeFont_MouseEnter( sender );
+            MouseEventsHelper.ChangeFontSize(sender, 58F);
         }
 
         private void buttonPlay_MouseLeave( object sender, EventArgs e )
         {
-            buttonPlay.Font = new System.Drawing.Font( "Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)) );
-            buttonPlay.Refresh();
+            MouseEventsHelper.ChangeFontSize(sender, 48F);
         }
 
         private void buttonBestiary_MouseEnter( object sender, EventArgs e )
         {
-            //buttonBestiary.Font = new System.Drawing.Font( "Playbill", 58F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)) );
-            //buttonBestiary.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            //buttonBestiary.Refresh();
-            ChangeFont_MouseEnter( sender );
+            MouseEventsHelper.ChangeFontSize(sender, 58F);
         }
 
         private void buttonBestiary_MouseLeave( object sender, EventArgs e )
         {
-            buttonBestiary.Font = new System.Drawing.Font( "Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)) );
-            buttonBestiary.Refresh();
+            MouseEventsHelper.ChangeFontSize(sender, 48F);
         }
 
         private void buttonContinue_MouseEnter( object sender, EventArgs e )
         {
-            //buttonContinue.Font = new System.Drawing.Font( "Playbill", 58F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)) );
-            //buttonContinue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            //buttonContinue.Refresh();
-            ChangeFont_MouseEnter( sender );
+            MouseEventsHelper.ChangeFontSize(sender, 58F);
         }
 
         private void buttonContinue_MouseLeave( object sender, EventArgs e )
         {
-            buttonContinue.Font = new System.Drawing.Font( "Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)) );
-            buttonContinue.Refresh();
+            MouseEventsHelper.ChangeFontSize(sender, 48F);
         }
 
         private void buttonRules_MouseEnter( object sender, EventArgs e )
         {
-            //buttonRules.Font = new System.Drawing.Font( "Playbill", 58F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)) );
-            //buttonRules.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            //buttonRules.Refresh();
-            ChangeFont_MouseEnter( sender );
+            MouseEventsHelper.ChangeFontSize(sender, 58F);
         }
 
         private void buttonRules_MouseLeave( object sender, EventArgs e )
         {
-            buttonRules.Font = new System.Drawing.Font( "Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)) );
-            buttonRules.Refresh();
+            MouseEventsHelper.ChangeFontSize(sender, 48F);
         }
 
         private void buttonLeaderboard_MouseEnter( object sender, EventArgs e )
         {
-            //buttonLeaderboard.Font = new System.Drawing.Font( "Playbill", 58F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)) );
-            //buttonLeaderboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            //buttonLeaderboard.Refresh();
-            ChangeFont_MouseEnter( sender );
+            MouseEventsHelper.ChangeFontSize(sender, 58F);
         }
 
         private void buttonLeaderboard_MouseLeave( object sender, EventArgs e )
         {
-            buttonLeaderboard.Font = new System.Drawing.Font( "Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)) );
-            buttonLeaderboard.Refresh();
+            MouseEventsHelper.ChangeFontSize(sender, 48F);
         }
 
         private void buttonQuit_MouseEnter( object sender, EventArgs e )
         {
-            //buttonQuit.Font = new System.Drawing.Font( "Playbill", 58F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)) );
-            //buttonQuit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            //buttonQuit.Refresh();
-            ChangeFont_MouseEnter( sender );
+            MouseEventsHelper.ChangeFontSize(sender, 58F);
         }
 
         private void buttonQuit_MouseLeave( object sender, EventArgs e )
         {
-            buttonQuit.Font = new System.Drawing.Font( "Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)) );
-            buttonQuit.Refresh();
+            MouseEventsHelper.ChangeFontSize(sender, 48F);
         }
     }
 }

@@ -13,6 +13,7 @@ namespace ITI.S3.PI.Chick_End
         readonly Square[,] _squares;
         readonly List<Ennemi> _ennemis;
         readonly List<Tower> _towers;
+        readonly List<EggLauncher> _eggs;
         readonly int _nbCaseWidth;
         readonly int _nbCaseHeight;
 
@@ -43,6 +44,11 @@ namespace ITI.S3.PI.Chick_End
             get { return _ennemis; }
         }
 
+        public List<EggLauncher> Eggs
+        {
+            get { return _eggs; }
+        }
+
         public int NbCaseWidth
         {
             get { return _nbCaseWidth; }
@@ -63,6 +69,7 @@ namespace ITI.S3.PI.Chick_End
             _ways = new List<Way>();
             _towers  = new List<Tower>();
             _ennemis = new List<Ennemi>();
+            _eggs = new List<EggLauncher>();
 
             // Setting the hen house
             for ( int i = 3; i < 6; i++)
@@ -284,6 +291,15 @@ namespace ITI.S3.PI.Chick_End
             _ennemis.Add(e);
             return e;
         }
+        public Wolf CreateAnubisWolf(Map context, int x, int y)
+        {
+            Wolf e = new Wolf(context, 20);
+            e.GetX = x;
+            e.GetY = y;
+            _ennemis.Add(e);
+            return e;
+        }
+
         public Hyena CreateHyena(Map context)
         {
             Hyena e = new Hyena(context, 30);
@@ -314,6 +330,27 @@ namespace ITI.S3.PI.Chick_End
             _ennemis.Add(e);
             return e;
         }
+
+        public NormalEgg CreateNormalEgg(Map context, int x, int y,int damage)
+        {
+            NormalEgg e = new NormalEgg(context, damage, x, y-20);
+            _eggs.Add(e);
+            return e;
+        }
+
+        public RottenEgg CreateRottenEgg(Map context, int x, int y, int damage)
+        {
+            RottenEgg e = new RottenEgg(context, damage, x, y - 20);
+            _eggs.Add(e);
+            return e;
+        }
+        public RobotEgg CreateRobotEgg(Map context, int x, int y, int damage)
+        {
+            RobotEgg e = new RobotEgg(context, damage, x, y - 20);
+            _eggs.Add(e);
+            return e;
+        }
+
 
         public List<Tower> GetTower
         {

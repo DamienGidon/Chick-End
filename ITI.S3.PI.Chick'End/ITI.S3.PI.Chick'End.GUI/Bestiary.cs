@@ -26,15 +26,12 @@ namespace ITI.S3.PI.Chick_End.GUI
         }
         private void buttonReturn_MouseEnter( object sender, EventArgs e )
         {
-            buttonReturn.Font = new System.Drawing.Font( "Playbill", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)) );
-            buttonReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            buttonReturn.Refresh();
+            MouseEventsHelper.ChangeFontSize(sender, 40F);
         }
 
         private void buttonReturn_MouseLeave( object sender, EventArgs e )
         {
-            buttonReturn.Font = new System.Drawing.Font( "Playbill", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)) );
-            buttonReturn.Refresh();
+            MouseEventsHelper.ChangeFontSize(sender, 30F);
         }
     }
 }

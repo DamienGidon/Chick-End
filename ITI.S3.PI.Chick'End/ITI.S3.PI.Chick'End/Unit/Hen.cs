@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +14,12 @@ namespace ITI.S3.PI.Chick_End
         public Hen(Square context)
             : base( context, 15 )
         {
+            _attackSpeed = 20;
             _health = 100;
+            _kind = "hen";
+            _passivImage = Image.FromFile("HenLeft.png");
+            _attackImage = Image.FromFile("HenAttack.png");
+            _image = _passivImage;
         }
 
         public override List<Square> ComputeRange()
@@ -22,9 +29,9 @@ namespace ITI.S3.PI.Chick_End
 
         public override void Attack(Unit ennemi, int tick)
         {
-            if (tick % 20 == 0)
+            if (tick % _attackSpeed == 0)
             {
-                ennemi.Health -= Damages;
+                Context.Context.CreateNormalEgg(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 15);
             }
         }
 

@@ -11,7 +11,8 @@ namespace ITI.S3.PI.Chick_End.GUI
         int _tick = 0;
         int _countM = 0;
         int _countR = 0;
-        int _countS = 0;
+        int _countS = -20;
+        int _countBaker;
         int _second = 0;
         int _minute = 0;
         int _seeds = 200;
@@ -30,13 +31,6 @@ namespace ITI.S3.PI.Chick_End.GUI
 
             _level = level;
             _henCreater = new HenCreater();
-            labelPrice.Text = "";
-
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-            player.SoundLocation = "bassecour.wav";
-            player.Play();
-
-            
             pictureBox1.AllowDrop = false;
             pictureBox2.AllowDrop = true;
             pictureBox3.AllowDrop = true;
@@ -60,6 +54,17 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             get { return _seeds; }
             set { _seeds = value; }
+        }
+        public int Minute
+        {
+            get { return _minute; }
+            set { _minute = value; }
+        }
+
+        public int Seconde
+        {
+            get { return _second; }
+            set { _second = value; }
         }
 
         private void OnCurrentGameChanged( object sender, EventArgs e )
@@ -93,11 +98,11 @@ namespace ITI.S3.PI.Chick_End.GUI
         
         private void buttonMenu_MouseEnter( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFont_MouseEnter( sender );
+            MouseEventsHelper.ChangeFontSize( sender, 28F );
         }
         private void buttonMenu_MouseLeave( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFont_MouseLeave( sender );
+            MouseEventsHelper.ChangeFontSize( sender, 25F );
         }
 
         private void viewMapControler1_DragEnter( object sender, DragEventArgs e )
@@ -139,7 +144,6 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     _seeds = _seeds - _henCreater.HenCost;
                     viewMapControler1.Map.CreateHen( line, column, viewMapControler1.Map );
-                    //viewMapControler1.Context.HenCreater.CreateHen(line, column, viewMapControler1.Context.Map);
                 }
             }
             this.MouseDown_UnitPicturebox( sender, e, viewMapControler1 );
@@ -471,7 +475,15 @@ namespace ITI.S3.PI.Chick_End.GUI
             if (_countR == 100)
             {
                 _countR = 0;
-                _seeds += 200;
+                foreach(Tower t in viewMapControler1.Map.Towers)
+                {
+                    if(t is Baker)
+                    {
+                        _countBaker++;
+                    }
+                }
+                _seeds += 200 + _countBaker*50;
+                _countBaker = 0;
             }
             labelSeedNumber.Text = Convert.ToString( _seeds );
 
@@ -479,12 +491,12 @@ namespace ITI.S3.PI.Chick_End.GUI
             if (_sound == true)
             {
                 _countS++;
-                if (_countS == 100)
+                if (_countS == 100 || _countS == -1)
                 {
                     System.Media.SoundPlayer player = new System.Media.SoundPlayer();
                     player.SoundLocation = "bassecour.wav";
                     player.Play();
-                    _countS = 0;
+                    _countS = 1;
                 }
             }
 

@@ -11,6 +11,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             InitializeComponent();
             _controler = controler;
+            Anchor = (AnchorStyles.Top);
         }
 
         private void buttonLevel1_Click( object sender, EventArgs e )
@@ -22,15 +23,54 @@ namespace ITI.S3.PI.Chick_End.GUI
 
                 _controler.DisplayNewGame();
 
+                _controler.Gamecontrol.Minute = 0;
+                _controler.Gamecontrol.Seconde = 0;
+
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer();
                 player.SoundLocation = "poule2.wav";
                 player.Play();
+                
             }
         }
 
         private void buttonReturn_Click( object sender, EventArgs e )
         {
             _controler.HideLevelMenu();
+        }
+
+        private void buttonLevel1_MouseEnter(object sender, EventArgs e)
+        {
+            MouseEventsHelper.ChangeFontSize(sender, 34F);
+        }
+
+        private void buttonLevel1_MouseLeave(object sender, EventArgs e)
+        {
+            MouseEventsHelper.ChangeFontSize(sender, 30F);
+        }
+
+        private void buttonReturn_MouseEnter(object sender, EventArgs e)
+        {
+            MouseEventsHelper.ChangeFontSize(sender, 34F);
+        }
+
+        private void buttonReturn_MouseLeave(object sender, EventArgs e)
+        {
+            MouseEventsHelper.ChangeFontSize(sender, 30F);
+        }
+
+        private void buttonLevel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonLevel2_MouseEnter(object sender, EventArgs e)
+        {
+            MouseEventsHelper.ChangeFontSize(sender, 34F);
+        }
+
+        private void buttonLevel2_MouseLeave(object sender, EventArgs e)
+        {
+            MouseEventsHelper.ChangeFontSize(sender, 30F);
         }
     }
 }

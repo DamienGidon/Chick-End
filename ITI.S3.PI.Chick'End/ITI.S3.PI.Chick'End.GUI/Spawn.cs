@@ -18,6 +18,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             _tick = tick;
             _game = Context;
             SpawnAll();
+            SpawnFromAnubis();
         }
 
         public void SpawnAll()
@@ -42,7 +43,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Lion l = _game.Map.CreateLion( _game.Map );
             }
 
-            if (_tick % 6000 == 0)
+            if (_tick % 3000 == 0)
             {
                 Anubis a = _game.Map.CreateAnubis( _game.Map );
             }
@@ -50,6 +51,24 @@ namespace ITI.S3.PI.Chick_End.GUI
             if (_tick % 4000 == 0)
             {
                 Cerberus c = _game.Map.CreateCerberus( _game.Map );
+            }
+        }
+
+        public void SpawnFromAnubis()
+        {
+            List<Anubis> _anubis = new List<Anubis>();
+            foreach( Ennemi e in _game.Map.Ennemis)
+            {
+                if (e is Anubis)
+                {
+                    Anubis i = (Anubis) e;
+                    _anubis.Add(i);
+                }
+            }
+
+            foreach(Anubis a in _anubis)
+            {
+                a.Summon(_tick);
             }
         }
     }
