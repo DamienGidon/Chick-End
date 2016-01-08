@@ -1,6 +1,6 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,40 +11,59 @@ namespace ITI.S3.PI.Chick_End
     public class GunnerFarmer : Tower
     {
         public GunnerFarmer(Square context)
-            : base( context, 200 )
+            : base( context, 15 )
         {
-            _attackSpeed = 20;
             _health = 50;
-            _kind = "human";
-            _passivImage = Image.FromFile("GunnerFarmer.png");
-            _attackImage = Image.FromFile("GunnerFarmerAttack.png");
-            _image = _passivImage;
         }
 
-        public override List<Square> ComputeRange()
+        public override void Attack(Unit ennemi)
         {
-            return this.GetRange(Math.Max(Square.Context.NbCaseHeight, Square.Context.NbCaseWidth));
+            ennemi.Health -= Damages;
         }
-
-        public override void Attack(Unit ennemi, int tick)
-        {
-            if (tick % _attackSpeed == 0)
-            {
-                Context.Context.CreateBullet(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 30);
-            }
-        }
-<<<<<<< HEAD
 
         public override List<Square> ComputeRange()
         {
             return this.GetRange( 6 );
         }
-
-        public override void CreateTower( int line, int column, Map map )
-        {
-            throw new NotImplementedException();
-        }
-=======
->>>>>>> a9659da0741e60180198e6dd1cc6ccfc504a3c60
     }
 }
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ITI.S3.PI.Chick_End
+{
+    [Serializable]
+    public class GunnerFarmer : Tower
+    {
+        public GunnerFarmer(Square context)
+            : base( context, 15 )
+        {
+            _health = 50;
+        }
+
+        public override void Attack(Unit ennemi, int tick)
+        {
+            if (tick % 20 == 0)
+            {
+                ennemi.Health -= Damages;
+            }
+        }
+
+        //public override List<Square> GetRange()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        /*
+        public override void Remove()
+        {
+
+        }
+        */
+    }
+}
+>>>>>>> c46aa1d75325320f5a8dda666a816a5071f5e131

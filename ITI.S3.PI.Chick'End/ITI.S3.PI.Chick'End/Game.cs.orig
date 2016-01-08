@@ -19,6 +19,10 @@ namespace ITI.S3.PI.Chick_End
 
         public Game()
         {
+<<<<<<< HEAD
+            List<EggLauncher> _eggLaunchers = new List<EggLauncher>();
+            List<ExplosiveEgg> _explosiveEggs = new List<ExplosiveEgg>();
+=======
             _map = new Map();
             _henCreater = new HenCreater(_map);
             _stopwatch = new Stopwatch();
@@ -59,10 +63,10 @@ namespace ITI.S3.PI.Chick_End
         public void Update(int tick)
         {
             List<EggLauncher> _eggLaunchers = new List<EggLauncher>();
-            List<ExplosiveEgg> _explosiveEggs = new List<ExplosiveEgg>();
+>>>>>>> 43a7d0a6e3df549730539716ffef1a001c2bd6f0
             foreach ( EggLauncher e in _map.Eggs)
             {
-                Enemy enemy = e.GetClosestEnemyAttackable();
+                Ennemi enemy = e.GetClosestEnnemiAttackable();
                 if (enemy == null)
                 {
                     if(e.Position.X < (FinalVariables.MapWidthInMeters - 35))
@@ -83,9 +87,10 @@ namespace ITI.S3.PI.Chick_End
             foreach (EggLauncher egg in _eggLaunchers)
             {
                 egg.Die();
+<<<<<<< HEAD
             }
 
-            foreach ( Enemy e in _map.Enemies)
+            foreach ( Ennemi e in _map.Ennemis)
             {
                 Tower t = e.GetClosestTowerAttackable();
 
@@ -98,31 +103,22 @@ namespace ITI.S3.PI.Chick_End
                     else
                     {
                         e.Move();
-                        e.MoveAnimate(tick);
-                        //e.UnitImage = e.PassiveImage;
+                        e.UnitImage = e.PassiveImage;
                     }
-                }
-                else if (t is Steak && e is Fox)
-                {
-                    e.Move();
-                    e.MoveAnimate(tick);
                 }
                 else
                 {
-                    if (e is Hyena && t is Butcher)
-                    {
-                        e.Damages = 200;
-                    }
-                    e.Attack(t, tick);
+                    e.Attack( t, tick );
                     e.AttackAnimate(tick, t.AttackSpeed);
                     if (t.Health <= 0)
                         t.Die();
+                    
                 }
             }
 
             foreach( Tower t in _map.Towers)
             {
-                Enemy e = t.GetClosestEnemyAttackable();
+                Ennemi e = t.GetClosestEnnemiAttackable();
                 if (e != null)
                 {
                     t.Attack( e, tick );
@@ -151,3 +147,47 @@ namespace ITI.S3.PI.Chick_End
         }
     }
 }
+=======
+            }
+
+            foreach ( Ennemi e in _map.Ennemis)
+            {
+                Tower t = e.GetClosestTowerAttackable();
+                if (t == null)
+                {
+                    e.Move();
+                    e.MoveAnimate(tick);
+                }
+                else if (t is Bucher && e is Fox)
+                {
+                    e.Move();
+                    e.MoveAnimate(tick);
+                }
+                else
+                {
+                    if(e is Hyena && t is Bucher)
+                    {
+                        e.Damages = 200;
+                    }
+                    e.Attack( t, tick );
+                    e.AttackAnimate(tick, t.AttackSpeed);
+                    if (t.Health <= 0)
+                        t.Die();
+                }
+            }
+
+            foreach( Tower t in _map.Towers)
+            {
+                Ennemi e = t.GetClosestEnnemiAttackable();
+                if (e != null)
+                {
+                    t.Attack( e, tick );
+                    t.AttackAnimate(tick, t.AttackSpeed);
+                    if (e.Health <= 0)
+                        e.Die();
+                }
+            }
+        }
+    }
+}
+>>>>>>> 43a7d0a6e3df549730539716ffef1a001c2bd6f0
