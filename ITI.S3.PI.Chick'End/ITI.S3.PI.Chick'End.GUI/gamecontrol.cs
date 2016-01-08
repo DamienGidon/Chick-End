@@ -134,7 +134,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / 9);
             int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if( line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1 )
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -146,7 +149,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                     viewMapControler1.Map.CreateHen( line, column, viewMapControler1.Map );
                 }
             }
-            this.MouseDown_UnitPicturebox( sender, e, viewMapControler1 );
+            //this.MouseDown_UnitPicturebox( sender, e, viewMapControler1 );
         }
 
         private void pictureBox2_DragDrop( object sender, DragEventArgs e )
@@ -165,7 +168,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / 9);
             int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -177,7 +183,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                     viewMapControler1.Map.CreateInfantryFarmer( line, column, viewMapControler1.Map );
                 }
             }
-            this.MouseDown_UnitPicturebox( sender, e, viewMapControler1 );
+            //this.MouseDown_UnitPicturebox( sender, e, viewMapControler1 );
         }
 
         private void pictureBox3_DragDrop( object sender, DragEventArgs e )
@@ -196,7 +202,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / 9);
             int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -226,7 +235,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / 9);
             int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -256,7 +268,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / 9);
             int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -286,7 +301,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / 9);
             int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -316,7 +334,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / 9);
             int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -346,7 +367,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / 9);
             int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -376,7 +400,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / 9);
             int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
