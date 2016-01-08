@@ -11,7 +11,7 @@ namespace ITI.S3.PI.Chick_End
     {
         readonly List<Way> _ways;
         readonly Square[,] _squares;
-        readonly List<Ennemi> _ennemis;
+        readonly List<Enemy> _enemies;
         readonly List<Tower> _towers;
         readonly List<EggLauncher> _eggs;
         readonly int _nbCaseWidth;
@@ -39,9 +39,9 @@ namespace ITI.S3.PI.Chick_End
             get { return _towers; }
         }
 
-        public List<Ennemi> Ennemis
+        public List<Enemy> Enemies
         {
-            get { return _ennemis; }
+            get { return _enemies; }
         }
 
         public List<EggLauncher> Eggs
@@ -68,7 +68,7 @@ namespace ITI.S3.PI.Chick_End
             _squares = new Square[_nbCaseHeight, _nbCaseWidth];
             _ways = new List<Way>();
             _towers  = new List<Tower>();
-            _ennemis = new List<Ennemi>();
+            _enemies = new List<Enemy>();
             _eggs = new List<EggLauncher>();
 
             // Setting the hen house
@@ -135,7 +135,7 @@ namespace ITI.S3.PI.Chick_End
             _squares = new Square[_nbCaseHeight - 1, _nbCaseWidth - 1];
             _ways = new List<Way>();
             _towers = new List<Tower>();
-            _ennemis = new List<Ennemi>();
+            _enemies = new List<Enemy>();
 
             for ( int i = 0; i <= 3; i++)
             {
@@ -268,7 +268,7 @@ namespace ITI.S3.PI.Chick_End
         }
         public void CreateButcher( int ligne, int colonne, Map context )
         {
-            Tower t = new Bucher( context._squares[ligne, colonne] );
+            Tower t = new Butcher( context._squares[ligne, colonne] );
             Square[ligne, colonne].Tower = t;
             _towers.Add( t );
         }
@@ -283,12 +283,19 @@ namespace ITI.S3.PI.Chick_End
             Tower t = new GunnerFarmer( context._squares[ligne, colonne] );
             Square[ligne, colonne].Tower = t;
             _towers.Add( t );
-        }        
+        }
+
+        public void CreateSteak(Map context, int line, int column)
+        {
+            Tower t = new Steak(context._squares[line, column]);
+            Square[line, column].Tower = t;
+            _towers.Add( t );
+        }
 
         public Wolf CreateWolf(Map context)
         {
             Wolf e = new Wolf(context, 20);
-            _ennemis.Add(e);
+            _enemies.Add(e);
             return e;
         }
         public Wolf CreateAnubisWolf(Map context, int x, int y)
@@ -296,45 +303,45 @@ namespace ITI.S3.PI.Chick_End
             Wolf e = new Wolf(context, 20);
             e.GetX = x;
             e.GetY = y;
-            _ennemis.Add(e);
+            _enemies.Add(e);
             return e;
         }
 
         public Hyena CreateHyena(Map context)
         {
             Hyena e = new Hyena(context, 30);
-            _ennemis.Add(e);
+            _enemies.Add(e);
             return e;
         }
         public Fox CreateFox(Map context)
         {
-            Fox e = new Fox(context, 10);
-            _ennemis.Add(e);
+            Fox e = new Fox(context, 15);
+            _enemies.Add(e);
             return e;
         }
         public Lion CreateLion(Map context)
         {
             Lion e = new Lion(context, 15);
-            _ennemis.Add(e);
+            _enemies.Add(e);
             return e;
         }
         public Anubis CreateAnubis( Map context)
         {
             Anubis e = new Anubis(context, 50);
-            _ennemis.Add(e);
+            _enemies.Add(e);
             return e;
         }
         public Cerberus CreateCerberus(Map context)
         {
             Cerberus e = new Cerberus(context, 100);
-            _ennemis.Add(e);
+            _enemies.Add(e);
             return e;
         }
 
         public Werewolf CreateWerewolf(Map context)
         {
             Werewolf e = new Werewolf(context, 75);
-            _ennemis.Add(e);
+            _enemies.Add(e);
             return e;
         }
 
@@ -351,11 +358,18 @@ namespace ITI.S3.PI.Chick_End
             _eggs.Add(e);
             return e;
         }
+
         public RobotEgg CreateRobotEgg(Map context, int x, int y, int damage)
         {
             RobotEgg e = new RobotEgg(context, damage, x, y - 20);
             _eggs.Add(e);
             return e;
+        }
+        public Bullet CreateBullet(Map context, int x, int y, int damage)
+        {
+            Bullet b = new Bullet(context, damage, x, y - 20);
+            _eggs.Add(b);
+            return b;
         }
     }
 }

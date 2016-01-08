@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
+    [Serializable]
     public class RottenEgg : EggLauncher
     {
 
@@ -20,7 +21,7 @@ namespace ITI.S3.PI.Chick_End
 
         public override void Attack(Unit ennemi, int tick)
         {
-            Ennemi _ennemi = (Ennemi)ennemi;
+            Enemy _ennemi = (Enemy)ennemi;
             ennemi.Health -= Damages;
             if (_ennemi.AlreadySlow == false)
             {

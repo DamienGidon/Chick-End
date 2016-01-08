@@ -4,6 +4,7 @@ using System.Drawing;
 
 namespace ITI.S3.PI.Chick_End
 {
+    [Serializable]
     public class EggLauncher : Unit, IAssailant, IMove
     {
         Map _context;
@@ -72,9 +73,9 @@ namespace ITI.S3.PI.Chick_End
             set { _range = ComputeRange(); }
         }
 
-        public Ennemi GetClosestEnnemiAttackable()
+        public Enemy GetClosestEnemyAttackable()
         {
-            return this.GetClosestUnit(_context.Ennemis);
+            return this.GetClosestUnit(_context.Enemies);
         }
 
         public List<Square> ComputeRange()
@@ -95,9 +96,9 @@ namespace ITI.S3.PI.Chick_End
             get { return _damages; }
         }
 
-        public virtual void Attack(Unit ennemi, int tick)
+        public virtual void Attack(Unit enemy, int tick)
         {
-            ennemi.Health -= Damages;
+            enemy.Health -= Damages;
         }
     }
 }

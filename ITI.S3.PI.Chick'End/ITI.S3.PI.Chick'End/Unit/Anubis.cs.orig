@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ITI.S3.PI.Chick_End
 {
     [Serializable]
-    public class Anubis : Enemy
+    public class Anubis : Ennemi
     {
         public Anubis( Map context, int damages )
             : base(context, damages)
@@ -17,9 +17,13 @@ namespace ITI.S3.PI.Chick_End
             Speed = 50;
             _attackSpeed = 60;
             _passivImage = Image.FromFile("Anubis.png");
+<<<<<<< HEAD
             _attackImage = Image.FromFile("AnubisAttack.png");
+=======
+            _attackImage = Image.FromFile("Anubis.png");
             _moveImage = Image.FromFile("AnubisMove.png");
 
+>>>>>>> 43a7d0a6e3df549730539716ffef1a001c2bd6f0
             _image = _passivImage;
             _imageWidth = 60;
             _imageHeight = 70;

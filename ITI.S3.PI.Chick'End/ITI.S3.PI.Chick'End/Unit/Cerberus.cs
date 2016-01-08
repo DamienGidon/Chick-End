@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 namespace ITI.S3.PI.Chick_End
 {
     [Serializable]
-    public class Cerberus : Ennemi
+    public class Cerberus : Enemy
     {
         public Cerberus( Map context, int damages )
             : base(context, damages)
         {
-            Health = 1000;
-            Speed = 50;
+            Health = 500;
+            Speed = 40;
             _attackSpeed = 20;
             _passivImage = Image.FromFile("Cerberus.png");
             _attackImage = Image.FromFile("CerberusAttack.png");

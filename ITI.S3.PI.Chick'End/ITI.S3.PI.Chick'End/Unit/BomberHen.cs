@@ -36,34 +36,6 @@ namespace ITI.S3.PI.Chick_End
         public override List<Square> ComputeRange()
         {
             return this.GetRange( 6 );
-            //List<Square> squaresInRange = new List<Square>();
-            //int line = _square.Line;
-            //int column = _square.Column;
-
-            //for (int i = column; i < column + 5; i++)
-            //{
-            //    if (_square.Context.Square[line, i].Decoration == "path")
-            //        squaresInRange.Add( _square.Context.Square[line, i] );
-            //    else
-            //        break;
-            //}
-
-            //for (int i = line + 1; i < i+ 4; i++)
-            //{
-            //    if (_square.Context.Square[i, column].Decoration == "path")
-            //        squaresInRange.Add( _square.Context.Square[i, column] );
-            //    else
-            //        break;
-            //}
-
-            //for (int i = line - 1; i >= 0 || i > i - 4; i--)
-            //{
-            //    if (_square.Context.Square[i, column].Decoration == "path")
-            //        squaresInRange.Add( _square.Context.Square[i, column] );
-            //    else
-            //        break;
-            //}
-            //return squaresInRange;
         }
 
         public override void CreateTower( int line, int column, Map map )

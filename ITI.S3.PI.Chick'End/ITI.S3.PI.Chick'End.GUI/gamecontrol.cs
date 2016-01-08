@@ -139,7 +139,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
-
+                
             }
             else
             {
@@ -530,7 +530,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             //génération ennemis
             Spawn s = new Spawn( _tick, _controler.FinalForm.CurrentGame );
 
-            foreach (Ennemi en in viewMapControler1.Map.Ennemis)
+            foreach (Enemy en in viewMapControler1.Map.Enemies)
             {
                 if (en.Way.Next.Decoration == "HomeHen")
                 {

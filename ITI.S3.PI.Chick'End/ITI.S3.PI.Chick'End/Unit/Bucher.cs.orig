@@ -1,0 +1,96 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+<<<<<<< HEAD
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ITI.S3.PI.Chick_End
+{
+    [Serializable]
+    public class Bucher : Tower
+    {
+
+        Random r = new Random();
+
+        internal Bucher(Square context)
+            : base( context, 15 )
+        {
+            _attackSpeed = 100;
+            _health = 100;
+            _kind = "human";
+            _passivImage = Image.FromFile("Butcher.png");
+            _attackImage = Image.FromFile("ButcherSummon.png");
+            _image = _passivImage;
+        }
+
+        public override void Attack(Unit ennemi, int tick)
+        {
+            
+        }
+
+        public void Summon(int tick)
+        {
+            Square square;
+            if (tick % _attackSpeed == 0)
+            {
+                do
+                {
+                    square = _range[ r.Next( 0, _range.Count() ) ];
+                } while (square.Tower != null);
+                Context.Context.CreateSteak(Square.Context, square.Line, square.Column);
+            }
+        }
+
+        /*
+        public override void Remove()
+        {
+
+        }
+        */
+    }
+}
+=======
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ITI.S3.PI.Chick_End
+{
+    [Serializable]
+    public class Bucher : Tower
+    {
+        internal Bucher(Square context)
+            : base( context, 15 )
+        {
+            _attackSpeed = 20;
+            _health = 400;
+            _kind = "human";
+            _passivImage = Image.FromFile("Butcher.png");
+            _attackImage = Image.FromFile("Butcher.png");
+            _image = _passivImage;
+        }
+
+        public override void Attack(Unit ennemi, int tick)
+        {
+            if (tick % _attackSpeed == 0)
+            {
+                ennemi.Health -= Damages;
+            }
+        }
+
+        //public override List<Square> GetRange()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        /*
+        public override void Remove()
+        {
+
+        }
+        */
+    }
+}
+>>>>>>> 43a7d0a6e3df549730539716ffef1a001c2bd6f0

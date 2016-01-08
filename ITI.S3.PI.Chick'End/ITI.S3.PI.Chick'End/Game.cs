@@ -59,9 +59,10 @@ namespace ITI.S3.PI.Chick_End
         public void Update(int tick)
         {
             List<EggLauncher> _eggLaunchers = new List<EggLauncher>();
+            List<ExplosiveEgg> _explosiveEggs = new List<ExplosiveEgg>();
             foreach ( EggLauncher e in _map.Eggs)
             {
-                Ennemi enemy = e.GetClosestEnnemiAttackable();
+                Enemy enemy = e.GetClosestEnemyAttackable();
                 if (enemy == null)
                 {
                     if(e.Position.X < (FinalVariables.MapWidthInMeters - 35))
@@ -84,17 +85,34 @@ namespace ITI.S3.PI.Chick_End
                 egg.Die();
             }
 
-            foreach ( Ennemi e in _map.Ennemis)
+            foreach ( Enemy e in _map.Enemies)
             {
                 Tower t = e.GetClosestTowerAttackable();
+
                 if (t == null)
+                {
+                    if (e is Anubis && tick % e.AttackSpeed >= 0 && tick % e.AttackSpeed <= 10)
+                    {
+                        e.UnitImage = e.AttackImage;
+                    }
+                    else
+                    {
+                        e.Move();
+                        e.UnitImage = e.PassiveImage;
+                    }
+                }
+                else if (t is Steak && e is Fox)
                 {
                     e.Move();
                     e.MoveAnimate(tick);
                 }
                 else
                 {
-                    e.Attack( t, tick );
+                    if (e is Hyena && t is Butcher)
+                    {
+                        e.Damages = 200;
+                    }
+                    e.Attack(t, tick);
                     e.AttackAnimate(tick, t.AttackSpeed);
                     if (t.Health <= 0)
                         t.Die();
@@ -103,14 +121,31 @@ namespace ITI.S3.PI.Chick_End
 
             foreach( Tower t in _map.Towers)
             {
-                Ennemi e = t.GetClosestEnnemiAttackable();
+                Enemy e = t.GetClosestEnemyAttackable();
                 if (e != null)
                 {
                     t.Attack( e, tick );
                     t.AttackAnimate(tick, t.AttackSpeed);
                     if (e.Health <= 0)
                         e.Die();
+
+                    if (t is ExplosiveEgg)
+                    {
+                        ExplosiveEgg ex = (ExplosiveEgg)t;
+                        if (ex.Exploded == true)
+                        {
+                            _explosiveEggs.Add(ex);
+                        }
+                    }
                 }
+                else
+                {
+                    t.UnitImage = t.PassiveImage;
+                }
+            }
+            foreach (ExplosiveEgg ex in _explosiveEggs)
+            {
+                ex.Die();
             }
         }
     }
