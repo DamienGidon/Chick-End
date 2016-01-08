@@ -32,7 +32,7 @@ namespace ITI.S3.PI.Chick_End
             get
             {
                 List<Unit> AllUnits = new List<Unit>();
-                foreach( Ennemi e in _ennemis)
+                foreach(Enemy e in _ennemis)
                 {
                     AllUnits.Add( e );
                 }
@@ -47,7 +47,7 @@ namespace ITI.S3.PI.Chick_End
         {
             get { return _towers; }
         }
-        public List<Enemy> Ennemis
+        public List<Enemy> Enemies
         {
             get { return _ennemis; }
         }
@@ -75,7 +75,7 @@ namespace ITI.S3.PI.Chick_End
             _squares = new Square[_nbCaseHeight, _nbCaseWidth];
             _ways = new List<Way>();
             _towers  = new List<Tower>();
-            _ennemis = new List<Ennemi>();
+            _ennemis = new List<Enemy>();
             _eggs = new List<EggLauncher>();
 
             // Setting the hen house
@@ -142,7 +142,7 @@ namespace ITI.S3.PI.Chick_End
             _squares = new Square[_nbCaseHeight - 1, _nbCaseWidth - 1];
             _ways = new List<Way>();
             _towers = new List<Tower>();
-            _ennemis = new List<Ennemi>();
+            _ennemis = new List<Enemy>();
 
             for (int i = 0; i <= 3; i++)
             {
@@ -261,7 +261,7 @@ namespace ITI.S3.PI.Chick_End
         }
         public void CreateButcher( int ligne, int colonne, Map context )
         {
-            Tower t = new Bucher( context._squares[ligne, colonne] );
+            Tower t = new Butcher( context._squares[ligne, colonne] );
             Square[ligne, colonne].Tower = t;
             _towers.Add( t );
         }
