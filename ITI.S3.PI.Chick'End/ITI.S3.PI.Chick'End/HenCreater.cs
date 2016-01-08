@@ -15,7 +15,6 @@ namespace ITI.S3.PI.Chick_End
         int _explosiveEgg = 400;
         int _oldHenCost = 150;
         int _roosterCost = 1000;
-
         int _bakerCost = 400;
         int _butcherCost = 300;
         int _infantryFamerCost = 300;
@@ -68,6 +67,7 @@ namespace ITI.S3.PI.Chick_End
 
         public int InfantryFarmerCost
         {
+
             get { return _infantryFamerCost; }
         }
 

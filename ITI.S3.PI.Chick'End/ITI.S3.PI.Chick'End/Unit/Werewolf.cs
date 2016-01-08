@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ITI.S3.PI.Chick_End
 {
     [Serializable]
-    public class Werewolf : Enemy
+    public class Werewolf : Ennemi
     {
         public Werewolf(Map context, int damages)
             : base(context, damages)
