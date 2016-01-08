@@ -1,53 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ITI.S3.PI.Chick_End
+{
+    [Serializable]
 <<<<<<< HEAD
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ITI.S3.PI.Chick_End
-{
-    [Serializable]
-    public class Werewolf : Ennemi
-    {
-        public Werewolf(Map context, int damages)
-            : base(context, damages)
-        {
-            Health = 500;
-            Speed = 30;
-            _attackSpeed = 20;
-            _passivImage = Image.FromFile("Werewolf.png");
-            _attackImage = Image.FromFile("WerewolfAttack.png");
-            _moveImage = Image.FromFile("WerewolfMove.png");
-            _image = _passivImage;
-            _imageWidth = 60;
-            _imageHeight = 50;
-        }
-
-        //public override void Attack( Unit opposant )
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public override void Move()
-        //{
-        //    throw new NotImplementedException();
-        //}
-    }
-}
-=======
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ITI.S3.PI.Chick_End
-{
-    [Serializable]
     public class Werewolf : Enemy
+=======
+    public class Werewolf : Ennemi
+>>>>>>> 90706b72103acde2127f3f4446c55d6b3e76c7e9
     {
         public Werewolf(Map context, int damages)
             : base(context, damages)
@@ -74,5 +39,4 @@ namespace ITI.S3.PI.Chick_End
         //}
     }
 }
->>>>>>> 882ba610ac657151279576b4f0865abd32c69890
 
