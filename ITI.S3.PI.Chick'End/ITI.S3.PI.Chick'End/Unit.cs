@@ -56,7 +56,7 @@ namespace ITI.S3.PI.Chick_End
 
         public virtual void MoveAnimate(int tick)
         {
-            if (tick % 15 >= 0 && tick % 15 <= 7)
+            if (tick % 13 >= 0 && tick % 13 <= 7)
             {
                 _image = _moveImage;
             }

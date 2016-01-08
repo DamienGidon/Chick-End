@@ -23,40 +23,40 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         public void SpawnAll()
         {
-            //if (_tick % 60 == 0)
-            //{
-            //    Wolf w = _game.Map.CreateWolf(_game.Map);
-            //}
-
-            //if (_tick % 200 == 0)
-            //{
-            //    Fox f = _game.Map.CreateFox(_game.Map);
-            //}
-
-            //if (_tick % 500 == 0)
-            //{
-            //    Hyena h = _game.Map.CreateHyena(_game.Map);
-            //}
-
-            //if (_tick % 120 == 0)
-            //{
-            //    Lion l = _game.Map.CreateLion(_game.Map);
-            //}
-
-            //if (_tick % 3000 == 0)
-            //{
-            //    Anubis a = _game.Map.CreateAnubis(_game.Map);
-            //}
-
             if (_tick % 60 == 0)
+            {
+                Wolf w = _game.Map.CreateWolf(_game.Map);
+            }
+
+            if (_tick % 200 == 0)
+            {
+                Fox f = _game.Map.CreateFox(_game.Map);
+            }
+
+            if (_tick % 500 == 0)
+            {
+                Hyena h = _game.Map.CreateHyena(_game.Map);
+            }
+
+            if (_tick % 120 == 0)
+            {
+                Lion l = _game.Map.CreateLion(_game.Map);
+            }
+
+            if (_tick % 3000 == 0)
+            {
+                Anubis a = _game.Map.CreateAnubis(_game.Map);
+            }
+
+            if (_tick % 5000 == 0)
             {
                 Werewolf w = _game.Map.CreateWerewolf(_game.Map);
             }
 
-            //if (_tick % 4000 == 0)
-            //{
-            //    Cerberus c = _game.Map.CreateCerberus( _game.Map );
-            //}
+            if (_tick % 4000 == 0)
+            {
+                Cerberus c = _game.Map.CreateCerberus(_game.Map);
+            }
         }
 
         public void SpawnFromAnubis()
