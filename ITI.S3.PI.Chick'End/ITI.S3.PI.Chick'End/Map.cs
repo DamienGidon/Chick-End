@@ -357,11 +357,5 @@ namespace ITI.S3.PI.Chick_End
             _eggs.Add(e);
             return e;
         }
-
-
-        public List<Tower> GetTower
-        {
-            get { return _towers; }
-        }
     }
 }
