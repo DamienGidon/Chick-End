@@ -87,7 +87,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 }
 
                 //On affiche les ennemis
-                foreach (Ennemi en in Map.Ennemis)
+                foreach (Enemy en in Map.Enemies)
                 {
                     int x = en.Position.X;
                     int y = en.Position.Y;

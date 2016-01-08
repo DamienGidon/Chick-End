@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ITI.S3.PI.Chick_End
 {
     [Serializable]
-    public abstract class Ennemi : Unit, IAssailant, IMove
+    public abstract class Enemy : Unit, IAssailant, IMove
     {
         protected Way _way;
         protected int _x;
@@ -21,7 +21,7 @@ namespace ITI.S3.PI.Chick_End
 
         protected static Random _r = new Random();
 
-        public Ennemi( Map context, int damages )
+        public Enemy( Map context, int damages )
         {
             _context = context;
             _damages = damages;
@@ -147,7 +147,7 @@ namespace ITI.S3.PI.Chick_End
 
         public override void Die()
         {
-            _context.Ennemis.Remove( this );
+            _context.Enemies.Remove( this );
         }
     }
 }

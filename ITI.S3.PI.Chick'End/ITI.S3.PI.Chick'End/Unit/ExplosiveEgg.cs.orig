@@ -16,7 +16,11 @@ namespace ITI.S3.PI.Chick_End
             : base( context, 200 )
         {
             _attackSpeed = 40;
+<<<<<<< HEAD
+            _health = 50;
+=======
             _health = 1000;
+>>>>>>> a9659da0741e60180198e6dd1cc6ccfc504a3c60
             _passivImage = Image.FromFile("ExplosiveEgg.png");
             _attackImage = Image.FromFile("Baker.png");
             _image = _passivImage;
@@ -48,6 +52,11 @@ namespace ITI.S3.PI.Chick_End
             List<Square> range = new List<Square>();
             range.Add( Square );
             return range;
+        }
+
+        public override void CreateTower( int line, int column, Map map )
+        {
+            throw new NotImplementedException();
         }
     }
 }

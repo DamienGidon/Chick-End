@@ -45,7 +45,7 @@
     <Compile Include="HenCreater.cs" />
     <Compile Include="UnitExtension.cs" />
     <Compile Include="Unit\Anubis.cs" />
-    <Compile Include="Unit\Bucher.cs" />
+    <Compile Include="Unit\Butcher.cs" />
     <Compile Include="Unit\BomberHen.cs" />
     <Compile Include="Unit\Cerberus.cs" />
     <Compile Include="FinalVariables.cs" />
@@ -63,7 +63,7 @@
     <Compile Include="Unit\GunnerFarmer.cs" />
     <Compile Include="Unit\OldHen.cs" />
     <Compile Include="IDie.cs" />
-    <Compile Include="Ennemi.cs" />
+    <Compile Include="Enemy.cs" />
     <Compile Include="Unit\Hen.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="IMove.cs" />
@@ -74,6 +74,7 @@
     <Compile Include="Unit.cs" />
     <Compile Include="Unit\Bullet.cs" />
     <Compile Include="Unit\RottenEgg.cs" />
+    <Compile Include="Unit\Steak.cs" />
     <Compile Include="Unit\Werewolf.cs" />
     <Compile Include="Way.cs" />
     <Compile Include="Unit\Wolf.cs" />

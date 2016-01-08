@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -7,25 +8,24 @@ using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-<<<<<<< HEAD
-    public abstract class Tower : Unit, IAssailant
-=======
     [Serializable]
-    public abstract class Tower : Unit, IAssailant, IRemove
->>>>>>> origin/dev
+    public abstract class Tower : Unit, IAssailant
     {
         protected readonly Square _square;
         internal readonly int _damages;
         protected readonly Square[] _range;
+        protected readonly int _cost;
+        public Square _context;
 
         protected Tower( Square context, int damages )
         {
+            _context = context;
             _square = context;
             _range = ComputeRange().ToArray();
             _damages = damages;
         }
 
-        public Square Square
+        public override Square Square
         {
             get { return _square; }
         }
@@ -34,15 +34,10 @@ namespace ITI.S3.PI.Chick_End
         {
             get { return _damages; }
         }
-
-        public override Square Square
-        {
-            get { return _square; }
-        }
-
+       
         public override Point Position
         {
-            get { return new Point( _square.Column * FinalVariables._squareWidthInMeters + FinalVariables._squareWidthInMeters / 2, _square.Line * FinalVariables._squareHeightInMeters + FinalVariables._squareHeightInMeters / 2 ); }
+            get { return new Point( _square.Column * FinalVariables.SquareWidthInMeters + FinalVariables.SquareWidthInMeters / 2, _square.Line * FinalVariables.SquareHeightInMeters + FinalVariables.SquareHeightInMeters / 2 ); }
         }
 
         public IReadOnlyList<Square> Range
@@ -53,8 +48,6 @@ namespace ITI.S3.PI.Chick_End
         public Ennemi GetClosestEnnemiAttackable()
         {
             return this.GetClosestUnit( _square.Context.Ennemis );
-            //return UnitExtension.GetClosestUnit( this, _square.Context.Ennemis );
-            //return GetClosestUnit<Ennemi>( _square.Context.Ennemis );
         }
 
         public virtual List<Square> ComputeRange()
@@ -63,7 +56,7 @@ namespace ITI.S3.PI.Chick_End
             int line = _square.Line;
             int column = _square.Column;
 
-            for (int i = column; i < FinalVariables._nbCaseWidth; i++)
+            for (int i = column; i < FinalVariables.NbCaseWidthMap1; i++)
             {
                 if (_square.Context.Square[line, i].Decoration == "path")
                     squaresInRange.Add( _square.Context.Square[line, i] );
@@ -71,7 +64,7 @@ namespace ITI.S3.PI.Chick_End
                     break;
             }
 
-            for (int i = line + 1; i < FinalVariables._nbCaseHeight; i++)
+            for (int i = line + 1; i < FinalVariables.NbCaseHeightMap1; i++)
             {
                 if (_square.Context.Square[i, column].Decoration == "path")
                     squaresInRange.Add( _square.Context.Square[i, column] );
@@ -90,9 +83,118 @@ namespace ITI.S3.PI.Chick_End
             return squaresInRange;
         }
 
-        public virtual void Attack( Unit ennemi )
+        public abstract void Attack(Unit ennemi, int tick);
+
+        public abstract void CreateTower( int line, int column, Map map );
+
+        public override void Die()
         {
-            throw new NotImplementedException();
+            _square.Context.Towers.Remove( this );
+            _square.Tower = null;
+        }
+
+        public Square Context
+        {
+            get { return _context; }
         }
     }
 }
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ITI.S3.PI.Chick_End
+{
+    [Serializable]
+    public abstract class Tower : Unit, IAssailant
+    {
+        protected readonly Square _square;
+        internal readonly int _damages;
+        protected readonly Square[] _range;
+        public Square _context;
+
+        protected Tower( Square context, int damages )
+        {
+            _context = context;
+            _square = context;
+            _range = ComputeRange().ToArray();
+            _damages = damages;
+        }
+
+        public override Square Square
+        {
+            get { return _square; }
+        }
+
+        public int Damages
+        {
+            get { return _damages; }
+        }
+       
+        public override Point Position
+        {
+            get { return new Point( _square.Column * FinalVariables.SquareWidthInMeters + FinalVariables.SquareWidthInMeters / 2, _square.Line * FinalVariables.SquareHeightInMeters + FinalVariables.SquareHeightInMeters / 2 ); }
+        }
+
+        public IReadOnlyList<Square> Range
+        {
+            get { return _range; }
+        }
+
+        public Enemy GetClosestEnemyAttackable()
+        {
+            return this.GetClosestUnit( _square.Context.Enemies );
+        }
+
+        public virtual List<Square> ComputeRange()
+        {
+            List<Square> squaresInRange = new List<Square>();
+            int line = _square.Line;
+            int column = _square.Column;
+
+            for (int i = column; i < FinalVariables.NbCaseWidthMap1; i++)
+            {
+                if (_square.Context.Square[line, i].Decoration == "path")
+                    squaresInRange.Add( _square.Context.Square[line, i] );
+                else
+                    break;
+            }
+
+            for (int i = line + 1; i < FinalVariables.NbCaseHeightMap1; i++)
+            {
+                if (_square.Context.Square[i, column].Decoration == "path")
+                    squaresInRange.Add( _square.Context.Square[i, column] );
+                else
+                    break;
+            }
+
+            for (int i = line - 1; i >= 0; i--)
+            {
+                if (_square.Context.Square[i, column].Decoration == "path")
+                    squaresInRange.Add( _square.Context.Square[i, column] );
+                else
+                    break;
+            }
+
+            return squaresInRange;
+        }
+
+        public abstract void Attack(Unit ennemi, int tick);
+
+        public override void Die()
+        {
+            _square.Context.Towers.Remove( this );
+            _square.Tower = null;
+        }
+
+        public Square Context
+        {
+            get { return _context; }
+        }
+    }
+}
+>>>>>>> a9659da0741e60180198e6dd1cc6ccfc504a3c60

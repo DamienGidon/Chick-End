@@ -26,7 +26,7 @@ namespace ITI.S3.PI.Chick_End
         {
             if (tick % _attackSpeed == 0)
             {
-                foreach(Ennemi e in Square.Context.Ennemis)
+                foreach(Enemy e in Square.Context.Enemies)
                     ennemi.Health -= Damages;
             }
         }
@@ -46,7 +46,6 @@ namespace ITI.S3.PI.Chick_End
             }
             return list;
         }
-
         /*
         public override void Remove()
         {
