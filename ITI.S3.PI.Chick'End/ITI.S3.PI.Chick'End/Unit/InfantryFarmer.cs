@@ -36,13 +36,6 @@ namespace ITI.S3.PI.Chick_End
         {
             return this.GetRange(0);
         }
-
-        public override void CreateTower( int line, int column, Map map )
-        {
-            throw new NotImplementedException();
-        }
-
-
         /*
         public override void Remove()
         {

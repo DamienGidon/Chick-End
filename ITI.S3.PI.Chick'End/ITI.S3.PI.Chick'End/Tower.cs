@@ -84,8 +84,6 @@ namespace ITI.S3.PI.Chick_End
 
         public abstract void Attack(Unit ennemi, int tick);
 
-        public abstract void CreateTower( int line, int column, Map map );
-
         public override void Die()
         {
             _square.Context.Towers.Remove( this );

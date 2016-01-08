@@ -34,10 +34,5 @@ namespace ITI.S3.PI.Chick_End
                 Context.Context.CreateNormalEgg(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 15);
             }
         }
-
-        public override void CreateTower( int line, int column, Map map )
-        {
-            throw new NotImplementedException();
-        }
     }
 }
