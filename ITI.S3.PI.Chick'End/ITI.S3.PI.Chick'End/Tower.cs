@@ -13,7 +13,6 @@ namespace ITI.S3.PI.Chick_End
         protected readonly Square _square;
         internal readonly int _damages;
         protected readonly Square[] _range;
-        protected readonly int _cost;
         public Square _context;
 
         protected Tower( Square context, int damages )

@@ -17,6 +17,37 @@ namespace ITI.S3.PI.Chick_End
         readonly int _nbCaseWidth;
         readonly int _nbCaseHeight;
 
+<<<<<<< HEAD
+        public Square[,] Square
+        {
+            get { return _squares; }
+        }
+        public Square this[int ligne, int colonne]
+        {
+            get { return _squares[ligne, colonne]; }
+        }
+        internal List<Way> Ways
+        {
+            get { return _ways; }
+        }
+        
+        List<Unit> AllUnits
+        {
+            get
+            {
+                List<Unit> AllUnits = new List<Unit>();
+                foreach(Enemy e in _ennemis)
+                {
+                    AllUnits.Add( e );
+                }
+                foreach( Tower t in _towers)
+                {
+                    AllUnits.Add( t );
+                }
+                return AllUnits;
+            }
+        }
+=======
         //List<Unit> AllUnits
         //{
         //    get
@@ -26,12 +57,15 @@ namespace ITI.S3.PI.Chick_End
         //    }
         //}
 
-                foreach(Enemy e in _ennemis)
+>>>>>>> ee165d879e3572951ac5aba1e1d1ede72e4df12f
         public List<Tower> Towers
         {
             get { return _towers; }
         }
+<<<<<<< HEAD
+=======
 
+>>>>>>> ee165d879e3572951ac5aba1e1d1ede72e4df12f
         public List<Enemy> Enemies
         {
             get { return _enemies; }
@@ -59,7 +93,11 @@ namespace ITI.S3.PI.Chick_End
             _squares = new Square[FinalVariables.NbCaseHeightMap1, FinalVariables.NbCaseWidthMap1];
             _ways = new List<Way>();
             _towers  = new List<Tower>();
+<<<<<<< HEAD
+            _ennemis = new List<Enemy>();
+=======
             _enemies = new List<Enemy>();
+>>>>>>> ee165d879e3572951ac5aba1e1d1ede72e4df12f
             _eggs = new List<EggLauncher>();
             _nbCaseHeight = 9;
             _nbCaseWidth = 14;
@@ -125,7 +163,11 @@ namespace ITI.S3.PI.Chick_End
             _squares = new Square[FinalVariables.NbCaseHeightMap2, FinalVariables.NbCaseWidthMap2];
             _ways = new List<Way>();
             _towers = new List<Tower>();
+<<<<<<< HEAD
+            _ennemis = new List<Enemy>();
+=======
             _enemies = new List<Enemy>();
+>>>>>>> ee165d879e3572951ac5aba1e1d1ede72e4df12f
 
             for ( int i = 0; i <= 3; i++)
             {

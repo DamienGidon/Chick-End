@@ -1,3 +1,39 @@
+<<<<<<< HEAD
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+
+namespace ITI.S3.PI.Chick_End
+{
+    [Serializable]
+    public class GunnerFarmer : Tower
+    {
+        public GunnerFarmer(Square context)
+            : base( context, 200 )
+        {
+            _attackSpeed = 20;
+            _health = 50;
+            _kind = "human";
+            _passivImage = Image.FromFile("GunnerFarmer.png");
+            _attackImage = Image.FromFile("GunnerFarmerAttack.png");
+            _image = _passivImage;
+        }
+
+        public override List<Square> ComputeRange()
+        {
+            return this.GetRange(Math.Max(Square.Context.NbCaseHeight, Square.Context.NbCaseWidth));
+        }
+
+        public override void Attack(Unit ennemi, int tick)
+        {
+            if (tick % _attackSpeed == 0)
+            {
+                Context.Context.CreateBullet(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 30);
+            }
+        }
+    }
+}
+=======
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -33,18 +69,6 @@ namespace ITI.S3.PI.Chick_End
                 Context.Context.CreateBullet(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 30);
             }
         }
-<<<<<<< HEAD
-
-        public override List<Square> ComputeRange()
-        {
-            return this.GetRange( 6 );
-        }
-
-        public override void CreateTower( int line, int column, Map map )
-        {
-            throw new NotImplementedException();
-        }
-=======
->>>>>>> a9659da0741e60180198e6dd1cc6ccfc504a3c60
     }
 }
+>>>>>>> ee165d879e3572951ac5aba1e1d1ede72e4df12f
