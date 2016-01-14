@@ -47,12 +47,12 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Image ExplosiveEgg = Image.FromFile( pathExplosiveEgg );
 
 
-                int CaseShouldBeThatHeight = e.ClipRectangle.Height / FinalVariables.NbCaseHeightMap1;
-                int CaseShouldBeThatWidth = e.ClipRectangle.Width / FinalVariables.NbCaseWidthMap1;
+                int CaseShouldBeThatHeight = e.ClipRectangle.Height / _map.NbCaseHeight;
+                int CaseShouldBeThatWidth = e.ClipRectangle.Width / _map.NbCaseWidth;
 
-                for (int i = 0; i < FinalVariables.NbCaseHeightMap1; i++)
+                for (int i = 0; i < _map.NbCaseHeight; i++)
                 {
-                    for (int j = 0; j < FinalVariables.NbCaseWidthMap1; j++)
+                    for (int j = 0; j < _map.NbCaseWidth; j++)
                     {
                         if (_map.Square[i, j].Decoration == "grass")
                         {
