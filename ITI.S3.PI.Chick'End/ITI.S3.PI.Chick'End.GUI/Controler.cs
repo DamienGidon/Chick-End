@@ -86,6 +86,7 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         public void DisplayLeaderbord()
         {
+            _leaderbord.ActualiseLeaderboard();
             _leaderbord.ShowDialog();
         }
 

@@ -98,7 +98,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             player.Play();
         }
 
-        // Rendre les boutons plus propres
+        // Rendre les boutons 'plus propres'
         private void ChangeFont_MouseEnter( object sender )
         {
             MouseEventsHelper.ChangeFontSize(sender, 58F);
