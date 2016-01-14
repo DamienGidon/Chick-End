@@ -26,7 +26,6 @@ namespace ITI.S3.PI.Chick_End
         //    }
         //}
 
-                foreach(Enemy e in _ennemis)
         public List<Tower> Towers
         {
             get { return _towers; }

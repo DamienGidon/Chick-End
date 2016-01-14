@@ -1,9 +1,12 @@
 <<<<<<< HEAD
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
-    [Serializable]
     public class Square
     {
         readonly Map _context;
@@ -12,7 +15,7 @@ namespace ITI.S3.PI.Chick_End
         readonly string _decoration;
         Tower _tower;
         Square _nextSquare;
-        Enemy _ennemi;
+        Ennemi _ennemi;
 
         public Square( Map context, int x, int y, string decoration)
         {
@@ -47,7 +50,7 @@ namespace ITI.S3.PI.Chick_End
             set { _tower = value; }
         }
 
-        public Enemy Ennemi
+        public Ennemi Ennemi
         {
             get { return _ennemi; }
             set { _ennemi = value; }
@@ -78,7 +81,7 @@ namespace ITI.S3.PI.Chick_End
         readonly string _decoration;
         Tower _tower;
         Square _nextSquare;
-        Enemy _ennemi;
+        Ennemi _ennemi;
 
         public Square( Map context, int x, int y, string decoration)
         {
@@ -87,11 +90,6 @@ namespace ITI.S3.PI.Chick_End
             _line = x;
             _column = y;
 
-        }
-
-        public Map Context
-        {
-            get { return _context; }
         }
 
         public int Line
@@ -113,7 +111,7 @@ namespace ITI.S3.PI.Chick_End
             set { _tower = value; }
         }
 
-        public Enemy Ennemi
+        public Ennemi Ennemi
         {
             get { return _ennemi; }
             set { _ennemi = value; }
@@ -126,4 +124,4 @@ namespace ITI.S3.PI.Chick_End
         }
     }
 }
->>>>>>> ee165d879e3572951ac5aba1e1d1ede72e4df12f
+>>>>>>> origin/dev

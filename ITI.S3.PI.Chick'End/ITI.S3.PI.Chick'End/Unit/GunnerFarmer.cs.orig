@@ -1,42 +1,6 @@
 <<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-
-namespace ITI.S3.PI.Chick_End
-{
-    [Serializable]
-    public class GunnerFarmer : Tower
-    {
-        public GunnerFarmer(Square context)
-            : base( context, 200 )
-        {
-            _attackSpeed = 20;
-            _health = 50;
-            _kind = "human";
-            _passivImage = Image.FromFile("GunnerFarmer.png");
-            _attackImage = Image.FromFile("GunnerFarmerAttack.png");
-            _image = _passivImage;
-        }
-
-        public override List<Square> ComputeRange()
-        {
-            return this.GetRange(Math.Max(Square.Context.NbCaseHeight, Square.Context.NbCaseWidth));
-        }
-
-        public override void Attack(Unit ennemi, int tick)
-        {
-            if (tick % _attackSpeed == 0)
-            {
-                Context.Context.CreateBullet(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 30);
-            }
-        }
-    }
-}
-=======
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,28 +11,59 @@ namespace ITI.S3.PI.Chick_End
     public class GunnerFarmer : Tower
     {
         public GunnerFarmer(Square context)
-            : base( context, 200 )
+            : base( context, 15 )
         {
-            _attackSpeed = 20;
             _health = 50;
-            _kind = "human";
-            _passivImage = Image.FromFile("GunnerFarmer.png");
-            _attackImage = Image.FromFile("GunnerFarmerAttack.png");
-            _image = _passivImage;
+        }
+
+        public override void Attack(Unit ennemi)
+        {
+            ennemi.Health -= Damages;
         }
 
         public override List<Square> ComputeRange()
         {
-            return this.GetRange(Math.Max(Square.Context.NbCaseHeight, Square.Context.NbCaseWidth));
+            return this.GetRange( 6 );
+        }
+    }
+}
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ITI.S3.PI.Chick_End
+{
+    [Serializable]
+    public class GunnerFarmer : Tower
+    {
+        public GunnerFarmer(Square context)
+            : base( context, 15 )
+        {
+            _health = 50;
         }
 
         public override void Attack(Unit ennemi, int tick)
         {
-            if (tick % _attackSpeed == 0)
+            if (tick % 20 == 0)
             {
-                Context.Context.CreateBullet(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 30);
+                ennemi.Health -= Damages;
             }
         }
+
+        //public override List<Square> GetRange()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        /*
+        public override void Remove()
+        {
+
+        }
+        */
     }
 }
->>>>>>> ee165d879e3572951ac5aba1e1d1ede72e4df12f
+>>>>>>> c46aa1d75325320f5a8dda666a816a5071f5e131
