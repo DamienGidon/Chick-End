@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Diagnostics;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ITI.S3.PI.Chick_End
 {
@@ -19,13 +18,13 @@ namespace ITI.S3.PI.Chick_End
 
         public Game()
         {
-            _map = new Map();
+            using (FileStream fs = new FileStream( "Map2.bin", FileMode.Open, FileAccess.Read, FileShare.None ))
+            {
+                BinaryFormatter ser = new BinaryFormatter();
+                Map map = (Map)ser.Deserialize( fs );
+                _map = map;
+            }
             _henCreater = new HenCreater(_map);
-            _stopwatch = new Stopwatch();
-        }
-        public Game(string test)
-        {
-            _map = new Map(test);
             _stopwatch = new Stopwatch();
         }
 
