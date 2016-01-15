@@ -30,63 +30,31 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.MenuPanel = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonQuit = new System.Windows.Forms.Button();
             this.buttonRules = new System.Windows.Forms.Button();
-            this.buttonLeaderboard = new System.Windows.Forms.Button();
-            this.buttonBestiary = new System.Windows.Forms.Button();
-            this.buttonContinue = new System.Windows.Forms.Button();
-            this.buttonPlay = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.MenuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuPanel
             // 
             this.MenuPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuPanel.BackgroundImage")));
             this.MenuPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.MenuPanel.Controls.Add(this.pictureBox2);
-            this.MenuPanel.Controls.Add(this.pictureBox1);
+            this.MenuPanel.Controls.Add(this.panel1);
             this.MenuPanel.Controls.Add(this.buttonQuit);
             this.MenuPanel.Controls.Add(this.buttonRules);
-            this.MenuPanel.Controls.Add(this.buttonLeaderboard);
-            this.MenuPanel.Controls.Add(this.buttonBestiary);
-            this.MenuPanel.Controls.Add(this.buttonContinue);
-            this.MenuPanel.Controls.Add(this.buttonPlay);
             this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MenuPanel.Location = new System.Drawing.Point(0, 0);
-            this.MenuPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MenuPanel.Margin = new System.Windows.Forms.Padding(4);
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(1311, 885);
             this.MenuPanel.TabIndex = 1;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
-            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(1100, 527);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(95, 69);
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(188, 368);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(95, 102);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
             // 
             // buttonQuit
             // 
@@ -96,9 +64,9 @@
             this.buttonQuit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonQuit.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonQuit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonQuit.Location = new System.Drawing.Point(519, 718);
-            this.buttonQuit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonQuit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonQuit.Location = new System.Drawing.Point(1093, 759);
+            this.buttonQuit.Margin = new System.Windows.Forms.Padding(4);
             this.buttonQuit.Name = "buttonQuit";
             this.buttonQuit.Size = new System.Drawing.Size(261, 108);
             this.buttonQuit.TabIndex = 5;
@@ -118,7 +86,7 @@
             this.buttonRules.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRules.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.buttonRules.Location = new System.Drawing.Point(519, 599);
-            this.buttonRules.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRules.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRules.Name = "buttonRules";
             this.buttonRules.Size = new System.Drawing.Size(263, 113);
             this.buttonRules.TabIndex = 4;
@@ -128,98 +96,135 @@
             this.buttonRules.MouseEnter += new System.EventHandler(this.buttonRules_MouseEnter);
             this.buttonRules.MouseLeave += new System.EventHandler(this.buttonRules_MouseLeave);
             // 
-            // buttonLeaderboard
+            // panel1
             // 
-            this.buttonLeaderboard.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonLeaderboard.BackColor = System.Drawing.Color.Transparent;
-            this.buttonLeaderboard.FlatAppearance.BorderSize = 0;
-            this.buttonLeaderboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonLeaderboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLeaderboard.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLeaderboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLeaderboard.Location = new System.Drawing.Point(452, 473);
-            this.buttonLeaderboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonLeaderboard.Name = "buttonLeaderboard";
-            this.buttonLeaderboard.Size = new System.Drawing.Size(408, 132);
-            this.buttonLeaderboard.TabIndex = 3;
-            this.buttonLeaderboard.Text = "Leaderboard";
-            this.buttonLeaderboard.UseVisualStyleBackColor = false;
-            this.buttonLeaderboard.Click += new System.EventHandler(this.buttonLeaderboard_Click);
-            this.buttonLeaderboard.MouseEnter += new System.EventHandler(this.buttonLeaderboard_MouseEnter);
-            this.buttonLeaderboard.MouseLeave += new System.EventHandler(this.buttonBestiary_MouseLeave);
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button5);
+            this.panel1.Location = new System.Drawing.Point(356, 170);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(624, 697);
+            this.panel1.TabIndex = 10;
             // 
-            // buttonBestiary
+            // button1
             // 
-            this.buttonBestiary.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonBestiary.BackColor = System.Drawing.Color.Transparent;
-            this.buttonBestiary.FlatAppearance.BorderSize = 0;
-            this.buttonBestiary.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonBestiary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBestiary.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBestiary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonBestiary.Location = new System.Drawing.Point(519, 372);
-            this.buttonBestiary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonBestiary.Name = "buttonBestiary";
-            this.buttonBestiary.Size = new System.Drawing.Size(273, 117);
-            this.buttonBestiary.TabIndex = 2;
-            this.buttonBestiary.Text = "Bestiary";
-            this.buttonBestiary.UseVisualStyleBackColor = false;
-            this.buttonBestiary.Click += new System.EventHandler(this.buttonBestiary_Click);
-            this.buttonBestiary.MouseEnter += new System.EventHandler(this.buttonBestiary_MouseEnter);
-            this.buttonBestiary.MouseLeave += new System.EventHandler(this.buttonBestiary_MouseLeave);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Playbill", 28F);
+            this.button1.ForeColor = System.Drawing.Color.BurlyWood;
+            this.button1.Location = new System.Drawing.Point(206, 15);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(196, 93);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Play";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.buttonPlay_Click);
+            this.button1.MouseEnter += new System.EventHandler(this.buttonPlay_MouseEnter);
+            this.button1.MouseLeave += new System.EventHandler(this.buttonPlay_MouseLeave);
             // 
-            // buttonContinue
+            // button2
             // 
-            this.buttonContinue.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonContinue.BackColor = System.Drawing.Color.Transparent;
-            this.buttonContinue.FlatAppearance.BorderSize = 0;
-            this.buttonContinue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonContinue.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonContinue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonContinue.Location = new System.Drawing.Point(519, 254);
-            this.buttonContinue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonContinue.Name = "buttonContinue";
-            this.buttonContinue.Size = new System.Drawing.Size(271, 129);
-            this.buttonContinue.TabIndex = 1;
-            this.buttonContinue.Text = "Continue";
-            this.buttonContinue.UseVisualStyleBackColor = false;
-            this.buttonContinue.Click += new System.EventHandler(this.buttonContinue_Click);
-            this.buttonContinue.MouseEnter += new System.EventHandler(this.buttonContinue_MouseEnter);
-            this.buttonContinue.MouseLeave += new System.EventHandler(this.buttonContinue_MouseLeave);
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Playbill", 28F);
+            this.button2.ForeColor = System.Drawing.Color.BurlyWood;
+            this.button2.Location = new System.Drawing.Point(201, 100);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(201, 55);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Continue";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.buttonContinue_Click);
+            this.button2.MouseEnter += new System.EventHandler(this.buttonContinue_MouseEnter);
+            this.button2.MouseLeave += new System.EventHandler(this.buttonContinue_MouseLeave);
             // 
-            // buttonPlay
+            // button3
             // 
-            this.buttonPlay.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonPlay.BackColor = System.Drawing.Color.Transparent;
-            this.buttonPlay.FlatAppearance.BorderSize = 0;
-            this.buttonPlay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPlay.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonPlay.Location = new System.Drawing.Point(519, 139);
-            this.buttonPlay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.Size = new System.Drawing.Size(263, 128);
-            this.buttonPlay.TabIndex = 0;
-            this.buttonPlay.Text = "Play";
-            this.buttonPlay.UseVisualStyleBackColor = false;
-            this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
-            this.buttonPlay.MouseEnter += new System.EventHandler(this.buttonPlay_MouseEnter);
-            this.buttonPlay.MouseLeave += new System.EventHandler(this.buttonPlay_MouseLeave);
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Playbill", 28F);
+            this.button3.ForeColor = System.Drawing.Color.BurlyWood;
+            this.button3.Location = new System.Drawing.Point(175, 163);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(257, 60);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Bestiary";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.buttonBestiary_Click);
+            this.button3.MouseEnter += new System.EventHandler(this.buttonBestiary_MouseEnter);
+            this.button3.MouseLeave += new System.EventHandler(this.buttonBestiary_MouseLeave);
+            // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Playbill", 28F);
+            this.button4.ForeColor = System.Drawing.Color.BurlyWood;
+            this.button4.Location = new System.Drawing.Point(201, 303);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(210, 56);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Leaderboard";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.buttonLeaderboard_Click);
+            this.button4.MouseEnter += new System.EventHandler(this.buttonLeaderboard_MouseEnter);
+            this.button4.MouseLeave += new System.EventHandler(this.buttonLeaderboard_MouseLeave);
+            // 
+            // button5
+            // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Playbill", 28F);
+            this.button5.ForeColor = System.Drawing.Color.BurlyWood;
+            this.button5.Location = new System.Drawing.Point(174, 238);
+            this.button5.Margin = new System.Windows.Forms.Padding(0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(258, 61);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Rules";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.buttonRules_Click);
+            this.button5.MouseEnter += new System.EventHandler(this.buttonRules_MouseEnter);
+            this.button5.MouseLeave += new System.EventHandler(this.buttonRules_MouseLeave);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.MenuPanel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainMenu";
             this.Size = new System.Drawing.Size(1311, 885);
             this.Load += new System.EventHandler(this.ManageUsersControl_Load);
             this.MenuPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -227,13 +232,13 @@
         #endregion
 
         private System.Windows.Forms.Panel MenuPanel;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonQuit;
         private System.Windows.Forms.Button buttonRules;
-        private System.Windows.Forms.Button buttonLeaderboard;
-        private System.Windows.Forms.Button buttonBestiary;
-        private System.Windows.Forms.Button buttonContinue;
-        private System.Windows.Forms.Button buttonPlay;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

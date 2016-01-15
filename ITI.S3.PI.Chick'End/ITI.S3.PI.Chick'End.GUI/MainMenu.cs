@@ -15,16 +15,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             InitializeComponent();
 
             _controler = controler;
-
-            Bitmap p = new Bitmap( @"HenLeft.png" );
-            Graphics g = Graphics.FromImage( p );
-            g.DrawImage( p, 60, 60 );
-            pictureBox1.Image = p;
-
-            Bitmap p1 = new Bitmap( @"Wolf.png" );
-            Graphics g1 = Graphics.FromImage( p1 );
-            g1.DrawImage( p, 60, 60 );
-            pictureBox2.Image = p1;
+            
         }
 
         IGameContext GameContext
@@ -101,66 +92,66 @@ namespace ITI.S3.PI.Chick_End.GUI
         // Rendre les boutons 'plus propres'
         private void ChangeFont_MouseEnter( object sender )
         {
-            MouseEventsHelper.ChangeFontSize(sender, 58F);
+            MouseEventsHelper.ChangeFontSize(sender, 20F);
         }
         private void buttonPlay_MouseEnter( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFontSize(sender, 58F);
+            MouseEventsHelper.ChangeFontSize(sender, 20F);
         }
 
         private void buttonPlay_MouseLeave( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFontSize(sender, 48F);
+            MouseEventsHelper.ChangeFontSize(sender, 28F);
         }
 
         private void buttonBestiary_MouseEnter( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFontSize(sender, 58F);
+            MouseEventsHelper.ChangeFontSize(sender, 20F);
         }
 
         private void buttonBestiary_MouseLeave( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFontSize(sender, 48F);
+            MouseEventsHelper.ChangeFontSize(sender, 28F);
         }
 
         private void buttonContinue_MouseEnter( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFontSize(sender, 58F);
+            MouseEventsHelper.ChangeFontSize(sender, 20F);
         }
 
         private void buttonContinue_MouseLeave( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFontSize(sender, 48F);
+            MouseEventsHelper.ChangeFontSize(sender, 28F);
         }
 
         private void buttonRules_MouseEnter( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFontSize(sender, 58F);
+            MouseEventsHelper.ChangeFontSize(sender, 20F);
         }
 
         private void buttonRules_MouseLeave( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFontSize(sender, 48F);
+            MouseEventsHelper.ChangeFontSize(sender, 28F);
         }
 
         private void buttonLeaderboard_MouseEnter( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFontSize(sender, 58F);
+            MouseEventsHelper.ChangeFontSize(sender, 20F);
         }
 
         private void buttonLeaderboard_MouseLeave( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFontSize(sender, 48F);
+            MouseEventsHelper.ChangeFontSize(sender, 28F);
         }
 
         private void buttonQuit_MouseEnter( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFontSize(sender, 58F);
+            MouseEventsHelper.ChangeFontSize(sender, 20F);
         }
 
         private void buttonQuit_MouseLeave( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFontSize(sender, 48F);
+            MouseEventsHelper.ChangeFontSize(sender, 28F);
         }
 
        
