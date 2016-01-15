@@ -563,7 +563,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         private void pictureBox1_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
-            labelShowSeed.Location = new Point(point.X, point.Y);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelSeedNumber.Parent = pictureBox1;
             labelSeedNumber.BackColor = Color.Transparent;
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.HenCost);
@@ -572,56 +572,56 @@ namespace ITI.S3.PI.Chick_End.GUI
         private void pictureBox5_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
-            labelShowSeed.Location = new Point(point.X, point.Y);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.OldHenCost);
         }
 
         private void pictureBox3_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
-            labelShowSeed.Location = new Point(point.X, point.Y);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.BomberHenCost);
         }
 
         private void pictureBox7_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
-            labelShowSeed.Location = new Point(point.X, point.Y);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.ExplosiveEggCost);
         }
 
         private void pictureBox9_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
-            labelShowSeed.Location = new Point(point.X, point.Y);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.RoosterCost);
         }
 
         private void pictureBox4_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
-            labelShowSeed.Location = new Point(point.X, point.Y);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.GunnerFarmerCost);
         }
 
         private void pictureBox2_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
-            labelShowSeed.Location = new Point(point.X, point.Y);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.InfantryFarmerCost);
         }
 
         private void pictureBox6_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
-            labelShowSeed.Location = new Point(point.X, point.Y);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.BakerCost);
         }
 
         private void pictureBox8_MouseEnter(object sender, EventArgs e)
         {
             Point point = panel1.PointToClient(Cursor.Position);
-            labelShowSeed.Location = new Point(point.X, point.Y);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.ButcherCost);
         }
         private void panel1_MouseEnter( object sender, EventArgs e )
