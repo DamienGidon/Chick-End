@@ -15,7 +15,7 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         public string PseudoR { get; set; }
 
-        public int LevelR { get; set; }
+        public string LevelR { get; set; }
     }
 
     public class Xml
@@ -24,7 +24,7 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         public string Pseudo { get; set; }
 
-        public int Level { get; set; }
+        public string Level { get; set; }
 
         public void Save(string fileName)
         {

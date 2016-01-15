@@ -149,7 +149,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Rules.resx">
       <DependentUpon>Rules.cs</DependentUpon>
@@ -187,7 +186,6 @@
     <Content Include="bin\Debug\HomeHen.png" />
     <Content Include="bin\Debug\Hyena.png" />
     <Content Include="bin\Debug\InfantryFarmer.png" />
-    <None Include="bin\Debug\LevelMenu.png" />
     <Content Include="bin\Debug\Lion.png" />
     <Content Include="bin\Debug\loup.wav" />
     <Content Include="bin\Debug\oldHen.png" />

@@ -34,9 +34,9 @@ namespace ITI.S3.PI.Chick_End
         public override List<Square> ComputeRange()
         {
             List<Square> list = new List<Square>();
-            for( int i = 0; i < Square.Context.NbCaseHeight; i++)
+            for( int i = 0; i < FinalVariables.NbCaseHeightMap1; i++)
             {
-                for( int j = 0; j < Square.Context.NbCaseWidth; j++)
+                for( int j = 0; j < FinalVariables.NbCaseWidthMap1; j++)
                 {
                     if (Square.Context.Square[i, j].Decoration == "path")
                     {

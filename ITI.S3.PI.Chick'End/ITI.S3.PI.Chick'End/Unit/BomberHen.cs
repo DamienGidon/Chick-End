@@ -29,7 +29,7 @@ namespace ITI.S3.PI.Chick_End
             if (tick % _attackSpeed == 0)
             /// <param name="ennemi"></param>
             {
-                Square.Context.CreateRobotEgg(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 15);
+                Context.Context.CreateRobotEgg(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 15);
             }
         }
 
