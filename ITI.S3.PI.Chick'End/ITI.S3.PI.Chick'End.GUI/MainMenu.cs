@@ -40,19 +40,28 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void buttonContinue_Click(object sender, EventArgs e)
         {
-            using (FileStream fs = new FileStream("save.bin", FileMode.Open, FileAccess.Read, FileShare.None))
+            string curFile = @"save.bin";
+            if(File.Exists(curFile))
             {
-                BinaryFormatter ser = new BinaryFormatter();
-                Game game = (Game)ser.Deserialize(fs);
-                MenuPanel.Hide();
-                _controler.FinalForm.CurrentGame = game;
-                _controler.DisplayExistingGame();
+                using (FileStream fs = new FileStream("save.bin", FileMode.Open, FileAccess.Read, FileShare.None))
+                {
+                    BinaryFormatter ser = new BinaryFormatter();
+                    Game game = (Game)ser.Deserialize(fs);
+                    MenuPanel.Hide();
+                    _controler.FinalForm.CurrentGame = game;
+                    _controler.DisplayExistingGame();
 
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-                player.SoundLocation = "poule2.wav";
-                player.Play();
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                    player.SoundLocation = "poule2.wav";
+                    player.Play();
 
+                }
             }
+            else
+            {
+                MessageBox.Show("Vous n'avez pas de partie en cours.");
+            }
+            
         }
 
         private void buttonRules_Click( object sender, EventArgs e )
