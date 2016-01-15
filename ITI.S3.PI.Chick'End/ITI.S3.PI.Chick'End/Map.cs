@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
@@ -16,6 +13,7 @@ namespace ITI.S3.PI.Chick_End
         readonly List<EggLauncher> _eggs;
         readonly int _nbCaseWidth;
         readonly int _nbCaseHeight;
+        int _level;
 
         //List<Unit> AllUnits
         //{
@@ -29,6 +27,11 @@ namespace ITI.S3.PI.Chick_End
         public List<Tower> Towers
         {
             get { return _towers; }
+        }
+
+        public int Level
+        {
+            get { return _level; }
         }
 
         public List<Enemy> Enemies
@@ -50,172 +53,173 @@ namespace ITI.S3.PI.Chick_End
             get { return _nbCaseHeight; }
         }
 
-        /*
-        * Constructor
-        */
-        //public Map()
-        //{
-        //    _nbCaseHeight = 9;
-        //    _nbCaseWidth = 14;
-        //    _squares = new Square[_nbCaseHeight, _nbCaseWidth];
-        //    _ways = new List<Way>();
-        //    _towers = new List<Tower>();
-        //    _enemies = new List<Enemy>();
-        //    _eggs = new List<EggLauncher>();
-
-        //    // Setting the hen house
-        //    for (int i = 3; i < 6; i++)
-        //    {
-        //        int j = 0;
-        //        _squares[i, j] = new Square( this, i, j, "HomeHen" );
-        //    }
-        //    // Setting the other decorations
-        //    for (int i = 0; i < 9; i++)
-        //    {
-        //        // Setting the trees
-        //        if (i < 3 || i > 5)
-        //        {
-        //            for (int j = 0; j < _nbCaseWidth; j++)
-        //            {
-        //                _squares[i, j] = new Square( this, i, j, "grass" );
-        //            }
-        //        }
-        //        else if (i == 4)
-        //        {
-        //            for (int j = 1; j < _nbCaseWidth; j++)
-        //            {
-        //                _squares[i, j] = new Square( this, i, j, "grass" );
-        //            }
-        //        }
-        //        // Setting the paths
-        //        else if (i == 3 || i == 5)
-        //        {
-        //            for (int j = 1; j < _nbCaseWidth; j++)
-        //            {
-        //                _squares[i, j] = new Square( this, i, j, "path" );
-        //            }
-        //        }
-        //    }
-
-        //    /*
-        //    * chaining of the squares
-        //    */
-        //    for (int i = 13; i > 0; i--)
-        //    {
-        //        _squares[3, i].NextSquare = _squares[3, i - 1];
-        //    }
-        //    for (int i = 13; i > 0; i--)
-        //    {
-        //        _squares[5, i].NextSquare = _squares[3, i - 1];
-        //    }
-
-        //    /*
-        //    * Creation of the different ways
-        //    */
-        //    Way w1 = new Way( _squares[3, 13] );
-        //    Way w2 = new Way( _squares[5, 13] );
-
-        //    _ways.Add( w1 );
-        //    _ways.Add( w2 );
-        //}
-
+        //Constructor of the 1st map
         public Map()
         {
-            _nbCaseHeight = 11;
-            _nbCaseWidth = 15;
+            _nbCaseHeight = 9;
+            _nbCaseWidth = 14;
+            _level = 1;
             _squares = new Square[_nbCaseHeight, _nbCaseWidth];
             _ways = new List<Way>();
             _towers = new List<Tower>();
             _enemies = new List<Enemy>();
             _eggs = new List<EggLauncher>();
 
-            _squares[5, 0] = new Square( this, 5, 0, "HomeHen" );
-            for (int i = 0; i <= 3; i++)
+            // Setting the hen house
+            for (int i = 3; i < 6; i++)
             {
-                _squares[i, 0] = new Square( this, i, 0, "grass" );
-                _squares[i, 1] = new Square( this, i, 1, "grass" );
+                int j = 0;
+                _squares[i, j] = new Square( this, i, j, "HomeHen" );
             }
-            for (int i = 7; i < _nbCaseHeight; i++)
+            // Setting the other decorations
+            for (int i = 0; i < 9; i++)
             {
-                _squares[i, 0] = new Square( this, i, 0, "grass" );
-                _squares[i, 1] = new Square( this, i, 1, "grass" );
-            }
-            for (int i = 0; i < _nbCaseWidth; i++)
-            {
-                _squares[4, i] = new Square( this, 4, i, "path" );
-                _squares[6, i] = new Square( this, 6, i, "path" );
-            }
-            for (int i = 2; i < _nbCaseWidth; i++)
-            {
-                _squares[0, i] = new Square( this, 0, i, "path" );
-                _squares[10, i] = new Square( this, 10, i, "path" );
-            }
-            for (int i = 1; i < _nbCaseWidth; i++)
-            {
-                _squares[5, i] = new Square( this, 5, i, "grass" );
-            }
-            for (int i = 1; i < 4; i++)
-            {
-                for (int j = 2; j < _nbCaseWidth; j++)
+                // Setting the trees
+                if (i < 3 || i > 5)
                 {
-                    _squares[i, j] = new Square( this, i, j, "grass" );
+                    for (int j = 0; j < _nbCaseWidth; j++)
+                    {
+                        _squares[i, j] = new Square( this, i, j, "grass" );
+                    }
                 }
-            }
-            for (int i = 7; i <= 9; i++)
-            {
-                for (int j = 3; j < _nbCaseWidth; j++)
+                else if (i == 4)
                 {
-                    _squares[i, j] = new Square( this, i, j, "grass" );
+                    for (int j = 1; j < _nbCaseWidth; j++)
+                    {
+                        _squares[i, j] = new Square( this, i, j, "grass" );
+                    }
                 }
-            }
-            for( int i = 1; i < 4; i++)
-            {
-                _squares[i, 2] = new Chick_End.Square( this, i, 2, "path" );
-            }
-            for (int i = 7; i < 10; i++)
-            {
-                _squares[i, 2] = new Chick_End.Square( this, i, 2, "path" );
+                // Setting the paths
+                else if (i == 3 || i == 5)
+                {
+                    for (int j = 1; j < _nbCaseWidth; j++)
+                    {
+                        _squares[i, j] = new Square( this, i, j, "path" );
+                    }
+                }
             }
 
             /*
-            *chaining of the squares
+            * chaining of the squares
             */
-            for (int i = _nbCaseWidth - 1; i > 3; i--)
+            for (int i = 13; i > 0; i--)
             {
-                _squares[0, i].NextSquare = _squares[0, i - 1];
-                _squares[4, i].NextSquare = _squares[4, i - 1];
-                _squares[6, i].NextSquare = _squares[6, i - 1];
-                _squares[10, i].NextSquare = _squares[10, i - 1];
+                _squares[3, i].NextSquare = _squares[3, i - 1];
             }
-            for (int i = 2; i > 0; i--)
+            for (int i = 13; i > 0; i--)
             {
-                _squares[4, i].NextSquare = _squares[4, i - 1];
-                _squares[6, i].NextSquare = _squares[6, i - 1];
+                _squares[5, i].NextSquare = _squares[3, i - 1];
             }
-            for (int i = 0; i < 4; i++)
-            {
-                _squares[i, 2].NextSquare = _squares[i + 1, 2];
-            }
-            for (int i = 10; i > 6; i--)
-            {
-                _squares[i, 2].NextSquare = _squares[i - 1, 2];
-            }
-            _squares[0, 4].NextSquare = _squares[0, 5];
-            _squares[0, 6].NextSquare = _squares[0, 5];
 
             /*
-            * Creation of the ways
+            * Creation of the different ways
             */
-            Way w1 = new Way( _squares[0, 14] );
-            Way w2 = new Way( _squares[4, 14] );
-            Way w3 = new Way( _squares[6, 14] );
-            Way w4 = new Way( _squares[10, 14] );
+            Way w1 = new Way( _squares[3, 13] );
+            Way w2 = new Way( _squares[5, 13] );
 
             _ways.Add( w1 );
             _ways.Add( w2 );
-            _ways.Add( w3 );
-            _ways.Add( w4 );
         }
+
+        // Constructor of the 2nd map
+        //public Map()
+        //{
+        //    _nbCaseHeight = 11;
+        //    _nbCaseWidth = 15;
+        //    _level = 2;
+        //    _squares = new Square[_nbCaseHeight, _nbCaseWidth];
+        //    _ways = new List<Way>();
+        //    _towers = new List<Tower>();
+        //    _enemies = new List<Enemy>();
+        //    _eggs = new List<EggLauncher>();
+
+        //    _squares[5, 0] = new Square( this, 5, 0, "HomeHen" );
+        //    for (int i = 0; i <= 3; i++)
+        //    {
+        //        _squares[i, 0] = new Square( this, i, 0, "grass" );
+        //        _squares[i, 1] = new Square( this, i, 1, "grass" );
+        //    }
+        //    for (int i = 7; i < _nbCaseHeight; i++)
+        //    {
+        //        _squares[i, 0] = new Square( this, i, 0, "grass" );
+        //        _squares[i, 1] = new Square( this, i, 1, "grass" );
+        //    }
+        //    for (int i = 0; i < _nbCaseWidth; i++)
+        //    {
+        //        _squares[4, i] = new Square( this, 4, i, "path" );
+        //        _squares[6, i] = new Square( this, 6, i, "path" );
+        //    }
+        //    for (int i = 2; i < _nbCaseWidth; i++)
+        //    {
+        //        _squares[0, i] = new Square( this, 0, i, "path" );
+        //        _squares[10, i] = new Square( this, 10, i, "path" );
+        //    }
+        //    for (int i = 1; i < _nbCaseWidth; i++)
+        //    {
+        //        _squares[5, i] = new Square( this, 5, i, "grass" );
+        //    }
+        //    for (int i = 1; i < 4; i++)
+        //    {
+        //        for (int j = 2; j < _nbCaseWidth; j++)
+        //        {
+        //            _squares[i, j] = new Square( this, i, j, "grass" );
+        //        }
+        //    }
+        //    for (int i = 7; i <= 9; i++)
+        //    {
+        //        for (int j = 3; j < _nbCaseWidth; j++)
+        //        {
+        //            _squares[i, j] = new Square( this, i, j, "grass" );
+        //        }
+        //    }
+        //    for( int i = 1; i < 4; i++)
+        //    {
+        //        _squares[i, 2] = new Chick_End.Square( this, i, 2, "path" );
+        //    }
+        //    for (int i = 7; i < 10; i++)
+        //    {
+        //        _squares[i, 2] = new Chick_End.Square( this, i, 2, "path" );
+        //    }
+
+        //    /*
+        //    *chaining of the squares
+        //    */
+        //    for (int i = _nbCaseWidth - 1; i >= 3; i--)
+        //    {
+        //        _squares[0, i].NextSquare = _squares[0, i - 1];
+        //        _squares[4, i].NextSquare = _squares[4, i - 1];
+        //        _squares[6, i].NextSquare = _squares[6, i - 1];
+        //        _squares[10, i].NextSquare = _squares[10, i - 1];
+        //    }
+        //    for (int i = 2; i > 0; i--)
+        //    {
+        //        _squares[4, i].NextSquare = _squares[4, i - 1];
+        //        _squares[6, i].NextSquare = _squares[6, i - 1];
+        //    }
+        //    for (int i = 0; i < 4; i++)
+        //    {
+        //        _squares[i, 2].NextSquare = _squares[i + 1, 2];
+        //    }
+        //    for (int i = 10; i > 6; i--)
+        //    {
+        //        _squares[i, 2].NextSquare = _squares[i - 1, 2];
+        //    }
+        //    _squares[4, 0].NextSquare = _squares[5, 0];
+        //    _squares[6, 0].NextSquare = _squares[5, 0];
+
+        //    /*
+        //    * Creation of the ways
+        //    */
+        //    Way w1 = new Way( _squares[0, 14] );
+        //    Way w2 = new Way( _squares[4, 14] );
+        //    Way w3 = new Way( _squares[6, 14] );
+        //    Way w4 = new Way( _squares[10, 14] );
+
+        //    _ways.Add( w1 );
+        //    _ways.Add( w2 );
+        //    _ways.Add( w3 );
+        //    _ways.Add( w4 );
+        //}
 
         internal List<Way> Ways
         {

@@ -16,9 +16,9 @@ namespace ITI.S3.PI.Chick_End
         bool _isLost;
         HenCreater _henCreater;
 
-        public Game()
+        public Game(string levelMap)
         {
-            using (FileStream fs = new FileStream( "Map2.bin", FileMode.Open, FileAccess.Read, FileShare.None ))
+            using (FileStream fs = new FileStream( levelMap, FileMode.Open, FileAccess.Read, FileShare.None ))
             {
                 BinaryFormatter ser = new BinaryFormatter();
                 Map map = (Map)ser.Deserialize( fs );
@@ -64,7 +64,7 @@ namespace ITI.S3.PI.Chick_End
                 Enemy enemy = e.GetClosestEnemyAttackable();
                 if (enemy == null)
                 {
-                    if(e.Position.X < (FinalVariables.MapWidthInMeters - 35))
+                    if(e.Position.X < (FinalVariables.SquareWidthInMeters * _map.NbCaseWidth - 35))
                     {
                         e.Move();
                     }

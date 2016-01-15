@@ -8,10 +8,25 @@ namespace ITI.S3.PI.Chick_End.GUI
     public class ViewMapControler : Panel
     {
         Map _map;
+        readonly Image _grass;
+        readonly Image _path;
+        readonly Image _homeHen;
+        readonly Image _explosiveEgg;
 
         public ViewMapControler()
         {
             DoubleBuffered = true;
+            string directory = Path.GetDirectoryName( Application.ExecutablePath );
+            string pathGrass = Path.Combine( directory, @"grass.png" );
+            string pathPath = Path.Combine( directory, @"path.png" );
+            string pathHomeHen = Path.Combine( directory, @"HomeHen.png" );
+            string pathExplosiveEgg = Path.Combine( directory, @"ExplosiveEgg.png" );
+
+            _grass = Image.FromFile( pathGrass );
+            _path = Image.FromFile( pathPath );
+            _homeHen = Image.FromFile( pathHomeHen );
+            _explosiveEgg = Image.FromFile( pathExplosiveEgg );
+
         }
 
         public Map Map
@@ -35,17 +50,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                string directory = Path.GetDirectoryName( Application.ExecutablePath );
-                string pathGrass = Path.Combine( directory, @"grass.png" );
-                string pathPath = Path.Combine( directory, @"path.png" );
-                string pathHomeHen = Path.Combine( directory, @"HomeHen.png" );
-                string pathExplosiveEgg = Path.Combine( directory, @"ExplosiveEgg.png" );
-
-                Image grass = Image.FromFile( pathGrass );
-                Image path = Image.FromFile( pathPath );
-                Image HomeHen = Image.FromFile( pathHomeHen );
-                Image ExplosiveEgg = Image.FromFile( pathExplosiveEgg );
-
+                double time = (DateTime.Now - DateTime.MinValue).TotalMilliseconds / 500.0;
+                double angle = Math.Sin( time );
+                e.Graphics.RotateTransform( (float)(angle*15) );
+                e.Graphics.ScaleTransform( 0.9f, 0.9f );
 
                 int CaseShouldBeThatHeight = e.ClipRectangle.Height / _map.NbCaseHeight;
                 int CaseShouldBeThatWidth = e.ClipRectangle.Width / _map.NbCaseWidth;
@@ -56,15 +64,15 @@ namespace ITI.S3.PI.Chick_End.GUI
                     {
                         if (_map.Square[i, j].Decoration == "grass")
                         {
-                            e.Graphics.DrawImage( grass, _map.Square[i, j].Column * CaseShouldBeThatWidth, _map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight );
+                            e.Graphics.DrawImage( _grass, _map.Square[i, j].Column * CaseShouldBeThatWidth, _map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight );
                         }
                         else if (_map.Square[i, j].Decoration == "path")
                         {
-                            e.Graphics.DrawImage( path, _map.Square[i, j].Column * CaseShouldBeThatWidth, _map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight );
+                            e.Graphics.DrawImage( _path, _map.Square[i, j].Column * CaseShouldBeThatWidth, _map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight );
                         }
                         else if (_map.Square[i, j].Decoration == "HomeHen")
                         {
-                            e.Graphics.DrawImage( HomeHen, _map.Square[i, j].Column * CaseShouldBeThatWidth, _map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight );
+                            e.Graphics.DrawImage( _homeHen, _map.Square[i, j].Column * CaseShouldBeThatWidth, _map.Square[i, j].Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth, CaseShouldBeThatHeight );
                         }
                     }
                 }
@@ -78,7 +86,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                     }
                     else if (t is ExplosiveEgg)
                     {
-                        e.Graphics.DrawImage(ExplosiveEgg, t.Square.Column * CaseShouldBeThatWidth + Convert.ToInt32(CaseShouldBeThatWidth * 0.2), t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth - Convert.ToInt32(CaseShouldBeThatWidth * 0.3), CaseShouldBeThatHeight);
+                        e.Graphics.DrawImage(_explosiveEgg, t.Square.Column * CaseShouldBeThatWidth + Convert.ToInt32(CaseShouldBeThatWidth * 0.2), t.Square.Line * CaseShouldBeThatHeight, CaseShouldBeThatWidth - Convert.ToInt32(CaseShouldBeThatWidth * 0.3), CaseShouldBeThatHeight);
                     }
                     else if (t.Kind == "human")
                     {
