@@ -60,7 +60,6 @@ namespace ITI.S3.PI.Chick_End.GUI
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer();
                 player.SoundLocation = "poule2.wav";
                 player.Play();
-
             }
         }
 
@@ -162,7 +161,5 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             MouseEventsHelper.ChangeFontSize(sender, 48F);
         }
-
-       
     }
 }

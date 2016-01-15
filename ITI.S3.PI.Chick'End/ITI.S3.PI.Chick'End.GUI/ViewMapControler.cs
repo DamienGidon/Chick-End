@@ -50,10 +50,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                double time = (DateTime.Now - DateTime.MinValue).TotalMilliseconds / 500.0;
-                double angle = Math.Sin( time );
-                e.Graphics.RotateTransform( (float)(angle*15) );
-                e.Graphics.ScaleTransform( 0.9f, 0.9f );
+                //double time = (DateTime.Now - DateTime.MinValue).TotalMilliseconds / 500.0;
+                //double angle = Math.Sin( time );
+                //e.Graphics.RotateTransform( (float)(angle*15) );
+                //e.Graphics.ScaleTransform( 0.9f, 0.9f );
 
                 int CaseShouldBeThatHeight = e.ClipRectangle.Height / _map.NbCaseHeight;
                 int CaseShouldBeThatWidth = e.ClipRectangle.Width / _map.NbCaseWidth;

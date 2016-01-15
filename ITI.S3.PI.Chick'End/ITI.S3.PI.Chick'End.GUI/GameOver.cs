@@ -22,7 +22,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             if(textBoxPseudo.Text == null || textBoxPseudo.Text == "")
             {
-                textBoxPseudo.Text = "Anonym";
+                textBoxPseudo.Text = "Anonymus";
             }
             if (textBoxPseudo.Text != null && textBoxPseudo.Text != "")
             {

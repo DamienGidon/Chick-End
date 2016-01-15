@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
 namespace ITI.S3.PI.Chick_End.GUI
@@ -15,6 +13,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             _controler = new Controler( this );
             InitializeComponent();
+            DoubleBuffered = true;
         }
 
         public Game CurrentGame
