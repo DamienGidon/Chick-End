@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
@@ -53,7 +51,7 @@ namespace ITI.S3.PI.Chick_End
                     break;
             }
 
-            for (int i = line + 1; i <= i + rangeInSquare || i < t.Square.Context.NbCaseHeight; i++)
+            for (int i = line + 1; i <= i + rangeInSquare && i < t.Square.Context.NbCaseHeight; i++)
             {
                 if (t.Square.Context.Square[i, column].Decoration == "path")
                     squaresInRange.Add( t.Square.Context.Square[i, column] );
@@ -61,7 +59,7 @@ namespace ITI.S3.PI.Chick_End
                     break;
             }
 
-            for (int i = line - 1; i >= 0 || i >= i - rangeInSquare; i--)
+            for (int i = line - 1; i > 0 && i >= i - rangeInSquare; i--)
             {
                 if (t.Square.Context.Square[i, column].Decoration == "path")
                     squaresInRange.Add( t.Square.Context.Square[i, column] );

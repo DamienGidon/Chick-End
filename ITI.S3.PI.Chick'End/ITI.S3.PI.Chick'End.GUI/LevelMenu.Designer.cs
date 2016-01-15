@@ -61,7 +61,6 @@
             this.buttonLevel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonLevel2.BackColor = System.Drawing.Color.Transparent;
-            this.buttonLevel2.Enabled = false;
             this.buttonLevel2.FlatAppearance.BorderSize = 0;
             this.buttonLevel2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonLevel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
