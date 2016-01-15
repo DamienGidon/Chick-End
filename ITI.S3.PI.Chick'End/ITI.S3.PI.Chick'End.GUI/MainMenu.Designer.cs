@@ -57,8 +57,9 @@
             this.MenuPanel.Controls.Add(this.buttonPlay);
             this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MenuPanel.Location = new System.Drawing.Point(0, 0);
+            this.MenuPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MenuPanel.Name = "MenuPanel";
-            this.MenuPanel.Size = new System.Drawing.Size(983, 719);
+            this.MenuPanel.Size = new System.Drawing.Size(1311, 885);
             this.MenuPanel.TabIndex = 1;
             // 
             // pictureBox2
@@ -67,9 +68,10 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(825, 428);
+            this.pictureBox2.Location = new System.Drawing.Point(1100, 527);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(71, 56);
+            this.pictureBox2.Size = new System.Drawing.Size(95, 69);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
@@ -79,9 +81,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(141, 299);
+            this.pictureBox1.Location = new System.Drawing.Point(188, 368);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 83);
+            this.pictureBox1.Size = new System.Drawing.Size(95, 102);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
@@ -94,9 +97,10 @@
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonQuit.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonQuit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonQuit.Location = new System.Drawing.Point(389, 583);
+            this.buttonQuit.Location = new System.Drawing.Point(519, 718);
+            this.buttonQuit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonQuit.Name = "buttonQuit";
-            this.buttonQuit.Size = new System.Drawing.Size(196, 88);
+            this.buttonQuit.Size = new System.Drawing.Size(261, 108);
             this.buttonQuit.TabIndex = 5;
             this.buttonQuit.Text = "Quit";
             this.buttonQuit.UseVisualStyleBackColor = false;
@@ -113,9 +117,10 @@
             this.buttonRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRules.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRules.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonRules.Location = new System.Drawing.Point(389, 487);
+            this.buttonRules.Location = new System.Drawing.Point(519, 599);
+            this.buttonRules.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRules.Name = "buttonRules";
-            this.buttonRules.Size = new System.Drawing.Size(197, 92);
+            this.buttonRules.Size = new System.Drawing.Size(263, 113);
             this.buttonRules.TabIndex = 4;
             this.buttonRules.Text = "Rules";
             this.buttonRules.UseVisualStyleBackColor = false;
@@ -132,9 +137,10 @@
             this.buttonLeaderboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLeaderboard.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLeaderboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonLeaderboard.Location = new System.Drawing.Point(339, 384);
+            this.buttonLeaderboard.Location = new System.Drawing.Point(452, 473);
+            this.buttonLeaderboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonLeaderboard.Name = "buttonLeaderboard";
-            this.buttonLeaderboard.Size = new System.Drawing.Size(306, 107);
+            this.buttonLeaderboard.Size = new System.Drawing.Size(408, 132);
             this.buttonLeaderboard.TabIndex = 3;
             this.buttonLeaderboard.Text = "Leaderboard";
             this.buttonLeaderboard.UseVisualStyleBackColor = false;
@@ -151,9 +157,10 @@
             this.buttonBestiary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBestiary.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBestiary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonBestiary.Location = new System.Drawing.Point(389, 302);
+            this.buttonBestiary.Location = new System.Drawing.Point(519, 372);
+            this.buttonBestiary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonBestiary.Name = "buttonBestiary";
-            this.buttonBestiary.Size = new System.Drawing.Size(205, 95);
+            this.buttonBestiary.Size = new System.Drawing.Size(273, 117);
             this.buttonBestiary.TabIndex = 2;
             this.buttonBestiary.Text = "Bestiary";
             this.buttonBestiary.UseVisualStyleBackColor = false;
@@ -170,12 +177,14 @@
             this.buttonContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonContinue.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonContinue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonContinue.Location = new System.Drawing.Point(389, 206);
+            this.buttonContinue.Location = new System.Drawing.Point(519, 254);
+            this.buttonContinue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonContinue.Name = "buttonContinue";
-            this.buttonContinue.Size = new System.Drawing.Size(203, 105);
+            this.buttonContinue.Size = new System.Drawing.Size(271, 129);
             this.buttonContinue.TabIndex = 1;
             this.buttonContinue.Text = "Continue";
             this.buttonContinue.UseVisualStyleBackColor = false;
+            this.buttonContinue.Click += new System.EventHandler(this.buttonContinue_Click);
             this.buttonContinue.MouseEnter += new System.EventHandler(this.buttonContinue_MouseEnter);
             this.buttonContinue.MouseLeave += new System.EventHandler(this.buttonContinue_MouseLeave);
             // 
@@ -188,9 +197,10 @@
             this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPlay.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonPlay.Location = new System.Drawing.Point(389, 113);
+            this.buttonPlay.Location = new System.Drawing.Point(519, 139);
+            this.buttonPlay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.Size = new System.Drawing.Size(197, 104);
+            this.buttonPlay.Size = new System.Drawing.Size(263, 128);
             this.buttonPlay.TabIndex = 0;
             this.buttonPlay.Text = "Play";
             this.buttonPlay.UseVisualStyleBackColor = false;
@@ -200,11 +210,12 @@
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.MenuPanel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainMenu";
-            this.Size = new System.Drawing.Size(983, 719);
+            this.Size = new System.Drawing.Size(1311, 885);
             this.Load += new System.EventHandler(this.ManageUsersControl_Load);
             this.MenuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
