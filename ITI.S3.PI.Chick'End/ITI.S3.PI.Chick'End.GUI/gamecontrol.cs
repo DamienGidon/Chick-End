@@ -153,10 +153,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                if (_henCreater.HenCost <= _seeds)
+                if (_henCreater.HensCost("Hen") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.HenCost;
-                    viewMapControler1.Map.CreateHen( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("Hen");
+                    viewMapControler1.Map.CreateHen(line, column, viewMapControler1.Map);
                 }
             }
         }
@@ -184,10 +184,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                if (_henCreater.InfantryFarmerCost <= _seeds)
+                if (_henCreater.HensCost("InfantryFarmer") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.InfantryFarmerCost;
-                    viewMapControler1.Map.CreateInfantryFarmer( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("InfantryFarmer");
+                    viewMapControler1.Map.CreateInfantryFarmer(line, column, viewMapControler1.Map);
                 }
             }
         }
@@ -215,10 +215,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                if (_henCreater.BomberHenCost <= _seeds)
+                if (_henCreater.HensCost("BomberHen") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.BomberHenCost;
-                    viewMapControler1.Map.CreateBomberHen( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("BomberHen");
+                    viewMapControler1.Map.CreateBomberHen(line, column, viewMapControler1.Map);
                 }
             }
         }
@@ -246,10 +246,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                if (_henCreater.GunnerFarmerCost <= _seeds)
+                if (_henCreater.HensCost("GunnerFarmer") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.GunnerFarmerCost;
-                    viewMapControler1.Map.CreateGunnerFarmer( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("GunnerFarmer");
+                    viewMapControler1.Map.CreateGunnerFarmer(line, column, viewMapControler1.Map);
                 }
             }
         }
@@ -278,10 +278,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                if (_henCreater.OldHenCost <= _seeds)
+                if (_henCreater.HensCost("OldHen") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.OldHenCost;
-                    viewMapControler1.Map.CreateOldHen( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("OldHen");
+                    viewMapControler1.Map.CreateOldHen(line, column, viewMapControler1.Map);
                 }
             }
         }
@@ -309,10 +309,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                if (_henCreater.BakerCost <= _seeds)
+                if (_henCreater.HensCost("Baker") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.BakerCost;
-                    viewMapControler1.Map.CreateBaker( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("Baker");
+                    viewMapControler1.Map.CreateBaker(line, column, viewMapControler1.Map);
                 }
             }
         }
@@ -340,10 +340,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                if (_henCreater.ExplosiveEggCost <= _seeds)
+                if (_henCreater.HensCost("ExplosiveEgg") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.ExplosiveEggCost;
-                    viewMapControler1.Map.CreateExplosiveEgg( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("ExplosiveEgg");
+                    viewMapControler1.Map.CreateExplosiveEgg(line, column, viewMapControler1.Map);
                 }
             }
         }
@@ -371,10 +371,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                if (_henCreater.ButcherCost <= _seeds)
+                if (_henCreater.HensCost("Butcher") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.ButcherCost;
-                    viewMapControler1.Map.CreateButcher( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("Butcher");
+                    viewMapControler1.Map.CreateButcher(line, column, viewMapControler1.Map);
                 }
             }
         }
@@ -402,10 +402,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                if (_henCreater.RoosterCost <= _seeds)
+                if (_henCreater.HensCost("Rooster") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.RoosterCost;
-                    viewMapControler1.Map.CreateRooster( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("Rooster");
+                    viewMapControler1.Map.CreateRooster(line, column, viewMapControler1.Map);
                 }
             }
         }
@@ -435,6 +435,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             pictureBox10.Image = p10;
             if (viewMapControler1.Map.Square[line, column].Tower != null && x < trashX + 50 && x > trashX && y < trashY + 50 && y > trashY)
             {
+                _seeds += _henCreater.SellUnit(viewMapControler1.Map.Square[line, column].Tower);
                 viewMapControler1.Map.Square[line, column].Tower.Die();
             }
         }
@@ -559,63 +560,63 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
-            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HenCost);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("Hen"));
         }
 
         private void pictureBox5_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
-            labelShowSeed.Text = Convert.ToString(" " + _henCreater.OldHenCost);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("OldHen"));
         }
 
         private void pictureBox3_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
-            labelShowSeed.Text = Convert.ToString(" " + _henCreater.BomberHenCost);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("BomberHen"));
         }
 
         private void pictureBox7_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
-            labelShowSeed.Text = Convert.ToString(" " + _henCreater.ExplosiveEggCost);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("ExplosiveEgg"));
         }
 
         private void pictureBox9_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
-            labelShowSeed.Text = Convert.ToString(" " + _henCreater.RoosterCost);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("Rooster"));
         }
 
         private void pictureBox4_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
-            labelShowSeed.Text = Convert.ToString(" " + _henCreater.GunnerFarmerCost);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("GunnerFarmer"));
         }
 
         private void pictureBox2_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
-            labelShowSeed.Text = Convert.ToString(" " + _henCreater.InfantryFarmerCost);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("InfantryFarmer"));
         }
 
         private void pictureBox6_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
-            labelShowSeed.Text = Convert.ToString(" " + _henCreater.BakerCost);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("Baker"));
         }
 
         private void pictureBox8_MouseEnter(object sender, EventArgs e)
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
-            labelShowSeed.Text = Convert.ToString(" " + _henCreater.ButcherCost);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("Butcher"));
         }
         private void panel1_MouseEnter( object sender, EventArgs e )
         {

@@ -10,70 +10,41 @@ namespace ITI.S3.PI.Chick_End
     public class HenCreater
     {
         Map _map;
-        int _henCost = 50;
-        int _bomberHenCost = 200;
-        int _explosiveEgg = 400;
-        int _oldHenCost = 150;
-        int _roosterCost = 1000;
-        int _bakerCost = 400;
-        int _butcherCost = 300;
-        int _infantryFamerCost = 300;
-        int _gunnerFarmerCost = 450;
+        Dictionary<string, int> _hensCost = new Dictionary<string, int>();
 
         public HenCreater(Map map)
         {
             _map = map;
+            FillList();
         }
 
         public HenCreater()
         {
-            
+            FillList();
         }
 
-        public int HenCost
+        public void FillList()
         {
-            get { return _henCost; }
+            _hensCost.Add("Hen", 50);
+            _hensCost.Add("BomberHen", 200);
+            _hensCost.Add("ExplosiveEgg", 400);
+            _hensCost.Add("OldHen", 150);
+            _hensCost.Add("Rooster", 1000);
+            _hensCost.Add("Baker", 400);
+            _hensCost.Add("Butcher", 300);
+            _hensCost.Add("InfantryFarmer", 300);
+            _hensCost.Add("GunnerFarmer", 450);
         }
 
-        public int BomberHenCost
+        public int SellUnit(Tower tower)
         {
-            get { return _bomberHenCost; }
+            string p = Convert.ToString(tower).Remove(0,20);
+            return _hensCost[p] / 2;
         }
 
-        public int ExplosiveEggCost
+        public int HensCost(string tower)
         {
-            get { return _explosiveEgg; }
-        }
-
-        public int OldHenCost
-        {
-            get { return _oldHenCost; }
-        }
-
-        public int RoosterCost
-        {
-            get { return _roosterCost; }
-        }
-
-        public int BakerCost
-        {
-            get { return _bakerCost; }
-        }
-
-        public int ButcherCost
-        {
-            get { return _butcherCost; }
-        }
-
-        public int InfantryFarmerCost
-        {
-
-            get { return _infantryFamerCost; }
-        }
-
-        public int GunnerFarmerCost
-        {
-            get { return _gunnerFarmerCost; }
+            return _hensCost[tower];
         }
 
         public void CreateHen(int ligne, int colonne, Map context)
