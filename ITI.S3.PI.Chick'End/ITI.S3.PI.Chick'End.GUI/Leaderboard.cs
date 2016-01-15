@@ -101,5 +101,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             if (labelPseudoThree.Text == "") { labelVide3.Text = _noScores; label3.Hide(); label4.Hide(); } else labelVide3.Hide();
             if (labelPseudoFour.Text == "") { labelVide4.Text = _noScores; label5.Hide(); label6.Hide(); } else labelVide4.Hide();
         }
+
+        public void ActualiseLeaderboard()
+        {
+            showScore();
+        }
     }
 }

@@ -41,9 +41,6 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.labelPrice = new System.Windows.Forms.Label();
-            this.labelPriceT = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,6 +55,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelUnit = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.labelShowSeed = new System.Windows.Forms.Label();
             this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
             this.panelSeed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -65,7 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -212,7 +209,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.Orange;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.labelShowSeed);
             this.panel1.Controls.Add(this.pictureBox9);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
@@ -230,37 +227,6 @@
             this.panel1.Size = new System.Drawing.Size(185, 728);
             this.panel1.TabIndex = 4;
             this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.DarkOrange;
-            this.panel5.Controls.Add(this.labelPrice);
-            this.panel5.Controls.Add(this.labelPriceT);
-            this.panel5.Location = new System.Drawing.Point(0, 583);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(185, 40);
-            this.panel5.TabIndex = 5;
-            // 
-            // labelPrice
-            // 
-            this.labelPrice.AutoSize = true;
-            this.labelPrice.Font = new System.Drawing.Font("Playbill", 20F);
-            this.labelPrice.ForeColor = System.Drawing.Color.DarkGreen;
-            this.labelPrice.Location = new System.Drawing.Point(95, 6);
-            this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(0, 27);
-            this.labelPrice.TabIndex = 1;
-            // 
-            // labelPriceT
-            // 
-            this.labelPriceT.AutoSize = true;
-            this.labelPriceT.Font = new System.Drawing.Font("Playbill", 20F);
-            this.labelPriceT.ForeColor = System.Drawing.Color.DarkGreen;
-            this.labelPriceT.Location = new System.Drawing.Point(40, 6);
-            this.labelPriceT.Name = "labelPriceT";
-            this.labelPriceT.Size = new System.Drawing.Size(54, 27);
-            this.labelPriceT.TabIndex = 0;
-            this.labelPriceT.Text = "Price :";
             // 
             // pictureBox9
             // 
@@ -324,6 +290,7 @@
             this.pictureBox8.TabStop = false;
             this.pictureBox8.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox8_DragDrop);
             this.pictureBox8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox8_MouseDown);
+            this.pictureBox8.MouseEnter += new System.EventHandler(this.pictureBox8_MouseEnter);
             // 
             // pictureBox7
             // 
@@ -411,6 +378,19 @@
             this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // labelShowSeed
+            // 
+            this.labelShowSeed.AutoSize = true;
+            this.labelShowSeed.BackColor = System.Drawing.Color.Transparent;
+            this.labelShowSeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelShowSeed.Font = new System.Drawing.Font("Playbill", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelShowSeed.ForeColor = System.Drawing.Color.DarkGreen;
+            this.labelShowSeed.Location = new System.Drawing.Point(70, 589);
+            this.labelShowSeed.Name = "labelShowSeed";
+            this.labelShowSeed.Size = new System.Drawing.Size(52, 29);
+            this.labelShowSeed.TabIndex = 11;
+            this.labelShowSeed.Text = "label2";
+            // 
             // viewMapControler1
             // 
             this.viewMapControler1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -447,8 +427,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -492,10 +471,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label labelPrice;
-        private System.Windows.Forms.Label labelPriceT;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label labelShowSeed;
     }
 }
