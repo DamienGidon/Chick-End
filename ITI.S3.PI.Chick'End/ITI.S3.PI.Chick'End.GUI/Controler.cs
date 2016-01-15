@@ -12,7 +12,6 @@ namespace ITI.S3.PI.Chick_End.GUI
         readonly Rules _rules;
         readonly LevelMenu _levelMenu;
         readonly GameMenu _gameMenu;
-        GameOver _gameOver;
 
         public Controler( FormF finalForm )
         {
@@ -56,12 +55,12 @@ namespace ITI.S3.PI.Chick_End.GUI
             _mainMenu.Hide();
         }
 
-        //public void DisplayNewGame()
-        //{
-        //    _finalForm.CurrentGame = new Game();
-        //    _gamecontrol.BringToFront();
-        //    _gamecontrol.Show();
-        //}
+        public void DisplayNewGame()
+        {
+            _finalForm.CurrentGame = new Game();
+            _gamecontrol.BringToFront();
+            _gamecontrol.Show();
+        }
 
         public void DisplayExistingGame()
         {
@@ -131,16 +130,6 @@ namespace ITI.S3.PI.Chick_End.GUI
         public void CloseGame()
         {
             _finalForm.Close();
-        }
-
-        public void DisplayGameOver()
-        {
-            _gameOver = new GameOver( this, _gamecontrol.ScoreInString, _finalForm.CurrentGame.Map.Level );
-            _gameOver.ShowDialog();
-        }
-        public void HideGameOver()
-        {
-            _gameOver.Close();
         }
     }
 }

@@ -29,21 +29,9 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
-        //public void SaveMap2( Map m )
-        //{
-        //    using (FileStream fs = new FileStream( "Map1.bin", FileMode.Create, FileAccess.Write ))
-        //    {
-        //        BinaryFormatter serializer = new BinaryFormatter();
-        //        serializer.Serialize( fs, m );
-        //    }
-        //}
-
         private void FormF_Load( object sender, EventArgs e )
         {
             _controler.DisplayMainMenu();
-
-            //Map m2 = new Map();
-            //SaveMap2( m2 );
         }
     }
 }

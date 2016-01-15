@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ITI.S3.PI.Chick_End.GUI
@@ -26,12 +31,15 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void buttonReturn_MouseEnter( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFontSize( sender, 23F );
+            buttonReturn.Font = new System.Drawing.Font( "Playbill", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)) );
+            buttonReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            buttonReturn.Refresh();
         }
 
         private void buttonReturn_MouseLeave( object sender, EventArgs e )
         {
-            MouseEventsHelper.ChangeFontSize( sender, 20F );
+            buttonReturn.Font = new System.Drawing.Font( "Playbill", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)) );
+            buttonReturn.Refresh();
         }
 
         private void showScore()
@@ -70,22 +78,22 @@ namespace ITI.S3.PI.Chick_End.GUI
 
                 for (i = 0; i < _results.Count(); i++)
                 {
-                    if (_results[i].LevelR == 1)
+                    if (_results[i].LevelR == "1")
                     {
                         labelPseudoOne.Text += _results[i].PseudoR + "\n\n";
                         labelScoreOne.Text += _results[i].ScoreR.Insert(2, ":") + "\n\n";
                     }
-                    else if (_results[i].LevelR == 2)
+                    else if (_results[i].LevelR == "2")
                     {
                         labelPseudoTwo.Text += _results[i].PseudoR + "\n\n";
                         labelScoreTwo.Text += _results[i].ScoreR.Insert(2, ":") + "\n\n";
                     }
-                    else if (_results[i].LevelR == 3)
+                    else if (_results[i].LevelR == "3")
                     {
                         labelPseudoThree.Text += _results[i].PseudoR + "\n\n";
                         labelScoreThree.Text += _results[i].ScoreR.Insert(2, ":") + "\n\n";
                     }
-                    else if (_results[i].LevelR == 4)
+                    else if (_results[i].LevelR == "4")
                     {
                         labelPseudoFour.Text += _results[i].PseudoR + "\n\n";
                         labelScoreFour.Text += _results[i].ScoreR.Insert(2, ":") + "\n\n";

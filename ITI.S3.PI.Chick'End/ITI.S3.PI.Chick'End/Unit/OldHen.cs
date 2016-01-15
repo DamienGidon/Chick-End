@@ -25,7 +25,7 @@ namespace ITI.S3.PI.Chick_End
         {
             if (tick % _attackSpeed == 0)
             {
-                Square.Context.CreateRottenEgg(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 10);
+                Context.Context.CreateRottenEgg(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 10);
             }
         }
 

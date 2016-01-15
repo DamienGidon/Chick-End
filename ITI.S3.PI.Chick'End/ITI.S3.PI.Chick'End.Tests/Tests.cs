@@ -13,7 +13,7 @@ namespace ITI.S3.PI.Chick_End.Tests
         [Test]
         public void Properties_of_class_Game_work_correcty()
         {
-            Game g = new Game("Map1.bin");
+            Game g = new Game();
 
             Assert.IsNotNull( g.Map );
         }

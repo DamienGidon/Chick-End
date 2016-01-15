@@ -54,6 +54,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             get { return _minute; }
             set { _minute = value; }
         }
+
         public int Seconde
         {
             get { return _second; }
@@ -72,6 +73,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             timer1.Enabled = _controler.FinalForm.CurrentGame != null;
         }
+
         public void Pause()
         {
             timer1.Enabled = false;
@@ -92,6 +94,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             MouseEventsHelper.ChangeFontSize( sender, 28F );
         }
+
         private void buttonMenu_MouseLeave( object sender, EventArgs e )
         {
             MouseEventsHelper.ChangeFontSize( sender, 25F );
@@ -109,7 +112,6 @@ namespace ITI.S3.PI.Chick_End.GUI
                 e.Effect = DragDropEffects.None;
             }
         }
-
         private void pictureBox10_DragEnter( object sender, DragEventArgs e )
         {
             if (e.Data.GetDataPresent( DataFormats.Bitmap ))
@@ -127,12 +129,12 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
-        // Drag and Drop for every Unit to place them on the map
         private void pictureBox1_DragDrop( object sender, DragEventArgs e )
         {
             PictureBox pb = ((PictureBox)sender);
             pb.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
         }
+
         private void pictureBox1_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb = ((PictureBox)sender);
@@ -140,10 +142,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb.DoDragDrop( pb.Image, DragDropEffects.Copy );
 
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
-            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
-            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
+            int line = topLeftCornerY / (viewMapControler1.Height / 9);
+            int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
             if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
@@ -164,6 +166,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             PictureBox pb2 = ((PictureBox)sender);
             pb2.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
         }
+
         private void pictureBox2_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb2 = ((PictureBox)sender);
@@ -171,10 +174,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb2.DoDragDrop( pb2.Image, DragDropEffects.Copy );
 
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
-            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
-            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
+            int line = topLeftCornerY / (viewMapControler1.Height / 9);
+            int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
             if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
@@ -195,37 +198,13 @@ namespace ITI.S3.PI.Chick_End.GUI
             PictureBox pb3 = ((PictureBox)sender);
             pb3.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
         }
-        private void pictureBox3_MouseDown( object sender, MouseEventArgs e )
-        {
-            PictureBox pb3 = ((PictureBox)sender);
-            pb3.Select();
-            pb3.DoDragDrop( pb3.Image, DragDropEffects.Copy );
-
-            var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
-            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
-            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
-
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
-            {
-
-            }
-            else
-            {
-                if (_henCreater.BomberHenCost <= _seeds)
-                {
-                    _seeds = _seeds - _henCreater.BomberHenCost;
-                    viewMapControler1.Map.CreateBomberHen( line, column, viewMapControler1.Map );
-                }
-            }
-        }
 
         private void pictureBox4_DragDrop( object sender, DragEventArgs e )
         {
             PictureBox pb4 = ((PictureBox)sender);
             pb4.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
         }
+
         private void pictureBox4_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb4 = ((PictureBox)sender);
@@ -233,10 +212,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb4.DoDragDrop( pb4.Image, DragDropEffects.Copy );
 
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
-            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
-            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
+            int line = topLeftCornerY / (viewMapControler1.Height / 9);
+            int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
             if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
@@ -252,12 +231,39 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
+        private void pictureBox3_MouseDown( object sender, MouseEventArgs e )
+        {
+            PictureBox pb3 = ((PictureBox)sender);
+            pb3.Select();
+            pb3.DoDragDrop( pb3.Image, DragDropEffects.Copy );
+
+            var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
+            int line = topLeftCornerY / (viewMapControler1.Height / 9);
+            int column = topLeftCornerX / (viewMapControler1.Width / 14);
+
+            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            {
+
+            }
+            else
+            {
+                if (_henCreater.BomberHenCost <= _seeds)
+                {
+                    _seeds = _seeds - _henCreater.BomberHenCost;
+                    viewMapControler1.Map.CreateBomberHen( line, column, viewMapControler1.Map );
+                }
+            }
+        }
+
         private void pictureBox5_DragDrop( object sender, DragEventArgs e )
         {
             PictureBox pb4 = ((PictureBox)sender);
             pb4.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
 
         }
+
         private void pictureBox5_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb5 = ((PictureBox)sender);
@@ -265,10 +271,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb5.DoDragDrop( pb5.Image, DragDropEffects.Copy );
 
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
-            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
-            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
+            int line = topLeftCornerY / (viewMapControler1.Height / 9);
+            int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
             if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
@@ -289,6 +295,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             PictureBox pb6 = ((PictureBox)sender);
             pb6.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
         }
+
         private void pictureBox6_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb6 = ((PictureBox)sender);
@@ -296,10 +303,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb6.DoDragDrop( pb6.Image, DragDropEffects.Copy );
 
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
-            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
-            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
+            int line = topLeftCornerY / (viewMapControler1.Height / 9);
+            int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
             if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
@@ -320,6 +327,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             PictureBox pb7 = ((PictureBox)sender);
             pb7.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
         }
+
         private void pictureBox7_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb7 = ((PictureBox)sender);
@@ -327,10 +335,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb7.DoDragDrop( pb7.Image, DragDropEffects.Copy );
 
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
-            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
-            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
+            int line = topLeftCornerY / (viewMapControler1.Height / 9);
+            int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
             if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
@@ -351,6 +359,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             PictureBox pb8 = ((PictureBox)sender);
             pb8.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
         }
+
         private void pictureBox8_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb8 = ((PictureBox)sender);
@@ -358,10 +367,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb8.DoDragDrop( pb8.Image, DragDropEffects.Copy );
 
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
-            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
-            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
+            int line = topLeftCornerY / (viewMapControler1.Height / 9);
+            int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
             if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
@@ -382,6 +391,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             PictureBox pb9 = ((PictureBox)sender);
             pb9.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
         }
+
         private void pictureBox9_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb9 = ((PictureBox)sender);
@@ -389,10 +399,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb9.DoDragDrop( pb9.Image, DragDropEffects.Copy );
 
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
-            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
-            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
+            int line = topLeftCornerY / (viewMapControler1.Height / 9);
+            int column = topLeftCornerX / (viewMapControler1.Width / 14);
 
             if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
@@ -408,12 +418,12 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
-        // Those two functions below manage the suppression of the current units on the map
         private void viewMapControler1_DragDrop( object sender, DragEventArgs e )
         {
             ViewMapControler v = ((ViewMapControler)sender);
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
         }
+
         private void viewMapControler1_MouseDown( object sender, MouseEventArgs e )
         {
             ViewMapControler v = ((ViewMapControler)sender);
@@ -453,16 +463,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
-        public string ScoreInString
-        {
-            get { return labelTimer.Text; }
-        }
-        /// <summary>
-        /// Game Loop
-        /// This function is called every tick of gamecontrol's timer
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void timer1_Tick( object sender, EventArgs e )
         {
             _tick++;
@@ -532,8 +532,8 @@ namespace ITI.S3.PI.Chick_End.GUI
                     player.Play();
                 }
                 this.timer1.Stop();
-                GameOver g = new GameOver( _controler, labelTimer.Text, _controler.FinalForm.CurrentGame.Map.Level );
-                _controler.DisplayGameOver();
+                GameOver g = new GameOver( labelTimer.Text, _level );
+                g.ShowDialog();
             }
             else
             {
@@ -542,10 +542,9 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
-        // Enable or Disable the game music.
         private void pictureBox10_Click( object sender, EventArgs e )
         {
-            if (sound)
+            if (sound == true)
             {
                 sound = false;
                 _countS = 90;
@@ -565,8 +564,6 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
-            labelSeedNumber.Parent = pictureBox1;
-            labelSeedNumber.BackColor = Color.Transparent;
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.HenCost);
         }
 
@@ -576,36 +573,42 @@ namespace ITI.S3.PI.Chick_End.GUI
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.OldHenCost);
         }
+
         private void pictureBox3_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.BomberHenCost);
         }
+
         private void pictureBox7_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.ExplosiveEggCost);
         }
+
         private void pictureBox9_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.RoosterCost);
         }
+
         private void pictureBox4_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.GunnerFarmerCost);
         }
+
         private void pictureBox2_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.InfantryFarmerCost);
         }
+
         private void pictureBox6_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
