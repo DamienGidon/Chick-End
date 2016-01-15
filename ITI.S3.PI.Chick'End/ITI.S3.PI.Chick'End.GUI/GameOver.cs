@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ITI.S3.PI.Chick_End.GUI
@@ -13,11 +6,13 @@ namespace ITI.S3.PI.Chick_End.GUI
     [Serializable]
     public partial class GameOver : Form
     {
+        Controler _controler;
         string _timer;
-        string _level;
+        int _level;
 
-        public GameOver(string timer, string level)
+        public GameOver(Controler controler, string timer, int level)
         {
+            _controler = controler;
             InitializeComponent();
             _timer = timer;
             _level = level;
@@ -25,6 +20,10 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void buttonReturn_Click(object sender, EventArgs e)
         {
+            if(textBoxPseudo.Text == null || textBoxPseudo.Text == "")
+            {
+                textBoxPseudo.Text = "Anonym";
+            }
             if (textBoxPseudo.Text != null && textBoxPseudo.Text != "")
             {
                 Xml Xml = new Xml();
@@ -34,11 +33,8 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Xml.Score = _timer;
                 Xml.Level = _level;
                 Xml.Save("leaderboard.xml");
-                Close();
-            }
-            else
-            {
-                textBoxPseudo.BackColor = System.Drawing.Color.OrangeRed;
+                _controler.HideGameOver();
+                _controler.DisplayMainMenu();
             }
         }
 

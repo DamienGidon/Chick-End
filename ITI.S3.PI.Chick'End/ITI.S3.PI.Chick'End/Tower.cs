@@ -13,11 +13,9 @@ namespace ITI.S3.PI.Chick_End
         protected readonly Square _square;
         internal readonly int _damages;
         protected readonly Square[] _range;
-        public Square _context;
 
         protected Tower( Square context, int damages )
         {
-            _context = context;
             _square = context;
             _range = ComputeRange().ToArray();
             _damages = damages;
@@ -54,7 +52,7 @@ namespace ITI.S3.PI.Chick_End
             int line = _square.Line;
             int column = _square.Column;
 
-            for (int i = column; i < FinalVariables.NbCaseWidthMap1; i++)
+            for (int i = column; i < Square.Context.NbCaseWidth; i++)
             {
                 if (_square.Context.Square[line, i].Decoration == "path")
                     squaresInRange.Add( _square.Context.Square[line, i] );
@@ -62,7 +60,7 @@ namespace ITI.S3.PI.Chick_End
                     break;
             }
 
-            for (int i = line + 1; i < FinalVariables.NbCaseHeightMap1; i++)
+            for (int i = line + 1; i < Square.Context.NbCaseHeight; i++)
             {
                 if (_square.Context.Square[i, column].Decoration == "path")
                     squaresInRange.Add( _square.Context.Square[i, column] );
@@ -87,11 +85,6 @@ namespace ITI.S3.PI.Chick_End
         {
             _square.Context.Towers.Remove( this );
             _square.Tower = null;
-        }
-
-        public Square Context
-        {
-            get { return _context; }
         }
     }
 }

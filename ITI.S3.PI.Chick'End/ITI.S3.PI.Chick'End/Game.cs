@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Diagnostics;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ITI.S3.PI.Chick_End
 {
@@ -17,15 +16,15 @@ namespace ITI.S3.PI.Chick_End
         bool _isLost;
         HenCreater _henCreater;
 
-        public Game()
+        public Game(string levelMap)
         {
-            _map = new Map();
+            using (FileStream fs = new FileStream( levelMap, FileMode.Open, FileAccess.Read, FileShare.None ))
+            {
+                BinaryFormatter ser = new BinaryFormatter();
+                Map map = (Map)ser.Deserialize( fs );
+                _map = map;
+            }
             _henCreater = new HenCreater(_map);
-            _stopwatch = new Stopwatch();
-        }
-        public Game(string test)
-        {
-            _map = new Map(test);
             _stopwatch = new Stopwatch();
         }
 
@@ -65,7 +64,7 @@ namespace ITI.S3.PI.Chick_End
                 Enemy enemy = e.GetClosestEnemyAttackable();
                 if (enemy == null)
                 {
-                    if(e.Position.X < (FinalVariables.MapWidthInMeters - 35))
+                    if(e.Position.X < (FinalVariables.SquareWidthInMeters * _map.NbCaseWidth - 35))
                     {
                         e.Move();
                     }

@@ -38,7 +38,7 @@ namespace ITI.S3.PI.Chick_End
                 {
                     square = _range[ r.Next( 0, _range.Count() ) ];
                 } while (square.Tower != null);
-                Context.Context.CreateSteak(Square.Context, square.Line, square.Column);
+                Square.Context.CreateSteak(Square.Context, square.Line, square.Column);
             }
         }
 

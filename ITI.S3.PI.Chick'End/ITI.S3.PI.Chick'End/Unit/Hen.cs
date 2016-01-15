@@ -31,7 +31,7 @@ namespace ITI.S3.PI.Chick_End
         {
             if (tick % _attackSpeed == 0)
             {
-                Context.Context.CreateNormalEgg(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 15);
+                Square.Context.CreateNormalEgg(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 15);
             }
         }
     }

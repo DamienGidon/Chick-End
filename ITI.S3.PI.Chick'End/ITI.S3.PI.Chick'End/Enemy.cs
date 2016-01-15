@@ -50,7 +50,6 @@ namespace ITI.S3.PI.Chick_End
             set { _alreadySlow = value; }
         }
 
-
         public Map Context
         {
             get { return _context; }
