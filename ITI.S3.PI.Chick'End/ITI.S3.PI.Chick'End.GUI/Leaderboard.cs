@@ -78,22 +78,22 @@ namespace ITI.S3.PI.Chick_End.GUI
 
                 for (i = 0; i < _results.Count(); i++)
                 {
-                    if (_results[i].LevelR == "1")
+                    if (_results[i].LevelR == 1)
                     {
                         labelPseudoOne.Text += _results[i].PseudoR + "\n\n";
                         labelScoreOne.Text += _results[i].ScoreR.Insert(2, ":") + "\n\n";
                     }
-                    else if (_results[i].LevelR == "2")
+                    else if (_results[i].LevelR == 2)
                     {
                         labelPseudoTwo.Text += _results[i].PseudoR + "\n\n";
                         labelScoreTwo.Text += _results[i].ScoreR.Insert(2, ":") + "\n\n";
                     }
-                    else if (_results[i].LevelR == "3")
+                    else if (_results[i].LevelR == 3)
                     {
                         labelPseudoThree.Text += _results[i].PseudoR + "\n\n";
                         labelScoreThree.Text += _results[i].ScoreR.Insert(2, ":") + "\n\n";
                     }
-                    else if (_results[i].LevelR == "4")
+                    else if (_results[i].LevelR == 4)
                     {
                         labelPseudoFour.Text += _results[i].PseudoR + "\n\n";
                         labelScoreFour.Text += _results[i].ScoreR.Insert(2, ":") + "\n\n";

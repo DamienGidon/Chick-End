@@ -462,7 +462,10 @@ namespace ITI.S3.PI.Chick_End.GUI
                 ser.Serialize(fs, _controler.FinalForm.CurrentGame);
             }
         }
-
+        public string ScoreInString
+        {
+            get { return labelTimer.Text; }
+        }
         private void timer1_Tick( object sender, EventArgs e )
         {
             _tick++;
@@ -532,8 +535,8 @@ namespace ITI.S3.PI.Chick_End.GUI
                     player.Play();
                 }
                 this.timer1.Stop();
-                GameOver g = new GameOver( labelTimer.Text, _level );
-                g.ShowDialog();
+                GameOver g = new GameOver( _controler, labelTimer.Text, _controler.FinalForm.CurrentGame.Map.Level );
+                _controler.DisplayGameOver();
             }
             else
             {

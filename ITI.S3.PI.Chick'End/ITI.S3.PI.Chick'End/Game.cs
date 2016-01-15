@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,15 +16,16 @@ namespace ITI.S3.PI.Chick_End
         bool _isLost;
         HenCreater _henCreater;
 
-        public Game()
+        public Game(string mapLevel)
         {
-            _map = new Map();
+            using (FileStream fs = new FileStream( mapLevel, FileMode.Open, FileAccess.Read, FileShare.None ))
+            {
+                BinaryFormatter ser = new BinaryFormatter();
+                Map map = (Map)ser.Deserialize( fs );
+                _map = map;
+            }
+            _henCreater = new HenCreater( _map );
             _henCreater = new HenCreater(_map);
-        }
-        public Game(string test)
-        {
-            _map = new Map(test);
-            _stopwatch = new Stopwatch();
         }
 
         public Map Map
