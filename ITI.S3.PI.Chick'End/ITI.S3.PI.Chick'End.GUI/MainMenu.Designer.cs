@@ -55,11 +55,6 @@
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(983, 719);
             this.MenuPanel.TabIndex = 1;
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(1100, 527);
-            this.pictureBox2.Size = new System.Drawing.Size(95, 69);
-            this.pictureBox1.Location = new System.Drawing.Point(188, 368);
-            this.pictureBox1.Size = new System.Drawing.Size(95, 102);
             // buttonQuit
             // 
             this.buttonQuit.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -125,12 +120,12 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBestiary.Location = new System.Drawing.Point(519, 372);
-            this.buttonBestiary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            //this.buttonBestiary.Location = new System.Drawing.Point(519, 372);
+            //this.buttonBestiary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Font = new System.Drawing.Font("Playbill", 28F);
             this.button1.ForeColor = System.Drawing.Color.BurlyWood;
             this.button1.Location = new System.Drawing.Point(206, 15);
-            this.buttonBestiary.Size = new System.Drawing.Size(273, 117);
+            //this.buttonBestiary.Size = new System.Drawing.Size(273, 117);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(196, 93);

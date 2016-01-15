@@ -13,7 +13,6 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             _controler = new Controler( this );
             InitializeComponent();
-            DoubleBuffered = true;
         }
 
         public Game CurrentGame

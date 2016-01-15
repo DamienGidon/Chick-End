@@ -13,7 +13,7 @@ namespace ITI.S3.PI.Chick_End
         readonly List<EggLauncher> _eggs;
         readonly int _nbCaseWidth;
         readonly int _nbCaseHeight;
-        int _level;
+        readonly int _level;
 
         //List<Unit> AllUnits
         //{
@@ -307,8 +307,8 @@ namespace ITI.S3.PI.Chick_End
         public Wolf CreateAnubisWolf(Map context, int x, int y)
         {
             Wolf e = new Wolf(context, 20);
-            e.GetX = x;
-            e.GetY = y;
+            e.X = x;
+            e.Y = y;
             _enemies.Add(e);
             return e;
         }

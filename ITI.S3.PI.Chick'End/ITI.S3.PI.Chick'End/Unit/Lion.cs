@@ -24,15 +24,5 @@ namespace ITI.S3.PI.Chick_End
             _imageWidth = 60;
             _imageHeight = 50;
         }
-
-        //public override void Attack( Unit opponent )
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public override void Move()
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -10,8 +9,6 @@ namespace ITI.S3.PI.Chick_End
     public class Game
     {
         readonly Map _map;
-        [NonSerialized]
-        readonly Stopwatch _stopwatch;
         bool _isPaused;
         bool _isLost;
         HenCreater _henCreater;
@@ -25,30 +22,21 @@ namespace ITI.S3.PI.Chick_End
                 _map = map;
             }
             _henCreater = new HenCreater(_map);
-            _stopwatch = new Stopwatch();
         }
 
         public Map Map
         {
             get { return _map; }
         }
-
-        public Stopwatch Stopwatch
-        {
-            get { return _stopwatch; }
-        }
-
         public HenCreater HenCreater
         {
             get { return _henCreater; }
         }
-
         public bool IsPosed
         {
             get { return _isPaused; }
             set { _isPaused = value; }
         }
-
         public bool IsLost
         {
             get { return _isLost; }
