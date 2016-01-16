@@ -13,7 +13,7 @@ namespace ITI.S3.PI.Chick_End
         internal Baker(Square context)
             : base( context, 0 )
         {
-            _health = 500;
+            _health = 50;
             _kind = "human";
             _attackSpeed = 10;
             _passivImage = Image.FromFile("Baker.png");

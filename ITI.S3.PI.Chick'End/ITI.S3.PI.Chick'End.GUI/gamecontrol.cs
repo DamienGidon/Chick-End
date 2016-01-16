@@ -14,10 +14,10 @@ namespace ITI.S3.PI.Chick_End.GUI
         int _countM = 0;
         int _countR = 0;
         int _countS = -20;
-        int _countBaker;
         int _second = 0;
         int _minute = 0;
-        int _seeds = 200;
+        int _seeds = 100;
+        int _countBaker = 0;
         string _level;
         string _Ssecond;
         string _Sminute;
@@ -79,6 +79,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             _second = 0;
             _minute = 0;
             _seeds = 100;
+            _countBaker = 0;
         }
 
         public void Resume()
@@ -418,6 +419,9 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     _seeds = _seeds - _henCreater.HensCost("Rooster");
                     viewMapControler1.Map.CreateRooster(line, column, viewMapControler1.Map);
+                    Rooster r = (Rooster) viewMapControler1.Map.Square[line, column].Tower;
+                    r.KillAll();
+
                 }
             }
         }
@@ -447,7 +451,14 @@ namespace ITI.S3.PI.Chick_End.GUI
             pictureBox10.Image = p10;
             if (viewMapControler1.Map.Square[line, column].Tower != null && x < trashX + 50 && x > trashX && y < trashY + 50 && y > trashY)
             {
-                _seeds += _henCreater.SellUnit(viewMapControler1.Map.Square[line, column].Tower);
+                if (viewMapControler1.Map.Square[line, column].Tower is Rooster)
+                {
+
+                }
+                else
+                {
+                    _seeds += _henCreater.SellUnit(viewMapControler1.Map.Square[line, column].Tower);
+                }
                 viewMapControler1.Map.Square[line, column].Tower.Die();
             }
         }
