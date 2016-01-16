@@ -15,15 +15,6 @@ namespace ITI.S3.PI.Chick_End
         readonly int _nbCaseHeight;
         int _level;
 
-        //List<Unit> AllUnits
-        //{
-        //    get
-        //    {
-        //        List<Unit> units = new List<Unit>();
-        //        return units;
-        //    }
-        //}
-
         public List<Tower> Towers
         {
             get { return _towers; }
@@ -303,7 +294,6 @@ namespace ITI.S3.PI.Chick_End
             _enemies.Add( e );
             return e;
         }
-
         public Wolf CreateAnubisWolf( Map context, int x, int y )
         {
             Wolf e = new Wolf( context, 20 );
@@ -312,42 +302,36 @@ namespace ITI.S3.PI.Chick_End
             _enemies.Add( e );
             return e;
         }
-
         public Hyena CreateHyena( Map context )
         {
             Hyena e = new Hyena( context, 30 );
             _enemies.Add( e );
             return e;
         }
-
         public Fox CreateFox( Map context )
         {
             Fox e = new Fox( context, 15 );
             _enemies.Add( e );
             return e;
         }
-
         public Lion CreateLion( Map context )
         {
             Lion e = new Lion( context, 15 );
             _enemies.Add( e );
             return e;
         }
-
         public Anubis CreateAnubis( Map context )
         {
             Anubis e = new Anubis( context, 50 );
             _enemies.Add( e );
             return e;
         }
-
         public Cerberus CreateCerberus( Map context )
         {
             Cerberus e = new Cerberus( context, 100 );
             _enemies.Add( e );
             return e;
         }
-
         public Werewolf CreateWerewolf( Map context )
         {
             Werewolf e = new Werewolf( context, 75 );
@@ -361,14 +345,12 @@ namespace ITI.S3.PI.Chick_End
             _eggs.Add( e );
             return e;
         }
-
         public RottenEgg CreateRottenEgg( Map context, int x, int y, int damage )
         {
             RottenEgg e = new RottenEgg( context, damage, x, y - 20 );
             _eggs.Add( e );
             return e;
         }
-
         public RobotEgg CreateRobotEgg( Map context, int x, int y, int damage )
         {
             RobotEgg e = new RobotEgg( context, damage, x, y - 20 );
@@ -380,11 +362,6 @@ namespace ITI.S3.PI.Chick_End
             Bullet b = new Bullet( context, damage, x, y - 20 );
             _eggs.Add( b );
             return b;
-        }
-
-        public List<Tower> GetTower
-        {
-            get { return _towers; }
         }
     }
 }

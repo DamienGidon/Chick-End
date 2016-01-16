@@ -54,7 +54,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             get { return _minute; }
             set { _minute = value; }
         }
-
         public int Seconde
         {
             get { return _second; }
@@ -94,7 +93,6 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             MouseEventsHelper.ChangeFontSize( sender, 28F );
         }
-
         private void buttonMenu_MouseLeave( object sender, EventArgs e )
         {
             MouseEventsHelper.ChangeFontSize( sender, 25F );
@@ -147,7 +145,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
             int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -178,7 +179,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
             int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -209,7 +213,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
             int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -240,7 +247,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
             int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -272,7 +282,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
             int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -303,7 +316,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
             int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -334,7 +350,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
             int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -365,7 +384,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
             int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -396,7 +418,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
             int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
+            {
+            }
+            else if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
 
             }
@@ -410,19 +435,19 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
+        // Drag and drop to delete units from the map
         private void viewMapControler1_DragDrop( object sender, DragEventArgs e )
         {
             ViewMapControler v = ((ViewMapControler)sender);
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
         }
-
         private void viewMapControler1_MouseDown( object sender, MouseEventArgs e )
         {
             ViewMapControler v = ((ViewMapControler)sender);
             v.Select();
             v.DoDragDrop( v, DragDropEffects.Copy );
-            int line = e.Y / (viewMapControler1.Height / 9);
-            int column = e.X / (viewMapControler1.Width / 14);
+            int line = e.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
+            int column = e.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
             var trashPosition = pictureBox10.PointToScreen( new Point( 10, 10 ) );
             var x = Cursor.Position.X;
             var y = Cursor.Position.Y;
@@ -455,6 +480,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 ser.Serialize(fs, _controler.FinalForm.CurrentGame);
             }
         }
+
         public string ScoreInString
         {
             get { return labelTimer.Text; }
@@ -521,14 +547,13 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             if (_controler.FinalForm.CurrentGame.IsLost)
             {
-                if (sound == true)
+                if (sound)
                 {
                     System.Media.SoundPlayer player = new System.Media.SoundPlayer();
                     player.SoundLocation = "defaite.wav";
                     player.Play();
                 }
-                this.timer1.Stop();
-                GameOver g = new GameOver( _controler, labelTimer.Text, _controler.FinalForm.CurrentGame.Map.Level );
+                timer1.Stop();
                 _controler.DisplayGameOver();
             }
             else
@@ -538,6 +563,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
+        // Enables or disables the sound in game.
         private void pictureBox10_Click( object sender, EventArgs e )
         {
             if (sound == true)
@@ -556,62 +582,55 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
+        // The functions below serve to display the price of the unit when the mouse is over the corresponding picture.
         private void pictureBox1_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("Hen"));
         }
-
         private void pictureBox5_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("OldHen"));
         }
-
         private void pictureBox3_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("BomberHen"));
         }
-
         private void pictureBox7_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("ExplosiveEgg"));
         }
-
         private void pictureBox9_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("Rooster"));
         }
-
         private void pictureBox4_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("GunnerFarmer"));
         }
-
         private void pictureBox2_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("InfantryFarmer"));
         }
-
         private void pictureBox6_MouseEnter( object sender, EventArgs e )
         {
             Point point = panel1.PointToClient(Cursor.Position);
             labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
             labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("Baker"));
         }
-
         private void pictureBox8_MouseEnter(object sender, EventArgs e)
         {
             Point point = panel1.PointToClient(Cursor.Position);
