@@ -90,7 +90,6 @@ namespace ITI.S3.PI.Chick_End
                     {
                         e.Move();
                         e.MoveAnimate(tick);
-                        //e.UnitImage = e.PassiveImage;
                     }
                 }
                 else if (t is Steak && e is Fox)

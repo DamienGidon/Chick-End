@@ -20,6 +20,9 @@ namespace ITI.S3.PI.Chick_End.GUI
             {
                 _controler.FinalForm.CurrentGame = new Game( "Map1.bin" );
                 _controler.HideLevelMenu();
+                ViewMapControler VMC = (ViewMapControler)_controler.Gamecontrol.Controls[0];
+                VMC.TestWidth = _controler.FinalForm.CurrentGame.Map.NbCaseWidth * FinalVariables.SquareWidthInMeters;
+                VMC.TestHeight = _controler.FinalForm.CurrentGame.Map.NbCaseHeight * FinalVariables.SquareHeightInMeters;
 
                 _controler.DisplayExistingGame();
 
@@ -64,6 +67,9 @@ namespace ITI.S3.PI.Chick_End.GUI
             {
                 _controler.FinalForm.CurrentGame = new Game( "Map2.bin" );
                 _controler.HideLevelMenu();
+                ViewMapControler VMC = (ViewMapControler)_controler.Gamecontrol.Controls[0];
+                VMC.TestWidth = _controler.FinalForm.CurrentGame.Map.NbCaseWidth * FinalVariables.SquareWidthInMeters;
+                VMC.TestHeight = _controler.FinalForm.CurrentGame.Map.NbCaseHeight * FinalVariables.SquareHeightInMeters;
 
                 _controler.DisplayExistingGame();
 

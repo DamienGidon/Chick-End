@@ -25,7 +25,7 @@ namespace ITI.S3.PI.Chick_End
             ennemi.Health -= Damages;
             if (_ennemi.AlreadySlow == false)
             {
-                _ennemi.Speed = _ennemi.Speed * 2;
+                _ennemi.Speed = Convert.ToInt32(_ennemi.Speed * 1.5);
                 _ennemi.AlreadySlow = true;
             }
         }

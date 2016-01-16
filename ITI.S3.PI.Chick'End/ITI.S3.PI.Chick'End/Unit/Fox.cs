@@ -13,7 +13,7 @@ namespace ITI.S3.PI.Chick_End
         public Fox( Map context, int damages )
             : base(context, damages)
         {
-            Health = 100;
+            Health = 80;
             Speed = 10;
             _attackSpeed = 20;
             _passivImage = Image.FromFile("Fox.png");
