@@ -12,7 +12,11 @@ namespace ITI.S3.PI.Chick_End.GUI
         public ViewMapControler()
         {
             DoubleBuffered = true;
+            TestWidth = 700;
+            TestHeight = 450;
         }
+        public int TestWidth { get; set; }
+        public int TestHeight { get; set; }
 
         public Map Map
         {
@@ -92,7 +96,13 @@ namespace ITI.S3.PI.Chick_End.GUI
                     int x = en.Position.X;
                     int y = en.Position.Y;
 
-                    e.Graphics.DrawImage(en.UnitImage, x, y, en.ImageWidth, en.ImageHeight);
+                    int imgFutureWidth = this.Width * en.ImageWidth / this.TestWidth;
+                    int imgFutureHeight = this.Height * en.ImageHeight / this.TestHeight;
+                    int futureX = this.Width * en.GetX / this.TestWidth;
+                    int futureY = this.Height * en.GetY / this.TestHeight;
+
+
+                    e.Graphics.DrawImage(en.UnitImage, futureX, futureY, imgFutureWidth, imgFutureHeight);
                 }
 
                 // On affiche les oeufs
@@ -100,8 +110,11 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     int x = eg.Position.X;
                     int y = eg.Position.Y;
-
-                    e.Graphics.DrawImage(eg.UnitImage, x, y, eg.ImageWidth, eg.ImageHeight);
+                    int imgFutureWidth = this.Width * eg.ImageWidth / this.TestWidth;
+                    int imgFutureHeight = this.Height * eg.ImageHeight / this.TestHeight;
+                    int futureX = this.Width * eg.Position.X / this.TestWidth;
+                    int futureY = this.Height * eg.Position.Y / this.TestHeight;
+                    e.Graphics.DrawImage(eg.UnitImage, futureX, futureY, imgFutureWidth, imgFutureHeight);
                 }
             }
             base.OnPaint( e );
