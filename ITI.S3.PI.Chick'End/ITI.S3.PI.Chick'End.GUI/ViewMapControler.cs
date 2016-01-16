@@ -17,15 +17,15 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             DoubleBuffered = true;
             string directory = Path.GetDirectoryName( Application.ExecutablePath );
-            string pathGrass = Path.Combine( directory, @"grass.png" );
-            string pathPath = Path.Combine( directory, @"path.png" );
-            string pathHomeHen = Path.Combine( directory, @"HomeHen.png" );
-            string pathExplosiveEgg = Path.Combine( directory, @"ExplosiveEgg.png" );
+            string pathPath = Path.Combine(directory, @"path.png");
+            string pathGrass = Path.Combine(directory, @"grass.png");
+            string pathHomeHen = Path.Combine(directory, @"HomeHen.png");
+            string pathExplosiveEgg = Path.Combine(directory, @"ExplosiveEgg.png");
 
-            _grass = Image.FromFile( pathGrass );
-            _path = Image.FromFile( pathPath );
-            _homeHen = Image.FromFile( pathHomeHen );
-            _explosiveEgg = Image.FromFile( pathExplosiveEgg );
+            _path = Image.FromFile(pathPath);
+            _grass = Image.FromFile(pathGrass);
+            _homeHen = Image.FromFile(pathHomeHen);
+            _explosiveEgg = Image.FromFile(pathExplosiveEgg);
 
         }
 
@@ -44,6 +44,16 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         protected override void OnPaint( PaintEventArgs e )
         {
+            //string directory = Path.GetDirectoryName(Application.ExecutablePath);
+            //string pathPath = Path.Combine(directory, @"path.png");
+            //string pathGrass = Path.Combine(directory, @"grass.png");
+            //string pathHomeHen = Path.Combine(directory, @"HomeHen.png");
+            //string pathExplosiveEgg = Path.Combine(directory, @"ExplosiveEgg.png");
+            //_path = Image.FromFile(pathPath);
+            //_grass = Image.FromFile(pathGrass);
+            //_homeHen = Image.FromFile(pathHomeHen);
+            //_explosiveEgg = Image.FromFile(pathExplosiveEgg);
+
             if (this.IsInDesignMode() || _map == null)
             {
                 BackColor = Color.Green;
