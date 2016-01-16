@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
@@ -30,10 +25,14 @@ namespace ITI.S3.PI.Chick_End
         {
             get { return _passivImage; }
         }
-
         public Image AttackImage
         {
             get { return _attackImage; }
+        }
+        public Image UnitImage
+        {
+            get { return _image; }
+            set { _image = value; }
         }
 
         public int Health
@@ -50,6 +49,10 @@ namespace ITI.S3.PI.Chick_End
         public int ImageWidth
         {
             get { return _imageWidth; }
+        }
+        public int ImageHeight
+        {
+            get { return _imageHeight; }
         }
 
         public virtual void AttackAnimate(int tick,  int attackSpeed)
@@ -75,18 +78,7 @@ namespace ITI.S3.PI.Chick_End
                 _image = _passivImage;
             }
         }
-
-        public int ImageHeight
-        {
-            get { return _imageHeight; }
-        }
-
-        public Image UnitImage
-        {
-            get { return _image; }
-            set { _image = value; }
-        }
-
+        
         public abstract void Die();
         
         public abstract Point Position { get; }

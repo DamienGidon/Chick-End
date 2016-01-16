@@ -27,8 +27,14 @@ namespace ITI.S3.PI.Chick_End
             if (tick % _attackSpeed == 0)
             {
                 foreach(Enemy e in Square.Context.Enemies)
-                    ennemi.Health -= Damages;
+                    e.Health -= Damages;
             }
+        }
+
+        public void KillAll()
+        {
+                foreach (Enemy e in Square.Context.Enemies)
+                    e.Health -= Damages;
         }
 
         public override List<Square> ComputeRange()

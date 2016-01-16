@@ -13,6 +13,7 @@ namespace ITI.S3.PI.Chick_End
         public GunnerFarmer(Square context)
             : base( context, 200 )
         {
+            Health = 100;
             _attackSpeed = 20;
             _health = 50;
             _kind = "human";

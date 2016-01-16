@@ -14,10 +14,10 @@ namespace ITI.S3.PI.Chick_End.GUI
         int _countM = 0;
         int _countR = 0;
         int _countS = -20;
-        int _countBaker;
         int _second = 0;
         int _minute = 0;
-        int _seeds = 200;
+        int _seeds = 100;
+        int _countBaker = 0;
         string _level;
         string _Ssecond;
         string _Sminute;
@@ -66,7 +66,20 @@ namespace ITI.S3.PI.Chick_End.GUI
             Pause();
             var game = _controler.FinalForm.CurrentGame;
             viewMapControler1.Map = game != null ? game.Map : null;
+            ResetTimer();
             Resume();
+        }
+
+        public void ResetTimer()
+        {
+            _tick = 0;
+            _countM = 0;
+            _countR = 0;
+            _countS = -20;
+            _second = 0;
+            _minute = 0;
+            _seeds = 100;
+            _countBaker = 0;
         }
 
         public void Resume()
@@ -129,12 +142,12 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
         }
 
+        // Drag and Drop for every Unit to place them on the map
         private void pictureBox1_DragDrop( object sender, DragEventArgs e )
         {
             PictureBox pb = ((PictureBox)sender);
             pb.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
         }
-
         private void pictureBox1_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb = ((PictureBox)sender);
@@ -142,21 +155,21 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb.DoDragDrop( pb.Image, DragDropEffects.Copy );
 
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
-            int line = topLeftCornerY / (viewMapControler1.Height / 9);
-            int column = topLeftCornerX / (viewMapControler1.Width / 14);
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
+            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
+            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
             if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
-                
+
             }
             else
             {
-                if (_henCreater.HenCost <= _seeds)
+                if (_henCreater.HensCost("Hen") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.HenCost;
-                    viewMapControler1.Map.CreateHen( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("Hen");
+                    viewMapControler1.Map.CreateHen(line, column, viewMapControler1.Map);
                 }
             }
         }
@@ -166,7 +179,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             PictureBox pb2 = ((PictureBox)sender);
             pb2.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
         }
-
         private void pictureBox2_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb2 = ((PictureBox)sender);
@@ -174,10 +186,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb2.DoDragDrop( pb2.Image, DragDropEffects.Copy );
 
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
-            int line = topLeftCornerY / (viewMapControler1.Height / 9);
-            int column = topLeftCornerX / (viewMapControler1.Width / 14);
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
+            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
+            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
             if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
@@ -185,10 +197,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                if (_henCreater.InfantryFarmerCost <= _seeds)
+                if (_henCreater.HensCost("InfantryFarmer") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.InfantryFarmerCost;
-                    viewMapControler1.Map.CreateInfantryFarmer( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("InfantryFarmer");
+                    viewMapControler1.Map.CreateInfantryFarmer(line, column, viewMapControler1.Map);
                 }
             }
         }
@@ -198,39 +210,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             PictureBox pb3 = ((PictureBox)sender);
             pb3.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
         }
-
-        private void pictureBox4_DragDrop( object sender, DragEventArgs e )
-        {
-            PictureBox pb4 = ((PictureBox)sender);
-            pb4.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
-        }
-
-        private void pictureBox4_MouseDown( object sender, MouseEventArgs e )
-        {
-            PictureBox pb4 = ((PictureBox)sender);
-            pb4.Select();
-            pb4.DoDragDrop( pb4.Image, DragDropEffects.Copy );
-
-            var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
-            int line = topLeftCornerY / (viewMapControler1.Height / 9);
-            int column = topLeftCornerX / (viewMapControler1.Width / 14);
-
-            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
-            {
-
-            }
-            else
-            {
-                if (_henCreater.GunnerFarmerCost <= _seeds)
-                {
-                    _seeds = _seeds - _henCreater.GunnerFarmerCost;
-                    viewMapControler1.Map.CreateGunnerFarmer( line, column, viewMapControler1.Map );
-                }
-            }
-        }
-
         private void pictureBox3_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb3 = ((PictureBox)sender);
@@ -238,10 +217,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb3.DoDragDrop( pb3.Image, DragDropEffects.Copy );
 
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
-            int line = topLeftCornerY / (viewMapControler1.Height / 9);
-            int column = topLeftCornerX / (viewMapControler1.Width / 14);
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
+            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
+            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
             if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
@@ -249,10 +228,41 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                if (_henCreater.BomberHenCost <= _seeds)
+                if (_henCreater.HensCost("BomberHen") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.BomberHenCost;
-                    viewMapControler1.Map.CreateBomberHen( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("BomberHen");
+                    viewMapControler1.Map.CreateBomberHen(line, column, viewMapControler1.Map);
+                }
+            }
+        }
+
+        private void pictureBox4_DragDrop( object sender, DragEventArgs e )
+        {
+            PictureBox pb4 = ((PictureBox)sender);
+            pb4.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
+        }
+        private void pictureBox4_MouseDown( object sender, MouseEventArgs e )
+        {
+            PictureBox pb4 = ((PictureBox)sender);
+            pb4.Select();
+            pb4.DoDragDrop( pb4.Image, DragDropEffects.Copy );
+
+            var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
+            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
+            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
+
+            if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
+            {
+
+            }
+            else
+            {
+                if (_henCreater.HensCost("GunnerFarmer") <= _seeds)
+                {
+                    _seeds = _seeds - _henCreater.HensCost("GunnerFarmer");
+                    viewMapControler1.Map.CreateGunnerFarmer(line, column, viewMapControler1.Map);
                 }
             }
         }
@@ -263,7 +273,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb4.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
 
         }
-
         private void pictureBox5_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb5 = ((PictureBox)sender);
@@ -271,10 +280,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb5.DoDragDrop( pb5.Image, DragDropEffects.Copy );
 
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
-            int line = topLeftCornerY / (viewMapControler1.Height / 9);
-            int column = topLeftCornerX / (viewMapControler1.Width / 14);
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
+            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
+            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
             if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
@@ -282,10 +291,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                if (_henCreater.OldHenCost <= _seeds)
+                if (_henCreater.HensCost("OldHen") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.OldHenCost;
-                    viewMapControler1.Map.CreateOldHen( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("OldHen");
+                    viewMapControler1.Map.CreateOldHen(line, column, viewMapControler1.Map);
                 }
             }
         }
@@ -295,7 +304,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             PictureBox pb6 = ((PictureBox)sender);
             pb6.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
         }
-
         private void pictureBox6_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb6 = ((PictureBox)sender);
@@ -303,10 +311,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb6.DoDragDrop( pb6.Image, DragDropEffects.Copy );
 
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
-            int line = topLeftCornerY / (viewMapControler1.Height / 9);
-            int column = topLeftCornerX / (viewMapControler1.Width / 14);
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
+            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
+            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
             if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
@@ -314,10 +322,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                if (_henCreater.BakerCost <= _seeds)
+                if (_henCreater.HensCost("Baker") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.BakerCost;
-                    viewMapControler1.Map.CreateBaker( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("Baker");
+                    viewMapControler1.Map.CreateBaker(line, column, viewMapControler1.Map);
                 }
             }
         }
@@ -327,7 +335,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             PictureBox pb7 = ((PictureBox)sender);
             pb7.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
         }
-
         private void pictureBox7_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb7 = ((PictureBox)sender);
@@ -335,10 +342,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb7.DoDragDrop( pb7.Image, DragDropEffects.Copy );
 
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
-            int line = topLeftCornerY / (viewMapControler1.Height / 9);
-            int column = topLeftCornerX / (viewMapControler1.Width / 14);
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
+            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
+            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
             if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
@@ -346,10 +353,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                if (_henCreater.ExplosiveEggCost <= _seeds)
+                if (_henCreater.HensCost("ExplosiveEgg") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.ExplosiveEggCost;
-                    viewMapControler1.Map.CreateExplosiveEgg( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("ExplosiveEgg");
+                    viewMapControler1.Map.CreateExplosiveEgg(line, column, viewMapControler1.Map);
                 }
             }
         }
@@ -359,7 +366,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             PictureBox pb8 = ((PictureBox)sender);
             pb8.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
         }
-
         private void pictureBox8_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb8 = ((PictureBox)sender);
@@ -367,10 +373,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb8.DoDragDrop( pb8.Image, DragDropEffects.Copy );
 
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
-            int line = topLeftCornerY / (viewMapControler1.Height / 9);
-            int column = topLeftCornerX / (viewMapControler1.Width / 14);
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
+            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
+            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
             if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
@@ -378,10 +384,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                if (_henCreater.ButcherCost <= _seeds)
+                if (_henCreater.HensCost("Butcher") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.ButcherCost;
-                    viewMapControler1.Map.CreateButcher( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("Butcher");
+                    viewMapControler1.Map.CreateButcher(line, column, viewMapControler1.Map);
                 }
             }
         }
@@ -391,7 +397,6 @@ namespace ITI.S3.PI.Chick_End.GUI
             PictureBox pb9 = ((PictureBox)sender);
             pb9.Image = (Image)e.Data.GetData( DataFormats.Bitmap );
         }
-
         private void pictureBox9_MouseDown( object sender, MouseEventArgs e )
         {
             PictureBox pb9 = ((PictureBox)sender);
@@ -399,10 +404,10 @@ namespace ITI.S3.PI.Chick_End.GUI
             pb9.DoDragDrop( pb9.Image, DragDropEffects.Copy );
 
             var relativePoint = viewMapControler1.PointToClient( Cursor.Position = new Point( Cursor.Position.X, Cursor.Position.Y ) );
-            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / 14)) * (viewMapControler1.Width / 14));
-            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / 9)) * (viewMapControler1.Height / 9));
-            int line = topLeftCornerY / (viewMapControler1.Height / 9);
-            int column = topLeftCornerX / (viewMapControler1.Width / 14);
+            int topLeftCornerX = ((relativePoint.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth)) * (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth));
+            int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
+            int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
+            int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
 
             if (viewMapControler1.Map.Square[line, column].Decoration != "path" || viewMapControler1.Map.Square[line, column].Tower != null)
             {
@@ -410,10 +415,13 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
             else
             {
-                if (_henCreater.RoosterCost <= _seeds)
+                if (_henCreater.HensCost("Rooster") <= _seeds)
                 {
-                    _seeds = _seeds - _henCreater.RoosterCost;
-                    viewMapControler1.Map.CreateRooster( line, column, viewMapControler1.Map );
+                    _seeds = _seeds - _henCreater.HensCost("Rooster");
+                    viewMapControler1.Map.CreateRooster(line, column, viewMapControler1.Map);
+                    Rooster r = (Rooster) viewMapControler1.Map.Square[line, column].Tower;
+                    r.KillAll();
+
                 }
             }
         }
@@ -443,6 +451,14 @@ namespace ITI.S3.PI.Chick_End.GUI
             pictureBox10.Image = p10;
             if (viewMapControler1.Map.Square[line, column].Tower != null && x < trashX + 50 && x > trashX && y < trashY + 50 && y > trashY)
             {
+                if (viewMapControler1.Map.Square[line, column].Tower is Rooster)
+                {
+
+                }
+                else
+                {
+                    _seeds += _henCreater.SellUnit(viewMapControler1.Map.Square[line, column].Tower);
+                }
                 viewMapControler1.Map.Square[line, column].Tower.Die();
             }
         }
@@ -462,7 +478,10 @@ namespace ITI.S3.PI.Chick_End.GUI
                 ser.Serialize(fs, _controler.FinalForm.CurrentGame);
             }
         }
-
+        public string ScoreInString
+        {
+            get { return labelTimer.Text; }
+        }
         private void timer1_Tick( object sender, EventArgs e )
         {
             _tick++;
@@ -495,7 +514,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                         _countBaker++;
                     }
                 }
-                _seeds += 200 + _countBaker*50;
+                _seeds += 100 + _countBaker*50;
                 _countBaker = 0;
             }
             labelSeedNumber.Text = Convert.ToString( _seeds );
@@ -532,8 +551,8 @@ namespace ITI.S3.PI.Chick_End.GUI
                     player.Play();
                 }
                 this.timer1.Stop();
-                GameOver g = new GameOver( labelTimer.Text, _level );
-                g.ShowDialog();
+                GameOver g = new GameOver( _controler, labelTimer.Text, _controler.FinalForm.CurrentGame.Map.Level );
+                _controler.DisplayGameOver();
             }
             else
             {
@@ -562,47 +581,69 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         private void pictureBox1_MouseEnter( object sender, EventArgs e )
         {
-            labelPrice.Text = Convert.ToString( _henCreater.HenCost );
+            Point point = panel1.PointToClient(Cursor.Position);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("Hen"));
         }
 
         private void pictureBox5_MouseEnter( object sender, EventArgs e )
         {
-            labelPrice.Text = Convert.ToString( _henCreater.OldHenCost );
+            Point point = panel1.PointToClient(Cursor.Position);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("OldHen"));
         }
 
         private void pictureBox3_MouseEnter( object sender, EventArgs e )
         {
-            labelPrice.Text = Convert.ToString( _henCreater.BomberHenCost );
+            Point point = panel1.PointToClient(Cursor.Position);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("BomberHen"));
         }
 
         private void pictureBox7_MouseEnter( object sender, EventArgs e )
         {
-            labelPrice.Text = Convert.ToString( _henCreater.ExplosiveEggCost );
+            Point point = panel1.PointToClient(Cursor.Position);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("ExplosiveEgg"));
         }
 
         private void pictureBox9_MouseEnter( object sender, EventArgs e )
         {
-            labelPrice.Text = Convert.ToString( _henCreater.RoosterCost );
+            Point point = panel1.PointToClient(Cursor.Position);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("Rooster"));
         }
 
         private void pictureBox4_MouseEnter( object sender, EventArgs e )
         {
-            labelPrice.Text = Convert.ToString( _henCreater.GunnerFarmerCost );
+            Point point = panel1.PointToClient(Cursor.Position);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("GunnerFarmer"));
         }
 
         private void pictureBox2_MouseEnter( object sender, EventArgs e )
         {
-            labelPrice.Text = Convert.ToString( _henCreater.InfantryFarmerCost );
+            Point point = panel1.PointToClient(Cursor.Position);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("InfantryFarmer"));
         }
 
         private void pictureBox6_MouseEnter( object sender, EventArgs e )
         {
-            labelPrice.Text = Convert.ToString( _henCreater.BakerCost );
+            Point point = panel1.PointToClient(Cursor.Position);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("Baker"));
         }
 
+        private void pictureBox8_MouseEnter(object sender, EventArgs e)
+        {
+            Point point = panel1.PointToClient(Cursor.Position);
+            labelShowSeed.Location = new Point(point.X + 1, point.Y + 1);
+            labelShowSeed.Text = Convert.ToString(" " + _henCreater.HensCost("Butcher"));
+        }
         private void panel1_MouseEnter( object sender, EventArgs e )
         {
-            labelPrice.Text = Convert.ToString( _henCreater.ButcherCost );
+            labelShowSeed.Text = Convert.ToString( "" );
         }
     }
 }

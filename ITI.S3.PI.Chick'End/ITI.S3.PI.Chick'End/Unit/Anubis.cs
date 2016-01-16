@@ -29,7 +29,7 @@ namespace ITI.S3.PI.Chick_End
         {
             if (tick % _attackSpeed == 0)
             {
-                Context.CreateAnubisWolf(Square.Context, this.GetX, this.GetY);
+                Context.CreateAnubisWolf(Square.Context, this.X, this.Y);
             }
         }
 

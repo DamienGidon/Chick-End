@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
-using System.Diagnostics;
 
 namespace ITI.S3.PI.Chick_End
 {
@@ -11,45 +12,35 @@ namespace ITI.S3.PI.Chick_End
     public class Game
     {
         readonly Map _map;
-        [NonSerialized]
-        readonly Stopwatch _stopwatch;
         bool _isPaused;
         bool _isLost;
         HenCreater _henCreater;
 
-        public Game()
+        public Game(string mapLevel)
         {
-            _map = new Map();
+            using (FileStream fs = new FileStream( mapLevel, FileMode.Open, FileAccess.Read, FileShare.None ))
+            {
+                BinaryFormatter ser = new BinaryFormatter();
+                Map map = (Map)ser.Deserialize( fs );
+                _map = map;
+            }
+            _henCreater = new HenCreater( _map );
             _henCreater = new HenCreater(_map);
-            _stopwatch = new Stopwatch();
-        }
-        public Game(string test)
-        {
-            _map = new Map(test);
-            _stopwatch = new Stopwatch();
         }
 
         public Map Map
         {
             get { return _map; }
         }
-
-        public Stopwatch Stopwatch
-        {
-            get { return _stopwatch; }
-        }
-
         public HenCreater HenCreater
         {
             get { return _henCreater; }
         }
-
         public bool IsPosed
         {
             get { return _isPaused; }
             set { _isPaused = value; }
         }
-
         public bool IsLost
         {
             get { return _isLost; }
@@ -99,7 +90,6 @@ namespace ITI.S3.PI.Chick_End
                     {
                         e.Move();
                         e.MoveAnimate(tick);
-                        //e.UnitImage = e.PassiveImage;
                     }
                 }
                 else if (t is Steak && e is Fox)
