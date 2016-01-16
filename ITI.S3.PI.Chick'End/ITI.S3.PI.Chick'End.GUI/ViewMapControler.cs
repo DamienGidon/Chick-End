@@ -26,7 +26,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             _grass = Image.FromFile(pathGrass);
             _homeHen = Image.FromFile(pathHomeHen);
             _explosiveEgg = Image.FromFile(pathExplosiveEgg);
-
+            
         }
         public int TestWidth { get; set; }
         public int TestHeight { get; set; }
@@ -114,8 +114,8 @@ namespace ITI.S3.PI.Chick_End.GUI
 
                     int imgFutureWidth = this.Width * en.ImageWidth / this.TestWidth;
                     int imgFutureHeight = this.Height * en.ImageHeight / this.TestHeight;
-                    int futureX = this.Width * en.GetX / this.TestWidth;
-                    int futureY = this.Height * en.GetY / this.TestHeight;
+                    int futureX = this.Width * en.X / this.TestWidth;
+                    int futureY = this.Height * en.Y / this.TestHeight;
 
 
                     e.Graphics.DrawImage(en.UnitImage, futureX, futureY, imgFutureWidth, imgFutureHeight);
