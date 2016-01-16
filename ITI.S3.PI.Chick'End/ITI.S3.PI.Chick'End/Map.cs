@@ -13,7 +13,9 @@ namespace ITI.S3.PI.Chick_End
         readonly List<EggLauncher> _eggs;
         readonly int _nbCaseWidth;
         readonly int _nbCaseHeight;
-        int _level;
+        readonly int _level;
+
+        static Random _r = new Random();
 
         public List<Tower> Towers
         {
@@ -362,6 +364,11 @@ namespace ITI.S3.PI.Chick_End
             Bullet b = new Bullet( context, damage, x, y - 20 );
             _eggs.Add( b );
             return b;
+        }
+
+        public Way CreateWay( Way way )
+        {
+            return new Way( way );
         }
     }
 }

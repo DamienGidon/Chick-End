@@ -26,7 +26,7 @@ namespace ITI.S3.PI.Chick_End
             _context = context;
             _damages = damages;
             int numberOfWays = _context.Ways.Count();
-            _way = _context.Ways[_r.Next( numberOfWays )];
+            _way = _context.CreateWay( _context.Ways[_r.Next( numberOfWays )]);
             _x = _way.FirstSquare.Column * FinalVariables.SquareWidthInMeters + FinalVariables.SquareWidthInMeters - 1;
             _y = _way.FirstSquare.Line * FinalVariables.SquareHeightInMeters;
             _range = ComputeRange();

@@ -14,6 +14,12 @@ namespace ITI.S3.PI.Chick_End
             _current = firstSquare;
         }
 
+        public Way( Way w )
+        {
+            _firstSquare = w.FirstSquare;
+            _current = w.FirstSquare;
+        }
+
         public Square FirstSquare
         {
             get { return _firstSquare; }

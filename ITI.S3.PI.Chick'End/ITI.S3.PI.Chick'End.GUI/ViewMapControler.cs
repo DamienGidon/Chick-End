@@ -31,9 +31,6 @@ namespace ITI.S3.PI.Chick_End.GUI
         public int TestWidth { get; set; }
         public int TestHeight { get; set; }
 
-        public int TestWidth { get; set; }
-        public int TestHeight { get; set; }
-
         public Map Map
         {
             get { return _map; }
