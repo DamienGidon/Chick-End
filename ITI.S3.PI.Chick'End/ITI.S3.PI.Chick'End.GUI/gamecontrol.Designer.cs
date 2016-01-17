@@ -57,6 +57,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.labelShowSeed = new System.Windows.Forms.Label();
             this.viewMapControler1 = new ITI.S3.PI.Chick_End.GUI.ViewMapControler();
+            this.labelUpgrade = new System.Windows.Forms.Label();
             this.panelSeed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -99,6 +100,7 @@
             this.panelSeed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelSeed.BackColor = System.Drawing.Color.Orange;
+            this.panelSeed.Controls.Add(this.labelUpgrade);
             this.panelSeed.Controls.Add(this.pictureBox10);
             this.panelSeed.Controls.Add(this.pictureBox11);
             this.panelSeed.Controls.Add(this.labelTimer);
@@ -408,6 +410,18 @@
             this.viewMapControler1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.viewMapControler1_MouseDown);
             this.viewMapControler1.Resize += new System.EventHandler(this.viewMapControler1_Resize);
             // 
+            // labelUpgrade
+            // 
+            this.labelUpgrade.AutoSize = true;
+            this.labelUpgrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.labelUpgrade.Font = new System.Drawing.Font("Playbill", 20F);
+            this.labelUpgrade.ForeColor = System.Drawing.Color.Green;
+            this.labelUpgrade.Location = new System.Drawing.Point(706, 14);
+            this.labelUpgrade.Name = "labelUpgrade";
+            this.labelUpgrade.Size = new System.Drawing.Size(61, 27);
+            this.labelUpgrade.TabIndex = 5;
+            this.labelUpgrade.Text = "Upgrade";
+            // 
             // gamecontrol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -474,5 +488,6 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label labelShowSeed;
+        private System.Windows.Forms.Label labelUpgrade;
     }
 }

@@ -6,11 +6,14 @@ namespace ITI.S3.PI.Chick_End
     [Serializable]
     public abstract class Unit : IDie
     {
+        protected bool _upgrade;
         protected int _health;
         protected Image _image;
         protected Image _passivImage;
         protected Image _attackImage;
         protected Image _moveImage;
+        protected Image _upgradeImage;
+        protected Image _attackUpgradeImage;
         protected int _imageWidth;
         protected int _imageHeight;
         protected string _kind;
@@ -19,6 +22,13 @@ namespace ITI.S3.PI.Chick_End
         public int AttackSpeed
         {
             get { return _attackSpeed; }
+        }
+
+        public void Upgrade()
+        {
+            _upgrade = true;
+            _passivImage =_image = _upgradeImage;
+            _attackSpeed = Convert.ToInt32(_attackSpeed / 1.5);
         }
 
         public Image PassiveImage
@@ -33,6 +43,11 @@ namespace ITI.S3.PI.Chick_End
         {
             get { return _image; }
             set { _image = value; }
+        }
+
+        public bool AlreadyUp
+        {
+            get { return _upgrade; }
         }
 
         public int Health
@@ -59,11 +74,25 @@ namespace ITI.S3.PI.Chick_End
         {
             if (tick % attackSpeed >= 0 && tick % attackSpeed <= 10)
             {
-                _image = _attackImage;
+                if (_upgrade == true)
+                {
+                    _image = _attackUpgradeImage;
+                }
+                else
+                {
+                    _image = _attackImage;
+                }
             }
             else
             {
-                _image = _passivImage;
+                if (_upgrade == true)
+                {
+                    _image = _upgradeImage;
+                }
+                else
+                {
+                    _image = _passivImage;
+                }
             }
         }
 

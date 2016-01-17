@@ -14,11 +14,14 @@ namespace ITI.S3.PI.Chick_End
         public Hen(Square context)
             : base( context, 15 )
         {
+            _upgrade = false;
             _attackSpeed = 20;
             _health = 100;
             _kind = "hen";
+            _upgradeImage = Image.FromFile("HenLeftUpgrade.png");
             _passivImage = Image.FromFile("HenLeft.png");
             _attackImage = Image.FromFile("HenAttack.png");
+            _attackUpgradeImage = Image.FromFile("HenAttackUpgrade.png");
             _image = _passivImage;
 
         }

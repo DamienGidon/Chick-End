@@ -465,6 +465,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             int line = e.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
             int column = e.X / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
             var trashPosition = pictureBox10.PointToScreen( new Point( 10, 10 ) );
+            var upgradePosition = labelUpgrade.PointToScreen(new Point(10, 10));
             var x = Cursor.Position.X;
             var y = Cursor.Position.Y;
             var trashX = trashPosition.X;
@@ -485,6 +486,18 @@ namespace ITI.S3.PI.Chick_End.GUI
                     _seeds += _henCreater.SellUnit(viewMapControler1.Map.Square[line, column].Tower);
                 }
                 viewMapControler1.Map.Square[line, column].Tower.Die();
+            }
+
+            if (viewMapControler1.Map.Square[line, column].Tower != null && x < upgradePosition.X + 50 && x > upgradePosition.X && y < upgradePosition.Y + 50 && y > upgradePosition.Y)
+            {
+                if (viewMapControler1.Map.Square[line, column].Tower is Hen)
+                {
+                    if (viewMapControler1.Map.Square[line, column].Tower.AlreadyUp == false && _seeds >= _henCreater.HensCost(Convert.ToString(viewMapControler1.Map.Square[line, column].Tower).Remove(0, 20)) * 3)
+                    {
+                        _seeds -= _henCreater.HensCost(Convert.ToString(viewMapControler1.Map.Square[line, column].Tower).Remove(0, 20)) * 3;
+                        viewMapControler1.Map.Square[line, column].Tower.Upgrade();
+                    }
+                }
             }
         }
 
