@@ -37,7 +37,7 @@ namespace ITI.S3.PI.Chick_End
             return Math.Sqrt( deltaX * deltaX + deltaY * deltaY );
         }
 
-        public static List<Square> GetRange(this Tower t, int rangeInSquare)
+        public static List<Square> GetRange(this Unit t, int rangeInSquare)
         {
             List<Square> squaresInRange = new List<Square>();
             int line = t.Square.Line;

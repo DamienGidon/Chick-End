@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
@@ -23,21 +20,23 @@ namespace ITI.S3.PI.Chick_End
             _damages = damages;
         }
 
+        // Properties
+        public Square Context
+        {
+            get { return _context; }
+        }
         public override Square Square
         {
             get { return _square; }
         }
-
         public int Damages
         {
             get { return _damages; }
         }
-       
         public override Point Position
         {
             get { return new Point( _square.Column * FinalVariables.SquareWidthInMeters + FinalVariables.SquareWidthInMeters / 2, _square.Line * FinalVariables.SquareHeightInMeters + FinalVariables.SquareHeightInMeters / 2 ); }
         }
-
         public IReadOnlyList<Square> Range
         {
             get { return _range; }
@@ -50,35 +49,7 @@ namespace ITI.S3.PI.Chick_End
 
         public virtual List<Square> ComputeRange()
         {
-            List<Square> squaresInRange = new List<Square>();
-            int line = _square.Line;
-            int column = _square.Column;
-
-            for (int i = column; i < FinalVariables.NbCaseWidthMap1; i++)
-            {
-                if (_square.Context.Square[line, i].Decoration == "path")
-                    squaresInRange.Add( _square.Context.Square[line, i] );
-                else
-                    break;
-            }
-
-            for (int i = line + 1; i < FinalVariables.NbCaseHeightMap1; i++)
-            {
-                if (_square.Context.Square[i, column].Decoration == "path")
-                    squaresInRange.Add( _square.Context.Square[i, column] );
-                else
-                    break;
-            }
-
-            for (int i = line - 1; i >= 0; i--)
-            {
-                if (_square.Context.Square[i, column].Decoration == "path")
-                    squaresInRange.Add( _square.Context.Square[i, column] );
-                else
-                    break;
-            }
-
-            return squaresInRange;
+            return this.GetRange( Math.Max( Square.Context.NbCaseHeight, Square.Context.NbCaseWidth ) );
         }
 
         public abstract void Attack(Unit ennemi, int tick);
@@ -89,9 +60,5 @@ namespace ITI.S3.PI.Chick_End
             _square.Tower = null;
         }
 
-        public Square Context
-        {
-            get { return _context; }
-        }
     }
 }

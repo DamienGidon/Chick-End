@@ -16,22 +16,27 @@ namespace ITI.S3.PI.Chick_End
         readonly int _level;
 
         static Random _r = new Random();
-
-        public List<Tower> Towers
-        {
-            get { return _towers; }
-        }
-
+        
+        /*
+        * Properties
+        */
         public int Level
         {
             get { return _level; }
         }
 
+        public List<Tower> Towers
+        {
+            get { return _towers; }
+        }
         public List<Enemy> Enemies
         {
             get { return _enemies; }
         }
-
+        internal List<Way> Ways
+        {
+            get { return _ways; }
+        }
         public List<EggLauncher> Eggs
         {
             get { return _eggs; }
@@ -44,6 +49,15 @@ namespace ITI.S3.PI.Chick_End
         public int NbCaseHeight
         {
             get { return _nbCaseHeight; }
+        }
+
+        public Square[,] Square
+        {
+            get { return _squares; }
+        }
+        public Square this[int ligne, int colonne]
+        {
+            get { return _squares[ligne, colonne]; }
         }
 
         //Constructor of the 1st map
@@ -214,19 +228,6 @@ namespace ITI.S3.PI.Chick_End
         //    _ways.Add( w4 );
         //}
 
-        internal List<Way> Ways
-        {
-            get { return _ways; }
-        }
-        public Square[,] Square
-        {
-            get { return _squares; }
-        }
-
-        public Square this[int ligne, int colonne]
-        {
-            get { return _squares[ligne, colonne]; }
-        }
 
         public void CreateHen( int ligne, int colonne, Map context )
         {
@@ -341,27 +342,27 @@ namespace ITI.S3.PI.Chick_End
             return e;
         }
 
-        public NormalEgg CreateNormalEgg( Map context, int x, int y, int damage )
+        public NormalEgg CreateNormalEgg( Map context, Square[] towerRange, int x, int y, int damage )
         {
-            NormalEgg e = new NormalEgg( context, damage, x, y - 20 );
+            NormalEgg e = new NormalEgg( context, towerRange, damage, x, y - 20 );
             _eggs.Add( e );
             return e;
         }
-        public RottenEgg CreateRottenEgg( Map context, int x, int y, int damage )
+        public RottenEgg CreateRottenEgg( Map context, Square[] towerRange, int x, int y, int damage )
         {
-            RottenEgg e = new RottenEgg( context, damage, x, y - 20 );
+            RottenEgg e = new RottenEgg( context, towerRange, damage, x, y - 20 );
             _eggs.Add( e );
             return e;
         }
-        public RobotEgg CreateRobotEgg( Map context, int x, int y, int damage )
+        public RobotEgg CreateRobotEgg( Map context, Square[] towerRange, int x, int y, int damage )
         {
-            RobotEgg e = new RobotEgg( context, damage, x, y - 20 );
+            RobotEgg e = new RobotEgg( context,towerRange, damage, x, y - 20 );
             _eggs.Add( e );
             return e;
         }
-        public Bullet CreateBullet( Map context, int x, int y, int damage )
+        public Bullet CreateBullet( Map context, Square[] towerRange, int x, int y, int damage )
         {
-            Bullet b = new Bullet( context, damage, x, y - 20 );
+            Bullet b = new Bullet( context, towerRange, damage, x, y - 20 );
             _eggs.Add( b );
             return b;
         }

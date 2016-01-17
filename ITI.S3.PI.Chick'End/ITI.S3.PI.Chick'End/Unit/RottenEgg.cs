@@ -11,8 +11,8 @@ namespace ITI.S3.PI.Chick_End
     public class RottenEgg : EggLauncher
     {
 
-        public RottenEgg(Map context, int damage, int x, int y)
-            : base(context, damage, x, y)
+        public RottenEgg(Map context, Square[] towerRange, int damage, int x, int y)
+            : base(context, towerRange, damage, x, y)
         {
             _image = Image.FromFile("RottenEgg.png");
             _imageWidth = 26;

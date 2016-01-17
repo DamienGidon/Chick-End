@@ -51,23 +51,71 @@ namespace ITI.S3.PI.Chick_End
         {
             List<EggLauncher> _eggLaunchers = new List<EggLauncher>();
             List<ExplosiveEgg> _explosiveEggs = new List<ExplosiveEgg>();
-            foreach ( EggLauncher e in _map.Eggs)
+
+            foreach (Tower t in _map.Towers)
             {
-                Enemy enemy = e.GetClosestEnemyAttackable();
-                if (enemy == null)
+                Enemy e = t.GetClosestEnemyAttackable();
+                if (e != null)
                 {
-                    if(e.Position.X < (FinalVariables.MapWidthInMeters - 35))
+                    t.Attack( e, tick );
+                    t.AttackAnimate( tick, t.AttackSpeed );
+                    if (e.Health <= 0)
+                        e.Die();
+
+                    if (t is ExplosiveEgg)
                     {
-                        e.Move();
-                    }
-                    else
-                    {
-                        _eggLaunchers.Add(e);
+                        ExplosiveEgg ex = (ExplosiveEgg)t;
+                        if (ex.Exploded == true)
+                        {
+                            _explosiveEggs.Add( ex );
+                        }
                     }
                 }
                 else
                 {
-                    e.Attack(enemy, tick);
+                    t.UnitImage = t.PassiveImage;
+                }
+            }
+            foreach (ExplosiveEgg ex in _explosiveEggs)
+            {
+                ex.Die();
+            }
+
+
+            foreach ( EggLauncher e in _map.Eggs)
+            {
+                Enemy enemy = e.GetClosestEnemyAttackable();
+                if (enemy != null)
+                {
+                    if (enemy.Square.Column > e.Square.Column)
+                    {
+                        if (e.X < enemy.X - 25)
+                        {
+                            e.Move( enemy );
+                        }
+                    }
+                    else if( enemy.Square.Line > e.Square.Line)
+                    {
+                        if( e.Y < enemy.Y)
+                        {
+                            e.Move( enemy );
+                        }
+                    }
+                    else if (enemy.Square.Line < e.Square.Line)
+                    {
+                        if (e.Y > enemy.Y )
+                        {
+                            e.Move( enemy );
+                        }
+                    }
+                    else
+                    {
+                        _eggLaunchers.Add( e );
+                        e.Attack( enemy, tick );
+                    }
+                }
+                else
+                {
                     _eggLaunchers.Add(e);
                 }
             }
@@ -108,35 +156,6 @@ namespace ITI.S3.PI.Chick_End
                     if (t.Health <= 0)
                         t.Die();
                 }
-            }
-
-            foreach( Tower t in _map.Towers)
-            {
-                Enemy e = t.GetClosestEnemyAttackable();
-                if (e != null)
-                {
-                    t.Attack( e, tick );
-                    t.AttackAnimate(tick, t.AttackSpeed);
-                    if (e.Health <= 0)
-                        e.Die();
-
-                    if (t is ExplosiveEgg)
-                    {
-                        ExplosiveEgg ex = (ExplosiveEgg)t;
-                        if (ex.Exploded == true)
-                        {
-                            _explosiveEggs.Add(ex);
-                        }
-                    }
-                }
-                else
-                {
-                    t.UnitImage = t.PassiveImage;
-                }
-            }
-            foreach (ExplosiveEgg ex in _explosiveEggs)
-            {
-                ex.Die();
             }
         }
     }

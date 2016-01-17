@@ -20,6 +20,7 @@ namespace ITI.S3.PI.Chick_End
             _passivImage = Image.FromFile("HenLeft.png");
             _attackImage = Image.FromFile("HenAttack.png");
             _image = _passivImage;
+
         }
 
         public override List<Square> ComputeRange()
@@ -31,7 +32,7 @@ namespace ITI.S3.PI.Chick_End
         {
             if (tick % _attackSpeed == 0)
             {
-                Context.Context.CreateNormalEgg(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 15);
+                Context.Context.CreateNormalEgg(Square.Context, _range, Square.Tower.Position.X, Square.Tower.Position.Y, 15);
             }
         }
     }

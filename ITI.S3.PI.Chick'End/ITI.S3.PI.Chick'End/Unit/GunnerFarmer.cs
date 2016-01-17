@@ -31,7 +31,7 @@ namespace ITI.S3.PI.Chick_End
         {
             if (tick % _attackSpeed == 0)
             {
-                Context.Context.CreateBullet(Square.Context, Square.Tower.Position.X, Square.Tower.Position.Y, 30);
+                Context.Context.CreateBullet(Square.Context, _range, Square.Tower.Position.X, Square.Tower.Position.Y, 30);
             }
         }
     }

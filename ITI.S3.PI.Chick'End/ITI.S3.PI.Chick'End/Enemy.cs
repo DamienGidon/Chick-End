@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ITI.S3.PI.Chick_End
 {
@@ -37,7 +35,6 @@ namespace ITI.S3.PI.Chick_End
             get { return _x; }
             set { _x = value; }
         }
-
         public int Y
         {
             get { return _y; }
@@ -55,18 +52,15 @@ namespace ITI.S3.PI.Chick_End
         {
             get { return _context; }
         }
-
         public Way Way
         {
             get { return _way; }
         }
-
         public int Damages
         {
             get { return _damages; }
             set { _damages = value; }
         }
-
         public int Speed
         {
             get { return _speed; }
@@ -121,7 +115,6 @@ namespace ITI.S3.PI.Chick_End
         public IReadOnlyList<Square> Range
         {
             get { return _range; }
-            set { _range = ComputeRange(); }
         }
 
         public Tower GetClosestTowerAttackable()
