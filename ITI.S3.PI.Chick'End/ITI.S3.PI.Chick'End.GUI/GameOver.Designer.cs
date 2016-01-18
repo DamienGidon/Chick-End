@@ -58,7 +58,7 @@
             this.buttonReturn.Name = "buttonReturn";
             this.buttonReturn.Size = new System.Drawing.Size(88, 44);
             this.buttonReturn.TabIndex = 1;
-            this.buttonReturn.Text = "Return";
+            this.buttonReturn.Text = "Quit";
             this.buttonReturn.UseVisualStyleBackColor = true;
             this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
             this.buttonReturn.MouseEnter += new System.EventHandler(this.buttonMenu_MouseEnter);
