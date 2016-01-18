@@ -18,6 +18,8 @@ namespace ITI.S3.PI.Chick_End
             _kind = "hen";
             _passivImage = Image.FromFile("OldHen.png");
             _attackImage = Image.FromFile("OldHenAttack.png");
+            _upgradeImage = Image.FromFile("OldHenUpgrade.png");
+            _attackUpgradeImage = Image.FromFile("OldHenAttackUpgrade.png");
             _image = _passivImage;
         }
 

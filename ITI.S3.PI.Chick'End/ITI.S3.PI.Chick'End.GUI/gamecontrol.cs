@@ -490,7 +490,7 @@ namespace ITI.S3.PI.Chick_End.GUI
 
             if (viewMapControler1.Map.Square[line, column].Tower != null && x < upgradePosition.X + 50 && x > upgradePosition.X && y < upgradePosition.Y + 50 && y > upgradePosition.Y)
             {
-                if (viewMapControler1.Map.Square[line, column].Tower is Hen)
+                if (viewMapControler1.Map.Square[line, column].Tower is Hen || viewMapControler1.Map.Square[line, column].Tower is OldHen)
                 {
                     if (viewMapControler1.Map.Square[line, column].Tower.AlreadyUp == false && _seeds >= _henCreater.HensCost(Convert.ToString(viewMapControler1.Map.Square[line, column].Tower).Remove(0, 20)) * 3)
                     {
