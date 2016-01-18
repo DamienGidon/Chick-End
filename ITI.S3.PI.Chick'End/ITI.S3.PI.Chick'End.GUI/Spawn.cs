@@ -17,9 +17,33 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             _tick = tick;
             _game = Context;
-            SpawnAll();
+            //SpawnAll();
+            SpawnIte();
             SpawnFromAnubis();
             SpawnSteak();
+        }
+
+        public void SpawnIte()
+        {
+            if (_tick == 100)
+            {
+                Wolf w = _game.Map.CreateWolf(_game.Map);
+            }
+
+            if (_tick == 200)
+            {
+                Fox f = _game.Map.CreateFox(_game.Map);
+            }
+
+            if (_tick == 300)
+            {
+                Anubis a = _game.Map.CreateAnubis(_game.Map);
+            }
+
+            if (_tick == 400)
+            {
+                Cerberus c = _game.Map.CreateCerberus(_game.Map);
+            }
         }
 
         public void SpawnAll()

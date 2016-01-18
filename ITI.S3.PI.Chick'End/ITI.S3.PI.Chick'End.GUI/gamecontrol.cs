@@ -77,7 +77,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             _countS = -20;
             _second = 0;
             _minute = 0;
-            _seeds = 100;
+            _seeds = 10000;
             _countBaker = 0;
         }
 
