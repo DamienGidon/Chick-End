@@ -14,7 +14,7 @@ namespace ITI.S3.PI.Chick_End
             : base(context, damages)
         {
             Health = 500;
-            Speed = 40;
+            Speed = 30;
             _attackSpeed = 20;
             _passivImage = Image.FromFile("Cerberus.png");
             _attackImage = Image.FromFile("CerberusAttack.png");

@@ -34,6 +34,8 @@ namespace ITI.S3.PI.Chick_End
             _hensCost.Add("Butcher", 300);
             _hensCost.Add("InfantryFarmer", 300);
             _hensCost.Add("GunnerFarmer", 450);
+            _hensCost.Add("Steak", 10);
+
         }
 
         public int SellUnit(Tower tower)

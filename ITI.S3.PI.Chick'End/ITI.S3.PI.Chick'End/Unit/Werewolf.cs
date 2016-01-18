@@ -13,7 +13,7 @@ namespace ITI.S3.PI.Chick_End
         public Werewolf(Map context, int damages)
             : base(context, damages)
         {
-            Health = 500;
+            Health = 1500;
             Speed = 30;
             _attackSpeed = 20;
             _passivImage = Image.FromFile("Werewolf.png");

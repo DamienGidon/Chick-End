@@ -25,24 +25,39 @@ namespace ITI.S3.PI.Chick_End.GUI
 
         public void SpawnIte()
         {
-            if (_tick == 100)
+            if (_tick == 200 || _tick == 120)
             {
                 Wolf w = _game.Map.CreateWolf(_game.Map);
             }
 
-            if (_tick == 200)
+            if (_tick == 350 || _tick == 270)
             {
                 Fox f = _game.Map.CreateFox(_game.Map);
             }
 
-            if (_tick == 300)
+            if (_tick == 500 || _tick == 420)
+            {
+                Hyena h = _game.Map.CreateHyena(_game.Map);
+            }
+
+            if (_tick == 650 || _tick == 570)
+            {
+                Lion l = _game.Map.CreateLion(_game.Map);
+            }
+
+            if (_tick == 800 || _tick == 720)
             {
                 Anubis a = _game.Map.CreateAnubis(_game.Map);
             }
 
-            if (_tick == 400)
+            if (_tick == 1050 || _tick == 1070)
             {
                 Cerberus c = _game.Map.CreateCerberus(_game.Map);
+            }
+
+            if (_tick == 1300 || _tick == 1320)
+            {
+                Werewolf w = _game.Map.CreateWerewolf(_game.Map);
             }
         }
 
