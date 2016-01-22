@@ -16,12 +16,12 @@ namespace ITI.S3.PI.Chick_End.GUI
         public ViewMapControler()
         {
             DoubleBuffered = true;
-            if (this.IsInDesignMode() || _map == null)
-            {
-                BackColor = Color.Green;
-            }
-            else
-            {
+            //if (this.IsInDesignMode() || _map == null)
+            //{
+            //    BackColor = Color.Green;
+            //}
+            //else
+            //{
                 string directory = Path.GetDirectoryName( Application.ExecutablePath );
                 string pathPath = Path.Combine( directory, @"path.png" );
                 string pathGrass = Path.Combine( directory, @"grass.png" );
@@ -32,7 +32,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                 _grass = Image.FromFile( pathGrass );
                 _homeHen = Image.FromFile( pathHomeHen );
                 _explosiveEgg = Image.FromFile( pathExplosiveEgg );
-            }
+            //}
             
         }
         public int TestWidth { get; set; }

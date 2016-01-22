@@ -14,7 +14,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+            //Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormF());
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -23,6 +24,7 @@ namespace ITI.S3.PI.Chick_End.GUI
         string _Sminute;
         bool sound = true;
         HenCreater _henCreater = new HenCreater();
+        Dictionary<Tower, ProgressBar> _lifebars = new Dictionary<Tower, ProgressBar>();
 
 
         public gamecontrol( Controler controler, string level )
@@ -156,6 +158,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             int topLeftCornerY = ((relativePoint.Y / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight)) * (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight));
             int line = topLeftCornerY / (viewMapControler1.Height / viewMapControler1.Map.NbCaseHeight);
             int column = topLeftCornerX / (viewMapControler1.Width / viewMapControler1.Map.NbCaseWidth);
+            
 
             if (line < 0 || line > viewMapControler1.Map.NbCaseHeight - 1 || column < 0 || column > viewMapControler1.Map.NbCaseWidth - 1)
             {
@@ -170,6 +173,11 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     _seeds = _seeds - _henCreater.HensCost("Hen");
                     viewMapControler1.Map.CreateHen(line, column, viewMapControler1.Map);
+                    Point point = viewMapControler1.PointToClient(Cursor.Position);
+                    ProgressBar p = new ProgressBar();
+                    viewMapControler1.Controls.Add(p);
+                    p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
+                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
                 }
             }
         }
@@ -204,6 +212,12 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     _seeds = _seeds - _henCreater.HensCost("InfantryFarmer");
                     viewMapControler1.Map.CreateInfantryFarmer(line, column, viewMapControler1.Map);
+                    Point point = viewMapControler1.PointToClient(Cursor.Position);
+                    ProgressBar p = new ProgressBar();
+                    viewMapControler1.Controls.Add(p);
+                    p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
+                    p.BringToFront();
+                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
                 }
             }
         }
@@ -238,6 +252,11 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     _seeds = _seeds - _henCreater.HensCost("BomberHen");
                     viewMapControler1.Map.CreateBomberHen(line, column, viewMapControler1.Map);
+                    Point point = viewMapControler1.PointToClient(Cursor.Position);
+                    ProgressBar p = new ProgressBar();
+                    viewMapControler1.Controls.Add(p);
+                    p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
+                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
                 }
             }
         }
@@ -272,6 +291,11 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     _seeds = _seeds - _henCreater.HensCost("GunnerFarmer");
                     viewMapControler1.Map.CreateGunnerFarmer(line, column, viewMapControler1.Map);
+                    Point point = viewMapControler1.PointToClient(Cursor.Position);
+                    ProgressBar p = new ProgressBar();
+                    viewMapControler1.Controls.Add(p);
+                    p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
+                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
                 }
             }
         }
@@ -307,6 +331,11 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     _seeds = _seeds - _henCreater.HensCost("OldHen");
                     viewMapControler1.Map.CreateOldHen(line, column, viewMapControler1.Map);
+                    Point point = viewMapControler1.PointToClient(Cursor.Position);
+                    ProgressBar p = new ProgressBar();
+                    viewMapControler1.Controls.Add(p);
+                    p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
+                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
                 }
             }
         }
@@ -341,6 +370,11 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     _seeds = _seeds - _henCreater.HensCost("Baker");
                     viewMapControler1.Map.CreateBaker(line, column, viewMapControler1.Map);
+                    Point point = viewMapControler1.PointToClient(Cursor.Position);
+                    ProgressBar p = new ProgressBar();
+                    viewMapControler1.Controls.Add(p);
+                    p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
+                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
                 }
             }
         }
@@ -375,6 +409,11 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     _seeds = _seeds - _henCreater.HensCost("ExplosiveEgg");
                     viewMapControler1.Map.CreateExplosiveEgg(line, column, viewMapControler1.Map);
+                    Point point = viewMapControler1.PointToClient(Cursor.Position);
+                    ProgressBar p = new ProgressBar();
+                    viewMapControler1.Controls.Add(p);
+                    p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
+                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
                 }
             }
         }
@@ -409,6 +448,11 @@ namespace ITI.S3.PI.Chick_End.GUI
                 {
                     _seeds = _seeds - _henCreater.HensCost("Butcher");
                     viewMapControler1.Map.CreateButcher(line, column, viewMapControler1.Map);
+                    Point point = viewMapControler1.PointToClient(Cursor.Position);
+                    ProgressBar p = new ProgressBar();
+                    viewMapControler1.Controls.Add(p);
+                    p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
+                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
                 }
             }
         }
@@ -445,6 +489,11 @@ namespace ITI.S3.PI.Chick_End.GUI
                     viewMapControler1.Map.CreateRooster(line, column, viewMapControler1.Map);
                     Rooster r = (Rooster) viewMapControler1.Map.Square[line, column].Tower;
                     r.KillAll();
+                    Point point = viewMapControler1.PointToClient(Cursor.Position);
+                    ProgressBar p = new ProgressBar();
+                    viewMapControler1.Controls.Add(p);
+                    p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
+                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
 
                 }
             }
@@ -523,6 +572,46 @@ namespace ITI.S3.PI.Chick_End.GUI
         private void timer1_Tick( object sender, EventArgs e )
         {
             _tick++;
+            int CaseShouldBeThatHeight = viewMapControler1.Size.Height / viewMapControler1.Map.NbCaseHeight;
+            int CaseShouldBeThatWidth = viewMapControler1.Size.Width / viewMapControler1.Map.NbCaseWidth;
+
+            foreach (KeyValuePair<Tower,ProgressBar> dico in _lifebars)
+            {
+                if (dico.Value.Value < dico.Value.Maximum * 0.33)
+                {
+                    dico.Value.ForeColor = Color.Red;
+                }
+                else if(dico.Value.Value < dico.Value.Maximum * 0.66)
+                {
+                    dico.Value.ForeColor = Color.Orange;
+                }
+                else
+                {
+                    dico.Value.ForeColor = Color.Lime;
+                }
+
+                if (dico.Key.Health <= 0)
+                {
+                    dico.Value.Dispose();
+                }
+                else
+                {
+                    int x = dico.Key.Square.Column * CaseShouldBeThatWidth;
+                    if (dico.Key.Kind == "human")
+                    {
+                        int y = dico.Key.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32(CaseShouldBeThatHeight * 0.6);
+                        dico.Value.Location = new Point(x, y);
+                    }
+                    else
+                    {
+                        int y = dico.Key.Square.Line * CaseShouldBeThatHeight - Convert.ToInt32(CaseShouldBeThatHeight * 0.2);
+                        dico.Value.Location = new Point(x, y);
+                    }
+                    dico.Value.Value = dico.Key.Health;
+                    dico.Value.BringToFront();
+                    dico.Value.Size = new Size(CaseShouldBeThatWidth, Convert.ToInt32(CaseShouldBeThatHeight *0.2));
+                }
+            }
 
             //affichage Timer
             _countM++;
