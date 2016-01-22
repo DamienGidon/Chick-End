@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Collections.Generic;
 
 namespace ITI.S3.PI.Chick_End.GUI
 {
@@ -17,8 +11,8 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             _tick = tick;
             _game = Context;
-            //SpawnAll();
-            SpawnIte();
+            SpawnAll();
+            //SpawnIte();
             SpawnFromAnubis();
             SpawnSteak();
         }

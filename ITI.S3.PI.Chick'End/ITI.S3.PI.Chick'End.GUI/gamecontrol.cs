@@ -29,7 +29,6 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             _controler = controler;
             _controler.FinalForm.CurrentGameChanged += OnCurrentGameChanged;
-            viewMapControler1 = new ViewMapControler();
             InitializeComponent();
 
             _level = level;
