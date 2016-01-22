@@ -331,13 +331,13 @@ namespace ITI.S3.PI.Chick_End
         }
         public Cerberus CreateCerberus( Map context )
         {
-            Cerberus e = new Cerberus( context, 100 );
+            Cerberus e = new Cerberus( context, 150 );
             _enemies.Add( e );
             return e;
         }
         public Werewolf CreateWerewolf( Map context )
         {
-            Werewolf e = new Werewolf( context, 75 );
+            Werewolf e = new Werewolf( context, 100 );
             _enemies.Add( e );
             return e;
         }

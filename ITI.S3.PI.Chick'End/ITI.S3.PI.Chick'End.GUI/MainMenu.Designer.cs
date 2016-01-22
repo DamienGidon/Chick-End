@@ -47,13 +47,12 @@
             this.MenuPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuPanel.BackgroundImage")));
             this.MenuPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuPanel.Controls.Add(this.panel1);
-            this.MenuPanel.Controls.Add(this.buttonQuit);
             this.MenuPanel.Controls.Add(this.buttonRules);
             this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MenuPanel.Location = new System.Drawing.Point(0, 0);
             this.MenuPanel.Margin = new System.Windows.Forms.Padding(4);
             this.MenuPanel.Name = "MenuPanel";
-            this.MenuPanel.Size = new System.Drawing.Size(983, 719);
+            this.MenuPanel.Size = new System.Drawing.Size(1009, 719);
             this.MenuPanel.TabIndex = 1;
             // 
             // panel1
@@ -63,13 +62,14 @@
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.buttonQuit);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Location = new System.Drawing.Point(356, 170);
+            this.panel1.Location = new System.Drawing.Point(369, 170);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(624, 697);
+            this.panel1.Size = new System.Drawing.Size(578, 697);
             this.panel1.TabIndex = 10;
             // 
             // button1
@@ -86,7 +86,7 @@
             this.button1.Location = new System.Drawing.Point(33, 15);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(566, 93);
+            this.button1.Size = new System.Drawing.Size(520, 93);
             this.button1.TabIndex = 0;
             this.button1.Text = "Play";
             this.button1.UseVisualStyleBackColor = false;
@@ -103,7 +103,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Playbill", 28F);
             this.button2.ForeColor = System.Drawing.Color.BurlyWood;
-            this.button2.Location = new System.Drawing.Point(33, 100);
+            this.button2.Location = new System.Drawing.Point(10, 100);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(566, 55);
@@ -123,7 +123,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Playbill", 28F);
             this.button3.ForeColor = System.Drawing.Color.BurlyWood;
-            this.button3.Location = new System.Drawing.Point(33, 163);
+            this.button3.Location = new System.Drawing.Point(10, 163);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(566, 60);
@@ -143,7 +143,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Playbill", 28F);
             this.button4.ForeColor = System.Drawing.Color.BurlyWood;
-            this.button4.Location = new System.Drawing.Point(33, 303);
+            this.button4.Location = new System.Drawing.Point(10, 303);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(566, 56);
@@ -163,7 +163,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Playbill", 28F);
             this.button5.ForeColor = System.Drawing.Color.BurlyWood;
-            this.button5.Location = new System.Drawing.Point(33, 238);
+            this.button5.Location = new System.Drawing.Point(10, 238);
             this.button5.Margin = new System.Windows.Forms.Padding(0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(566, 61);
@@ -176,14 +176,14 @@
             // 
             // buttonQuit
             // 
-            this.buttonQuit.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonQuit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonQuit.BackColor = System.Drawing.Color.Transparent;
             this.buttonQuit.FlatAppearance.BorderSize = 0;
             this.buttonQuit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonQuit.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonQuit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonQuit.Location = new System.Drawing.Point(1093, 759);
+            this.buttonQuit.Location = new System.Drawing.Point(440, 457);
             this.buttonQuit.Margin = new System.Windows.Forms.Padding(4);
             this.buttonQuit.Name = "buttonQuit";
             this.buttonQuit.Size = new System.Drawing.Size(196, 88);
@@ -203,7 +203,7 @@
             this.buttonRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRules.Font = new System.Drawing.Font("Playbill", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRules.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonRules.Location = new System.Drawing.Point(389, 487);
+            this.buttonRules.Location = new System.Drawing.Point(402, 487);
             this.buttonRules.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRules.Name = "buttonRules";
             this.buttonRules.Size = new System.Drawing.Size(197, 92);
@@ -221,7 +221,7 @@
             this.Controls.Add(this.MenuPanel);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainMenu";
-            this.Size = new System.Drawing.Size(983, 719);
+            this.Size = new System.Drawing.Size(1009, 719);
             this.Load += new System.EventHandler(this.ManageUsersControl_Load);
             this.MenuPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

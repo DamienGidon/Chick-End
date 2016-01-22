@@ -20,8 +20,8 @@ namespace ITI.S3.PI.Chick_End
             _attackImage = Image.FromFile("WerewolfAttack.png");
             _moveImage = Image.FromFile("WerewolfMove.png");
             _image = _passivImage;
-            _imageWidth = 60;
-            _imageHeight = 50;
+            _imageWidth = 80;
+            _imageHeight = 70;
         }
 
         //public override void Attack( Unit opposant )
