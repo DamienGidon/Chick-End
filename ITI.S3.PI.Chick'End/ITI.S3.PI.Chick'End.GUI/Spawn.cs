@@ -6,13 +6,14 @@ namespace ITI.S3.PI.Chick_End.GUI
     {
         int _tick;
         Game _game;
+        Controler _controler;
 
-        public Spawn( int tick, Game Context )
+        public Spawn( int tick, Game Context, Controler controler )
         {
             _tick = tick;
             _game = Context;
+            _controler = controler;
             SpawnAll();
-            //SpawnIte();
             SpawnFromAnubis();
             SpawnSteak();
         }
@@ -22,36 +23,43 @@ namespace ITI.S3.PI.Chick_End.GUI
             if (_tick == 200 || _tick == 120)
             {
                 Wolf w = _game.Map.CreateWolf(_game.Map);
+                _controler.Gamecontrol.createLifeBar(w);
             }
 
             if (_tick == 350 || _tick == 270)
             {
                 Fox f = _game.Map.CreateFox(_game.Map);
+                _controler.Gamecontrol.createLifeBar(f);
             }
 
             if (_tick == 500 || _tick == 420)
             {
                 Hyena h = _game.Map.CreateHyena(_game.Map);
+                _controler.Gamecontrol.createLifeBar(h);
             }
 
             if (_tick == 650 || _tick == 570)
             {
                 Lion l = _game.Map.CreateLion(_game.Map);
+                _controler.Gamecontrol.createLifeBar(l);
             }
 
             if (_tick == 800 || _tick == 720)
             {
                 Anubis a = _game.Map.CreateAnubis(_game.Map);
+                _controler.Gamecontrol.createLifeBar(a);
             }
 
             if (_tick == 1050 || _tick == 1070)
             {
                 Cerberus c = _game.Map.CreateCerberus(_game.Map);
+                _controler.Gamecontrol.createLifeBar(c);
             }
 
             if (_tick == 1300 || _tick == 1320)
             {
                 Werewolf w = _game.Map.CreateWerewolf(_game.Map);
+                _controler.Gamecontrol.createLifeBar(w);
             }
         }
 
@@ -60,36 +68,44 @@ namespace ITI.S3.PI.Chick_End.GUI
             if (_tick % 60 == 0)
             {
                 Wolf w = _game.Map.CreateWolf(_game.Map);
+                Enemy p = (Enemy)w;
+                _controler.Gamecontrol.createLifeBar(p);
             }
 
             if (_tick % 200 == 0)
             {
                 Fox f = _game.Map.CreateFox(_game.Map);
+                _controler.Gamecontrol.createLifeBar(f);
             }
 
             if (_tick % 500 == 0)
             {
                 Hyena h = _game.Map.CreateHyena(_game.Map);
+                _controler.Gamecontrol.createLifeBar(h);
             }
 
             if (_tick % 120 == 0)
             {
                 Lion l = _game.Map.CreateLion(_game.Map);
+                _controler.Gamecontrol.createLifeBar(l);
             }
 
             if (_tick % 3000 == 0)
             {
                 Anubis a = _game.Map.CreateAnubis(_game.Map);
+                _controler.Gamecontrol.createLifeBar(a);
             }
 
             if (_tick % 5000 == 0)
             {
                 Werewolf w = _game.Map.CreateWerewolf(_game.Map);
+                _controler.Gamecontrol.createLifeBar(w);
             }
 
             if (_tick % 4000 == 0)
             {
                 Cerberus c = _game.Map.CreateCerberus(_game.Map);
+                _controler.Gamecontrol.createLifeBar(c);
             }
         }
 

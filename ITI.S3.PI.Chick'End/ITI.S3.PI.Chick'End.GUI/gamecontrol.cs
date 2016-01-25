@@ -24,7 +24,8 @@ namespace ITI.S3.PI.Chick_End.GUI
         string _Sminute;
         bool sound = true;
         HenCreater _henCreater = new HenCreater();
-        Dictionary<Tower, ProgressBar> _lifebars = new Dictionary<Tower, ProgressBar>();
+        Dictionary<Tower, ProgressBar> _towersLifebar = new Dictionary<Tower, ProgressBar>();
+        Dictionary<Enemy, ProgressBar> _enemyLifebar = new Dictionary<Enemy, ProgressBar>();
 
 
         public gamecontrol( Controler controler, string level )
@@ -177,7 +178,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                     ProgressBar p = new ProgressBar();
                     viewMapControler1.Controls.Add(p);
                     p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
-                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
+                    _towersLifebar.Add(viewMapControler1.Map.Square[line, column].Tower, p);
                 }
             }
         }
@@ -217,7 +218,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                     viewMapControler1.Controls.Add(p);
                     p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
                     p.BringToFront();
-                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
+                    _towersLifebar.Add(viewMapControler1.Map.Square[line, column].Tower, p);
                 }
             }
         }
@@ -256,7 +257,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                     ProgressBar p = new ProgressBar();
                     viewMapControler1.Controls.Add(p);
                     p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
-                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
+                    _towersLifebar.Add(viewMapControler1.Map.Square[line, column].Tower, p);
                 }
             }
         }
@@ -295,7 +296,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                     ProgressBar p = new ProgressBar();
                     viewMapControler1.Controls.Add(p);
                     p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
-                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
+                    _towersLifebar.Add(viewMapControler1.Map.Square[line, column].Tower, p);
                 }
             }
         }
@@ -335,7 +336,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                     ProgressBar p = new ProgressBar();
                     viewMapControler1.Controls.Add(p);
                     p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
-                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
+                    _towersLifebar.Add(viewMapControler1.Map.Square[line, column].Tower, p);
                 }
             }
         }
@@ -374,7 +375,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                     ProgressBar p = new ProgressBar();
                     viewMapControler1.Controls.Add(p);
                     p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
-                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
+                    _towersLifebar.Add(viewMapControler1.Map.Square[line, column].Tower, p);
                 }
             }
         }
@@ -413,7 +414,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                     ProgressBar p = new ProgressBar();
                     viewMapControler1.Controls.Add(p);
                     p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
-                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
+                    _towersLifebar.Add(viewMapControler1.Map.Square[line, column].Tower, p);
                 }
             }
         }
@@ -452,7 +453,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                     ProgressBar p = new ProgressBar();
                     viewMapControler1.Controls.Add(p);
                     p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
-                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
+                    _towersLifebar.Add(viewMapControler1.Map.Square[line, column].Tower, p);
                 }
             }
         }
@@ -493,7 +494,7 @@ namespace ITI.S3.PI.Chick_End.GUI
                     ProgressBar p = new ProgressBar();
                     viewMapControler1.Controls.Add(p);
                     p.Value = p.Maximum = viewMapControler1.Map.Square[line, column].Tower.Health;
-                    _lifebars.Add(viewMapControler1.Map.Square[line, column].Tower, p);
+                    _towersLifebar.Add(viewMapControler1.Map.Square[line, column].Tower, p);
 
                 }
             }
@@ -569,13 +570,60 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             get { return labelTimer.Text; }
         }
+
+        public void createLifeBar(Enemy e)
+        {
+            int x = e.Position.X;
+            int y = e.Position.Y;
+            Point point = viewMapControler1.PointToClient(Cursor.Position);
+            ProgressBar p = new ProgressBar();
+            viewMapControler1.Controls.Add(p);
+            p.Value = p.Maximum = e.Health;
+            p.Location = new Point(x, y - 20);
+            _enemyLifebar.Add(e, p);
+        }
         private void timer1_Tick( object sender, EventArgs e )
         {
             _tick++;
             int CaseShouldBeThatHeight = viewMapControler1.Size.Height / viewMapControler1.Map.NbCaseHeight;
             int CaseShouldBeThatWidth = viewMapControler1.Size.Width / viewMapControler1.Map.NbCaseWidth;
 
-            foreach (KeyValuePair<Tower,ProgressBar> dico in _lifebars)
+            //LIFEBAR ENEMIES UNIT
+ 
+            foreach(KeyValuePair<Enemy, ProgressBar> dicoE in _enemyLifebar)
+            {
+
+                if (dicoE.Value.Value < dicoE.Value.Maximum * 0.33)
+                {
+                    dicoE.Value.ForeColor = Color.Red;
+                }
+                else if (dicoE.Value.Value < dicoE.Value.Maximum * 0.66)
+                {
+                    dicoE.Value.ForeColor = Color.Orange;
+                }
+                else
+                {
+                    dicoE.Value.ForeColor = Color.Lime;
+                }
+
+                if (dicoE.Key.Health <= 0)
+                {
+                    dicoE.Value.Dispose();
+                }
+                else
+                {
+                    int x = dicoE.Key.Position.X;
+                    int y = dicoE.Key.Position.Y;
+                    dicoE.Value.Location = new Point(x, y - 20);
+
+                    dicoE.Value.Value = dicoE.Key.Health;
+                    dicoE.Value.BringToFront();
+                    dicoE.Value.Size = new Size(CaseShouldBeThatWidth, Convert.ToInt32(CaseShouldBeThatHeight * 0.2));
+                }
+            }
+            
+            // LIFEBAR FRIENDLY UNIT
+            foreach (KeyValuePair<Tower,ProgressBar> dico in _towersLifebar)
             {
                 if (dico.Value.Value < dico.Value.Maximum * 0.33)
                 {
@@ -660,7 +708,7 @@ namespace ITI.S3.PI.Chick_End.GUI
             }
 
             //génération ennemis
-            Spawn s = new Spawn( _tick, _controler.FinalForm.CurrentGame );
+            Spawn s = new Spawn( _tick, _controler.FinalForm.CurrentGame, _controler );
 
             foreach (Enemy en in viewMapControler1.Map.Enemies)
             {
