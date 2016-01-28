@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -41,6 +42,15 @@ namespace ITI.S3.PI.Chick_End.GUI
         {
             if( MessageBox.Show("Do you really want to quit the current game ?", "Confirmation", MessageBoxButtons.YesNo ) == DialogResult.Yes)
             {
+                foreach (KeyValuePair<Enemy, ProgressBar> dicoE in _controler.Gamecontrol.EnemiesLifebar)
+                {
+                    dicoE.Value.Dispose();
+                }
+
+                foreach (KeyValuePair<Tower, ProgressBar> dicoE in _controler.Gamecontrol.TowersLifeBar)
+                {
+                    dicoE.Value.Dispose();
+                }
                 _controler.HideGameMenu();
                 _controler.HideGamecontrol();
                 _controler.DisplayMainMenu();

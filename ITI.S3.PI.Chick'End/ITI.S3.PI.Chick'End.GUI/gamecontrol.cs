@@ -582,6 +582,17 @@ namespace ITI.S3.PI.Chick_End.GUI
             p.Location = new Point(x, y - 20);
             _enemyLifebar.Add(e, p);
         }
+
+        public Dictionary<Enemy,ProgressBar> EnemiesLifebar
+        {
+            get { return _enemyLifebar; }
+        }
+
+        public Dictionary<Tower, ProgressBar> TowersLifeBar
+        {
+            get { return _towersLifebar; }
+        }
+
         private void timer1_Tick( object sender, EventArgs e )
         {
             _tick++;

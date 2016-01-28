@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ITI.S3.PI.Chick_End.GUI
@@ -35,6 +36,16 @@ namespace ITI.S3.PI.Chick_End.GUI
                 Xml.Save( "leaderboard.xml" );
                 _controler.HideGameOver();
                 _controler.DisplayMainMenu();
+            }
+
+            foreach (KeyValuePair<Enemy, ProgressBar> dicoE in _controler.Gamecontrol.EnemiesLifebar)
+            {
+                dicoE.Value.Dispose();
+            }
+
+            foreach (KeyValuePair<Tower, ProgressBar> dicoE in _controler.Gamecontrol.TowersLifeBar)
+            {
+                dicoE.Value.Dispose();
             }
         }
 
